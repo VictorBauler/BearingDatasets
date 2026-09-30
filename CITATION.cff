@@ -14,9 +14,10 @@ authors:
   - family-names: Bauler
     given-names: Victor
     orcid: "https://orcid.org/0009-0001-4754-9610"
-version: 0.1.0
+version: 0.1.1
 date-released: "2026-09-30"
 license: MIT
+doi: 10.5281/zenodo.23062167
 repository-code: "https://github.com/VictorBauler/BearingDatasets"
 url: "https://github.com/VictorBauler/BearingDatasets"
 keywords:

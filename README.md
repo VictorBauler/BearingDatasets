@@ -1,8 +1,10 @@
 # bearing-datasets
 
+[![PyPI](https://img.shields.io/pypi/v/bearing-datasets)](https://pypi.org/project/bearing-datasets/)
 [![Python](https://img.shields.io/badge/python-%E2%89%A5%203.10-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](#license)
 [![Datasets](https://img.shields.io/badge/datasets-69-orange)](#datasets)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23062167.svg)](https://doi.org/10.5281/zenodo.23062167)
 
 **69 public bearing and rotating-machinery fault datasets in one common format**, downloaded
 from their original sources. Every dataset becomes one metadata table (one row per signal) plus the
@@ -45,20 +47,24 @@ New here? Read the [guide](docs/guide.md) (concepts, recipes, FAQ) and run the n
 
 ## Quick start
 
-**1. Install** the package from GitHub (no need to clone the repository):
+**1. Install** the package from PyPI (no need to clone the repository):
 
 ```bash
-pip install "bearing-datasets[polars] @ git+https://github.com/VictorBauler/BearingDatasets"
+pip install bearing-datasets
 # or, in a uv project:
-uv add "bearing-datasets[polars] @ git+https://github.com/VictorBauler/BearingDatasets"
+uv add bearing-datasets
 ```
+
+Add the `polars` extra (`pip install "bearing-datasets[polars]"`) to get the metadata as a
+polars DataFrame. The latest development version installs from GitHub:
+`pip install "bearing-datasets @ git+https://github.com/VictorBauler/BearingDatasets"`.
 
 > **Command not found?** (common on Windows, e.g. "bearing-datasets is not recognized")
 > `uv add` installs the command inside the project's `.venv`, which is not on your PATH.
 > Run it through uv from the project folder, `uv run bearing-datasets list`, or activate the
 > environment first (`.venv\Scripts\activate` on Windows, `source .venv/bin/activate`
 > elsewhere). To have the command everywhere, install it as a tool instead:
-> `uv tool install "bearing-datasets @ git+https://github.com/VictorBauler/BearingDatasets"`
+> `uv tool install bearing-datasets`
 > then `uv tool update-shell` and open a new terminal. The examples below write
 > `bearing-datasets ...`; prefix them with `uv run` if needed.
 
@@ -450,10 +456,13 @@ repository lets others find the same data and reproduce your results.
   author  = {Bauler, Victor},
   title   = {bearing-datasets: public bearing fault datasets in one common format},
   year    = {2026},
-  version = {0.1.0},
+  doi     = {10.5281/zenodo.23062167},
   url     = {https://github.com/VictorBauler/BearingDatasets}
 }
 ```
+
+This DOI always points to the latest version; each release also has its own DOI, listed on
+[Zenodo](https://doi.org/10.5281/zenodo.23062167), to cite the exact version you used.
 
 ## License
 

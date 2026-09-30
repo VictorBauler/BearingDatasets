@@ -62,8 +62,8 @@ Two special values appear in the table instead of empty cells:
 ## 3. First steps
 
 ```bash
-# 1. install from GitHub (no need to clone the repository)
-pip install "bearing-datasets[polars] @ git+https://github.com/VictorBauler/BearingDatasets"
+# 1. install from PyPI (no need to clone the repository)
+pip install bearing-datasets
 
 # 2. tell the library where the datasets are (saved for your user; works on Windows too)
 bearing-datasets root /data/bearing_datasets
@@ -584,7 +584,7 @@ download into `~/data/my_cwru`. Built by path the first time:
 : The package was installed in a project environment (`uv add`), whose `.venv` is not on
   PATH. Use `uv run bearing-datasets ...` from the project folder, or activate the environment
   (`.venv\Scripts\activate` on Windows), or install the command globally with
-  `uv tool install "bearing-datasets @ git+https://github.com/VictorBauler/BearingDatasets"`
+  `uv tool install bearing-datasets`
   and `uv tool update-shell`.
 
 **`KeyError` when reading a signal**
