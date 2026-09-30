@@ -1,0 +1,41 @@
+# Publishes to PyPI when a GitHub release is published (trusted publishing, no token).
+# One-time setup: on pypi.org, add a pending trusted publisher for this repository
+# (workflow `publish.yml`, environment `pypi`), and create the `pypi` environment on GitHub.
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Check that the tag matches the package version
+        run: |
+          version=$(sed -n 's/^__version__ = "\(.*\)"/\1/p' src/bearing_datasets/_version.py)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match package version $version"; exit 1
+          fi
+      - run: uv run pytest
+      - run: uv run ruff check src tests && uv run ruff format --check src tests
+      - run: uv build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1

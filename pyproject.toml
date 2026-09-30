@@ -1,8 +1,7 @@
 [project]
 name = "bearing-datasets"
-dynamic = ["version"]
+dynamic = ["version", "readme"]
 description = "Reproducible download and standardized Parquet storage for bearing / rotating-machinery fault datasets"
-readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Victor Bauler" }]
@@ -75,11 +74,26 @@ dev = [
 ]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-fancy-pypi-readme"]
 build-backend = "hatchling.build"
 
 [tool.hatch.version]
 path = "src/bearing_datasets/_version.py"
+
+# PyPI renders the README without the repository around it: make its links absolute.
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/markdown"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
+path = "README.md"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '\]\(#'
+replacement = '](https://github.com/VictorBauler/BearingDatasets#'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '\]\((?!https?://)([^)]+)\)'
+replacement = '](https://github.com/VictorBauler/BearingDatasets/blob/main/\1)'
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/bearing_datasets"]
