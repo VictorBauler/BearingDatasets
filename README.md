@@ -1,6 +1,6 @@
 # bearing-datasets
 
-[![PyPI](https://img.shields.io/pypi/v/bearing-datasets)](https://pypi.org/project/bearing-datasets/)
+[![PyPI](https://img.shields.io/pypi/v/bearing-datasets?cacheSeconds=3600)](https://pypi.org/project/bearing-datasets/)
 [![Python](https://img.shields.io/badge/python-%E2%89%A5%203.10-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](#license)
 [![Datasets](https://img.shields.io/badge/datasets-69-orange)](#datasets)
