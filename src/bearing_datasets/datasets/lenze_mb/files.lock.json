@@ -1,0 +1,22 @@
+[
+ {
+  "name": "Data.zip",
+  "size": 3220660245,
+  "sha256": "221832c1cbef15947499d10f86c42730e68b7dafd1143ad64102c1a1cdaaaa5f"
+ },
+ {
+  "name": "Lenze_Motor_Bearing_Fault_Dataset_(Lenze-MB).pdf",
+  "size": 663467,
+  "sha256": "64beaeec74fb2fe1a85892e16dc078c6b5c95dabd719f67cb55e9b2d242b390c"
+ },
+ {
+  "name": "Meta_Data.xlsx",
+  "size": 20595,
+  "sha256": "a4ef1b937020b212c1a4c6bbccc379092993531410a5fde0634438de9ef8377c"
+ },
+ {
+  "name": "Quick_Start_Script.ipynb",
+  "size": 256818,
+  "sha256": "9645cfe8f938506a41da0666a6adc2da2d6d47619cb802009d8e928abf8bc715"
+ }
+]

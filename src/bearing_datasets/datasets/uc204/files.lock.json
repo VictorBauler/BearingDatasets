@@ -1,0 +1,752 @@
+[
+ {
+  "name": "Normal_025Hp/sinal2_1.txt",
+  "size": 367046,
+  "sha256": "81ff822386ef72d9b3c7d048664326c50dccd5374fd2751d954b992f6ddafbba"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_10.txt",
+  "size": 360704,
+  "sha256": "a5fadece059621ce2535c43e5b386dbffaea7d80ca5dbed5920c7e64ce909273"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_2.txt",
+  "size": 362362,
+  "sha256": "0bf8b9df10401025902fd83a952741ef481275c3e4d0dcfbe371851d8371fafa"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_3.txt",
+  "size": 372076,
+  "sha256": "8917ffdc26bfa692dd084805e8661c745a823c42a31041d5adf9522fa71aedd0"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_4.txt",
+  "size": 358653,
+  "sha256": "d58c5257b8cb6f51eada9b6ef976236ff473bf871c8062bdde483451d147fdf8"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_5.txt",
+  "size": 371195,
+  "sha256": "d9e595627f13d19c9f2d4fdc92b24086e356b6d584c16ab302bcc811b373b39e"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_6.txt",
+  "size": 358430,
+  "sha256": "4a85ddf8ebaed3fb6ed15661c372960236e7e78b4a7ca4b47e0460e487d2c0d0"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_7.txt",
+  "size": 362466,
+  "sha256": "7a9cd94e97b1d8bfa5ae9e617bd7d00059f360712898eb1d9b2745d29b3dc7c9"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_8.txt",
+  "size": 371369,
+  "sha256": "34daa2a2d1672c0ba6fa7f899e9f71ace11444044535b5e2fedb16993509b2ef"
+ },
+ {
+  "name": "Normal_025Hp/sinal2_9.txt",
+  "size": 364540,
+  "sha256": "40d36063103e36620302a842184ed6906dcafbd505cf3f2419841d6a75024159"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_1.txt",
+  "size": 370942,
+  "sha256": "346817a7c40e769abae2ab7f512e306925b8293f8322b8c25d9113cbc6d82df9"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_10.txt",
+  "size": 371271,
+  "sha256": "56257e44a526320e42422c55aca2b79bb7c3e1ed464343639f4cfb8d4a7e9b6e"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_2.txt",
+  "size": 380184,
+  "sha256": "f72e681a7ae482dee550a7d7da6649da1545169c7ca2fe90dfb0f6e12a16ef45"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_3.txt",
+  "size": 367937,
+  "sha256": "45a541a55fd001ece19073e2ba51e28c2755baa218b0ca5741d926a1f2270aec"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_4.txt",
+  "size": 379990,
+  "sha256": "a2571fefe7acbefd30fe5dfaed0f383a58a482c8a043aa57fa7eb217c25778d1"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_5.txt",
+  "size": 370732,
+  "sha256": "0e20d6360e2408b94fa504a8fa8d37210c802bddd85d219ad93ad5b51516327c"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_6.txt",
+  "size": 366068,
+  "sha256": "0be6cf14ec778cccf3754c24e93c32ce654479b45d2a95865cf8416450f2f1d6"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_7.txt",
+  "size": 358718,
+  "sha256": "b27c5492a2abd17361e6e38548262edb16dce1a92145c0d0adf42ba2d19e6307"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_8.txt",
+  "size": 374227,
+  "sha256": "5230f83761b7a9c094753fda1bb10c296928ced953dd05c5f7f2ecce06fd1925"
+ },
+ {
+  "name": "Normal_04Hp/sinal4_9.txt",
+  "size": 370664,
+  "sha256": "17da48c2ccab6e6c4a54d448747e0782a9335f102f8ee92d2b92123d221e4b2b"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_1.txt",
+  "size": 366367,
+  "sha256": "6ef4e49718dd518df5df2480f949c4798906ad2558234ae4cca2badeaa5e932f"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_10.txt",
+  "size": 359779,
+  "sha256": "b444c18cddc55b7b4da4cd07e4f83b1135ad45e913967f78eb3b9daa81cfeae8"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_2.txt",
+  "size": 361516,
+  "sha256": "38fb3f754741127000614a5e2b14033e7a76f46343c18500a51644913a02b9ae"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_3.txt",
+  "size": 375145,
+  "sha256": "701f16e17fd10c46c2b559bd0b4d73f9c723e94d21e750df9ee9d2f261051504"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_4.txt",
+  "size": 370698,
+  "sha256": "383d11fdceb26f8a13c3925c14f74a6f9783fb15c6d0680dab5f2b4d66d11a98"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_5.txt",
+  "size": 361767,
+  "sha256": "49d7cb91d37b168c5feb6bf6f37d9744785e45b5c822fcaef35988656e74d1ff"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_6.txt",
+  "size": 363977,
+  "sha256": "376d96b6c05bb2cc96a0d8faf868f2e8effe6c4ad2fb78e187c28944673d3551"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_7.txt",
+  "size": 375214,
+  "sha256": "75c453711885aa5f3485d1dcb1f99d4a8b801bb0973d753902d95f4053f01d87"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_8.txt",
+  "size": 370561,
+  "sha256": "98da0749ef8a0cb0d3da6c23f6874b32efaef61d30cca3899acca4d3bd646ce2"
+ },
+ {
+  "name": "Normal_06Hp/sinal6_9.txt",
+  "size": 376929,
+  "sha256": "32c29d4cc0417b4f4777dc48cd7c51c952a91f00b18bb108e6cea9abb2d7d259"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_1.txt",
+  "size": 363508,
+  "sha256": "b4a4859126fea288df6fa4b2a62d1cd33da126b787cea4f8cb3ba47ebc92c40d"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_10.txt",
+  "size": 358113,
+  "sha256": "a3b52f7ba259290ab4c32a657345975b9f47dd970438a31dc5a55b46545f728a"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_2.txt",
+  "size": 364302,
+  "sha256": "a5b446ac56e75c59ff81ad7cab64434e148286439caa322fe841c112615d2d62"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_3.txt",
+  "size": 370258,
+  "sha256": "58e98a525f589a5351b5efb63cfe27e7466def7f6994083cc2cf1c94c3921d86"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_4.txt",
+  "size": 364284,
+  "sha256": "37d8bc244ab283e3f92a8990e2ba6075011ec296bfe79753aea354ebf7382dc4"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_5.txt",
+  "size": 374670,
+  "sha256": "00ce7f22832d43d40a5f30df32bffb78fadc883e5e0b8f8fbf934583108e7d42"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_6.txt",
+  "size": 377742,
+  "sha256": "48ce8b12b262964a2deabe74c85ef86725a3da8701df42eef3d4ac4d7a69d80c"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_7.txt",
+  "size": 365270,
+  "sha256": "ba57ef248654bf3fb92ffec50df1abaa42a33e2f3f864dbb4e723045afa97002"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_8.txt",
+  "size": 366215,
+  "sha256": "95a0716e8f08f7a72e155104077b9db88889ebba827b0ac31dcf21f6615bf1d8"
+ },
+ {
+  "name": "OR_025Hp_018mm/sinal218_9.txt",
+  "size": 373966,
+  "sha256": "6c55e38d7654eb303cc1ccf5ab6d86e4c6801c723b069871a11022fb40ed9745"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_1.txt",
+  "size": 369725,
+  "sha256": "471ea5878d450f06eb11c18e3dc1c9496702146a84822ace44da76f12e6648fb"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_10.txt",
+  "size": 365235,
+  "sha256": "1a01bb29d37ec0923814b5b6302ea32200b7e8f7a096375a9ab109c479236406"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_2.txt",
+  "size": 363429,
+  "sha256": "685ee8a97fa0892fe35fd6a6c2884708f2b35ade6949270ac1a17af290a2c9ca"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_3.txt",
+  "size": 360707,
+  "sha256": "daf5f561327588b99a83951d5769eda0ab29b6c75a6dd960a8e7dbcc9dcb7363"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_4.txt",
+  "size": 368137,
+  "sha256": "3b77144a80c9b94178d0358fe03f44f5d43f3286db97824576a136592c593b14"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_5.txt",
+  "size": 369341,
+  "sha256": "7d4838c23e9c779fc0705c85a267c5982cbd5a6067ee3a3bc893a3242dc4ab2a"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_6.txt",
+  "size": 375188,
+  "sha256": "460f7b2d8949205136096efff69a6d5b26f31e6e8d6aac88869303e86e60d5e5"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_7.txt",
+  "size": 366488,
+  "sha256": "2ee19aae15f3968d8e8a69997fa19eaca78421f7fd41b25160254218fadddfb7"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_8.txt",
+  "size": 368493,
+  "sha256": "3c9cd9a298a518345a985370d3bddafb68543c86a02e92fc92cc70165e8186a0"
+ },
+ {
+  "name": "OR_025Hp_036mm/sinal236_9.txt",
+  "size": 367663,
+  "sha256": "b379347cc2fe70131d0f6bd8748fb44d5924732fe5877838ec3da62b4e27dfe7"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_1.txt",
+  "size": 363775,
+  "sha256": "8b91d2c32cb164726e730b51560d42911b9446554106cf387c65bfba4963fd57"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_10.txt",
+  "size": 358136,
+  "sha256": "a2a151cbb8a346ee8d78e448fbd1700697eb9e044be001b08efd1c2c14c5c7b6"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_2.txt",
+  "size": 366643,
+  "sha256": "43c2ba4cc6da2f4830ae55bbd630bccfeee5badc7cf00752ef8562f0d8bbaa4a"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_3.txt",
+  "size": 369820,
+  "sha256": "27f03d257950b65d3e14b35af65ea961fba0cf8fd62d6a3545809a8be143be2d"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_4.txt",
+  "size": 360444,
+  "sha256": "23b444f556eaa186521cdf8057b607a71bd7387f1631ee52976268dd0165b9ec"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_5.txt",
+  "size": 361331,
+  "sha256": "d9e4d05420817ea2cd18d9f0ededcd090066c5159cbb5fdd612225c6685858bb"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_6.txt",
+  "size": 375366,
+  "sha256": "0c40cd562932de8a90051a86fec35823a42343fc863eb40a048133fce26bbdc2"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_7.txt",
+  "size": 362217,
+  "sha256": "23328b3f3ba468164071c71844df5d616c0c5f30c4ef5175235f63e6479d8f4c"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_8.txt",
+  "size": 366969,
+  "sha256": "787c7195f6e6e98aa2a98ea08862fe3eeb17feb94f1bc5b55833f63405c46b9b"
+ },
+ {
+  "name": "OR_025Hp_054mm/sinal254_9.txt",
+  "size": 367404,
+  "sha256": "c4d648891b511d18995af901c9636b9c23b6bf67fe6abbc2a46902fc3d9e8dd9"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_1.txt",
+  "size": 367357,
+  "sha256": "8dfd4a46d69c9521ca0b9ef9c91b093d41f576aff02767f37eecfbefe3fb794b"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_10.txt",
+  "size": 363584,
+  "sha256": "5756707894bac97c0398f1a390a200ce813c410008325d7c244a9ea57180f9db"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_2.txt",
+  "size": 375362,
+  "sha256": "efe159a7e2c3eb8bc6c6de24c2dc6ff0695bf0bc7e95b771ffa2a7aa8265f373"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_3.txt",
+  "size": 356010,
+  "sha256": "5d0378160b13af7fcdfe466b13d7427800608a9e7def2618260ef40096585c9b"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_4.txt",
+  "size": 367490,
+  "sha256": "57e5d51efa252aab1038de913a0288ce3e3addce16d36f538c42fa3b15395e46"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_5.txt",
+  "size": 358244,
+  "sha256": "4f04550ca8f5e9e0fd849bb8b46f071ae4a8e78bfdb7301aa29d75cfa8962649"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_6.txt",
+  "size": 381050,
+  "sha256": "5b1f226deeb1021e908adb40402431f32cfa0eb36f9abd707af406faec427a5a"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_7.txt",
+  "size": 370990,
+  "sha256": "d15bac5ef7cd90015ba14e63e685af0c7441ba56a1ecbd8985ee2915eeb5daba"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_8.txt",
+  "size": 362622,
+  "sha256": "f01633fe86b91df8295b6034c0604b0463d7169e25db021e1ed73093fc0c2c9d"
+ },
+ {
+  "name": "OR_025Hp_072mm/sinal272_9.txt",
+  "size": 355196,
+  "sha256": "decd71b0a58e03f56d9e90d8b17eef57582fb006bc99ae82385664a62de3d0aa"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_1.txt",
+  "size": 362109,
+  "sha256": "ff59a8158dec03b6bc2a735211b02994a782eedcb61f619a7fc8863999ba06bd"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_10.txt",
+  "size": 367244,
+  "sha256": "18a9b3930d1d11b0bb074fc4691f0807aee56f66ef776fb79aa6b88ee3759277"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_2.txt",
+  "size": 369261,
+  "sha256": "224364017cc984f63dc1764429d2d1a59696776b7226effa66b060bd4a4c5f11"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_3.txt",
+  "size": 370558,
+  "sha256": "8cb5429114cff2371c475c04ba24d0c9da998213fd0009c987db3b734c59dede"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_4.txt",
+  "size": 373293,
+  "sha256": "ab63673aa0332bdbe29ad47bbfe171cf2cd742ab170bc91d1fc5bc4db06e1c16"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_5.txt",
+  "size": 373433,
+  "sha256": "bcb112dcf54bf8e96df89f712645b7771645ba5dbe18c2a6746e618248a2e32e"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_6.txt",
+  "size": 362393,
+  "sha256": "bdd8d923248b9eac57d060873d9031646b3b69955d98f2c16aa70ea9502f95bf"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_7.txt",
+  "size": 360780,
+  "sha256": "393d4b126603a7858ef31f614f9d4caadab09a0ea2392fb732bd35bb7b3a56f6"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_8.txt",
+  "size": 359396,
+  "sha256": "7209df189b48a0fab03d373efee1f731567cf39531009fa642b61858e0133294"
+ },
+ {
+  "name": "OR_040Hp_018mm/sinais418_9.txt",
+  "size": 372844,
+  "sha256": "72817168c856260a1c30606b2294ed28bc976f6da894e434db7004cd0d41fe1c"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_1.txt",
+  "size": 357034,
+  "sha256": "bfcf490d0a3d91a5f9c8d8940e281ffffcec6091cb09742954d374e816167b13"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_10.txt",
+  "size": 377313,
+  "sha256": "7a5eddf722efccfb0e055a9b8b87a3541535951c18c1d744b88e8aacaae47eca"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_2.txt",
+  "size": 364008,
+  "sha256": "c165fb62cce8548d2881639e83e7576e57d11779ee741d8e98ead0c11bf33a9d"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_3.txt",
+  "size": 357408,
+  "sha256": "26ad516cfdae860bc35065f9f1164286a6a91645ebf46c6dc830636ee6ac63ba"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_4.txt",
+  "size": 368866,
+  "sha256": "ce2d4b4597c0724583950a68a428162acc52fed7629737c010271b071e9e8e39"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_5.txt",
+  "size": 372924,
+  "sha256": "e5c908c14af1d90114902ba5071d1b8b57ec50d2c64639fd03339c0cd35cba1e"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_6.txt",
+  "size": 365916,
+  "sha256": "14fca5b099a36036bd21d73b7cb00d9b4461f1e1033e706973a413be353a4891"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_7.txt",
+  "size": 377187,
+  "sha256": "0eb4cab9be5d91fecf6ec8918454fbc2345ec3f807a1d27f14e4a49fef7469ed"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_8.txt",
+  "size": 373955,
+  "sha256": "9261d4779a5cd093bc4742e357b3d36ac4e1e8e729b791d1a2c62b5e14d34309"
+ },
+ {
+  "name": "OR_040Hp_036mm/sinais436_9.txt",
+  "size": 372008,
+  "sha256": "438ff1b11b4a17213bd642128e2295c7558ff448e6059c61d779f0ab1cfef539"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_1.txt",
+  "size": 372435,
+  "sha256": "3f9035d6826ab052ea7b4dbb092eac798094326d2b57336fe2310120faa4e483"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_10.txt",
+  "size": 365796,
+  "sha256": "bcdb5f75d89687c3dc8fbf4b19fe9ab69321029e579a5a69580befb545f3984a"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_2.txt",
+  "size": 368419,
+  "sha256": "fab6c030a9400c7c879f35d22b0cac075cbcfb085fbfcb1e8cdaab0a37cc0c36"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_3.txt",
+  "size": 364130,
+  "sha256": "52494413e9ef917befc6d5f2984b041f42ec3804f50e7f191ba4d2b5969d448f"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_4.txt",
+  "size": 356084,
+  "sha256": "07fb5b2236569d2836deeb37f98c50c02731668204115bc42b2dae2c61a8ff6f"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_5.txt",
+  "size": 361931,
+  "sha256": "8ade024e07f71869df74299cda21a207d20c40f0a261f9ce594beef453a4f7b8"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_6.txt",
+  "size": 379634,
+  "sha256": "d054b16d0821bdf4fa6336601a5632251cf8404cb1f81c8a9a0b97915513aadc"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_7.txt",
+  "size": 363530,
+  "sha256": "934029b693e47efd517a89ddec32fb034ffc45550cdc8280f393da75e5bdb8cc"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_8.txt",
+  "size": 356066,
+  "sha256": "c7b6ccbe0bc1b11c376f48485afdf4c0ca38b1c92f3c51e338badabf6b3de81a"
+ },
+ {
+  "name": "OR_040Hp_054mm/sinais454_9.txt",
+  "size": 372593,
+  "sha256": "b3c3cbf90d72312ac27f43ea2cb951eb58baecca58ae1d2863459d2eb505ae2a"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_1.txt",
+  "size": 359252,
+  "sha256": "5c3098f807116d926f97cb3dfb2b8f063ec4a688044f19e709a22cdd5f69c7d0"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_10.txt",
+  "size": 382708,
+  "sha256": "542ad77b70ee4d30c0467ba6fea07313ccddb125048715d25917fe519c7997d9"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_2.txt",
+  "size": 356562,
+  "sha256": "49e7ae9d298e1d4153861d4d0d4bb1e21eeb7190d687c5def5ac7e430f7bacee"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_3.txt",
+  "size": 370655,
+  "sha256": "e2b09b46dc5b64d9d098a5fb2627a081dcc05181930c6b88914ef87a42c07039"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_4.txt",
+  "size": 376934,
+  "sha256": "bb48456f5f82c67c99b489dddaf32bf50579c98f378dd4a40ea8ffa9d522b402"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_5.txt",
+  "size": 359396,
+  "sha256": "c26bf981946c6305fc70f163fa5335496c47ee8523c39d53b7b0b040d04dcbac"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_6.txt",
+  "size": 361346,
+  "sha256": "65320f3fa557340661d675e3f56a3806e368aec23b841e1332d69dc7cc983ff6"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_7.txt",
+  "size": 364180,
+  "sha256": "2057e45696ecfd74099bcf8ed163c9cfae9faf3a035468fe0548e37185cd5d71"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_8.txt",
+  "size": 355739,
+  "sha256": "ce9236f554533f68f27e3a949198943e8ba7892ad151dcbb4e31ad7fec91bb69"
+ },
+ {
+  "name": "OR_040Hp_072mm/sinais472_9.txt",
+  "size": 368017,
+  "sha256": "29e4d33d6fd9a81eecf6bb7f4cf0039e4f885bd165079ae3bfcc20879a02439e"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_1.txt",
+  "size": 371454,
+  "sha256": "602d5ac17b8344f8102cf4ba331691034e125e90b400037a196117488d1f9967"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_10.txt",
+  "size": 379992,
+  "sha256": "ccc151dcfeabf4227225d2937b380d40cd4d74c7d4428b117940a8d726089312"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_2.txt",
+  "size": 362473,
+  "sha256": "89596c4aef7f775dc78ccf7a3878ce9e6b154770f93581eb93bbd4263adadd2f"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_3.txt",
+  "size": 357994,
+  "sha256": "6e41648948b3562b389f213e323c3850de7910402efc8bd84e369630c5dd0b33"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_4.txt",
+  "size": 371490,
+  "sha256": "76f427497d5207d431b50ebca4c89de5e333d1f4d65f2d47785d932fcea72548"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_5.txt",
+  "size": 372644,
+  "sha256": "9e58ed3cff2fa5f0be52e7f6dbe977764d27ec830e62d8389f9ea9a9bafd1d7c"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_6.txt",
+  "size": 360349,
+  "sha256": "5232538dd00e852bfdebccdedb60cd0286f1f69149a85dad78e9d50787c46993"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_7.txt",
+  "size": 371179,
+  "sha256": "e3eb2b2f4549f5fb8a7ad0e6a6b26a003894e454770779f067defca3a430cd58"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_8.txt",
+  "size": 380629,
+  "sha256": "ea635d78ecbbcf022dad09d7e8c2f8d86fe7059c52964494f37b695f886c0007"
+ },
+ {
+  "name": "OR_060Hp_018mm/sinal618_9.txt",
+  "size": 357369,
+  "sha256": "262282022da56c24b3113d857bf34429f62013c065b294a559d4a5a538f81aed"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_1.txt",
+  "size": 367409,
+  "sha256": "0000019b1e4b94ed4b4834548d406da686485c55ad447fe80856fc13a61a1805"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_10.txt",
+  "size": 361777,
+  "sha256": "2d7c95a939fa41c9fea40b1979599c2afdb4ab6c8f7f2ade9bc873a3eb5fdcd7"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_2.txt",
+  "size": 372104,
+  "sha256": "1750a19539c6aa423e74c89ecd7f747b03913b85b65556c6e4f9c3c2093959c7"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_3.txt",
+  "size": 371602,
+  "sha256": "90faa8153f2d727e5737bda4796f7ac38ddaf00c48a23cfb3000510a4aba5afc"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_4.txt",
+  "size": 373888,
+  "sha256": "66bc65335d7ceddd64ef456deb2ea0847fbbc4908bd1b0419974d8d9d852e1b1"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_5.txt",
+  "size": 359541,
+  "sha256": "220a5e12280525e32a28beb8881e812bdf207a72b181e5add35841e2a2f8b314"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_6.txt",
+  "size": 367174,
+  "sha256": "c27ca40d18620c5a97b7df1b82e29af9608a40a1eef713b73043c1136e09310e"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_7.txt",
+  "size": 362084,
+  "sha256": "daecaeeeb4e4045be71686ca19da3fd9fb63ff8dc16aec9642a6009ed9b5c633"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_8.txt",
+  "size": 363249,
+  "sha256": "25ce3054e11ba884e363ffe96c052e8dbdb4bf7edfed24a88cd0e2a65d9aad15"
+ },
+ {
+  "name": "OR_060Hp_036mm/sinal636_9.txt",
+  "size": 369785,
+  "sha256": "6fce4936b077af976b353b5e1c202cc27740fe46e2de70f811689c04a8350dda"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_1.txt",
+  "size": 370419,
+  "sha256": "b1a3fe37504345f18b67a1eea9de7764874b7b34d1307eefbcaaa3d50499dfec"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_10.txt",
+  "size": 357456,
+  "sha256": "53a554855a5ddea43b1b51b993861148b4a2ec03883ae66a1b35b01480b98b95"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_2.txt",
+  "size": 367914,
+  "sha256": "1a967a07e5d682bd266600649668d5f617dc44416e9dea10de70cb9443666784"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_3.txt",
+  "size": 368407,
+  "sha256": "d328f92263ce474cc1b989f589a6461629307a8f200fef6e675eb2200f22688a"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_4.txt",
+  "size": 368033,
+  "sha256": "98a2a3ae98751fcaf18d4eb5afca610b6304a843e176436c3ca835d7b1ac0918"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_5.txt",
+  "size": 361324,
+  "sha256": "0dd3d7ce2535d3c641798523dcc535f50d3b4736c66b4a9e283d0c36a4cf5b1a"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_6.txt",
+  "size": 366618,
+  "sha256": "eef09efc6a3de2c04a8872066ee996b0ed64ebfab8d7a90755a8823e3fe5e613"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_7.txt",
+  "size": 374658,
+  "sha256": "7a6acba220fbf2c18d6e8908e83d267b4f7ed1076efb5ac31c849a6b03023b0b"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_8.txt",
+  "size": 358968,
+  "sha256": "2f6148a24b34cfa9aec64682380fcbeae1483859660bd83e16e590d9afabfa2f"
+ },
+ {
+  "name": "OR_060Hp_054mm/sinal654_9.txt",
+  "size": 359387,
+  "sha256": "5fad8f091a735fb18efef882e8e3dd554ec4c2078723a6be915a6376d9929333"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_1.txt",
+  "size": 364423,
+  "sha256": "b7d1db2a48da997348ae929726638859471359cfeed11a940477b2ce7011ff80"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_10.txt",
+  "size": 360704,
+  "sha256": "a5fadece059621ce2535c43e5b386dbffaea7d80ca5dbed5920c7e64ce909273"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_2.txt",
+  "size": 377989,
+  "sha256": "b812517423638895a1976caae618749041e1aabf39f960782d4a086394a5761f"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_3.txt",
+  "size": 373101,
+  "sha256": "cda75a32687f741e1f7bde853e644f9a5da4c86d07a574354bdca9da521a4d97"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_4.txt",
+  "size": 355854,
+  "sha256": "001679ec403656b6dd3e5fba4f647c70cfe6b4449cf1aa09b6b4c47d5e57823f"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_5.txt",
+  "size": 364888,
+  "sha256": "b0ef9e04a6a8f50c22b2b754958b9bae68f4363df1b0fe54fe7c599749166709"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_6.txt",
+  "size": 363928,
+  "sha256": "a93001bf71e869119670230c60c93eb4b84056cccf9d413211bea15d48415b8e"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_7.txt",
+  "size": 367476,
+  "sha256": "1c4f6bbad4b713322a51db35cae9ec7e540c123158d5ab6e1387d18108d0950d"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_8.txt",
+  "size": 377918,
+  "sha256": "eba4a736b3b110a43ceab9bce874df7803f1b15e170c476327ae422eb7efcadc"
+ },
+ {
+  "name": "OR_060Hp_072mm/sinal672_9.txt",
+  "size": 369230,
+  "sha256": "fcfdfaaf928357ee08cb849f82c4f80b211379741de9e973d61cf66a7135b62b"
+ }
+]

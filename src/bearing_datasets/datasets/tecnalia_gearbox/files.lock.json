@@ -1,0 +1,72 @@
+[
+ {
+  "name": "Nextmon_GPS_1.txt",
+  "size": 39977715,
+  "sha256": "cc2e05677832018a0853c496800d66525b0b0cc66bac6ad4e8084411f54dcb67"
+ },
+ {
+  "name": "Nextmon_GPS_10.txt",
+  "size": 39924997,
+  "sha256": "30b59007c26fcc6e886662db96b4aca22fe9e44c516379e3d33d21914966de76"
+ },
+ {
+  "name": "Nextmon_GPS_11.txt",
+  "size": 39912111,
+  "sha256": "4b91006305164d6a160cad4a9f841569100abadcb94341ba310b6010936e2fb5"
+ },
+ {
+  "name": "Nextmon_GPS_12.txt",
+  "size": 39984995,
+  "sha256": "26d79645ef8cebfbd2db639cc8756a3280d252c4924226b9afdda488d1d85c35"
+ },
+ {
+  "name": "Nextmon_GPS_14.txt",
+  "size": 39925684,
+  "sha256": "ef6402e5220402a34ce7bccf0d107cb1173be47403cbbf649c13ac3e2b566bf1"
+ },
+ {
+  "name": "Nextmon_GPS_15.txt",
+  "size": 39967787,
+  "sha256": "614d7cf0e343383a8c64c01822ac7c98194df07de745e8dfd8e8a923cfe9f763"
+ },
+ {
+  "name": "Nextmon_GPS_16.txt",
+  "size": 39945592,
+  "sha256": "46e43219a7b8a663b03550cfca5780a0c781e7fc6f334774393d51ad47c75083"
+ },
+ {
+  "name": "Nextmon_GPS_2.txt",
+  "size": 39918302,
+  "sha256": "797beb6a1bec0f5813f2057faa6ba46c20d2ed057e0bb8f5b264e23c2033e6a0"
+ },
+ {
+  "name": "Nextmon_GPS_3.txt",
+  "size": 39971082,
+  "sha256": "73e570d0c0aa0ae4880731361b0cd8460f39fe93aed2ed7a4ad3926c8fe68299"
+ },
+ {
+  "name": "Nextmon_GPS_4.txt",
+  "size": 39918233,
+  "sha256": "54c0b70261862bf1829bff3f5c1bff6e35e55ed7796f857fdb21ffddbb7db8b2"
+ },
+ {
+  "name": "Nextmon_GPS_5.txt",
+  "size": 51116615,
+  "sha256": "806b98559b3d4c9955e6c6fb74708967f0baf1f293015006a3acbee409972a69"
+ },
+ {
+  "name": "Nextmon_GPS_6.txt",
+  "size": 39927023,
+  "sha256": "361b96916202661451336a937309ec6f9c67750f8859644f870608efb70a8067"
+ },
+ {
+  "name": "Nextmon_GPS_7.txt",
+  "size": 39917637,
+  "sha256": "14fbb093ad7d87926286ca443ee760c9d4d77ece36e6da63767383e85157927c"
+ },
+ {
+  "name": "Nextmon_GPS_8.txt",
+  "size": 39953746,
+  "sha256": "34c84c09440dfa18376e718d14a9c1a455fe4659d37382dff3cc6405eae9fd14"
+ }
+]

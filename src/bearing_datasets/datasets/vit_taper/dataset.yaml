@@ -1,0 +1,21 @@
+name: vit_taper
+title: VIT Vellore taper roller bearing dataset at 12.8 kHz (set 2)
+description: |
+  Custom tapered roller bearing fault test rig at Vellore Institute of Technology (30 mm
+  bore, 62 mm outer diameter; designation not stated). Five states made by EDM: healthy (H),
+  single roller taper fault (F1), inner wedge (F2), wear damage on the circumference (F3;
+  component not stated, condition bearing), inner cage fault (F4). 900, 1100, 1300 and 1500
+  rpm, two trials each: 40 recordings of ~10 s at 12.8 kHz, triaxial acceleration (g); the
+  healthy files also have an excitation force channel (EXI, N). Data from the Data1 sheet of
+  the Dewesoft Excel exports (the other sheets hold derived spectra). No associated paper.
+license: CC-BY-4.0
+size: "download 0.30 GB, built 0.10 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.22109737
+citation: |
+  Babu, T. N. (2026). Taper roller bearing dataset @ 12800 Hz. Zenodo.
+  doi:10.5281/zenodo.22109737
+sources:
+  - {type: zenodo, record: "22109737"}
+columns:
+  fault: fault as described in the record
+  trial: trial number 1 or 2

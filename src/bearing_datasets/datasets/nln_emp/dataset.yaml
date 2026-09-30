@@ -1,0 +1,39 @@
+name: nln_emp
+title: NLN-EMP motor current and vibration dataset of an e-motor-driven centrifugal pump (Royal Netherlands Navy)
+description: |
+  Two induction-motor-driven centrifugal pump sets (VFD-fed, fresh water) at Fieldlab
+  Techport, IJmuiden, measured by the Royal Netherlands Navy. One fault at a time.
+  Motor 2 (11 kW, 4-pole; 1480, 1110 and 740 rpm = 100, 75, 50% speed): bearing faults
+  on the motor non-drive-end 6309 bearing (inner or outer race: 1, 2 or 3 milled axial
+  lines 1 mm wide x 350 um deep; a damaged rolling element; grease contaminated with
+  iron filings), an outer race fault on the pump non-drive-end 6308 bearing that also
+  got an inner race assembly damage (condition inner+outer), impeller damage, loose
+  and soft foot, stator winding short, broken rotor bar. Motor 4 (22 kW, 2-pole, 2070
+  rpm = 70%): misalignment, unbalance, coupling degradation, cavitation, bent shaft.
+  Healthy references: healthy 1-3 (different moments), new motor (the stator-short
+  motor without short) and healthy noise (healthy, with neighbouring pump sets
+  running). Five single-axis accelerometers (g) and three phase currents (A) and
+  voltages (V), 20 kHz, recorded by separate systems: vibration recordings are 12 s,
+  electric recordings 15 s. Four folders are empty in the published archive
+  (vibration: Motor-2 50% bearing bpfi 3 and loose foot motor, Motor-4 cavitation
+  suction 2; electric: Motor-2 100% stator short 2).
+license: CC0-1.0
+size: "download 20.8 GB, built 22 GB (measured)"
+homepage: https://doi.org/10.4121/2b61183e-c14f-4131-829b-cc4822c369d0
+citation: |
+  Bruinsma, S., Geertsma, R. D., Loendersloot, R., & Tinga, T. (2024). Motor current and
+  vibration monitoring dataset for various faults in an E-motor-driven centrifugal pump.
+  Data in Brief, 52, 109987. doi:10.1016/j.dib.2023.109987
+sources:
+  - type: http
+    name: 4tu
+    urls:
+      "NLN-EMP.7z": https://data.4tu.nl/file/2b61183e-c14f-4131-829b-cc4822c369d0/8d84b13f-98f7-4baf-a7ea-60dee1e8876f
+files: ["NLN-EMP.7z"]
+columns:
+  severity: severity number from the folder name (higher is worse; coupling 2D is a two-sided cut), none if healthy or single-level
+  setup: motor_2 or motor_4 (motor-pump set)
+  speed_pct: motor speed in % of rated speed
+  rpm: motor speed measured during the test (measurement overview), +- 5 rpm
+  measurement: vibration or electric (separate acquisition systems)
+  sample: number of the 12 s (vibration) or 15 s (electric) sample within the test

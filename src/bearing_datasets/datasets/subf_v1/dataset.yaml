@@ -1,0 +1,25 @@
+name: subf_v1
+title: SUBF v1.0 bearing fault vibration data (wireless triaxial accelerometer)
+description: |
+  Test rig with a 0.25 hp three-phase AC motor at 1440 rpm (50 Hz) driving a shaft on two
+  bearings; the left bearing is healthy, or has an inner or an outer race fault. One
+  BeanDevice 2.4 GHz AX-3D wireless triaxial accelerometer at 1 kHz. Six hours per class,
+  cut into consecutive 10 s segments: 2160 recordings per class, 6480 in total. The release
+  has every signal twice (.mat and .csv, identical values); the .mat files are read. The
+  unit is not stated; z has a mean of about 1, so g with gravity. How the faults were made
+  is not described. Non-commercial license.
+license: CC-BY-NC-SA-4.0
+size: "download 1.71 GB, built 0.23 GB (measured)"
+homepage: https://www.kaggle.com/datasets/sumairaziz/subf-v1-0-dataset-bearing-fault-vibration-data
+citation: |
+  Aziz, S., Khan, M. U., Faraz, M., & Montes, G. A. (2023). Intelligent bearing faults
+  diagnosis featuring automated relative energy based empirical mode decomposition and novel
+  cepstral autoregressive features. Measurement, 216, 112871.
+  doi:10.1016/j.measurement.2023.112871
+sources:
+  - type: kaggle
+    dataset: sumairaziz/subf-v1-0-dataset-bearing-fault-vibration-data
+    version: 1
+    bundle: true
+columns:
+  segment: number of the 10 s segment within the class (1-2160, in the order of the file names)

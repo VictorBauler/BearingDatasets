@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Bearing  6213 Norm-OR  Dataset.docx",
+  "size": 13451,
+  "sha256": "cef9aab5e166c44dbedadd2c5b99cd9d14d4d4ed7e01367d683338d3153ad578"
+ },
+ {
+  "name": "Bearing 6213 Norm-OR Dataset.zip",
+  "size": 106637201,
+  "sha256": "230fee0b0de59e4074a1a946b674cbdec26b698eec08dd92b48b842581af41cb"
+ },
+ {
+  "name": "Bearing 6213 OR Dataset.zip",
+  "size": 329399647,
+  "sha256": "dc3872189ec41fb45376141b208f80ae2c5ddeebe6d0917597c3f1b3ad24c998"
+ },
+ {
+  "name": "Constant speed dataset.zip",
+  "size": 268970039,
+  "sha256": "d80c8c8d46596b0b136ab7f76acb869633f42a6d63f6424b74ea2db6baa70191"
+ },
+ {
+  "name": "Description of Bearing 6213 OR Dataset.docx",
+  "size": 14781,
+  "sha256": "0494f3ee24268ad034f058be81f64a1bffb3a2677ae166c8ecaf6e9f1893f4f1"
+ },
+ {
+  "name": "Variated speed dataset.zip",
+  "size": 1160365607,
+  "sha256": "372b1f23e162a98aa53e051319f7fcea1d9d2adfcd0361a30b55165feb0c16d4"
+ },
+ {
+  "name": "Variating speed dataset.docx",
+  "size": 160815,
+  "sha256": "0f6cf48c88f35732888773fc26e98bf1ea74ac21fe00770df9ff5bde61e82098"
+ },
+ {
+  "name": "Vibration of bearing under conditions of constant shaft speed.docx",
+  "size": 154612,
+  "sha256": "2f8e86fd83ec0a51f476fc1a8d2af1111f224287e53856036c65edd6a9695bc7"
+ },
+ {
+  "name": "Vibration of bearing under conditions of moderately variated shaft speed.docx",
+  "size": 155799,
+  "sha256": "0810b12fc563c2282f5fa9bf356f825def68ed2dcf0a3488fb0e3336217159ff"
+ },
+ {
+  "name": "Vibration of bearing under conditions of moderately variated shaft speed.zip",
+  "size": 360728841,
+  "sha256": "68ebc359c9c9e691bd905e9443c06f85fabf71aa6a3edcbc8878b97158b7c82e"
+ }
+]

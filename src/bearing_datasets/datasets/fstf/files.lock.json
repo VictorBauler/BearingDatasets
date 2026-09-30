@@ -1,0 +1,182 @@
+[
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 1 - Inner race fault/First speed - 648 rpm.mat",
+  "size": 2405951,
+  "sha256": "f17eb805ccd6dfb60e36e15283138620defa58d8804e9086e80e4c5380ba1cb1"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 1 - Inner race fault/Second speed - 1236rpm.mat",
+  "size": 2458931,
+  "sha256": "2c3f66319d72828df012d5a086c893dfe0844f060379910874317c6160e9b444"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 1 - Inner race fault/Third speed - 1812rpm.mat",
+  "size": 2473958,
+  "sha256": "1a7f17db6d66e53bf7f6a313fd787cd7f283c9d6df179890920b40060e8ebc0d"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 2 - Outer race fault/First speed - 642 rpm.mat",
+  "size": 2041476,
+  "sha256": "d77e50e6e1fc41aaafe0947dcdc69a80acefbaa317c3550aeb6ac6943824485b"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 2 - Outer race fault/Second speed - 1236 rpm.mat",
+  "size": 2232961,
+  "sha256": "b84c60b5ff2a0880f039dbc3f11c19dac4868753caa2b79f71ccd6a45de13b0d"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 2 - Outer race fault/Third speed - 1809 rpm.mat",
+  "size": 2367435,
+  "sha256": "1565f82582877df8cfcdd63c476056a1d5b9403ea031811c57ad7f2e4dc3fe20"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 3 - Ball fault/First speed - 636 rpm.mat",
+  "size": 2402095,
+  "sha256": "420dde2b26b378fa467993eb77d1f66b35216f46c851f64ae847015dad875afe"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 3 - Ball fault/Second speed - 1230 rpm.mat",
+  "size": 2452365,
+  "sha256": "668e907039844a2dc1fb9d1a525ab05a563498f19792b89ac557edc6dfcc3e38"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 3 - Ball fault/Third speed - 1812 rpm.mat",
+  "size": 2481010,
+  "sha256": "577a3cf3dd60c1f89da27bbd4a8d0949e901fa05df73d2edc928ee7cf5b8795c"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 4 - Healthy bearing/First speed - 636 rpm.mat",
+  "size": 1209139,
+  "sha256": "246fd08d089b9a877a2a47b12671b1df5c148ed8933faa19d4543c7a0f9e177f"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 4 - Healthy bearing/Second speed - 1230 rpm.mat",
+  "size": 1417668,
+  "sha256": "385988e57677b1f8db877db0eb37db6fd76d957e08506e5a7c1d8fe374cf9023"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 4 - Healthy bearing/Third speed - 1812 rpm.mat",
+  "size": 1526487,
+  "sha256": "9dd0d448b036b35502fad57c046485f19c3584a79885ec2896b35273572907fa"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 5 - Looseness fault/6-Looseness-1200rpm.mat",
+  "size": 2175150,
+  "sha256": "71d2cccb77b2445d3840ba751046ade98904293995fb64c086ac2a54480e73cb"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 5 - Looseness fault/6-Looseness-1800rpm.mat",
+  "size": 2186601,
+  "sha256": "c5b9e6114ad9a025ba6026116dba11701607bbcdc8eb142414381266191e4ac9"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 5 - Looseness fault/6-Looseness-600rpm.mat",
+  "size": 2184895,
+  "sha256": "ea4c7790f9926c8c53f0577f3a51f785a66a9aeddec1d4784f940fd6ae85dd91"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 6 - Combined faults (Inner, outer, ball)/6-Combined-1200rpm.mat",
+  "size": 2478007,
+  "sha256": "0a435af20d5aff9d42de66e6c0dc323c1ad823eb1884ebc8f5e72b88f03454a0"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 6 - Combined faults (Inner, outer, ball)/6-Combined-1800rpm.mat",
+  "size": 2502821,
+  "sha256": "3dc9fa29c2044075f181ffb87006f46b9d5222cd5e4118637a9c485fe370a3e6"
+ },
+ {
+  "name": "Datasets 1- Data acquisition using the stethoscope/Case 6 - Combined faults (Inner, outer, ball)/6-Combined-600rpm.mat",
+  "size": 2486243,
+  "sha256": "142ed25c6f41e867c320713447cc258010037af44c7d533a8bc8c0b44e737739"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 1 - Inner race fault/1-Inner-1200rpm-ws.mat",
+  "size": 2516646,
+  "sha256": "b02e664a7ddcd2513bed660a8e4b50f13343359fd6cac684aeafce990a94f963"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 1 - Inner race fault/1-Inner-1800rpm-ws.mat",
+  "size": 2553036,
+  "sha256": "e32fccea8a66cda071eef037c855a3054b55b03642cf54569474e60d5b99f0f0"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 1 - Inner race fault/1-Inner-600rpm-ws.mat",
+  "size": 2345713,
+  "sha256": "34a1928fb8ff61eac754f56ee9885c9f1ada7d413d54396550ffa80532d834c6"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 2 - Outer race fault/2-Outer-1200rpm-ws.mat",
+  "size": 204740,
+  "sha256": "16b304ad9b7183c1f1d4b106c6d33db30955f6cd90fa91e824bcb5bf51892a85"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 2 - Outer race fault/2-Outer-1800rpm-ws.mat",
+  "size": 218388,
+  "sha256": "288fe2ecf862aa4ac3f092c744a40e753c710a9e9f5b886c067c2098fd3d7d8f"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 2 - Outer race fault/2-Outer-600rpm-ws.mat",
+  "size": 244670,
+  "sha256": "125d8dbdb5de4f900bda5161d8a37b670763f38a6049761c7c567f75d8c5ec04"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 3 - Ball fault/3-Ball-1200rpm-ws.mat",
+  "size": 2487237,
+  "sha256": "b45294e5b794aa21c3c9b0a07a19409daa2247656a997deef3d2d8f3d749c50c"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 3 - Ball fault/3-Ball-1800rpm-ws.mat",
+  "size": 2568258,
+  "sha256": "3121b27a12ef760e2c8f6f44ce3f46738e6555fca93569e87e263ec169c09e55"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 3 - Ball fault/3-Ball-600rpm-ws.mat",
+  "size": 2323690,
+  "sha256": "709b87fd47fa95ea137b6fb8cc930665e55a957b1c7d89553241e5b432b97439"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 4 - Healthy bearing/4-Healthy-1200rpm-ws.mat",
+  "size": 1002279,
+  "sha256": "4637b72a26701bad170ec24cdbd7680e50267bb1427a922da726fb8bc34cb49c"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 4 - Healthy bearing/4-Healthy-1800rpm-ws.mat",
+  "size": 1068995,
+  "sha256": "9c4c1edc6c3f9243d9f4d0ee55830cb777cb67a8b93ce7a0cccebe88ed782a57"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 4 - Healthy bearing/4-Healthy-600rpm-ws.mat",
+  "size": 960119,
+  "sha256": "d07131867d088e211aa15982472214f77454c5d93949df5aa5d6d22adbf5a59c"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 5 - Looseness fault/5-Looseness-1200rpm-ws.mat",
+  "size": 1303252,
+  "sha256": "cea4743b6f2045de850196033281514b24b2a75d1b6c9e5f0513de9e5a6c667e"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 5 - Looseness fault/5-Looseness-1800rpm-ws.mat",
+  "size": 1301872,
+  "sha256": "6d09954daed6274d842d62e7aaa4f172f76545a6edceaee92999a3576347dce0"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 5 - Looseness fault/5-Looseness-600rpm-ws.mat",
+  "size": 1262947,
+  "sha256": "9c181ee74efbdd1c1e713c58eaca03e06c01e0fbb623859fdcfb7b062e686c92"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 6 - Combined faults (Inner, outer, ball)/6-Combined-1200rpm-ws.mat",
+  "size": 1204280,
+  "sha256": "2e5e7756f2393b36f330793fab6ba3b51afa6d1ebf22478cf43655c7ded1c157"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 6 - Combined faults (Inner, outer, ball)/6-Combined-1800rpm-ws.mat",
+  "size": 1254286,
+  "sha256": "614b46bb1207b60422ec139cecf4245ad99e1e135e73c00015b0cee1632cf3ee"
+ },
+ {
+  "name": "Datasets 2- Data acquisition without using the stethoscope/Case 6 - Combined faults (Inner, outer, ball)/6-Combined-600rpm-ws.mat",
+  "size": 1086237,
+  "sha256": "9064561a449308bcff3ed491d9106541f45710ddd5b00ad2d90e1245006b60c2"
+ }
+]

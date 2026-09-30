@@ -1,0 +1,387 @@
+[
+ {
+  "name": "0.7mm-bearing-faults/0.7inner-100watt-67V2Iv.csv",
+  "size": 4520076,
+  "sha256": "3b1f1ebd2499cd75a4443455afcc4101bd64136b02ea7c1ba3caed3c86780724"
+ },
+ {
+  "name": "0.7mm-bearing-faults/0.7inner-200watt-jolm8U.csv",
+  "size": 3965081,
+  "sha256": "42ee4b84d3c6da73f7d6fafddb763baf23a8a4d5e339f7bbd8329c510c0fe9d1"
+ },
+ {
+  "name": "0.7mm-bearing-faults/0.7inner-300watt-Zo8w7U.csv",
+  "size": 3588368,
+  "sha256": "c34fe2546040776e3434659a577179ff8baa42ef6f1fbdac2fa789ddcbf27db3"
+ },
+ {
+  "name": "0.7mm-bearing-faults/0.7outer-100watt-lB5LIS.csv",
+  "size": 4125202,
+  "sha256": "782dcac141a504b10c39e2fe4a236f92930d8a8a99264f344a541cd4cd7f2487"
+ },
+ {
+  "name": "0.7mm-bearing-faults/0.7outer-200watt-0Pp0qm.csv",
+  "size": 4128685,
+  "sha256": "b6681ef3c102af88197520af5ad69497afa5782bf05b6b82fafb1f162b80259f"
+ },
+ {
+  "name": "0.7mm-bearing-faults/0.7outer-300watt-PzsIeS.csv",
+  "size": 2092319,
+  "sha256": "0aca794580648b30be829171eb5e4b1b4f50c5d9d156d742db92b74418760ba5"
+ },
+ {
+  "name": "0.9mm-bearing-faults/0.9inner-100watt.csv",
+  "size": 4835760,
+  "sha256": "3c683997ab165237b552c8c6c81e5513a13bbacaecef6d9da5199730643eb93b"
+ },
+ {
+  "name": "0.9mm-bearing-faults/0.9inner-200watt.csv",
+  "size": 4347169,
+  "sha256": "b9dbaac7d11b288701f23d9b864f843e2b7eb98004fcc1aa001b1307d296261e"
+ },
+ {
+  "name": "0.9mm-bearing-faults/0.9inner-300watt.csv",
+  "size": 4191982,
+  "sha256": "4a2d045353620aefc1dccca408b73c552663051480a2d308a6bbf5581bd4ff92"
+ },
+ {
+  "name": "0.9mm-bearing-faults/0.9outer-100watt.csv",
+  "size": 4435383,
+  "sha256": "8d6ab75c6ab875fb42e5c8d8dae15b6fc4588fbcc18b4207e33c2c0f5e943843"
+ },
+ {
+  "name": "0.9mm-bearing-faults/0.9outer-200watt.csv",
+  "size": 4446197,
+  "sha256": "896954f44a96d7709cfb26e0e8477df8a05ce4b8f7e43d33da182ac3dce757e5"
+ },
+ {
+  "name": "0.9mm-bearing-faults/0.9outer-300watt.csv",
+  "size": 3871320,
+  "sha256": "120f4b349f191a837a7ad29e830a604a5c7cef88440e40fc927024b90a013dd3"
+ },
+ {
+  "name": "1.1mm-bearing-faults/1.1inner-100watt.csv",
+  "size": 4308508,
+  "sha256": "20031b17785d8a1747caca9858d70fd4878ff1b12870ccce98ab599fa2c868a3"
+ },
+ {
+  "name": "1.1mm-bearing-faults/1.1inner-200watt.csv",
+  "size": 4342791,
+  "sha256": "f11663c3292e6da7af0e1c57c5f6c083e8fa7fe78130024b30e9f72f868da255"
+ },
+ {
+  "name": "1.1mm-bearing-faults/1.1inner-300watt.csv",
+  "size": 4647943,
+  "sha256": "0ff7bcbc6eed1326cbc9c18953914bbdb2942c6bf34f351f521724048b23dd84"
+ },
+ {
+  "name": "1.1mm-bearing-faults/1.1outer-100watt.csv",
+  "size": 4299102,
+  "sha256": "476bba2ba5560dfba799a9d6288b954b6e66303e937f3a52e167d6c1a92df3e8"
+ },
+ {
+  "name": "1.1mm-bearing-faults/1.1outer-200watt.csv",
+  "size": 4798393,
+  "sha256": "ed96bbfb78b1eab76be4e14c7393a7bc2762cf13902bea1ea329fbe8b3bea2d4"
+ },
+ {
+  "name": "1.1mm-bearing-faults/1.1outer-300watt.csv",
+  "size": 4406367,
+  "sha256": "8396de2057f39f5f4a22d9b29d5da87d2b4c5a476c115031e979ff08f0013ed7"
+ },
+ {
+  "name": "1.3mm-bearing-faults/1.3inner-100watt.csv",
+  "size": 4540613,
+  "sha256": "937f1e83ec3aeaaa991374591494bf2ae4df5a3031e77dd25786f589ed540902"
+ },
+ {
+  "name": "1.3mm-bearing-faults/1.3inner-200watt.csv",
+  "size": 4225040,
+  "sha256": "5740f505708df63bed59f937ac8643578d8cc7359accaabf6b6fd0aa3fb5453d"
+ },
+ {
+  "name": "1.3mm-bearing-faults/1.3inner-300watt.csv",
+  "size": 4054292,
+  "sha256": "531bda931859cc571c7f543190667114c8d38edc2e9011d17cc2a5d8f34c9a85"
+ },
+ {
+  "name": "1.3mm-bearing-faults/1.3outer-100watt.csv",
+  "size": 4200627,
+  "sha256": "924ffe3901fee5f84049540b880a1e803c868f8a33a914c8d8779291eb1c0bec"
+ },
+ {
+  "name": "1.3mm-bearing-faults/1.3outer-200watt.csv",
+  "size": 4413675,
+  "sha256": "a7e76092a4a1f3e3304a1c1f8bfb354a5fc7038b9063d50dd32c975670106147"
+ },
+ {
+  "name": "1.3mm-bearing-faults/1.3outer-300watt.csv",
+  "size": 4044226,
+  "sha256": "8bae96124c57c3cbbb7dcc909385c5c003f37a100eb9724a709640e3f54963e7"
+ },
+ {
+  "name": "1.5mm-bearing-faults/1.5inner-100watt.csv",
+  "size": 4161491,
+  "sha256": "c4429e6d0b6ee7b3009ef11222030a052d8190dc9c9fdc3861a434383e60374a"
+ },
+ {
+  "name": "1.5mm-bearing-faults/1.5inner-200watt.csv",
+  "size": 4621404,
+  "sha256": "dafbaef3bff196e39a548ba2d762247799ae2215f2f5d862d43103540d59c557"
+ },
+ {
+  "name": "1.5mm-bearing-faults/1.5inner-300watt.csv",
+  "size": 4244581,
+  "sha256": "eaeb55df426e20a440d4dc1d8f36429668c6367c8f0b126b9d290bd349618812"
+ },
+ {
+  "name": "1.5mm-bearing-faults/1.5outer-100watt.csv",
+  "size": 4176762,
+  "sha256": "fd852ef55d73d1a70c711e5e2de8c950753ea3d2c93bc02a7133b46b3e259d37"
+ },
+ {
+  "name": "1.5mm-bearing-faults/1.5outer-200watt.csv",
+  "size": 3976832,
+  "sha256": "876c69f1b613ed6d0d3d9274f695eb06cd49206935603b2147d7a0a6cb4569d0"
+ },
+ {
+  "name": "1.5mm-bearing-faults/1.5outer-300watt.csv",
+  "size": 4279247,
+  "sha256": "be039880c519dd29a1a74f0c4040634d250945846931cf79b1e9051cb16091b4"
+ },
+ {
+  "name": "1.7mm-bearing-faults/1.7inner-100watt.csv",
+  "size": 4386776,
+  "sha256": "84d1609a47d1420a8f1f7883e9be0cd517cd76418107cd033c38f61b8dcd554b"
+ },
+ {
+  "name": "1.7mm-bearing-faults/1.7inner-200watt.csv",
+  "size": 4369257,
+  "sha256": "79770d7c685c92d87455804aebfd6da5a0f4aa51d8de4adbb0b8749fd0c96b64"
+ },
+ {
+  "name": "1.7mm-bearing-faults/1.7inner-300watt.csv",
+  "size": 4085053,
+  "sha256": "cba642a6b7c1fedbc8474a2ad860be743616481701affad4a06910a1a9525503"
+ },
+ {
+  "name": "1.7mm-bearing-faults/1.7outer-100watt.csv",
+  "size": 4312365,
+  "sha256": "c4b765900a9260c5982dcba63dcd8e8c11bd7969bd5d4700a9be8df14bc20032"
+ },
+ {
+  "name": "1.7mm-bearing-faults/1.7outer-200watt.csv",
+  "size": 4144996,
+  "sha256": "0f7676cecd35edd6aef241906c96e01b0d779aa256bce2cd76676c14a7293b68"
+ },
+ {
+  "name": "1.7mm-bearing-faults/1.7outer-300watt.csv",
+  "size": 4336286,
+  "sha256": "d8032ad47a16c16ec8985b0be80e1bc80ac217437fedab4742b59e18726edce3"
+ },
+ {
+  "name": "3-Phase-current-0.7mm-bearing-fault/0.7inner-100watt.csv",
+  "size": 4392130,
+  "sha256": "076234967397a28c768840c4c3fd773447e45b325afa0380a4e144cecb7bbfb8"
+ },
+ {
+  "name": "3-Phase-current-0.7mm-bearing-fault/0.7inner-200watt.csv",
+  "size": 3840017,
+  "sha256": "e1f6c81a005fffb2474cdd434c1cd812356991c960c02fde11bfec83f71246fd"
+ },
+ {
+  "name": "3-Phase-current-0.7mm-bearing-fault/0.7inner-300watt.csv",
+  "size": 3478106,
+  "sha256": "52cf0f1c32aabb40af8fa94278fb6976ceb78947d25f7407a6d79687e7fe1647"
+ },
+ {
+  "name": "3-Phase-current-0.7mm-bearing-fault/0.7outer-100watt.csv",
+  "size": 3985736,
+  "sha256": "8b2caad3e3dad84511359d23c6cd5cc5d03ea1024dbd66e22b7143eac0f6b620"
+ },
+ {
+  "name": "3-Phase-current-0.7mm-bearing-fault/0.7outer-200watt.csv",
+  "size": 3989554,
+  "sha256": "3a3370a7e02ac600048d26bbf202b15450a2097ebd1c6bdc0f4a43ffb0d4b34a"
+ },
+ {
+  "name": "3-Phase-current-0.7mm-bearing-fault/0.7outer-300watt.csv",
+  "size": 2022185,
+  "sha256": "fdd0bc7020ed1a1b3eba921326bab83f887cabb50e4da5c1f8195a04b2b41f6c"
+ },
+ {
+  "name": "3-Phase-current-0.9mm-bearing-fault/0.9inner-100watt.csv",
+  "size": 4669553,
+  "sha256": "10a7c37613f60e7f4394cb2d68d1ed3f7863589737fa4bee01f41ff39408ab4d"
+ },
+ {
+  "name": "3-Phase-current-0.9mm-bearing-fault/0.9inner-200watt.csv",
+  "size": 4204811,
+  "sha256": "0159dc2669b118401cbd6b56c42516d19673f434bb75c575e12a816d63c7ddb3"
+ },
+ {
+  "name": "3-Phase-current-0.9mm-bearing-fault/0.9inner-300watt.csv",
+  "size": 4056984,
+  "sha256": "a5bab2e25c06aa2d776b74bdc06382be0fa64fdc8bc71ed9b44cc73a691fd084"
+ },
+ {
+  "name": "3-Phase-current-0.9mm-bearing-fault/0.9outer-100watt.csv",
+  "size": 4305179,
+  "sha256": "9b8411c4b39654cedb190405893bce3d280235e41cde86982e989d95a29f0bc0"
+ },
+ {
+  "name": "3-Phase-current-0.9mm-bearing-fault/0.9outer-200watt.csv",
+  "size": 4311435,
+  "sha256": "31ac0395810b7a7741c5c773e69edf866e1cb7c0572c09dfc048a3f1e2eb7605"
+ },
+ {
+  "name": "3-Phase-current-0.9mm-bearing-fault/0.9outer-300watt.csv",
+  "size": 3757766,
+  "sha256": "6bb344b84d319327bb02025493528e9acafcca38af6a68fc8c30472dd49485a6"
+ },
+ {
+  "name": "3-Phase-current-1.1mm-bearing-fault/1.1inner-100watt.csv",
+  "size": 4169486,
+  "sha256": "3fb00e0cfacd7e8f44d9c7fe8191a2fe8c549780798cef8c27f62734a1ff2d2f"
+ },
+ {
+  "name": "3-Phase-current-1.1mm-bearing-fault/1.1inner-200watt.csv",
+  "size": 4205783,
+  "sha256": "35c9f3193ffb624648889d86114970d2d230d693d53e9e68323eaf0bb29df352"
+ },
+ {
+  "name": "3-Phase-current-1.1mm-bearing-fault/1.1inner-300watt.csv",
+  "size": 4507904,
+  "sha256": "030332bc2f8fa77597d522d54f263da4f37784dfaff2e8f60f097710d69c98f1"
+ },
+ {
+  "name": "3-Phase-current-1.1mm-bearing-fault/1.1outer-100watt.csv",
+  "size": 4156809,
+  "sha256": "0938305000831f2c769d2a752477be88f0088c610ce768906e7ce440b6f79495"
+ },
+ {
+  "name": "3-Phase-current-1.1mm-bearing-fault/1.1outer-200watt.csv",
+  "size": 4646494,
+  "sha256": "085a49b41cdd76fa7311fc14590ef82a6a9c30e1645eb3e922f910e8788dd569"
+ },
+ {
+  "name": "3-Phase-current-1.1mm-bearing-fault/1.1outer-300watt.csv",
+  "size": 4269913,
+  "sha256": "9885cdfc3285943323872328c73033496db868a179a1aa08df4d5656a75f662d"
+ },
+ {
+  "name": "3-Phase-current-1.3mm-bearing-fault/1.3inner-100watt.csv",
+  "size": 4391387,
+  "sha256": "ef10b54599b3c1894b75557cdcc816fda88c22f867c4064091c66143323cafe4"
+ },
+ {
+  "name": "3-Phase-current-1.3mm-bearing-fault/1.3inner-200watt.csv",
+  "size": 4080608,
+  "sha256": "bf979afb3ccf0cdd7f3cd8876bd8742fdb8fb99fa917e98c8c17c710e17f570a"
+ },
+ {
+  "name": "3-Phase-current-1.3mm-bearing-fault/1.3inner-300watt.csv",
+  "size": 3916088,
+  "sha256": "131f1bc9c5bdd4e769d9c8b0158e356b9d178cc9d8eda0681dc5a1e4f8f4928c"
+ },
+ {
+  "name": "3-Phase-current-1.3mm-bearing-fault/1.3outer-100watt.csv",
+  "size": 4065943,
+  "sha256": "d09e3263bb96d4da2a1e45931dad996a804940040993793fd0b0c076215f53ad"
+ },
+ {
+  "name": "3-Phase-current-1.3mm-bearing-fault/1.3outer-200watt.csv",
+  "size": 4269604,
+  "sha256": "a4bc139b51ed51e68f06cde29feb3ab3a50612a3829253440d19027d2ffb7c30"
+ },
+ {
+  "name": "3-Phase-current-1.3mm-bearing-fault/1.3outer-300watt.csv",
+  "size": 3914897,
+  "sha256": "bc90d7e84309b2743f00003cba2691eeffa5a7a7ba12b157552b5324f084d2a0"
+ },
+ {
+  "name": "3-Phase-current-1.5mm-bearing-fault/1.5inner-100watt.csv",
+  "size": 4018050,
+  "sha256": "1cdc2b91e3a7107196a167c3d58149ae7a606c8e1daa4b6a82faef9afff3b9ec"
+ },
+ {
+  "name": "3-Phase-current-1.5mm-bearing-fault/1.5inner-200watt.csv",
+  "size": 4469773,
+  "sha256": "26f3c3a145164d37ce785c4e71929ecfee51568bd3f27bca9428a612d362bb4c"
+ },
+ {
+  "name": "3-Phase-current-1.5mm-bearing-fault/1.5inner-300watt.csv",
+  "size": 4106558,
+  "sha256": "2f41c489d225c0e5bce37be31cb603754eb55745c8f685a7591539ad7fee28a0"
+ },
+ {
+  "name": "3-Phase-current-1.5mm-bearing-fault/1.5outer-100watt.csv",
+  "size": 4037133,
+  "sha256": "f3b88b4d555119324b6d7596c8df425a6fba4f525c54796a43d547be6ff48c3d"
+ },
+ {
+  "name": "3-Phase-current-1.5mm-bearing-fault/1.5outer-200watt.csv",
+  "size": 3849282,
+  "sha256": "0605cf3dfef43d5cbbd871bfb40703c71584e3ef5f5f4715616cc9840b8dcaa8"
+ },
+ {
+  "name": "3-Phase-current-1.5mm-bearing-fault/1.5outer-300watt.csv",
+  "size": 4143924,
+  "sha256": "d9c592ed07338612e3204b8599ecfb9552090092bb524ca7fd5f2b16047fcc98"
+ },
+ {
+  "name": "3-Phase-current-1.7mm-bearing-fault/1.7inner-100watt.csv",
+  "size": 4235156,
+  "sha256": "cc917915c49c1def32e6a50fcee9f0f7fb9e7c92ba5ac437b15008cb42266ef7"
+ },
+ {
+  "name": "3-Phase-current-1.7mm-bearing-fault/1.7inner-200watt.csv",
+  "size": 4221978,
+  "sha256": "7752feab31aab5610baa83f76e6ca9b3c5d3152fa95b43b5e7bf61fd3c9e6bce"
+ },
+ {
+  "name": "3-Phase-current-1.7mm-bearing-fault/1.7inner-300watt.csv",
+  "size": 3952053,
+  "sha256": "7937610e85335b68eb5a245c85835c0d7f7dc0020294f1c952f123a85b0f7bc2"
+ },
+ {
+  "name": "3-Phase-current-1.7mm-bearing-fault/1.7outer-100watt.csv",
+  "size": 4172851,
+  "sha256": "b170f8c23f4ecc08c7404160ad0bcef663801fa62392d37503feab84d51beb97"
+ },
+ {
+  "name": "3-Phase-current-1.7mm-bearing-fault/1.7outer-200watt.csv",
+  "size": 4012044,
+  "sha256": "4cb6e8926f479015d45546211c95f50605a5c4146a8d683fbdc907a9a12712b9"
+ },
+ {
+  "name": "3-Phase-current-1.7mm-bearing-fault/1.7outer-300watt.csv",
+  "size": 4198376,
+  "sha256": "3c1f432fcc3cd240ee1bfa9c27be5072b0c342201ebd3e7a90c0c0ea1a204a9e"
+ },
+ {
+  "name": "3-Phase-current-12-4mm-broken-rotor-bar-fault/BRB-12-4-100watt.csv",
+  "size": 4246742,
+  "sha256": "6d5afec75208fa617f792ca85aea249a811a1f7aafb180850380fcb85de50710"
+ },
+ {
+  "name": "3-Phase-current-12-4mm-broken-rotor-bar-fault/BRB-12-4-300watt.csv",
+  "size": 4096354,
+  "sha256": "6a80d131156f88020ce2f3613ed4f9f3e8486acf406bff2136c92db9ea6c22e7"
+ },
+ {
+  "name": "3-Phase-current-healthy-motor/healthy.csv",
+  "size": 3585007,
+  "sha256": "23098d25d897fbeb7391e7380ca2d2af25059fa63a991d16a8718b6e2ac0843f"
+ },
+ {
+  "name": "Healthy bearing data/Healthy with pulley.csv",
+  "size": 3777235,
+  "sha256": "8cdf4c889491c260925470d41f60293c72a31747864cab5671952e182e8822e8"
+ },
+ {
+  "name": "Healthy bearing data/healthy without pulley.csv",
+  "size": 3622830,
+  "sha256": "6439ad8a24ccae5465ee2b343b928437dcd2627abaceecada0a149ee4cdfb3f4"
+ }
+]

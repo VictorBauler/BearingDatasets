@@ -1,0 +1,39 @@
+name: uaq_upc
+title: UAQ/UPC rotating electromechanical system dataset (induction motor, gearbox, DC generator)
+description: |
+  Test bench of Universidad Autonoma de Queretaro and Universitat Politecnica de Catalunya:
+  a VFD-fed three-phase induction motor drives a DC generator (passive load) through a
+  gearbox. Nine conditions: healthy; motor bearing defect (1.191 mm hole drilled in the outer
+  race); half (3 mm deep) and fully (14 mm) broken rotor bar; unbalance (10 g bolt on the
+  motor-gearbox coupling); misalignment (5 mm horizontal, 1.5 degrees); gear wear of 25, 50
+  and 75% (material removed from the gear teeth). Each at supply frequencies of 5, 15, 50 and
+  60 Hz, in two kinds of test: a stationary test (one long acquisition) and start-up tests
+  (30 s: a 10 s acceleration ramp of the VFD, then 20 s steady; 5 repetitions). Channels:
+  three stator currents (4 kHz), a triaxial accelerometer on top of the gearbox (3 kHz), six
+  RTD temperatures on the motor (1 kHz, stationary tests only) and the speed from an encoder
+  on the DC generator (1/30 Hz in stationary tests; 100 Hz in start-up tests, where the
+  record's "1/30 Hz" does not hold). 216 recordings. In the stationary tests the channels
+  have different lengths (vibration and speed 50 min, temperatures 45 min, currents 37.5 min);
+  how they align in time is not documented. Thermal images, the per-test .mat files
+  and ambient temperatures are not included. Only one bearing condition, and the vibration is
+  measured on the gearbox, not at the motor bearing.
+license: CC-BY-4.0
+size: "download 40.6 GB, built 5.4 GB (measured)"
+homepage: https://doi.org/10.34810/data2500
+citation: |
+  Saucedo-Dorantes, J. J., Delgado-Prieto, M., Valls Perez, J., & Elvira-Ortiz, D. A. (2026).
+  Rotating electromechanical system dataset for condition monitoring. Scientific Data, 13.
+  doi:10.1038/s41597-026-07224-0
+sources:
+  - type: dataverse
+    server: https://dataverse.csuc.cat
+    doi: 10.34810/data2500
+    version: "2.1"
+    include: ["*_C[123].csv", "*_C[123]_[1-5].csv", "*_V[xyz].csv", "*_V[xyz]_[1-5].csv",
+              "*_T[1-6].csv", "*_RPM.csv", "*_RPM_[1-5].csv"]
+columns:
+  severity: 'rotor bars: half broken bar or one broken bar; gear: 25%, 50% or 75% wear; else none'
+  speed_profile: 'start-up tests: a 10 s ramp from standstill, then 20 s at the set speed'
+  supply_hz: VFD supply frequency set point (5, 15, 50 or 60 Hz)
+  test: stationary (37.5-50 min depending on the channel) or start-up (30 s)
+  repetition: repetition of the start-up test (1-5); 0 for stationary tests

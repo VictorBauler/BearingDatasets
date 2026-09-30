@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Data_18Hz/Ball_1_inch_18Hz.mat",
+  "size": 11296610,
+  "sha256": "eef14e58016ebb8a187146572a87f16c68b662537f6d14bf9676e1b336088fbc"
+ },
+ {
+  "name": "Data_18Hz/Combination_1_inch_18Hz.mat",
+  "size": 12152262,
+  "sha256": "2a62e7b025fea772bf11067252827d871d46f10fdab6b2f3282f972a995a19ab"
+ },
+ {
+  "name": "Data_18Hz/Inner_1_inch_18Hz.mat",
+  "size": 11556944,
+  "sha256": "f3b46d2ce16e1b586e971f192409a8a0b2decb0ee915e58927872f91c0859636"
+ },
+ {
+  "name": "Data_18Hz/Normal_1_inch_18Hz.mat",
+  "size": 11069036,
+  "sha256": "b268116d98b6fb946407b186601d84c976192f381577dd4e186887b4533dbd56"
+ },
+ {
+  "name": "Data_18Hz/Outer_1_inch_18Hz.mat",
+  "size": 11492338,
+  "sha256": "f6261435c368e28ead730678654aa29cc5972f3b9ee4094d85d3077beba090fe"
+ },
+ {
+  "name": "Data_20Hz/Ball_1_inch_20Hz.mat",
+  "size": 46404318,
+  "sha256": "ee4ec7a68c449eda36d959e97ce3d4ef910ba6bdf4bf72157d72b310580225c9"
+ },
+ {
+  "name": "Data_20Hz/Combination_1_inch_20Hz.mat",
+  "size": 46343052,
+  "sha256": "87738697666cfd6da913d0551a7854f80d9fe4552a84c5ba814facb5ceb57470"
+ },
+ {
+  "name": "Data_20Hz/Inner_1_inch_20Hz.mat",
+  "size": 46323077,
+  "sha256": "be1480080a72e06866f8b443e325d0287119d99e98c9bd5756b4c3eaccf799a0"
+ },
+ {
+  "name": "Data_20Hz/Normal_1_inch_20Hz.mat",
+  "size": 46407183,
+  "sha256": "c567e10939a9499e4c8e242a63f0c1902b35c53edbe011129914c4704b8e2092"
+ },
+ {
+  "name": "Data_20Hz/Outer_1_inch_20Hz.mat",
+  "size": 46367619,
+  "sha256": "8f627dedb613596c8b3e946ca5fa4954a1bd999afd1390983dce54416f80b9ce"
+ }
+]

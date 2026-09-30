@@ -1,0 +1,27 @@
+[
+ {
+  "name": "Read me for data description.docx",
+  "size": 19965,
+  "sha256": "d8d7b91ac286b1e4a7eba1be7de14ad97e60651985eba0f744b35f3755d4ceaa"
+ },
+ {
+  "name": "Test 1.7z",
+  "size": 1679267821,
+  "sha256": "922b4d3111e5c8b2575fc6128a0949749a23f605662cae6d2a2090b28513a836"
+ },
+ {
+  "name": "Test 2.7z",
+  "size": 3026157873,
+  "sha256": "f60dfcb97ee5ca0ec2635a1a44b7ba9adcd02988001fc30a1d85970cb0da4b8a"
+ },
+ {
+  "name": "Test 3.7z",
+  "size": 1780595292,
+  "sha256": "2f2613eaa7d3fdc0a2bed0514641a5764de16524d02cfb2932e24a9a69e69520"
+ },
+ {
+  "name": "Test 4.7z",
+  "size": 3234274005,
+  "sha256": "04a92927cf2ff5321b67490aabf8eefc63cb0d097c2219e35fea49ef44d2882d"
+ }
+]

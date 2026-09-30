@@ -1,0 +1,27 @@
+name: vit_sq
+title: VIT Vellore SpectraQuest ball bearing dataset (12.8 kHz, several speeds and loads)
+description: |
+  SpectraQuest MFS-PKG5 fault simulator at Vellore Institute of Technology, MB ER-10K deep
+  groove ball bearings: healthy, inner race and outer race faults (1.2 mm wide, 0.5 mm deep),
+  ball fault (two 1.2 mm dimples on one ball) and the three combined, made with a diamond-tip
+  cutter. Kistler 8763A50 triaxial accelerometer (100 mV/g) on the bearing housing, 12.8 kHz,
+  22-36 s. First record: 1000, 1500, 2000 rpm with 0, 6 or 12 g "load" (as in the file names;
+  presumably masses on the balance rotor, not explained); second record adds 2500 rpm (its
+  other files duplicate the first record's 0 g files and are not stored): 50 recordings.
+  Unit not stated.
+license: CC-BY-4.0
+size: "download 0.33 GB, built 0.19 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.20483719
+citation: |
+  Pandiyan, M., & Babu, T. N. (2025). Implementation of MF block in CNN for advanced REB fault
+  diagnosis. Scientific Reports, 15. doi:10.1038/s41598-025-01780-y
+  Data: Babu, T. N. (2026), Zenodo, doi:10.5281/zenodo.20483719; Pandiyan, M., & Babu, T. N.
+  (2026), Zenodo, doi:10.5281/zenodo.22705165
+sources:
+  - {type: zenodo, name: loads, record: "20483719"}
+  - {type: zenodo, name: speed-2500, record: "22705165"}
+columns:
+  bpfo: >-
+    MB ER-10K from the paper's Table 2 (8 balls of 7.939 mm, pitch 33.503 mm); the paper's
+    text gives other dimensions, the table matches MB's published multipliers
+  added_mass_g: load in grams from the file name (0, 6, 12), presumably masses added on the balance rotor

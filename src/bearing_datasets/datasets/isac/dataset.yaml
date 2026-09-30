@@ -1,0 +1,23 @@
+name: isac
+title: ISAC Lab rotating machinery vibration dataset for bearing and unbalance faults (University of Guilan)
+description: |
+  Rotating machine test rig of the Intelligent Systems and Advanced Control Lab (ISAC),
+  University of Guilan, with three bearings and six disks. Healthy at 10-50 Hz shaft
+  frequency (twice, 60 s; with a 0.02 mm shaft misalignment); outer race or ball fault with
+  the defective bearing in position 1, 2 or 3; unbalance on one of the disks 1 (largest) to
+  6 (smallest) or on disks 1 and 4; faults at 10 and 30 Hz. 35 recordings of 60 s, 12
+  analog channels in V at about 10 kHz (the file's time step gives 10,040 Hz). Which sensor
+  is on which channel is not documented (ai0-ai11); the bearing model is not stated. The
+  startup/shutdown noise recordings described in the record are not in the archive.
+license: CC-BY-4.0
+size: "download 0.50 GB, built 0.18 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.17653852
+citation: |
+  Chaibakhsh, A., & Pedram, R. (2025). Rotating machinery vibration dataset for bearing and
+  unbalance faults (ISAC Lab dataset). Zenodo. doi:10.5281/zenodo.17653852
+  Pedram, R., & Chaibakhsh, A. (2025). Multi-scale deep learning framework for robust bearing
+  fault diagnosis in rotating machinery under sensor anomalies. doi:10.1080/23307706.2025.2567006
+sources:
+  - {type: zenodo, record: "17653852"}
+columns:
+  rpm: shaft frequency from the file name x 60

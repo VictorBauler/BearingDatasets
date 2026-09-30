@@ -1,0 +1,102 @@
+name: uestc
+title: UESTC bearing dataset (University of Electronic Science and Technology of China)
+description: |
+  Laboratory rig at no load with ASAHI UCPH 20 pillow-block bearings in four states:
+  normal, ball fault (pit of 3 mm diameter and 5 mm depth on one ball), inner and outer
+  race faults (wire-cut slot 0.55 mm wide and 1 mm deep), at 800, 1000, 1200 and 1400 rpm.
+  One single-axis piezoelectric accelerometer (10.22 mV per m/s^2) at 20 kHz. Each of the
+  16 conditions was recorded continuously and split into five files for storage; the
+  builder joins them back into one recording per condition.
+license: unspecified (open for research; cite the paper)
+size: "download 0.15 GB, built 0.09 GB (measured)"
+homepage: https://github.com/ChangLiu2024/UESTC-Bearing-Dataset
+citation: |
+  Liu, C., et al. (2025). A New Target Domain One-Class Learning Bearing Fault Detection
+  Framework. IEEE Sensors Journal. doi:10.1109/JSEN.2025.3635217
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/ChangLiu2024/UESTC-Bearing-Dataset/782c6ddddcd63e0ef97019dbfeec9887e36bca1e/
+files:
+  - Data/B_1000/B_1000_1.mat
+  - Data/B_1000/B_1000_2.mat
+  - Data/B_1000/B_1000_3.mat
+  - Data/B_1000/B_1000_4.mat
+  - Data/B_1000/B_1000_5.mat
+  - Data/B_1200/B_1200_1.mat
+  - Data/B_1200/B_1200_2.mat
+  - Data/B_1200/B_1200_3.mat
+  - Data/B_1200/B_1200_4.mat
+  - Data/B_1200/B_1200_5.mat
+  - Data/B_1400/B_1400_1.mat
+  - Data/B_1400/B_1400_2.mat
+  - Data/B_1400/B_1400_3.mat
+  - Data/B_1400/B_1400_4.mat
+  - Data/B_1400/B_1400_5.mat
+  - Data/B_800/B_800_1.mat
+  - Data/B_800/B_800_2.mat
+  - Data/B_800/B_800_3.mat
+  - Data/B_800/B_800_4.mat
+  - Data/B_800/B_800_5.mat
+  - Data/I_1000/I_1000_1.mat
+  - Data/I_1000/I_1000_2.mat
+  - Data/I_1000/I_1000_3.mat
+  - Data/I_1000/I_1000_4.mat
+  - Data/I_1000/I_1000_5.mat
+  - Data/I_1200/I_1200_1.mat
+  - Data/I_1200/I_1200_2.mat
+  - Data/I_1200/I_1200_3.mat
+  - Data/I_1200/I_1200_4.mat
+  - Data/I_1200/I_1200_5.mat
+  - Data/I_1400/I_1400_1.mat
+  - Data/I_1400/I_1400_2.mat
+  - Data/I_1400/I_1400_3.mat
+  - Data/I_1400/I_1400_4.mat
+  - Data/I_1400/I_1400_5.mat
+  - Data/I_800/I_800_1.mat
+  - Data/I_800/I_800_2.mat
+  - Data/I_800/I_800_3.mat
+  - Data/I_800/I_800_4.mat
+  - Data/I_800/I_800_5.mat
+  - Data/N_1000/N_1000_1.mat
+  - Data/N_1000/N_1000_2.mat
+  - Data/N_1000/N_1000_3.mat
+  - Data/N_1000/N_1000_4.mat
+  - Data/N_1000/N_1000_5.mat
+  - Data/N_1200/N_1200_1.mat
+  - Data/N_1200/N_1200_2.mat
+  - Data/N_1200/N_1200_3.mat
+  - Data/N_1200/N_1200_4.mat
+  - Data/N_1200/N_1200_5.mat
+  - Data/N_1400/N_1400_1.mat
+  - Data/N_1400/N_1400_2.mat
+  - Data/N_1400/N_1400_3.mat
+  - Data/N_1400/N_1400_4.mat
+  - Data/N_1400/N_1400_5.mat
+  - Data/N_800/N_800_1.mat
+  - Data/N_800/N_800_2.mat
+  - Data/N_800/N_800_3.mat
+  - Data/N_800/N_800_4.mat
+  - Data/N_800/N_800_5.mat
+  - Data/O_1000/O_1000_1.mat
+  - Data/O_1000/O_1000_2.mat
+  - Data/O_1000/O_1000_3.mat
+  - Data/O_1000/O_1000_4.mat
+  - Data/O_1000/O_1000_5.mat
+  - Data/O_1200/O_1200_1.mat
+  - Data/O_1200/O_1200_2.mat
+  - Data/O_1200/O_1200_3.mat
+  - Data/O_1200/O_1200_4.mat
+  - Data/O_1200/O_1200_5.mat
+  - Data/O_1400/O_1400_1.mat
+  - Data/O_1400/O_1400_2.mat
+  - Data/O_1400/O_1400_3.mat
+  - Data/O_1400/O_1400_4.mat
+  - Data/O_1400/O_1400_5.mat
+  - Data/O_800/O_800_1.mat
+  - Data/O_800/O_800_2.mat
+  - Data/O_800/O_800_3.mat
+  - Data/O_800/O_800_4.mat
+  - Data/O_800/O_800_5.mat
+columns:
+  n_files: number of consecutive storage files joined into the recording

@@ -1,0 +1,302 @@
+[
+ {
+  "name": "1 Data collected from a healthy bearing/H-A-1.mat",
+  "size": 11909642,
+  "sha256": "a113089dac7969eaf3e2adc563aa724a523f5d7ef4b3dd957bdf111ac1d84257"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-A-2.mat",
+  "size": 12163512,
+  "sha256": "fe103e4777f0a8bc964d05079180de56c3ba0fdbaf492879deee9d5b7e547372"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-A-3.mat",
+  "size": 12167580,
+  "sha256": "9f8b6a3f4b80ef479f8a522d4d04f150174de777b27e8bc5cc35c3f61c8dc187"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-B-1.mat",
+  "size": 12182954,
+  "sha256": "c32bdb51290ccde19adca328b2c17944acabdcf4ee977ff7358892502795d1ab"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-B-2.mat",
+  "size": 11858198,
+  "sha256": "993fed480dc7f5b9f24da8670f94a0bf15804e292de61e6590adb5773bf0b1a6"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-B-3.mat",
+  "size": 12281532,
+  "sha256": "7c4fa4a9babe8eba73b6cfe9f6c1005a2b2ddd54f53f63e4817f959e94c06db4"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-C-1.mat",
+  "size": 12167895,
+  "sha256": "1467325c6d257bdbc1680370d73795ddaa23602f5065b24f79a8e293071fc038"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-C-2.mat",
+  "size": 12040818,
+  "sha256": "af9257068f271d10b57b3edaa866997abeadc0e6f7a093ba051d66171832b010"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-C-3.mat",
+  "size": 12074455,
+  "sha256": "7c9563fb685fbaeb4f0f7564f2a2854ba28c33e0ce8e6901a4ad05e4ea6d6b40"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-D-1.mat",
+  "size": 11890850,
+  "sha256": "668b7a9d5790e3c2585dd7b4dbaf8377e57338299787c44518a21df7070086c5"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-D-2.mat",
+  "size": 11843015,
+  "sha256": "2c177cc27e773ef854e5638673249a150861ef2bd7a693e0cee8b5c7844815a8"
+ },
+ {
+  "name": "1 Data collected from a healthy bearing/H-D-3.mat",
+  "size": 12464414,
+  "sha256": "dcce9be19f89f56dc2dda6928e982c6617a6c9d5b6262c7714c0a1fb9e568e86"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-A-1.mat",
+  "size": 15517304,
+  "sha256": "496a14c3caf62d28169ff2567e9aaf5c7913c03c648ad73651b410cd09316ea7"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-A-2.mat",
+  "size": 15828147,
+  "sha256": "38ab920d5c92fd085949b877b9d1aac2251bf0ddc247ce1afac7df6b62df1c44"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-A-3.mat",
+  "size": 15902200,
+  "sha256": "22ffb437f4d491df11abad868c998385f8c86a4ed5ad82c3e8755675d20b0a74"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-B-1.mat",
+  "size": 15064234,
+  "sha256": "b6d2d338c839e48ca2c16d8f16885bc7508ce7b5e5c90ead9738c4357c19cab8"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-B-2.mat",
+  "size": 15622518,
+  "sha256": "92f4e49aeef4cb2d093583d2e2632fc08f62f4ddc1e97a4b955a45611262d781"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-B-3.mat",
+  "size": 15779273,
+  "sha256": "a252adc89b65cb51febf055d14945e740b9790ba345db4c58c317804b5582f60"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-C-1.mat",
+  "size": 16037573,
+  "sha256": "c053ce37a9378e891c9d8818e3e1220dc38c778275a87fd72379b7c6720d82d1"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-C-2.mat",
+  "size": 15830613,
+  "sha256": "fb584ba8cdd3edcdec142117f773a38a0bb4aac67a8d58e578ec063b6de96892"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-C-3.mat",
+  "size": 15440285,
+  "sha256": "0d28d3d928eb14bb6fd3734791c080079d91ca3f5fb88a8e8befa95f19103538"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-D-1.mat",
+  "size": 15818168,
+  "sha256": "fd7eeec30039496bb59ecf37f1bd1738baa0f8154530e152c1efe8a64a7ff86c"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-D-2.mat",
+  "size": 15884588,
+  "sha256": "7c4df92ab3c1012589395016ad315f770f4886ba719962a9f1b08963dc057b78"
+ },
+ {
+  "name": "2 Data collected from a bearing with inner race fault/I-D-3.mat",
+  "size": 15896601,
+  "sha256": "2fc484d86ed53745207dd541e160a1d0d433adff511f3e7f49a53af79d09e6fb"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-A-1.mat",
+  "size": 12484063,
+  "sha256": "f07716f39f8fb93ea73465e40dc415b0252eefcf5797591b079139ce66ff1040"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-A-2.mat",
+  "size": 12237232,
+  "sha256": "b44dd1494f344841799d9988fbae7e59c3eb263c64547f48643552edac8aec84"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-A-3.mat",
+  "size": 12314003,
+  "sha256": "e569af9fe9c7acfa9ba072841b365ca33e8db4b7eb875ba07fa5a8b3c4aa1f6c"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-B-1.mat",
+  "size": 12099142,
+  "sha256": "8bd90233c8c4ae24c45d29394ca432eeca609dc9cb8c4935ea0a07b229e1fab9"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-B-2.mat",
+  "size": 12082036,
+  "sha256": "017a8546aef8658ebfd29902eb53c7c4f6f4f1b99e5b4c624dfc525f4584fb32"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-B-3.mat",
+  "size": 12205953,
+  "sha256": "500492f1724631661eaafc199993276cb8f6c43d5cd233ae1291bbd824857a20"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-C-1.mat",
+  "size": 12108677,
+  "sha256": "5974da12daaf36de2706d4b770b7e5e22fd3a4100c106895a0bb1b85f327a5e4"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-C-2.mat",
+  "size": 12334994,
+  "sha256": "1417f07c7b71378d668aac3055f042b4ce64e375a4ca8b8dcd532e5641f2b80a"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-C-3.mat",
+  "size": 12233133,
+  "sha256": "1767194ad9c39e9832ddcc02457e2869500e47444fb4687735937ca6ee0266a0"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-D-1.mat",
+  "size": 12591498,
+  "sha256": "e20e4bfccf548d9f22e65443fb27b9695233d7328d28cbaa02d236b86f1a4fc1"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-D-2.mat",
+  "size": 12313071,
+  "sha256": "2fdf58eb7e11734eb69b9e2c62518ccb57908c3fe0a558dfb4d3ce8028399858"
+ },
+ {
+  "name": "3 Data collected from a bearing with outer race fault/O-D-3.mat",
+  "size": 12326700,
+  "sha256": "3946be312a5420186a40452eba16e447b7bbfe041a017c303c2239d47a5862cf"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-A-1.mat",
+  "size": 12497757,
+  "sha256": "2d6ed6f02289faaadb4a4a7f52ac4167245673f1a9156c9bcdc7040c28bda42b"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-A-2.mat",
+  "size": 12557333,
+  "sha256": "7d33d188aee76f8cdc5a67ec1ee5654616e4a89d5ef0be82b0c6708ada06189a"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-A-3.mat",
+  "size": 12516711,
+  "sha256": "38438ab22af5a6ffcccfe8c1b77329155b68f14a93f8be5ef1e719bf2541df44"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-B-1.mat",
+  "size": 12496164,
+  "sha256": "a32dd2e7fc513dc14214667a54c8faa381de65625cdff7fc8bcf82a480c244aa"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-B-2.mat",
+  "size": 12257242,
+  "sha256": "ed5b0231d96c89b5ccc845e39f4d40ea174d130b16516196f573c5cebf0a4dbb"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-B-3.mat",
+  "size": 13053987,
+  "sha256": "6b1b0a7aaa8f6997e1d43a52633bbf777501c16a806b2ced635398eebfcf5a63"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-C-1.mat",
+  "size": 12444075,
+  "sha256": "0880e80ec993faa2a6c1ea7597c67eed35ee481443e8b3921d9e7fd81aa8bb22"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-C-2.mat",
+  "size": 12442515,
+  "sha256": "6cb0bc5bd708272f8565df9961582a3821b616c49013a0e32d674e7d3936d85a"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-C-3.mat",
+  "size": 12261942,
+  "sha256": "1a7656b7977ca63a9fc140a8f3cb86d489bbf5c08b1f9ddf1ae4e799ea067a7e"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-D-1.mat",
+  "size": 12216026,
+  "sha256": "929a4b8acd8cc15c57f749ebdbca8d32fdf9058d85ffdf58d2ded52212063171"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-D-2.mat",
+  "size": 12416517,
+  "sha256": "7e4c3b7eb2c14de860685810d3b514fe54937f4f50f25b3fce53a98512300061"
+ },
+ {
+  "name": "4 Data collected from a bearing with ball fault/B-D-3.mat",
+  "size": 13362372,
+  "sha256": "2e4294a537de9f1279233ac8ec7bc3f22ca67bc25aff98cf2d506e90cddd1891"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-A-1.mat",
+  "size": 14265890,
+  "sha256": "146525ae4ab79120278184663c93a8dc259e30de20a456e4783cd6187099d9e1"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-A-2.mat",
+  "size": 14334362,
+  "sha256": "28ee571643faff6c9ea9bd9047401a54478f0fc483ed09bc390aadf12f78644d"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-A-3.mat",
+  "size": 14301014,
+  "sha256": "9a3de68901a45c5fbeb6e209f3569d19d9f3d4302bc277475c88d1ca8a104227"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-B-1.mat",
+  "size": 14078923,
+  "sha256": "7ec911e4838ef636d66a1cca5a95e29dd957c68689cda49438e68492624a5a57"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-B-2.mat",
+  "size": 14210135,
+  "sha256": "0565a6bab7d7b9d8289acde79d879808dd7efa1f9ba3d058f8b5bd0307d0980a"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-B-3.mat",
+  "size": 14256102,
+  "sha256": "36791f7e0733c5b5e4c69b8936cd5b41c5b39041d715cc6e568c8f203566db23"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-C-1.mat",
+  "size": 13602293,
+  "sha256": "db470192db1bd260530adff672caee691058e3d5538e6ba2b3b48404203b2985"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-C-2.mat",
+  "size": 13673879,
+  "sha256": "922adaa6e070e053b09273dcb3369cacb2754d849aa4d2a058f1acf6ce13dff6"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-C-3.mat",
+  "size": 13975131,
+  "sha256": "1006e4f1bdd18be00ca66602146aa124bf18fa8587b0621993a0150054bc276a"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-D-1.mat",
+  "size": 14029439,
+  "sha256": "86dedf18476cace5ae913d92201fa88a40feb6ac747625f3c0f559979e057dc8"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-D-2.mat",
+  "size": 14147080,
+  "sha256": "d7701c35f51dbd3c9be18e31a61a7d510014ca873ffe8d4b194e23d85c3975d6"
+ },
+ {
+  "name": "5 Data collected from a bearing with a combination of faults/C-D-3.mat",
+  "size": 14210810,
+  "sha256": "37bb3a2c0d444f70f5df82d57f37e71b91159b6a45c74b8f992fa6e268dc6026"
+ }
+]

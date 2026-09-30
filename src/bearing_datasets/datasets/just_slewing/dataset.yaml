@@ -1,0 +1,21 @@
+name: just_slewing
+title: JUST slewing bearing datasets (Jiangsu University of Science and Technology), very low speed
+description: |
+  Slewing bearing test rig at Jiangsu University of Science and Technology, very low speed:
+  normal, inner race, outer race and rolling element (B1) faults at 2, 6 and 12 rpm under
+  loads of 0, 30 and 60 (N in the file names; a tilting moment according to the list), 5
+  repetitions of ~61 s: 180 recordings at 50 kHz. Six accelerometers (m/s^2; positions not
+  documented) and one acoustic channel (dB). Two Mendeley records (conditions 1-6, 7-9).
+license: CC-BY-4.0
+size: "download 14.5 GB, built 4.4 GB (measured)"
+homepage: https://doi.org/10.17632/hwg8v5j8t6.1
+citation: |
+  Ren, X. (2023). JUST slewing bearing datasets 1 and 2. Mendeley Data. doi:10.17632/hwg8v5j8t6.1,
+  doi:10.17632/rcxgmdxhbr.1. Related paper: Acta Armamentarii (2023),
+  doi:10.12382/bgxb.2023.0756
+sources:
+  - {type: mendeley, name: conditions1-6, id: hwg8v5j8t6, version: 1}
+  - {type: mendeley, name: conditions7-9, id: rcxgmdxhbr, version: 1}
+columns:
+  load: load from the file name (0, 30, 60)
+  repetition: repeat number 1-5

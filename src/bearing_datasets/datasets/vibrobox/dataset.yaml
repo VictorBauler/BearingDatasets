@@ -1,0 +1,30 @@
+name: vibrobox
+title: VibroBox bearing 6213 vibration datasets (constant, moderately and widely varying speed)
+description: |
+  Five VibroBox (Minsk) records of a rolling bearing analogous to 6213, normal and with an
+  outer ring fault, on the same test stand; accelerometer (B&R, stud mounted, 32 mV/g,
+  4 Hz-8 kHz) recorded at 96 kHz as raw integer wav samples. Subsets: const_973rpm (20
+  normal, 20 with a severe outer ring defect and an incipient inner ring defect, 10 s);
+  const_800_900rpm (120 outer ring fault recordings at 800-900 rpm in 5 rpm steps; the
+  speeds of files 181-195 are not in the table: unknown); const_50_900rpm (normal and
+  outer ring fault at 50-900 rpm, 30 s); moderate_ramps (speed changed by 1-10 rpm from
+  650-975 rpm, 60 s); varying_0_900rpm (random, linear or triangle speed profiles over 0-900
+  rpm, 60 s). The two varying-speed subsets include the tachometer (speed / 30, irregularly
+  sampled; exact times in tach_time_unix). Labels and speeds come from the records' docx
+  tables (meta.csv).
+license: CC-BY-4.0
+size: "download 2.2 GB, built 2.0 GB (measured)"
+homepage: https://doi.org/10.17632/fbf6y8m4mv.1
+citation: |
+  Aslamov, Y. P., Kechik, D. A., & Davydov, I. G. (2020-2021). VibroBox bearing 6213
+  datasets. Mendeley Data. doi:10.17632/fbf6y8m4mv.1, doi:10.17632/vjzrrzm5wm.1,
+  doi:10.17632/ryg9rrkgv8.1, doi:10.17632/j66x27t229.1, doi:10.17632/6k6fbzc6vv.1
+sources:
+  - {type: mendeley, name: const-973rpm, id: fbf6y8m4mv, version: 1}
+  - {type: mendeley, name: const-800-900rpm, id: vjzrrzm5wm, version: 1}
+  - {type: mendeley, name: const-50-900rpm, id: ryg9rrkgv8, version: 1}
+  - {type: mendeley, name: moderate-ramps, id: j66x27t229, version: 1}
+  - {type: mendeley, name: varying-0-900rpm, id: 6k6fbzc6vv, version: 1}
+columns:
+  subset: const_973rpm, const_800_900rpm, const_50_900rpm, moderate_ramps or varying_0_900rpm (record)
+  speed_setting: speed as given in the record table (e.g. 973, 800.0, 650+5, 0...900), unknown for const_800_900rpm files 181-195

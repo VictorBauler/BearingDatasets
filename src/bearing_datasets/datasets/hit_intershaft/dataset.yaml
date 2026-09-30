@@ -1,0 +1,37 @@
+name: hit_intershaft
+title: HIT inter-shaft bearing dataset (aero-engine test rig, Harbin Institute of Technology)
+description: |
+  A real dual-rotor aero-engine, driven by low-pressure (LP) and high-pressure (HP)
+  motors, with its inter-shaft bearing replaced in turn by a healthy bearing (tested
+  twice, data1 and data2), two bearings with wire-cut inner ring faults (0.5 mm deep,
+  0.5 or 1.0 mm long) and one with an outer ring fault (0.5 x 0.5 mm). 28 LP/HP speed
+  pairs (LP 1000-5000 rpm, HP 1200-6000 rpm, speed ratio 1.2-1.8). Two eddy current
+  sensors on the LP rotor (horizontal, vertical displacement) and four accelerometers
+  on the casings, 25 kHz. The authors cut each 15 s acquisition into segments of 20480
+  samples and removed invalid ones: 2412 segments, stored here as one recording each
+  (`segment` numbers them within a speed pair). Units are not stated.
+license: unspecified (cite the paper)
+size: "download 2.9 GB, built 1.7 GB (measured)"
+homepage: https://github.com/HouLeiHIT/HIT-dataset
+citation: |
+  Hou, L., Yi, H., Jin, Y., Gui, M., Sui, L., Zhang, J., & Chen, Y. (2023). Inter-shaft
+  bearing fault diagnosis based on aero-engine system: A benchmarking dataset study.
+  Journal of Dynamics, Monitoring and Diagnostics, 2(4), 228-242.
+  doi:10.37965/jdmd.2023.314
+sources:
+  - type: http
+    name: google-drive
+    urls:
+      data1.npy: https://drive.usercontent.google.com/download?id=1yRVSYhwcbOBtDmrbS6YUBBj4tQV0SwdU&export=download&confirm=t
+      data2.npy: https://drive.usercontent.google.com/download?id=1RtRVXidVqFivwSnAfApY29XRFwaZVl_A&export=download&confirm=t
+      data3.npy: https://drive.usercontent.google.com/download?id=1AilZKGz-Ia9d9JJL6ie-LG4bQJF0T_Wc&export=download&confirm=t
+      data4.npy: https://drive.usercontent.google.com/download?id=18B_3N7qVFgjENJgT0LrSsd8zs4fFWszU&export=download&confirm=t
+      data5.npy: https://drive.usercontent.google.com/download?id=1Qzk7o93iY-FPd7qp08yvi_EZPrq8kxxM&export=download&confirm=t
+files: [data1.npy, data2.npy, data3.npy, data4.npy, data5.npy]
+columns:
+  fault_depth_mm: depth of the wire-cut fault (0 if healthy)
+  fault_length_mm: length of the wire-cut fault (0 if healthy)
+  bearing_id: data file = test; each test is a different bearing (data1 and data2 both healthy)
+  lp_rpm: low-pressure rotor speed in rpm
+  hp_rpm: high-pressure rotor speed in rpm
+  segment: number of the 20480-sample segment within the test and speed pair

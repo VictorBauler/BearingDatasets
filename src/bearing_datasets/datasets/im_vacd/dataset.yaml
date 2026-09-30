@@ -1,0 +1,27 @@
+name: im_vacd
+title: IM-VACD, induction motor vibration and sound recorded with smartphones
+description: |
+  Eight D396 Marathon Electric three-phase motors on a SpectraQuest rig, each with one
+  state: healthy, faulty bearing, bowed rotor, broken rotor bars, rotor unbalance, rotor
+  misalignment, stator winding fault and voltage unbalance. Recorded with three phones
+  (iPhone 13, Samsung Galaxy S6, Samsung Galaxy A50), each giving the microphone and the
+  3-axis accelerometer, at 15, 20, 25 or 30 Hz, with and without load, with the phone held
+  in the hand or rigidly mounted: 256 recordings of about 10 s. The files contradict the
+  record text (42 kHz for all phones): the microphone was set to 44.1 or 48 kHz and the
+  accelerometer to 100-490 Hz depending on the phone; fs is the rate each file reports as
+  measured (43-48 kHz and 97-500 Hz), rounded to an integer. Sound is 16-bit PCM
+  normalised to [-1, 1]. Not every phone has every speed/load combination. Each fault is
+  on a different motor, so the motor is confounded with the class.
+license: CC-BY-4.0
+size: "download 3.68 GB, built 0.24 GB (measured)"
+homepage: https://doi.org/10.17632/yc8yhg5xjd.2
+citation: |
+  Sehri, M. (2026). Induction Motor Vibration and Acoustic Cellular Device (IM-VACD).
+  Mendeley Data, V2. doi:10.17632/yc8yhg5xjd.2
+sources:
+  - {type: mendeley, id: yc8yhg5xjd, version: 2}
+columns:
+  phone: iphone_13, galaxy_s6 or galaxy_a50
+  mounting: hand_held or rigid
+  acoustic_fs_set: microphone rate requested from the phone, Hz
+  accelerometer_fs_set: accelerometer rate requested from the phone, Hz

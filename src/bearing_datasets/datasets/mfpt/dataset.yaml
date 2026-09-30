@@ -1,0 +1,31 @@
+name: mfpt
+title: MFPT bearing fault dataset (Society for Machinery Failure Prevention Technology)
+description: |
+  NICE bearing on a test rig at 25 Hz: 3 baseline, 3 outer race faults at 270 lbs,
+  7 outer race and 7 inner race faults at loads of 0-300 lbs (20 recordings), plus 3
+  real-world recordings (wind turbine intermediate-shaft and oil-pump bearings, a
+  planet bearing). One accelerometer (g). Baseline and the first 3 outer race files are
+  sampled at 97,656 Hz for 6 s, the variable-load files at 48,828 Hz for 3 s.
+  The zip ships no document saying which element failed in the real-world recordings,
+  so their condition is "bearing". The official download page is gone; the file comes
+  from the Internet Archive copy of the official zip (checked by sha256).
+  NICE bearing (8 rollers of 0.235 in, pitch diameter 1.245 in, 0 deg): fault
+  frequencies in orders of the shaft speed BPFO 3.245, BPFI 4.755, BSF 2.555, FTF 0.406.
+license: unspecified (distributed free by MFPT for research)
+size: "download 0.06 GB, built 0.03 GB (measured)"
+homepage: https://www.mfpt.org/fault-data-sets/
+citation: |
+  Bechhoefer, E. (2013). Condition Based Maintenance Fault Database for Testing of
+  Diagnostic and Prognostics Algorithms. Society for Machinery Failure Prevention
+  Technology (MFPT).
+sources:
+  - type: http
+    name: internet-archive
+    urls:
+      MFPT-Fault-Data-Sets-20200227T131140Z-001.zip: https://web.archive.org/web/20250505045128id_/https://www.mfpt.org/wp-content/uploads/2020/02/MFPT-Fault-Data-Sets-20200227T131140Z-001.zip
+files: [MFPT-Fault-Data-Sets-20200227T131140Z-001.zip]
+columns:
+  load: radial load on the test bearing in lbs (real-world recordings - 0 if not given)
+  rpm: shaft speed (the `rate` of each file, in Hz, x 60)
+  field_data: true for the 3 real-world recordings, false for the test rig
+  source_file: original file inside the MFPT zip (folder/file)

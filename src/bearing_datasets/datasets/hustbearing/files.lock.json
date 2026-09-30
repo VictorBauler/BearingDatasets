@@ -1,0 +1,497 @@
+[
+ {
+  "name": "0.5X_B_20Hz.xls",
+  "size": 12707301,
+  "sha256": "175a6e7b8e46eff70e2b3a604d7d6c4f167496678eb8b0e2dfac4e5a3c758be0"
+ },
+ {
+  "name": "0.5X_B_25Hz.xls",
+  "size": 12674398,
+  "sha256": "a94085437982d4de1f36be2002a07a6cea835346623d273070389f05585a4df3"
+ },
+ {
+  "name": "0.5X_B_30Hz.xls",
+  "size": 12643357,
+  "sha256": "4fc6e3e2109c702bed68f623a75118eaee5cad63cb9e7a5ea908409a51e88a38"
+ },
+ {
+  "name": "0.5X_B_35Hz.xls",
+  "size": 12619609,
+  "sha256": "0d8bda9bb63e694243c8808c3305edb1a4ead7125901934517f324b42effb377"
+ },
+ {
+  "name": "0.5X_B_40Hz.xls",
+  "size": 12602514,
+  "sha256": "4cddd5af43bc40e3c4a42c857472144d9d6015c5474a6daa7ee5fe49ba753fe2"
+ },
+ {
+  "name": "0.5X_B_60Hz.xls",
+  "size": 12735165,
+  "sha256": "b6426fc1670ff269fc22d4f597b03788e4bcdbd41ab705bed50dcf1461c2d06e"
+ },
+ {
+  "name": "0.5X_B_65Hz.xls",
+  "size": 12730785,
+  "sha256": "43fccb47626c87ff03c74771d5c10bd2ae272d1b4d2ebe7637c4b7c562101b5f"
+ },
+ {
+  "name": "0.5X_B_70Hz.xls",
+  "size": 12704219,
+  "sha256": "071ffa48dfdc27504c6a145671c50e65bc1d29ba59bf204f8f844c62ec70733f"
+ },
+ {
+  "name": "0.5X_B_75Hz.xls",
+  "size": 12485971,
+  "sha256": "28b3942f5efd76a9e0920c740ddc987a14786f2f17f9275062df3a3c6b638476"
+ },
+ {
+  "name": "0.5X_B_80Hz.xls",
+  "size": 12502470,
+  "sha256": "173aec72f31e50c965feaf3136cf9db8e9306433a14957c42e900fd56765f399"
+ },
+ {
+  "name": "0.5X_B_VS_0_40_0Hz.xls",
+  "size": 12633395,
+  "sha256": "87cec2aa9bf113d411acfb38af18715354fc27cd66a277671c53dd29ac2f249c"
+ },
+ {
+  "name": "0.5X_C_20Hz.xls",
+  "size": 12552438,
+  "sha256": "043115c61dd87260ff620e3b790d822eb701f06b2b53be21d6c9c47d78e7ab51"
+ },
+ {
+  "name": "0.5X_C_25Hz.xls",
+  "size": 12520641,
+  "sha256": "f75a5f633e3c90875fed194b68d67e90fc33680618dd7b58a402c89ad5556126"
+ },
+ {
+  "name": "0.5X_C_30Hz.xls",
+  "size": 12504518,
+  "sha256": "1925f854839b59f607e34165b64504a6b0ebaea06617e549af34db2670934e98"
+ },
+ {
+  "name": "0.5X_C_35Hz.xls",
+  "size": 12491169,
+  "sha256": "17d1699504caefb47f8f7c70d3575272bd445e15f125c7d9e6dfd4243449799b"
+ },
+ {
+  "name": "0.5X_C_40Hz.xls",
+  "size": 12488287,
+  "sha256": "d8fba33eb0f0b0b6ff41484429129baf03fa442fe6e96b342d3c4cea30c22966"
+ },
+ {
+  "name": "0.5X_C_60Hz.xls",
+  "size": 12482158,
+  "sha256": "26ac3aef71426981da6260df5daef1361c497e51282399a21a49a620913f590f"
+ },
+ {
+  "name": "0.5X_C_65Hz.xls",
+  "size": 12479152,
+  "sha256": "52ac6613c559e675ce1c4c2c2fc72246cc2cbea54f9e6ac261f7407291def768"
+ },
+ {
+  "name": "0.5X_C_70Hz.xls",
+  "size": 12475198,
+  "sha256": "20e88d01138665bd2301d77c1b79a4da635b31c0d004002b6b7150b5244cbe29"
+ },
+ {
+  "name": "0.5X_C_75Hz.xls",
+  "size": 12464441,
+  "sha256": "f5b0bcf0e061481c7b796ced00c7d97b52b4c5cec81c2c09425362d866e11311"
+ },
+ {
+  "name": "0.5X_C_80Hz.xls",
+  "size": 12475876,
+  "sha256": "ac06063a75aa3e77a796b7c98fe72261c1ef2a042ab1f5e8fe9399af00ec5346"
+ },
+ {
+  "name": "0.5X_C_VS_0_40_0Hz.xls",
+  "size": 12498370,
+  "sha256": "91c32c39c612d6a219f0d1a270c8e8d6a4131280a8cf12289177e0d63a3dfa90"
+ },
+ {
+  "name": "0.5X_I_20Hz.xls",
+  "size": 12657324,
+  "sha256": "68e3f9441261c85bdc573a3294253acbba11da1afdaf3ea27dc269f6cfc81c36"
+ },
+ {
+  "name": "0.5X_I_25Hz.xls",
+  "size": 12609591,
+  "sha256": "4dc05732fee7718ef3e024a3bbcafc510ec88762eeafa244a4d13453a8b43d13"
+ },
+ {
+  "name": "0.5X_I_30Hz.xls",
+  "size": 12569550,
+  "sha256": "b46c70764d2ead741dc68fed9b1e2eebff2d074d79a9abdfec2c0073fc63d856"
+ },
+ {
+  "name": "0.5X_I_35Hz.xls",
+  "size": 12544789,
+  "sha256": "814a3d5dced5ca7922f62e86db74323b909c2997f01a2d122599da0b087f2a4c"
+ },
+ {
+  "name": "0.5X_I_40Hz.xls",
+  "size": 12527878,
+  "sha256": "629426418c1c268071f27a6ac8debb1a4f443bec31b1aafef2dcc3a1b3ca1595"
+ },
+ {
+  "name": "0.5X_I_60Hz.xls",
+  "size": 12499383,
+  "sha256": "cd9ff6303dd377d18de50de65831da3dd6b84c8cd0a744b62d6e6814ff6f3c5d"
+ },
+ {
+  "name": "0.5X_I_65Hz.xls",
+  "size": 12500023,
+  "sha256": "0c42efbb34b7ed7f473f3bc8484e0a46198908863658a7d1a51850e475fe893a"
+ },
+ {
+  "name": "0.5X_I_70Hz.xls",
+  "size": 12484524,
+  "sha256": "85709a3f6671d8fc3debede4c12c10644ea2e161bb34288fc686a5e168a716fa"
+ },
+ {
+  "name": "0.5X_I_75Hz.xls",
+  "size": 12490068,
+  "sha256": "e3bd2234f7aad677b03fafcebbf95cd6b3da6eb5831347aed116977c6a7a6e10"
+ },
+ {
+  "name": "0.5X_I_80Hz.xls",
+  "size": 12485210,
+  "sha256": "22f5671726a03f6649940f1b6de49dc4b59eb682037d27d2111b4ae842f69fae"
+ },
+ {
+  "name": "0.5X_I_VS_0_40_0Hz.xls",
+  "size": 12562117,
+  "sha256": "b9a65465782a3aa5b1506c4bacbcf498ea2a93848692625efcfce3fd92208960"
+ },
+ {
+  "name": "0.5X_O_20Hz.xls",
+  "size": 12649213,
+  "sha256": "7b7bb04ae6d4da2f14d99c07ea660c7b0ee9a2caa8b93144bd5bfea08aa282aa"
+ },
+ {
+  "name": "0.5X_O_25Hz.xls",
+  "size": 12582370,
+  "sha256": "c628c86b244adafc4ccb16eacca2cb030405a1f3c1510443c29ba497d8a14061"
+ },
+ {
+  "name": "0.5X_O_30Hz.xls",
+  "size": 12547874,
+  "sha256": "f7a21e456bf167df9b5dc6e5633fbeea94b6f4b167aa123b2b5ad79072e2c0ab"
+ },
+ {
+  "name": "0.5X_O_35Hz.xls",
+  "size": 12517651,
+  "sha256": "1f56399ac7a3fafa2ed713cd3858e5450f3018e066d4f91f45916ef169ddc39e"
+ },
+ {
+  "name": "0.5X_O_40Hz.xls",
+  "size": 12495204,
+  "sha256": "446cd624a35467b87b3cce155f4571e72f9c69a68458272a6a6ca40b4f50b125"
+ },
+ {
+  "name": "0.5X_O_60Hz.xls",
+  "size": 12448980,
+  "sha256": "8a480c052f4fce0bbb459459b9e53381821ff34a9cb98425b3eeac92efe10b7c"
+ },
+ {
+  "name": "0.5X_O_65Hz.xls",
+  "size": 12481587,
+  "sha256": "be98f11484f77ffae443acf7343900b72f60360665e02bad79d41cdff0448430"
+ },
+ {
+  "name": "0.5X_O_70Hz.xls",
+  "size": 12464858,
+  "sha256": "b56a77960ec2b6c9a69e6aee104053797d186790a27073a6d819ec30a740762d"
+ },
+ {
+  "name": "0.5X_O_75Hz.xls",
+  "size": 12473268,
+  "sha256": "7426814fccb72caf4a65f8b9109c715ecfc5d84a89fb7a8fc380e2fd4f4689cd"
+ },
+ {
+  "name": "0.5X_O_80Hz.xls",
+  "size": 12464151,
+  "sha256": "7bb479416f5d4f8785bfb6f0e00aa8a8ade4ad8c2fd3d1d56d9259153495ff6e"
+ },
+ {
+  "name": "0.5X_O_VS_0_40_0Hz.xls",
+  "size": 12530911,
+  "sha256": "5fda3374a28c4be322f80ee89128fb35e4baec30a30fdb4ff743b2806021f5ad"
+ },
+ {
+  "name": "B_20Hz.xls",
+  "size": 12702566,
+  "sha256": "7682c0af30b1ad904126954083aa319ebefd83b17b40560851b436abd583d88c"
+ },
+ {
+  "name": "B_25Hz.xls",
+  "size": 12620191,
+  "sha256": "ecc32e9779d0a0f8b3dc07bb0429f2613ef1707f6623ccc4e61f2a09f4320124"
+ },
+ {
+  "name": "B_30Hz.xls",
+  "size": 12606272,
+  "sha256": "829e6a2603a1beed3839b238080e10124477b82530ea7ba08f2ff4b3a3a8490c"
+ },
+ {
+  "name": "B_35Hz.xls",
+  "size": 12553051,
+  "sha256": "56adcdba1c4f29f4ec8214d73936a0f950a840c9cf702ff9264f4aeef00d29cd"
+ },
+ {
+  "name": "B_40Hz.xls",
+  "size": 12548832,
+  "sha256": "570f2d4822365175eadf0c0de7aff09b17cf7534a3ec60671b3c125e21c8e31c"
+ },
+ {
+  "name": "B_60Hz.xls",
+  "size": 12520607,
+  "sha256": "e8c0f5db259232546f6fe8010f307c12d95c17dc82aad651c9b8b116436e0685"
+ },
+ {
+  "name": "B_65Hz.xls",
+  "size": 12507495,
+  "sha256": "2d6e17fdff30bbbefb56719fa834a3a3caa8ee5909e46f11a3897077a9478278"
+ },
+ {
+  "name": "B_70Hz.xls",
+  "size": 12474843,
+  "sha256": "8eb5e2af1396b21201c67a880849a44603c10e74e56a8529b3e6fb3bc0ec4900"
+ },
+ {
+  "name": "B_75Hz.xls",
+  "size": 12474061,
+  "sha256": "ebb010c7ccf09b327d55bf86b909366d6672a8ff6710638631a0a0c78a1ed989"
+ },
+ {
+  "name": "B_80Hz.xls",
+  "size": 12470970,
+  "sha256": "8df7e7263ba8d581e2206b24cb95c4d8be59488e805b4883deda8a89de100d22"
+ },
+ {
+  "name": "B_VS_0_40_0Hz.xls",
+  "size": 12602191,
+  "sha256": "fb3680da0ef0fce6c01424f88063ca9174fb63c6412669ec30c1b5170722fb8d"
+ },
+ {
+  "name": "C_20Hz.xls",
+  "size": 12528653,
+  "sha256": "c47643380d2ed6149f6df7657b1b282c07d00afaed92b81328ecab1fe18c4ff2"
+ },
+ {
+  "name": "C_25Hz.xls",
+  "size": 12474706,
+  "sha256": "e09e9803e5871369633e9f95c64bd7cb62cd2d6c06f08e33dddba691e79a7ebf"
+ },
+ {
+  "name": "C_30Hz.xls",
+  "size": 12435749,
+  "sha256": "944243639450fe1ff9d6c64c85fccae632e15ed466c8650d2cf39fb04d7497a1"
+ },
+ {
+  "name": "C_35Hz.xls",
+  "size": 12444073,
+  "sha256": "74f45915720897ad62696810e06e8f50e43beb5491ecd262bccf07c8de840e5a"
+ },
+ {
+  "name": "C_40Hz.xls",
+  "size": 12389397,
+  "sha256": "81ef62537aa4ebbc00329e2a25a2a4798aca014e5d503a9a1b9d3304ab5e238d"
+ },
+ {
+  "name": "C_60Hz.xls",
+  "size": 12395002,
+  "sha256": "37a53d262e97a8124d9e23e88c44a5887b4666a7f47172f5092ed438fbcc68a7"
+ },
+ {
+  "name": "C_65Hz.xls",
+  "size": 12444879,
+  "sha256": "e11797567cc34a9ce16062d6281e756c084d47ed5c52f6673b0c14c9106b7087"
+ },
+ {
+  "name": "C_70Hz.xls",
+  "size": 12458163,
+  "sha256": "9afca13b9fac06df6377a38bd2167e680318bd11c8bd4e70463c5457cd445367"
+ },
+ {
+  "name": "C_75Hz.xls",
+  "size": 12464688,
+  "sha256": "79834e22854f59eaa47113baadcab064a14e4b4800cf872c3e152fd75a95543f"
+ },
+ {
+  "name": "C_80Hz.xls",
+  "size": 12422443,
+  "sha256": "0d222fcaa9e782350e9f42d5638b5145a1d9542fcee83bb821e5fdabc71f269a"
+ },
+ {
+  "name": "C_VS_0_40_0Hz.xls",
+  "size": 12468151,
+  "sha256": "82d6b559b1d05b3b7cfc6414c25466b82edb4f290f1e72522391ecc417dfad24"
+ },
+ {
+  "name": "H_20Hz.xls",
+  "size": 12738273,
+  "sha256": "8d6088da2cbfa51b10cd9c39f6e1533fb91fa85b86d0ee828c41721181f69ae0"
+ },
+ {
+  "name": "H_25hz.xls",
+  "size": 12667626,
+  "sha256": "c086cbd8bda68b4214ff46bc38ba3fe7938390c0d2d4a58c497ada9bb755259b"
+ },
+ {
+  "name": "H_30Hz.xls",
+  "size": 12625995,
+  "sha256": "5ca8d9cdd6a4ff1e28fe7cbc1bfba369fa78944a16eb3e22ec7d8c6322b03b9b"
+ },
+ {
+  "name": "H_35Hz.xls",
+  "size": 12582864,
+  "sha256": "7ee6ca1101e9375858869a25211df38105be814d19d323e5fde8f147758b0f4f"
+ },
+ {
+  "name": "H_40Hz.xls",
+  "size": 12535574,
+  "sha256": "ec6e18a2fb78c14c3e854efa666832fa16a5c4610f910243628ebc35a4ff2e15"
+ },
+ {
+  "name": "H_60Hz.xls",
+  "size": 12503513,
+  "sha256": "be528bd605fb55facd2ba646d602c8329986894c7a62ffdb7833f8233930d761"
+ },
+ {
+  "name": "H_65Hz.xls",
+  "size": 12481421,
+  "sha256": "fae76b9bea806b53e1ba723041b153a5188d5863c6caca24ef352c7b5f35cf6f"
+ },
+ {
+  "name": "H_70Hz.xls",
+  "size": 12470718,
+  "sha256": "c2dcf1ebb773809c0898ee9f2903a94669a51808efd00e2d1b467ff060b31cba"
+ },
+ {
+  "name": "H_75Hz.xls",
+  "size": 12469948,
+  "sha256": "328c86abe3b85b723d69e8550270634a9dc1ca8462e9eb3e4227eed03208a677"
+ },
+ {
+  "name": "H_80Hz.xls",
+  "size": 12456507,
+  "sha256": "7e15d85a1e9c33c52ee3f28c306c0df4b84d23b1ce348adfc85e1b8bfc75cd25"
+ },
+ {
+  "name": "H_VS_0_40_0Hz.xls",
+  "size": 12581965,
+  "sha256": "8d2e12a30a065c4fb9f7a5a30a8981fb23fd5fcfc899efb4086ad2622e9a8ab3"
+ },
+ {
+  "name": "I_20Hz.xls",
+  "size": 12614360,
+  "sha256": "966056ea4a92bef4460794a2c245e3730312eb30064d1da4190b2a0676c56f88"
+ },
+ {
+  "name": "I_25Hz.xls",
+  "size": 12598331,
+  "sha256": "37bbad18c8c36f919fb837c45c96fe920ff3b8309c1f674c0eb28e65ef0106e5"
+ },
+ {
+  "name": "I_30Hz.xls",
+  "size": 12545973,
+  "sha256": "b8bb15799a7a11d45e6882bbc803de88a4930bce6e6a07030df20aaea50c2908"
+ },
+ {
+  "name": "I_35Hz.xls",
+  "size": 12513171,
+  "sha256": "40c2fa3e11ae4ea76c42f65ba485df47f522985fb9c4e26cb1a57306ac2ecc85"
+ },
+ {
+  "name": "I_40Hz.xls",
+  "size": 12500200,
+  "sha256": "8b4fd5d34a6b2f96d34ed5441ea202b7ed2a447f918ddc1a99b187719e7b30d6"
+ },
+ {
+  "name": "I_60Hz.xls",
+  "size": 12465620,
+  "sha256": "ce3c7e7d434decfe729000e5c40261a868f12c4941bad3ef14929558e89dcca4"
+ },
+ {
+  "name": "I_65Hz.xls",
+  "size": 12461072,
+  "sha256": "a20116fcc0d999421283d476a35deb080bbe52c5bad26ad19ac19697daeb5ab6"
+ },
+ {
+  "name": "I_70Hz.xls",
+  "size": 12469566,
+  "sha256": "ad0a3e0c66049453c97a7d96b0c2c7ad9a973e3f53ed0c651c69ccdf319e189c"
+ },
+ {
+  "name": "I_75Hz.xls",
+  "size": 12479459,
+  "sha256": "66411de956d7237a808eb9c6ad29ddc46a028dd179f0cfc340f3e1253a7aad40"
+ },
+ {
+  "name": "I_80Hz.xls",
+  "size": 12459823,
+  "sha256": "170bc15d311da5a8560e7e34985005b6555532b85b2591bc81027dbcf90e0f00"
+ },
+ {
+  "name": "I_VS_0_40_0Hz.xls",
+  "size": 12551008,
+  "sha256": "b525d19dc62ada190b00ed6c1da3ac2dff2ea566b1ab20ae3c736e323ee2bca1"
+ },
+ {
+  "name": "O_20Hz.xls",
+  "size": 12671953,
+  "sha256": "13d800436339dfac29eb6cee6602ba45c829a879fae87d6f23203687bb8d61bd"
+ },
+ {
+  "name": "O_25Hz.xls",
+  "size": 12626951,
+  "sha256": "acec7bd586673e4b3fae10ca78bce486b590bd9445e3ad313a01da9cb1e7c5f0"
+ },
+ {
+  "name": "O_30Hz.xls",
+  "size": 12583023,
+  "sha256": "1ad70c07db61374ea47550d41ff89db52592fd86dc448a1a7c25f4f2f41b3275"
+ },
+ {
+  "name": "O_35Hz.xls",
+  "size": 12549364,
+  "sha256": "2e45648d12b316c329300527e8f4d3bdba61266211f8adffaaecb57d7ac6a68a"
+ },
+ {
+  "name": "O_40Hz.xls",
+  "size": 12541193,
+  "sha256": "0a19cd807d34af1b1d4c6e63c04d4e39adea550dde65a67ca0b9aaf63b8c6243"
+ },
+ {
+  "name": "O_60Hz.xls",
+  "size": 12518618,
+  "sha256": "658068baccb6c7564d449ad56baa2fc74fe6fd56d1b77e30bc335453e6497a63"
+ },
+ {
+  "name": "O_65Hz.xls",
+  "size": 12507909,
+  "sha256": "1d1e99ec2e53b9dd1a6e14b19bed8c32a434940268b2ca9371fc3e98d2902fd5"
+ },
+ {
+  "name": "O_70Hz.xls",
+  "size": 12493569,
+  "sha256": "5a6f3f811ea0df8f8ed4d6d6f65f40f6b954458194ae0849f6dfc33f38772ac8"
+ },
+ {
+  "name": "O_75Hz.xls",
+  "size": 12479155,
+  "sha256": "7830e7b8023d83561dfc1cd4b0ba0b1663e10fcfe2c7e88010141610fa673a96"
+ },
+ {
+  "name": "O_80Hz.xls",
+  "size": 12465577,
+  "sha256": "4f630c09ff9205b0dc8ba8f0e6607e7a9927fbe5bb83b80ac20045e961db2fbb"
+ },
+ {
+  "name": "O_VS_0_40_0Hz.xls",
+  "size": 12600626,
+  "sha256": "27389450174fd30be053259f369a0834ba8aff26555da4ddeae6d431048eeedd"
+ }
+]

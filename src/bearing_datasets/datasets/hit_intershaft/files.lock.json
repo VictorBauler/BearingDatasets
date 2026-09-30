@@ -1,0 +1,27 @@
+[
+ {
+  "name": "data1.npy",
+  "size": 660603008,
+  "sha256": "44aae77a964bc4269cd4e5648981385f416ad9a9c6e73e8ad508bb428dbec654"
+ },
+ {
+  "name": "data2.npy",
+  "size": 294912128,
+  "sha256": "daa9c7932f07a32288d695968b8b849152f35dfedd1fde804f42dfcc6fc6fd8d"
+ },
+ {
+  "name": "data3.npy",
+  "size": 660603008,
+  "sha256": "19bb052d1a95a8c1af6bcbbe2dfe52f68a1e66f78df939b19eaa440fec5a1872"
+ },
+ {
+  "name": "data4.npy",
+  "size": 660603008,
+  "sha256": "bf0161a9b0a233026166809cea22fcf911a40313c12407192cf227dadf24b111"
+ },
+ {
+  "name": "data5.npy",
+  "size": 589824128,
+  "sha256": "d6c79621b401a6224189e2ac0ede312dec44cecc65b5a19646e934c7d4f9c90e"
+ }
+]

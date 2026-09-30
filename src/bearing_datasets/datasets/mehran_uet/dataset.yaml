@@ -1,0 +1,26 @@
+name: mehran_uet
+title: Mehran UET induction motor bearing dataset, triaxial vibration and three-phase current under varying load
+description: |
+  Three-phase induction motor driving an alternator through a belt (NCRA Condition
+  Monitoring Systems Lab, Mehran UET). The drive-end 6204-2Z/C3 bearing is replaced by
+  bearings with inner or outer race faults of 0.7, 0.9, 1.1, 1.3, 1.5 and 1.7 mm, each run
+  at 100, 200 and 300 W load. Triaxial MEMS accelerometer (ADXL355, g) on the motor housing
+  near the drive-end bearing (z up) and three phase currents (A), recorded together at
+  10 kHz (the vibration and current files of each fault condition are one acquisition, so
+  they form one 6-channel recording). Healthy: vibration without and with the belt/pulley
+  (load not stated) and one healthy current file (load not stated), and current of a
+  broken rotor bar fault at 100 and 300 W; these do not pair up and are separate
+  recordings. The ADXL355 range is +-2.048 g: some fault recordings clip there (up to 16%
+  of the y-axis samples in 0.7inner-100watt).
+license: CC-BY-4.0
+size: "download 0.33 GB, built 0.03 GB (measured)"
+homepage: https://data.mendeley.com/datasets/fm6xzxnf36/2
+citation: |
+  Kumar, D., Mehran, S., Shaikh, M. Z., Hussain, M., Chowdhry, B. S., & Hussain, T. (2022).
+  Triaxial bearing vibration dataset of induction motor under varying load conditions.
+  Data in Brief, 42, 108315. doi:10.1016/j.dib.2022.108315
+sources:
+  - {type: mendeley, name: vibration, id: fm6xzxnf36, version: 2}
+  - {type: mendeley, name: current, id: gxdd74czwh, version: 1}
+columns:
+  load_condition: motor load (100, 200 or 300 W) or a note when not stated

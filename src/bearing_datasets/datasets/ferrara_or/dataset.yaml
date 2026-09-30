@@ -1,0 +1,28 @@
+name: ferrara_or
+title: University of Ferrara acceleration signals of rolling element bearings with artificial outer ring defects
+description: |
+  SKF 1205 ETN9 self-aligning ball bearings with rectangular EDM defects on the outer ring,
+  of three nominal widths (D1 ~0.93 mm, D2 ~1.66 mm, D3 ~2.50 mm), each made on three
+  different bearings (a, b, c; measured widths in fault_size_mm), at 1000 and 2000 N and
+  20, 30 and 40 Hz: 54 recordings of 15 s, one accelerometer (PCB 356B21) on top of the
+  case, radial, in g, 51.2 kHz (25.6 kHz for bearing D2a). There are no healthy
+  recordings. Three bearings per defect size allow testing on unseen bearings of the same
+  size (split by bearing_id).
+license: CC-BY-4.0
+size: "download 0.13 GB, built 0.11 GB (measured)"
+homepage: https://doi.org/10.17632/8wdzm5gwng.1
+citation: |
+  Gabrielli, A., Battarra, M., Mucchi, E., & Dalpiaz, G. (2022). Acceleration signals of
+  rolling element bearings with artificial defects. Mendeley Data, V1.
+  doi:10.17632/8wdzm5gwng.1
+  Gabrielli, A., Battarra, M., Mucchi, E., & Dalpiaz, G. (2022). A procedure for the
+  assessment of unknown parameters in modeling defective bearings through multi-objective
+  optimization. Mechanical Systems and Signal Processing, 185, 109783.
+  doi:10.1016/j.ymssp.2022.109783
+sources:
+  - {type: mendeley, id: 8wdzm5gwng, version: 1}
+columns:
+  bpfo: >-
+    SKF 1205 ETN9 as in ferrara_rtf (same model and lab; Arpa et al. 2024, Table 2), per row
+  fault_size_mm: measured width of the outer ring defect
+  bearing_id: defect label = bearing (D1a-D3c)

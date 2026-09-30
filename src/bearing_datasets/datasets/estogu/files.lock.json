@@ -1,0 +1,27 @@
+[
+ {
+  "name": "Dataset_Structure.pdf",
+  "size": 95754,
+  "sha256": "810deeaf9eda95ba4e62941feb27742d5d409ef9dcd54185539bc4f148cf8ad4"
+ },
+ {
+  "name": "Metadata.zip",
+  "size": 556734,
+  "sha256": "a119c2764daa69656e00f81ef6c478d946738ff94eb88e608e43ec463379ff2d"
+ },
+ {
+  "name": "README.md",
+  "size": 4887,
+  "sha256": "fdaafaa1df545ff43fcfedca58964bef5c8ed29d43c48b3f9612a3a5298d662f"
+ },
+ {
+  "name": "With_Driver_Dataset.zip",
+  "size": 12982037924,
+  "sha256": "005d5447d588d8eece713415eea25613524e4d79ad2337f2db455add08326ce2"
+ },
+ {
+  "name": "Without_Driver_Dataset.zip",
+  "size": 1209595738,
+  "sha256": "e92c25efa38f8f02b53803bc7dc8cd32d707c15714a3412af9383cf5cc12f48a"
+ }
+]

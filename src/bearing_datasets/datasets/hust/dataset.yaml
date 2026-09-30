@@ -1,0 +1,32 @@
+name: hust
+title: HUST bearing dataset (Hanoi University of Science and Technology)
+description: |
+  Ball bearings of 5 types (6204-6208) with inner, outer, ball and compound
+  (inner+ball, inner+outer, outer+ball) defects, under 3 loads (0, 200, 400 W).
+  One accelerometer, 51.2 kHz, 10 s per recording.
+  Note: the `fs` variable inside the .mat files is the shaft rotation frequency
+  (Hz), not the sampling rate. The auxiliary `rpm`/`ru`/`ru_raw` arrays are
+  undocumented and present only in some files, so they are not stored.
+license: CC-BY-4.0
+size: "download 0.67 GB, built 0.30 GB (measured)"
+homepage: https://data.mendeley.com/datasets/cbv7jyx4p9/3
+citation: |
+  Thuan, N. D., & Hong, H. S. (2023). HUST bearing: a practical dataset for ball
+  bearing fault diagnosis. BMC Research Notes, 16, 138. Data: Mendeley Data,
+  V3, doi:10.17632/cbv7jyx4p9.3
+sources:
+  - type: mendeley
+    id: cbv7jyx4p9
+    version: 3
+    include: ["HUST bearing dataset/*.mat"]
+    strip_prefix: "HUST bearing dataset/"
+columns:
+  bpfo: >-
+    computed from the paper's bearing dimensions (bore, outer and ball diameter, number of
+    balls per type); the paper gives no pitch diameter, taken as (bore + outer) / 2
+  bearing_model: bearing type, 6204 to 6208 (encoded in the file name)
+  rpm: from the shaft frequency stored in the `fs` variable of the .mat files
+  load: motor load in W (0, 200 or 400)
+  bearing_id: >-
+    fault code + bearing type (e.g. IB7); assumes one bearing per fault and type,
+    reused for the 3 loads (the dataset has a single bearing of each combination)

@@ -1,0 +1,63 @@
+[project]
+name = "bearing-datasets"
+dynamic = ["version"]
+description = "Reproducible download and standardized Parquet storage for bearing / rotating-machinery fault datasets"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "pyarrow>=14",
+    "pandas>=2.0",
+    "pyyaml>=6",
+    "scipy>=1.10",
+    "tqdm>=4.60",
+    "nptdms>=1.7",
+    "openpyxl>=3.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/VictorBauler/BearingDatasets"
+Documentation = "https://github.com/VictorBauler/BearingDatasets/blob/main/docs/guide.md"
+Issues = "https://github.com/VictorBauler/BearingDatasets/issues"
+
+[project.optional-dependencies]
+polars = ["polars>=1.0"]
+all = ["bearing-datasets[polars]"]
+
+[project.scripts]
+bearing-datasets = "bearing_datasets.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+    "pre-commit>=3.5",
+    "ipykernel>=6.29",
+    "nbclient>=0.10",
+    "matplotlib>=3.8",
+    "bearing-datasets[all]",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/bearing_datasets/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bearing_datasets"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["SIM905"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: builds real datasets (needs the datasets built under BEARING_DATASETS_ROOT)"]
+addopts = "-m 'not integration'"

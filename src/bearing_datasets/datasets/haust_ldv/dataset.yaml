@@ -1,0 +1,30 @@
+name: haust_ldv
+title: HAUST-LDV bearing dataset, vibration measured without contact by laser Doppler vibrometry (Henan University of Science and Technology)
+description: |
+  SKF 6206 deep groove ball bearings on an SKF precision vibration test platform (AC motor,
+  spindle, pneumatic loading), measured without contact: a Polytec MSL-7100 laser Doppler
+  vibrometer aimed at the outer ring gives its radial vibration velocity. Healthy and
+  pitting on the inner race (0.2, 0.3, 0.5 mm), outer race (0.2, 0.3, 0.5 mm) or a roller
+  (0.5, 0.8, 1.0 mm), under load A (100 N axial, 0 N radial) and B (100 N axial, 50 N
+  radial), at 1800 rpm: 20 recordings of 34 s at 48 kHz. The files hold the velocity
+  (side1, unit not stated) and a second, undocumented channel env1 (probably an envelope
+  signal from the vibrometer electronics), stored as given.
+license: CC-BY-4.0
+size: "download 1.12 GB, built 0.38 GB (measured)"
+homepage: https://doi.org/10.17632/3d5kcz83ny.1
+citation: |
+  Yang, H., Xue, Y., Cai, H., & Wang, M. (2026). HAUST-LDV-bearing-dataset: Vibration signals
+  of rolling bearings under multiple fault types acquired by non-contact laser Doppler
+  vibrometry. Mendeley Data, V1. doi:10.17632/3d5kcz83ny.1
+sources:
+  - type: mendeley
+    id: 3d5kcz83ny
+    version: 1
+    strip_prefix: "HAUST-LDV-bearing-dataset/"
+columns:
+  bpfo: >-
+    SKF 6206: 9 balls of 9.525 mm on a 46 mm pitch, from published studies of this bearing
+    (not the dataset's documents)
+  fault_size_mm: pitting size (0 if healthy)
+  load_case: A (100 N axial, 0 N radial) or B (100 N axial, 50 N radial)
+  radial_load_n: radial load in N (the axial load is 100 N in both cases)

@@ -1,0 +1,40 @@
+name: upm_citef
+title: UPM CITEF spherical roller bearing databases (Universidad Politecnica de Madrid), 2020, 2021 and 2023
+description: |
+  Railway axlebox bearing test rig of the Railway Technology Research Centre (CITEF),
+  Universidad Politecnica de Madrid: FAG 22205E1KC3 spherical roller bearings with
+  milled defects, loaded through a tightening tower. Three studies, 40 kHz, three
+  accelerometers (Rod_1 on the housing of the faulty bearing, Rod_2 on the other
+  housing, Rod_3 on the tightening tower); unit not stated.
+  2020: rolling element defects at 4 depths (0.006-0.027 mm) + healthy, 200/350/500 rpm,
+  1.4 kN, 3 repeats, 30 s. 2021: combined outer race + rolling element defects at 4
+  levels + healthy, same speeds and load, 3 repeats, 45 s. 2023: outer race, inner race
+  or rolling element defects at 4 levels + healthy, 500 rpm, 400 kg (3.92 kN), 58 s.
+  Defect depths per component are in depth_or_mm / depth_ir_mm / depth_re_mm.
+license: CC-BY-4.0
+size: "download 3.5 GB, built 4.5 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.3898942
+citation: |
+  Soto-Ocampo, C. R., Mera, J. M., Cano-Moreno, J. D., & Garcia-Bernardo, J. L. (2020).
+  Low-cost, high-frequency, data acquisition system for condition monitoring of rotating
+  machinery through vibration analysis - case study. Sensors, 20(12), 3493.
+  doi:10.3390/s20123493
+  Soto-Ocampo, C. R., Cano-Moreno, J. D., Mera, J. M., & Maroto, J. (2021). Bearing
+  database - combined failure. Zenodo. doi:10.5281/zenodo.5084405
+  Soto-Ocampo, C. R., Maroto, J., Cano-Moreno, J. D., & Mera, J. M. (2023). Bearing
+  database - evaluation of isolated cases. Zenodo. doi:10.5281/zenodo.8241764
+sources:
+  - {type: zenodo, name: study2020, record: "3898942", include: "*.mat"}
+  - {type: zenodo, name: study2021, record: "5084405", include: "*.mat"}
+  - {type: zenodo, name: study2023, record: "8241764", include: "*.mat"}
+columns:
+  bpfo: >-
+    official Schaeffler values of the FAG 22205E1KC3 test bearing from the companion paper
+    (Sensors 2020, 20, 3493, Table 1); its BSF 5.4030 is 2 x BSF, halved
+  severity: fault level F0 (healthy) to F4 (deepest), as in the file name
+  depth_or_mm: depth of the outer race defect (0 if none)
+  depth_ir_mm: depth of the inner race defect (0 if none)
+  depth_re_mm: depth of the rolling element defects (0 if none)
+  load: radial load in kN
+  study: 2020, 2021 or 2023 (Zenodo record)
+  repetition: repeat number from the file name

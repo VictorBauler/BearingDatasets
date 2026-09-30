@@ -1,0 +1,21 @@
+name: uc204
+title: UC204 bearing outer race fault vibration dataset under variable load (Universidade Federal da Paraiba)
+description: |
+  UC204 insert ball bearing (GBR), healthy and with an artificial outer race groove of
+  0.18, 0.36, 0.54 or 0.72 mm length, at about 1500 rpm (25 Hz) under 0.25, 0.4 and 0.6 hp
+  load. ADXL210 accelerometer near the bearing housing, NI USB-6212 (16 bit), 3.2 kHz, 10 s
+  per recording, 10 recordings per condition: 150 recordings (unit not stated). Mendeley
+  record szfkx3mzcm is a byte-identical duplicate of this one.
+license: CC-BY-4.0
+size: "download 0.06 GB, built 0.01 GB (measured)"
+homepage: https://doi.org/10.17632/95ybrwzhm8.1
+citation: |
+  Santos, R., Souto, C., Duarte, A., & Pereira, G. (2026). Experimental vibration dataset for
+  rolling bearing outer race fault diagnosis under variable load conditions. Mendeley Data,
+  V1. doi:10.17632/95ybrwzhm8.1
+sources:
+  - {type: mendeley, id: 95ybrwzhm8, version: 1}
+columns:
+  fault_size_mm: length of the outer race groove (0 if healthy)
+  load: motor load in hp
+  rpm: nominal shaft speed (about 1500 rpm)

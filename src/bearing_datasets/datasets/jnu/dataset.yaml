@@ -1,0 +1,23 @@
+name: jnu
+title: Jiangnan University (JNU) bearing dataset
+description: |
+  Roller bearing with seeded faults (wire-cut dents 0.3 mm wide x 0.05 mm deep) on the
+  inner race, outer race and roller, plus healthy, at 600, 800 and 1000 rpm: 12 recordings.
+  One PCB MA352A60 accelerometer in the vertical direction, 50 kHz. Fault recordings
+  last 10 s, normal ones 30 s. The amplitude is clipped at a different range in
+  different files (the input range was changed between recordings).
+license: unspecified (no license in the repository; cite the paper)
+size: "download 0.08 GB, built 0.02 GB (measured)"
+homepage: https://github.com/ClarkGableWang/JNU-Bearing-Dataset
+citation: |
+  Li, K., Ping, X., Wang, H., Chen, P., & Cao, Y. (2013). Sequential fuzzy diagnosis
+  method for motor roller bearing in variable operating conditions based on vibration
+  analysis. Sensors, 13(6), 8013-8041. doi:10.3390/s130608013
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/ClarkGableWang/JNU-Bearing-Dataset/main/
+files: [ib600_2.csv, ib800_2.csv, ib1000_2.csv, n600_3_2.csv, n800_3_2.csv, n1000_3_2.csv,
+        ob600_2.csv, ob800_2.csv, ob1000_2.csv, tb600_2.csv, tb800_2.csv, tb1000_2.csv]
+columns:
+  fault_size_mm: width of the wire-cut dent (0.3 mm; depth 0.05 mm); 0 if healthy

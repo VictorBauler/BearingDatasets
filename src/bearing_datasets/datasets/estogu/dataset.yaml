@@ -1,0 +1,29 @@
+name: estogu
+title: "ESTOGU: a multimodal motor condition monitoring dataset for fault diagnosis in electrical machines (Eskisehir Technical University)"
+description: |
+  2-pole induction motor (Gamak AGM 90 L 2, 2.2 kW class) driving a synchronous generator
+  with a resistor bank load, Electrical Machines Laboratory, Eskisehir Technical
+  University. Six conditions: normal, bearing ball defect (BB), bearing ring defect (BR;
+  race not stated, condition bearing), 3 and 5 broken rotor bars (drilled), stator
+  inter-turn short. Inverter-fed at 11 frequencies (45-50 Hz, 0.5 Hz steps; nominal rpm =
+  Hz x 60) and grid-fed at 50 Hz, each with 6 resistor-bank positions (no load, 111, 56,
+  38, 29, 23 ohm): 432 recordings of 20 s at 35 kHz. Triaxial accelerometer on the motor fan
+  cover, three phase currents (shunts, 100 mV/div) and one line voltage (200 V/div), all
+  stored in V. The README says the bearing defects were drilled, the setup description
+  says worn bearings from an industrial maintenance workshop were used; fault_origin is
+  therefore unknown for BB and BR.
+license: CC-BY-4.0
+size: "download 14.2 GB, built 3.0 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.18222578
+citation: |
+  Demir, A., Oruklu, K., Basaran, M., Agalar, S., Ergin, S., & Necati, A. (2026). ESTOGU: A
+  multimodal motor condition monitoring dataset for fault diagnosis in electrical machines.
+  Zenodo. doi:10.5281/zenodo.18222578
+sources:
+  - {type: zenodo, record: "18222578"}
+columns:
+  supply: inverter (With_Driver) or grid (Without_Driver)
+  supply_hz: supply frequency in Hz
+  rpm: nominal speed (supply frequency x 60, from the dataset's Motor RPM Values table)
+  load_position: resistor bank switch position 0-5
+  load_resistance: resistance of that position (no load, 111, 56, 38, 29, 23 ohm)

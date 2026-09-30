@@ -1,0 +1,224 @@
+name: hust_transmission
+title: HUST transmission system dataset (Huazhong University of Science and Technology), distributed and compound faults
+description: |
+  SQI transmission chain rig: motor (Marathon D393A), coupling, shaft on two ER-16K
+  bearings, belt and pulley, Hub City M2 gearbox. 14 system health states from the Readme:
+  healthy; single faults of the motor (mechanical), left bearing (outer race), shaft (crack),
+  right bearing (inner race), right bearing housing (warping), belt pulley (eccentricity),
+  gearbox (missing tooth); and 6 compound states. Each at 20, 30, 40, 50, 60, 70 Hz and one
+  0-70-0 Hz run-up/run-down: 98 recordings (10.24 s; 30.7 s for the run), four single-axis accelerometers (g)
+  on the motor, both bearing housings and the gearbox, 25.6 kHz. native_label keeps the
+  component codes (e.g. M1_LB1_S0_RB0_RH0_BP0_G1). No license stated.
+license: unspecified (cite the paper)
+size: "download 1.7 GB, built 0.37 GB (measured)"
+homepage: https://github.com/CHAOZHAO-1/HUSTTransmissionsystem-dataset
+citation: |
+  Zhao, C., Shen, W., Zio, E., & Ma, H. (2025). Environment-aware graph relational reasoning
+  for interpretable and generalizable mechanical transmission system distributed fault
+  diagnosis. Expert Systems with Applications, 130962. doi:10.1016/j.eswa.2025.130962
+sources:
+  - type: http
+    name: google-drive
+    urls:
+      Type1/0700.csv: https://drive.usercontent.google.com/download?id=1Z20eir_dRPO37hh8mYkewnr9cCzGQKZZ&export=download&confirm=t
+      Type1/20.csv: https://drive.usercontent.google.com/download?id=1V22GapYB-z3igG5FIdL6jGlvVvtaQITa&export=download&confirm=t
+      Type1/30.csv: https://drive.usercontent.google.com/download?id=1cd16mJPtTY-dtXE5I-K5xK6SftQvw-qa&export=download&confirm=t
+      Type1/40.csv: https://drive.usercontent.google.com/download?id=1z63i_-tEMsJPWdSC18EabZtydyucqYie&export=download&confirm=t
+      Type1/50.csv: https://drive.usercontent.google.com/download?id=1SPGU-Xp5tWHxbxs_LjfrNfWGAtPSFv32&export=download&confirm=t
+      Type1/60.csv: https://drive.usercontent.google.com/download?id=193LMO9KWdg0bj9TZiq9eXKEufROLS3OG&export=download&confirm=t
+      Type1/70.csv: https://drive.usercontent.google.com/download?id=1oPvycSG2B3HYEjEpA5V34pS7QLPZd3WT&export=download&confirm=t
+      Type10/0700.csv: https://drive.usercontent.google.com/download?id=1KG_hmZKv1b3V1Xx_Nb-Zckdd79HE_pJ2&export=download&confirm=t
+      Type10/20.csv: https://drive.usercontent.google.com/download?id=1aO-1OSRfCiKkG4Skw76jvNiznhik0fPl&export=download&confirm=t
+      Type10/30.csv: https://drive.usercontent.google.com/download?id=1j_3YEY3VWrxhfZxyB5iXQECGdWGrkDnA&export=download&confirm=t
+      Type10/40.csv: https://drive.usercontent.google.com/download?id=1D5y7QsAjYH9SQc4cPR30fMFnGiCT4vH6&export=download&confirm=t
+      Type10/50.csv: https://drive.usercontent.google.com/download?id=1tfseUA-ocJmXetS9SkNtMVIVvf0WTH23&export=download&confirm=t
+      Type10/60.csv: https://drive.usercontent.google.com/download?id=111cSCmWpgC0RWka1UjdDj5oFw-P57g4J&export=download&confirm=t
+      Type10/70.csv: https://drive.usercontent.google.com/download?id=1Ys8789euPvXDnbPTWaHYxfsYG6KPlexv&export=download&confirm=t
+      Type11/0700.csv: https://drive.usercontent.google.com/download?id=1SjO6IZMHPBOoZ1WfqrDSLDF0qPYjz8AK&export=download&confirm=t
+      Type11/20.csv: https://drive.usercontent.google.com/download?id=1bgN6EnGWhBBP0IGANs_t3-uAGHszg3an&export=download&confirm=t
+      Type11/30.csv: https://drive.usercontent.google.com/download?id=1MRYv2YBC1OSjOcLh8-Y2e3gWdLiMlLSZ&export=download&confirm=t
+      Type11/40.csv: https://drive.usercontent.google.com/download?id=1BE7kRJFOg9zAq9A2E0OVG6WbXoO_tosA&export=download&confirm=t
+      Type11/50.csv: https://drive.usercontent.google.com/download?id=1FGOhC9KlnDF0zNvxyx1iofZAtxRIakZk&export=download&confirm=t
+      Type11/60.csv: https://drive.usercontent.google.com/download?id=1swXh3e8qi2LZSowam9pK-vhOcSUhXGQC&export=download&confirm=t
+      Type11/70.csv: https://drive.usercontent.google.com/download?id=1Tu0u4AE6VaVkD-3VSgnfwANTgnmBYwux&export=download&confirm=t
+      Type12/0700.csv: https://drive.usercontent.google.com/download?id=1V1EHX4j1jsxb5ULA8TfCy1gbVdsdtzif&export=download&confirm=t
+      Type12/20.csv: https://drive.usercontent.google.com/download?id=1AXQyISs7-nBJi2lyzn93saL785sHDvJI&export=download&confirm=t
+      Type12/30.csv: https://drive.usercontent.google.com/download?id=14ueJp-0P0wSa6xGQHBE_4leLAzhqPK5O&export=download&confirm=t
+      Type12/40.csv: https://drive.usercontent.google.com/download?id=1qqEQ7hx9KEampQahbB2k4HneUFBmGf80&export=download&confirm=t
+      Type12/50.csv: https://drive.usercontent.google.com/download?id=1xUyfbkzXBaPHfe8wkoMqRFu9t2fGTGjz&export=download&confirm=t
+      Type12/60.csv: https://drive.usercontent.google.com/download?id=1bWg25tkn1DJKowyneeahV-HzucvQGyFl&export=download&confirm=t
+      Type12/70.csv: https://drive.usercontent.google.com/download?id=15qZ53lYRqDhrmhL_1aAu0wLkmRmBpKY_&export=download&confirm=t
+      Type13/0700.csv: https://drive.usercontent.google.com/download?id=19OMRcFOur2BSe0uXTuZR7mkgkK9x2fgJ&export=download&confirm=t
+      Type13/20.csv: https://drive.usercontent.google.com/download?id=1pnzL0ld-LVBgZo_KyrJRYOt3_ZENN_jF&export=download&confirm=t
+      Type13/30.csv: https://drive.usercontent.google.com/download?id=1KPzxYwXcB3iaJBJaw4qoSPAA-W8SmVOU&export=download&confirm=t
+      Type13/40.csv: https://drive.usercontent.google.com/download?id=1Y-nvo27nQy6L1pJz7aecIKPQxEOWlGER&export=download&confirm=t
+      Type13/50.csv: https://drive.usercontent.google.com/download?id=1xvEkgUrEs1PWtRbgkwDMrt7WWxzP6P7f&export=download&confirm=t
+      Type13/60.csv: https://drive.usercontent.google.com/download?id=1JHmVaAOGNP81JmeBXU_XSwnxfKZlgHrS&export=download&confirm=t
+      Type13/70.csv: https://drive.usercontent.google.com/download?id=1B_kHQrnjLs9HsQAZ9C2deTo4b1eH5-lY&export=download&confirm=t
+      Type14/0700.csv: https://drive.usercontent.google.com/download?id=1GqvsxpvYE-I0LJYPScyaUK2PvsfotyVF&export=download&confirm=t
+      Type14/20.csv: https://drive.usercontent.google.com/download?id=1ZQs8VFpxH6tANdwthfYkRVzug2YyI9Ur&export=download&confirm=t
+      Type14/30.csv: https://drive.usercontent.google.com/download?id=16BzIZJnZvGgJiaCyBOvihBRRq81Rq77x&export=download&confirm=t
+      Type14/40.csv: https://drive.usercontent.google.com/download?id=1f0I0qNyIPLyQaeIZ8-Cu3ooNkIFVr066&export=download&confirm=t
+      Type14/50.csv: https://drive.usercontent.google.com/download?id=198mvKRhtnX_zG_KgMS_ezF-qbCZq3WX8&export=download&confirm=t
+      Type14/60.csv: https://drive.usercontent.google.com/download?id=1qGJOqxfjiZeFKLLIrKRm-qlIffNqL3zX&export=download&confirm=t
+      Type14/70.csv: https://drive.usercontent.google.com/download?id=1izkesMOszjWXNLm8TEAzMMn0bR9hjTdd&export=download&confirm=t
+      Type2/0700.csv: https://drive.usercontent.google.com/download?id=1EG3qrTS1uuCNpU6zLrSbSRjeOY4GT5uY&export=download&confirm=t
+      Type2/20.csv: https://drive.usercontent.google.com/download?id=1lN_IlRLZKmfZ2j9-sMdTgTScYxShKxi_&export=download&confirm=t
+      Type2/30.csv: https://drive.usercontent.google.com/download?id=12cHoOIz2pYE8iAFR2sBoDCiyxKBG5R5V&export=download&confirm=t
+      Type2/40.csv: https://drive.usercontent.google.com/download?id=1o-nv6TZSLLySBC-_DeOBif6JbfbEeFoa&export=download&confirm=t
+      Type2/50.csv: https://drive.usercontent.google.com/download?id=1Yt35w5sKm9O3zETS6GrsUkKiMz5OstKs&export=download&confirm=t
+      Type2/60.csv: https://drive.usercontent.google.com/download?id=1ppUhsCKnYSXEIAt7Qjz_Tpo1-Fi25x_E&export=download&confirm=t
+      Type2/70.csv: https://drive.usercontent.google.com/download?id=1MNJmAoEh7FGIv_cd6h4zQwWD30HQ6mMM&export=download&confirm=t
+      Type3/0700.csv: https://drive.usercontent.google.com/download?id=1dTWrhv6qCCz0v8nhw28gCB6WwH645u6Q&export=download&confirm=t
+      Type3/20.csv: https://drive.usercontent.google.com/download?id=1A40_tcAzp8sPllsDVLQEc_lqigAaxsV-&export=download&confirm=t
+      Type3/30.csv: https://drive.usercontent.google.com/download?id=1iaayEoDNXLhyutGd7cHD9HrhjbJ_gzsk&export=download&confirm=t
+      Type3/40.csv: https://drive.usercontent.google.com/download?id=1vgzgNQt9X5_5JC8_5trOtG35QDhVWOYV&export=download&confirm=t
+      Type3/50.csv: https://drive.usercontent.google.com/download?id=10zd1ApWRqu-fBrAY3JvOwn3RbqfbZVGQ&export=download&confirm=t
+      Type3/60.csv: https://drive.usercontent.google.com/download?id=1zKTekZnB5SAsSuv02J1pJuMoYSGBv6Cx&export=download&confirm=t
+      Type3/70.csv: https://drive.usercontent.google.com/download?id=1v4wCKD9qdD-9bmbs-tHM0D8AVnKK6WpA&export=download&confirm=t
+      Type4/0700.csv: https://drive.usercontent.google.com/download?id=15dbQ5xGMpcpKtgNIMDdKuVuo44y5a9Jm&export=download&confirm=t
+      Type4/20.csv: https://drive.usercontent.google.com/download?id=1TjoRVMsd6TNEzpMtJS-NDM3WGtTKCb1L&export=download&confirm=t
+      Type4/30.csv: https://drive.usercontent.google.com/download?id=1ccN60rmczzEe9_UnNNt5yYV4va4Cytz3&export=download&confirm=t
+      Type4/40.csv: https://drive.usercontent.google.com/download?id=1k0PS-AqP_79YA6lwoAcHN8A-nmdtLyyu&export=download&confirm=t
+      Type4/50.csv: https://drive.usercontent.google.com/download?id=1fsweloTa_yLiwLtxOdTGxT8fDzrUWZ-_&export=download&confirm=t
+      Type4/60.csv: https://drive.usercontent.google.com/download?id=1WAUviq_mF9f4mrTIgkd8RPSUt7oeR9nF&export=download&confirm=t
+      Type4/70.csv: https://drive.usercontent.google.com/download?id=14LPPoeXnMHtWwQC71-lP78gi7-DwdYfh&export=download&confirm=t
+      Type5/0700.csv: https://drive.usercontent.google.com/download?id=1ZMyIC-sXfDmOvgxoyieiMlNuemCu3544&export=download&confirm=t
+      Type5/20.csv: https://drive.usercontent.google.com/download?id=1s0PTeA-gFDP3B6xkVdbhf14uiRtIUMVn&export=download&confirm=t
+      Type5/30.csv: https://drive.usercontent.google.com/download?id=1NbZjPn6vdqM40DnHW_btE3cI4Is3N5eS&export=download&confirm=t
+      Type5/40.csv: https://drive.usercontent.google.com/download?id=1aPQU9r52CKXZ3-pAevj9B3_urqNRCs3j&export=download&confirm=t
+      Type5/50.csv: https://drive.usercontent.google.com/download?id=12CZiB9XGyoGyTz72RFPxF-hoEUE33QRS&export=download&confirm=t
+      Type5/60.csv: https://drive.usercontent.google.com/download?id=1f_LR35rsqVhwuY875L12Bnkx1cXFodaf&export=download&confirm=t
+      Type5/70.csv: https://drive.usercontent.google.com/download?id=10FdV6Css9xNNKU_fM8Ll_x47z2SUrtDN&export=download&confirm=t
+      Type6/0700.csv: https://drive.usercontent.google.com/download?id=1x1MN9El-fnyHBbnfGWwj66VOMKJV7D9D&export=download&confirm=t
+      Type6/20.csv: https://drive.usercontent.google.com/download?id=1SxtSzBXABgZEHyXTrKTeSSEUVfbhr4mo&export=download&confirm=t
+      Type6/30.csv: https://drive.usercontent.google.com/download?id=1BBiIX0nvWnOMunI8ce-MWc-iteaqwtCy&export=download&confirm=t
+      Type6/40.csv: https://drive.usercontent.google.com/download?id=1w7ET_TsEgYUSFJf2QKJqafCYZoM1w-hn&export=download&confirm=t
+      Type6/50.csv: https://drive.usercontent.google.com/download?id=1wTEkgtFSfOEgZnHUZP0tOFhH1qcL3otw&export=download&confirm=t
+      Type6/60.csv: https://drive.usercontent.google.com/download?id=1L55LRI6UBRpq34vIaGtxP7CMyQbB7lgO&export=download&confirm=t
+      Type6/70.csv: https://drive.usercontent.google.com/download?id=1EaBORv_T85-PCoLwJjbNUwNIyRsVnCeJ&export=download&confirm=t
+      Type7/0700.csv: https://drive.usercontent.google.com/download?id=1368E_b0oBWnnjbVHVQJg5ovMGddalA8o&export=download&confirm=t
+      Type7/20.csv: https://drive.usercontent.google.com/download?id=1lhNWZBJzWMDUIaJ0cBgSjCVMIrF3yuMU&export=download&confirm=t
+      Type7/30.csv: https://drive.usercontent.google.com/download?id=18rFw2_ET1S6WyepAaVpcUGv6gLJrcyE8&export=download&confirm=t
+      Type7/40.csv: https://drive.usercontent.google.com/download?id=1ecDrz5ugacz-ivieOL6w6-TDBNsiiDOp&export=download&confirm=t
+      Type7/50.csv: https://drive.usercontent.google.com/download?id=1VFdHUF0zhAmIlGPd0VQgCewvM9zohsez&export=download&confirm=t
+      Type7/60.csv: https://drive.usercontent.google.com/download?id=1-YrNy1MNLCJv77pZEIkMAWldC9vmkzz2&export=download&confirm=t
+      Type7/70.csv: https://drive.usercontent.google.com/download?id=18-Nfcedz9b-ABDoxM_5_4hdyhQC3LcUA&export=download&confirm=t
+      Type8/0700.csv: https://drive.usercontent.google.com/download?id=1q_5YgjM2ezFejaH7qEMm1updxAPw_LVZ&export=download&confirm=t
+      Type8/20.csv: https://drive.usercontent.google.com/download?id=1szGHLUJBy5KOf1NRD4iy8OxYj6kUM2bA&export=download&confirm=t
+      Type8/30.csv: https://drive.usercontent.google.com/download?id=1DJEPiu8MYits2jljNeWMGrVYfJqN8SLk&export=download&confirm=t
+      Type8/40.csv: https://drive.usercontent.google.com/download?id=10q3VZL3Lho5xAHDRwsFe96QdxkV9wms9&export=download&confirm=t
+      Type8/50.csv: https://drive.usercontent.google.com/download?id=1YfZ1vH7pJ1JyTC2mvJFbJwdHRDhqmxYx&export=download&confirm=t
+      Type8/60.csv: https://drive.usercontent.google.com/download?id=18gS43HTqHgHEh8awrU51l_WxVs34qPaz&export=download&confirm=t
+      Type8/70.csv: https://drive.usercontent.google.com/download?id=1az2VZGcU-s43GnAs6obJ6_PtKnunISWk&export=download&confirm=t
+      Type9/0700.csv: https://drive.usercontent.google.com/download?id=1YC_EJWzGl-Rcp5Lt4h4VH2IqyZOP5SJf&export=download&confirm=t
+      Type9/20.csv: https://drive.usercontent.google.com/download?id=1DG68GWV-CfDhR8Qx2n-1nQJ0uxipU2Ep&export=download&confirm=t
+      Type9/30.csv: https://drive.usercontent.google.com/download?id=1Gi602HdIAm4keBuGw6KpZv_WUnoH25uR&export=download&confirm=t
+      Type9/40.csv: https://drive.usercontent.google.com/download?id=1Pj568yAtmHjQZbHr8_UgAvEooyCm7b1w&export=download&confirm=t
+      Type9/50.csv: https://drive.usercontent.google.com/download?id=1DVj_I1iJH53s8WLB44VzsF1wktCWjmxb&export=download&confirm=t
+      Type9/60.csv: https://drive.usercontent.google.com/download?id=1ec7jOtt3nEO3l9AQJExzqPGcZDnSaMOL&export=download&confirm=t
+      Type9/70.csv: https://drive.usercontent.google.com/download?id=1I-RSsD4Kgk_UoFZ7zOFukMejm6-zt5-z&export=download&confirm=t
+files:
+  - Type1/0700.csv
+  - Type1/20.csv
+  - Type1/30.csv
+  - Type1/40.csv
+  - Type1/50.csv
+  - Type1/60.csv
+  - Type1/70.csv
+  - Type10/0700.csv
+  - Type10/20.csv
+  - Type10/30.csv
+  - Type10/40.csv
+  - Type10/50.csv
+  - Type10/60.csv
+  - Type10/70.csv
+  - Type11/0700.csv
+  - Type11/20.csv
+  - Type11/30.csv
+  - Type11/40.csv
+  - Type11/50.csv
+  - Type11/60.csv
+  - Type11/70.csv
+  - Type12/0700.csv
+  - Type12/20.csv
+  - Type12/30.csv
+  - Type12/40.csv
+  - Type12/50.csv
+  - Type12/60.csv
+  - Type12/70.csv
+  - Type13/0700.csv
+  - Type13/20.csv
+  - Type13/30.csv
+  - Type13/40.csv
+  - Type13/50.csv
+  - Type13/60.csv
+  - Type13/70.csv
+  - Type14/0700.csv
+  - Type14/20.csv
+  - Type14/30.csv
+  - Type14/40.csv
+  - Type14/50.csv
+  - Type14/60.csv
+  - Type14/70.csv
+  - Type2/0700.csv
+  - Type2/20.csv
+  - Type2/30.csv
+  - Type2/40.csv
+  - Type2/50.csv
+  - Type2/60.csv
+  - Type2/70.csv
+  - Type3/0700.csv
+  - Type3/20.csv
+  - Type3/30.csv
+  - Type3/40.csv
+  - Type3/50.csv
+  - Type3/60.csv
+  - Type3/70.csv
+  - Type4/0700.csv
+  - Type4/20.csv
+  - Type4/30.csv
+  - Type4/40.csv
+  - Type4/50.csv
+  - Type4/60.csv
+  - Type4/70.csv
+  - Type5/0700.csv
+  - Type5/20.csv
+  - Type5/30.csv
+  - Type5/40.csv
+  - Type5/50.csv
+  - Type5/60.csv
+  - Type5/70.csv
+  - Type6/0700.csv
+  - Type6/20.csv
+  - Type6/30.csv
+  - Type6/40.csv
+  - Type6/50.csv
+  - Type6/60.csv
+  - Type6/70.csv
+  - Type7/0700.csv
+  - Type7/20.csv
+  - Type7/30.csv
+  - Type7/40.csv
+  - Type7/50.csv
+  - Type7/60.csv
+  - Type7/70.csv
+  - Type8/0700.csv
+  - Type8/20.csv
+  - Type8/30.csv
+  - Type8/40.csv
+  - Type8/50.csv
+  - Type8/60.csv
+  - Type8/70.csv
+  - Type9/0700.csv
+  - Type9/20.csv
+  - Type9/30.csv
+  - Type9/40.csv
+  - Type9/50.csv
+  - Type9/60.csv
+  - Type9/70.csv
+columns:
+  bpfo: >-
+    ER-16K (named in the README, manufacturer not stated): MB geometry assumed, 9 balls of
+    7.94 mm, pitch 38.52 mm
+  operating_condition: motor speed, 20Hz to 70Hz (constant) or 0-70-0Hz (run-up and run-down)

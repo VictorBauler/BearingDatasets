@@ -1,0 +1,21 @@
+name: my_cwru
+title: Four CWRU files read from a local folder (private-dataset example)
+description: |
+  Example of a dataset built from files in a local folder, the way you would add your
+  own (private) data without changing the package. It uses four public files of the
+  CWRU bearing data center (the full dataset is the package's `cwru`), all at 0 hp:
+  normal baseline (97.mat, 48 kHz) and 0.007" drive-end faults on the inner race
+  (105.mat), ball (118.mat) and outer race at 6:00 (130.mat), 12 kHz. Drive-end and
+  fan-end accelerometers.
+  Source: download the four files from https://engineering.case.edu/bearingdatacenter
+  into ~/data/my_cwru (or change `path` below).
+license: "unspecified (public, cite CWRU)"
+citation: |
+  Case Western Reserve University Bearing Data Center,
+  https://engineering.case.edu/bearingdatacenter
+sources:
+  - type: local
+    path: ~/data/my_cwru
+    include: ["*.mat"]
+columns:
+  source_file: original CWRU file (e.g. 105.mat)

@@ -1,0 +1,36 @@
+name: kaist_load
+title: KAIST vibration, acoustic, temperature and motor current dataset under varying load
+description: |
+  Rotating machine test bed (3 hp motor, gearbox, two bearing housings A and B, rotor
+  disks, hysteresis brake) at 3010 rpm under 0, 2 and 4 Nm. States: normal; inner and
+  outer race faults of 0.3, 1.0 and 3.0 mm on the NSK 6205 DDU bearing in housing A;
+  parallel shaft misalignment of 0.1, 0.3 and 0.5 mm at housing A; unbalance of 583 to
+  3318 mg on the disk closest to housing A. 15 states x 3 loads.
+  Three separate acquisitions per state, stored as separate recordings: vibration
+  (x and y on each housing, 25.6 kHz, Simcenter SCADAS), temperature of both housings
+  and three motor phase currents (NI FlexLogger, 25608 Hz from the file time step),
+  and acoustic (one microphone, 51.2 kHz, only normal and bearing faults of 0.3 and
+  1.0 mm at 0 Nm). 60 s per faulty recording; normal recordings are longer.
+  Phases V and W are empty in the 9 outer race current files (only phase U there).
+  Vibration unit: the paper says g, but the Test.Lab export says the values are SI
+  (m/s^2); amplitudes suggest m/s^2, so the unit is left as unknown.
+license: CC-BY-4.0
+size: "download 4.3 GB, built 1.6 GB (measured)"
+homepage: https://data.mendeley.com/datasets/ztmf3m7h5x/5
+citation: |
+  Jung, W., Kim, S.-H., Yun, S.-H., Bae, J., & Park, Y.-H. (2023). Vibration, acoustic,
+  temperature, and motor current dataset of rotating machine under varying operating
+  conditions for fault diagnosis. Data in Brief, 48, 109049. doi:10.1016/j.dib.2023.109049
+sources:
+  - type: mendeley
+    id: ztmf3m7h5x
+    version: 5
+columns:
+  bpfo: >-
+    NSK 6205 DDU in housing A from Jung et al. (2023), Table 1 (9 balls of 7.90 mm, pitch
+    38.5 mm); the paper's BSF is 2 x BSF
+  severity: >-
+    bearing crack size (0.3, 1.0, 3.0 mm), shaft misalignment offset (0.1, 0.3, 0.5 mm)
+    or unbalance mass (583 to 3318 mg); none if normal
+  load: brake torque in Nm (0, 2 or 4)
+  rpm: constant speed stated in the paper

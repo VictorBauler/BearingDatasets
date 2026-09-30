@@ -1,0 +1,73 @@
+name: wt_hss
+title: Wind turbine high-speed shaft bearing prognosis data (field, 50 days)
+description: |
+  Field data from the high-speed shaft bearing of a 2 MW wind turbine (20-tooth pinion)
+  whose inner race fault developed over 50 days (7 March to 25 April 2013): one
+  acquisition per day, 6 s of vibration at 97656 Hz, and the times of the tachometer
+  pulses (channel tach_times_s: times in s, not a sampled signal; its fs is the mean
+  pulse rate). Data by Eric Bechhoefer (Green Power Monitoring Systems), redistributed by
+  MathWorks, who merged the sensor and tach files of each day. Run-to-failure: use run_id,
+  time_s and rul_s (end of life = last acquisition, from the time stamps); the condition
+  of each day is unknown, the failure at the end was an inner race fault.
+  License CC BY-NC-SA 4.0 (non-commercial).
+license: CC-BY-NC-SA-4.0
+size: "download 0.22 GB, built 0.16 GB (measured)"
+homepage: https://github.com/mathworks/WindTurbineHighSpeedBearingPrognosis-Data
+citation: |
+  Bechhoefer, E., Van Hecke, B., & He, D. (2013). Processing for improved spectral analysis.
+  Annual Conference of the PHM Society, 5(1). doi:10.36001/phmconf.2013.v5i1.2220
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/mathworks/WindTurbineHighSpeedBearingPrognosis-Data/2c698346ce27f864417ae870d54c73610263c93c/
+files:
+  - data-20130307T015746Z.mat
+  - data-20130308T023421Z.mat
+  - data-20130309T023343Z.mat
+  - data-20130310T030102Z.mat
+  - data-20130311T030024Z.mat
+  - data-20130312T061710Z.mat
+  - data-20130313T063404Z.mat
+  - data-20130314T065041Z.mat
+  - data-20130315T065003Z.mat
+  - data-20130316T065643Z.mat
+  - data-20130317T065604Z.mat
+  - data-20130317T184756Z.mat
+  - data-20130318T184715Z.mat
+  - data-20130320T003354Z.mat
+  - data-20130321T003314Z.mat
+  - data-20130322T003950Z.mat
+  - data-20130323T003911Z.mat
+  - data-20130324T004549Z.mat
+  - data-20130325T004512Z.mat
+  - data-20130326T014150Z.mat
+  - data-20130327T035827Z.mat
+  - data-20130328T095531Z.mat
+  - data-20130329T095505Z.mat
+  - data-20130330T100142Z.mat
+  - data-20130331T193818Z.mat
+  - data-20130401T193739Z.mat
+  - data-20130402T194415Z.mat
+  - data-20130403T212942Z.mat
+  - data-20130404T212901Z.mat
+  - data-20130405T213537Z.mat
+  - data-20130406T221209Z.mat
+  - data-20130407T221131Z.mat
+  - data-20130408T221809Z.mat
+  - data-20130409T231445Z.mat
+  - data-20130410T231407Z.mat
+  - data-20130411T231358Z.mat
+  - data-20130412T170231Z.mat
+  - data-20130413T170210Z.mat
+  - data-20130414T170847Z.mat
+  - data-20130415T225524Z.mat
+  - data-20130416T230159Z.mat
+  - data-20130417T230120Z.mat
+  - data-20130418T230803Z.mat
+  - data-20130419T230747Z.mat
+  - data-20130420T151307Z.mat
+  - data-20130421T151231Z.mat
+  - data-20130422T151908Z.mat
+  - data-20130423T151830Z.mat
+  - data-20130424T215514Z.mat
+  - data-20130425T232202Z.mat

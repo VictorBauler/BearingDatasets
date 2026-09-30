@@ -1,0 +1,17 @@
+[
+ {
+  "name": "acoustic.zip",
+  "size": 47205730,
+  "sha256": "5dd1371ccec00729498e2d151df13593f6400fdced8895481ff6a8a945a5962f"
+ },
+ {
+  "name": "current,temp.zip",
+  "size": 1547790068,
+  "sha256": "7caa22152ff1fd673a6a3a9614f95fabd2890c6aea0860b40a1f5b27eabb59d6"
+ },
+ {
+  "name": "vibration.zip",
+  "size": 2659778162,
+  "sha256": "df73fa80371a2ad3c983825044447b7772fcefd1db2ac409b2b298b533e4659f"
+ }
+]

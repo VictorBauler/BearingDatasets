@@ -1,0 +1,32 @@
+name: arkansas
+title: University of Arkansas single and double fault scenarios for a rotary machine
+description: |
+  SpectraQuest rotary machine fault simulator at the University of Arkansas: DC motor, shaft
+  on a left (bearing 1) and right (bearing 2) bearing with two disks, belt and gearbox.
+  Bearing faults: inner race, outer race, ball, or combination (a ball and a raceway defect;
+  condition bearing); shaft bent at the center or at the coupling end. 11 single faults, 27
+  double faults (one fault per component) and no fault, at three speed settings (25, 50, 75;
+  the record calls them rpm, the unit is uncertain), 25 trials of 10 s each: 2925
+  recordings at 6.4 kHz. Channels: tachometer (V) and 8 accelerometers (PCB 608A11, g) on the
+  motor, both bearing housings (x, y, z) and the gearbox.
+license: CC-BY-4.0
+size: "download 14.8 GB, built 3.0 GB (measured)"
+homepage: https://doi.org/10.6084/m9.figshare.22693120
+citation: |
+  Marshall, L., & Jensen, D. (2023). Dataset of single and double faults scenarios using
+  vibration signals from a rotary machine. Data in Brief, 49, 109358.
+  doi:10.1016/j.dib.2023.109358
+sources:
+  - type: http
+    name: figshare
+    urls:
+      "Fault data split 25.zip": https://ndownloader.figshare.com/files/40288855
+      "Fault data split 50.zip": https://ndownloader.figshare.com/files/40292614
+      "Fault data split 75.zip": https://ndownloader.figshare.com/files/40292608
+files:
+  - "Fault data split 25.zip"
+  - "Fault data split 50.zip"
+  - "Fault data split 75.zip"
+columns:
+  speed_setting: speed setting of the folder (25, 50 or 75; called rpm in the record)
+  trial: trial number 1-25

@@ -1,0 +1,414 @@
+name: sdust
+title: SDUST bearing dataset (Shandong University of Science and Technology), bearing subset
+description: |
+  Fault implantation test rig (AC motor, test bearing, planetary gearbox, magnetic
+  powder brake) with 6205 bearings in 10 states: normal (NC), and inner race (IF),
+  outer race (OF) and rolling element (RF) faults of 0.2, 0.4 and 0.6 mm. Constant
+  speeds of 1000, 1500, 1800, 2000, 2500 and 3000 rpm (plus 1797 rpm at no load) and
+  speed varying at random within 800-1500, 1000-2000 or 1500-2500 rpm, each under
+  loads of 0, 20, 40 and 60 N. Two triaxial accelerometers (6 channels), 25.6 kHz, about
+  41 s per file, LMS Test.Lab. The files name the sensors zcjshang and zcjxia (upper and
+  lower support); the dataset PDF says one sensor is on the bearing housing and one on
+  the gearbox support without saying which is which. Vibration unit: the Test.Lab export
+  says SI, displayed in g; left as unknown. Only the bearing subset is included (the
+  repository also has a planetary gear subset).
+license: unspecified (cite the papers)
+size: "download 19.2 GB, built 2.6 GB (measured)"
+homepage: https://github.com/JRWang-SDUST/SDUST-Dataset
+citation: |
+  Wang, J., Zhang, X., Zhang, Z., et al. (2024). Attention guided multi-wavelet
+  adversarial network for cross domain fault diagnosis. Knowledge-Based Systems, 284,
+  111285. doi:10.1016/j.knosys.2023.111285
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/JRWang-SDUST/SDUST-Dataset/23e2310e3f13b145e6d2ab9a45a1112701202c37/
+files:
+  - 轴承数据集/IF0.2/IF0.2 1000 0.mat
+  - 轴承数据集/IF0.2/IF0.2 1000 20.mat
+  - 轴承数据集/IF0.2/IF0.2 1000 40.mat
+  - 轴承数据集/IF0.2/IF0.2 1000 60.mat
+  - 轴承数据集/IF0.2/IF0.2 1000~2000 0.mat
+  - 轴承数据集/IF0.2/IF0.2 1000~2000 20.mat
+  - 轴承数据集/IF0.2/IF0.2 1000~2000 40.mat
+  - 轴承数据集/IF0.2/IF0.2 1000~2000 60.mat
+  - 轴承数据集/IF0.2/IF0.2 1500 0.mat
+  - 轴承数据集/IF0.2/IF0.2 1500 20.mat
+  - 轴承数据集/IF0.2/IF0.2 1500 40.mat
+  - 轴承数据集/IF0.2/IF0.2 1500 60.mat
+  - 轴承数据集/IF0.2/IF0.2 1500~2500 0.mat
+  - 轴承数据集/IF0.2/IF0.2 1500~2500 20.mat
+  - 轴承数据集/IF0.2/IF0.2 1500~2500 40.mat
+  - 轴承数据集/IF0.2/IF0.2 1500~2500 60.mat
+  - 轴承数据集/IF0.2/IF0.2 1797 0.mat
+  - 轴承数据集/IF0.2/IF0.2 1800 0.mat
+  - 轴承数据集/IF0.2/IF0.2 1800 20.mat
+  - 轴承数据集/IF0.2/IF0.2 1800 40.mat
+  - 轴承数据集/IF0.2/IF0.2 1800 60.mat
+  - 轴承数据集/IF0.2/IF0.2 2000 0.mat
+  - 轴承数据集/IF0.2/IF0.2 2000 20.mat
+  - 轴承数据集/IF0.2/IF0.2 2000 40.mat
+  - 轴承数据集/IF0.2/IF0.2 2000 60.mat
+  - 轴承数据集/IF0.2/IF0.2 2500 0.mat
+  - 轴承数据集/IF0.2/IF0.2 2500 20.mat
+  - 轴承数据集/IF0.2/IF0.2 2500 40.mat
+  - 轴承数据集/IF0.2/IF0.2 2500 60.mat
+  - 轴承数据集/IF0.2/IF0.2 3000 0.mat
+  - 轴承数据集/IF0.2/IF0.2 3000 20.mat
+  - 轴承数据集/IF0.2/IF0.2 3000 40.mat
+  - 轴承数据集/IF0.2/IF0.2 3000 60.mat
+  - 轴承数据集/IF0.2/IF0.2 800~1500 0.mat
+  - 轴承数据集/IF0.2/IF0.2 800~1500 20.mat
+  - 轴承数据集/IF0.2/IF0.2 800~1500 40.mat
+  - 轴承数据集/IF0.2/IF0.2 800~1500 60.mat
+  - 轴承数据集/IF0.4/IF0.4 1000 0.mat
+  - 轴承数据集/IF0.4/IF0.4 1000 20.mat
+  - 轴承数据集/IF0.4/IF0.4 1000 40.mat
+  - 轴承数据集/IF0.4/IF0.4 1000 60.mat
+  - 轴承数据集/IF0.4/IF0.4 1000~2000 0.mat
+  - 轴承数据集/IF0.4/IF0.4 1000~2000 20.mat
+  - 轴承数据集/IF0.4/IF0.4 1000~2000 40.mat
+  - 轴承数据集/IF0.4/IF0.4 1000~2000 60.mat
+  - 轴承数据集/IF0.4/IF0.4 1500 0.mat
+  - 轴承数据集/IF0.4/IF0.4 1500 20.mat
+  - 轴承数据集/IF0.4/IF0.4 1500 40.mat
+  - 轴承数据集/IF0.4/IF0.4 1500 60.mat
+  - 轴承数据集/IF0.4/IF0.4 1500~2500 0.mat
+  - 轴承数据集/IF0.4/IF0.4 1500~2500 20.mat
+  - 轴承数据集/IF0.4/IF0.4 1500~2500 40.mat
+  - 轴承数据集/IF0.4/IF0.4 1500~2500 60.mat
+  - 轴承数据集/IF0.4/IF0.4 1797 0.mat
+  - 轴承数据集/IF0.4/IF0.4 1800 0.mat
+  - 轴承数据集/IF0.4/IF0.4 1800 20.mat
+  - 轴承数据集/IF0.4/IF0.4 1800 40.mat
+  - 轴承数据集/IF0.4/IF0.4 1800 60.mat
+  - 轴承数据集/IF0.4/IF0.4 2000 0.mat
+  - 轴承数据集/IF0.4/IF0.4 2000 20.mat
+  - 轴承数据集/IF0.4/IF0.4 2000 40.mat
+  - 轴承数据集/IF0.4/IF0.4 2000 60.mat
+  - 轴承数据集/IF0.4/IF0.4 2500 0.mat
+  - 轴承数据集/IF0.4/IF0.4 2500 20.mat
+  - 轴承数据集/IF0.4/IF0.4 2500 40.mat
+  - 轴承数据集/IF0.4/IF0.4 2500 60.mat
+  - 轴承数据集/IF0.4/IF0.4 3000 0.mat
+  - 轴承数据集/IF0.4/IF0.4 3000 20.mat
+  - 轴承数据集/IF0.4/IF0.4 3000 40.mat
+  - 轴承数据集/IF0.4/IF0.4 3000 60.mat
+  - 轴承数据集/IF0.4/IF0.4 800~1500 0.mat
+  - 轴承数据集/IF0.4/IF0.4 800~1500 20.mat
+  - 轴承数据集/IF0.4/IF0.4 800~1500 40.mat
+  - 轴承数据集/IF0.4/IF0.4 800~1500 60.mat
+  - 轴承数据集/IF0.6/IF0.6 1000 0.mat
+  - 轴承数据集/IF0.6/IF0.6 1000 20.mat
+  - 轴承数据集/IF0.6/IF0.6 1000 40.mat
+  - 轴承数据集/IF0.6/IF0.6 1000 60.mat
+  - 轴承数据集/IF0.6/IF0.6 1000~2000 0.mat
+  - 轴承数据集/IF0.6/IF0.6 1000~2000 20.mat
+  - 轴承数据集/IF0.6/IF0.6 1000~2000 40.mat
+  - 轴承数据集/IF0.6/IF0.6 1000~2000 60.mat
+  - 轴承数据集/IF0.6/IF0.6 1500 0.mat
+  - 轴承数据集/IF0.6/IF0.6 1500 20.mat
+  - 轴承数据集/IF0.6/IF0.6 1500 40.mat
+  - 轴承数据集/IF0.6/IF0.6 1500 60.mat
+  - 轴承数据集/IF0.6/IF0.6 1500~2500 0.mat
+  - 轴承数据集/IF0.6/IF0.6 1500~2500 20.mat
+  - 轴承数据集/IF0.6/IF0.6 1500~2500 40.mat
+  - 轴承数据集/IF0.6/IF0.6 1500~2500 60.mat
+  - 轴承数据集/IF0.6/IF0.6 1797 0.mat
+  - 轴承数据集/IF0.6/IF0.6 1800 0.mat
+  - 轴承数据集/IF0.6/IF0.6 1800 20.mat
+  - 轴承数据集/IF0.6/IF0.6 1800 40.mat
+  - 轴承数据集/IF0.6/IF0.6 1800 60.mat
+  - 轴承数据集/IF0.6/IF0.6 2000 0.mat
+  - 轴承数据集/IF0.6/IF0.6 2000 20.mat
+  - 轴承数据集/IF0.6/IF0.6 2000 40.mat
+  - 轴承数据集/IF0.6/IF0.6 2000 60.mat
+  - 轴承数据集/IF0.6/IF0.6 2500 0.mat
+  - 轴承数据集/IF0.6/IF0.6 2500 20.mat
+  - 轴承数据集/IF0.6/IF0.6 2500 40.mat
+  - 轴承数据集/IF0.6/IF0.6 2500 60.mat
+  - 轴承数据集/IF0.6/IF0.6 3000 0.mat
+  - 轴承数据集/IF0.6/IF0.6 3000 20.mat
+  - 轴承数据集/IF0.6/IF0.6 3000 40.mat
+  - 轴承数据集/IF0.6/IF0.6 3000 60.mat
+  - 轴承数据集/IF0.6/IF0.6 800~1500 0.mat
+  - 轴承数据集/IF0.6/IF0.6 800~1500 20.mat
+  - 轴承数据集/IF0.6/IF0.6 800~1500 40.mat
+  - 轴承数据集/IF0.6/IF0.6 800~1500 60 0.mat
+  - 轴承数据集/NC/NC 1000 0.mat
+  - 轴承数据集/NC/NC 1000 20.mat
+  - 轴承数据集/NC/NC 1000 40.mat
+  - 轴承数据集/NC/NC 1000 60.mat
+  - 轴承数据集/NC/NC 1000~2000 0 1.mat
+  - 轴承数据集/NC/NC 1000~2000 0 2.mat
+  - 轴承数据集/NC/NC 1000~2000 20 1.mat
+  - 轴承数据集/NC/NC 1000~2000 20 2.mat
+  - 轴承数据集/NC/NC 1000~2000 40 1.mat
+  - 轴承数据集/NC/NC 1000~2000 40 2.mat
+  - 轴承数据集/NC/NC 1000~2000 60 1.mat
+  - 轴承数据集/NC/NC 1000~2000 60 2.mat
+  - 轴承数据集/NC/NC 1500 0.mat
+  - 轴承数据集/NC/NC 1500 20.mat
+  - 轴承数据集/NC/NC 1500 40.mat
+  - 轴承数据集/NC/NC 1500 60.mat
+  - 轴承数据集/NC/NC 1500~2500 0 1.mat
+  - 轴承数据集/NC/NC 1500~2500 0 2.mat
+  - 轴承数据集/NC/NC 1500~2500 20 2.mat
+  - 轴承数据集/NC/NC 1500~2500 20 3.mat
+  - 轴承数据集/NC/NC 1500~2500 40 1.mat
+  - 轴承数据集/NC/NC 1500~2500 40 2.mat
+  - 轴承数据集/NC/NC 1500~2500 60 1.mat
+  - 轴承数据集/NC/NC 1500~2500 60 2.mat
+  - 轴承数据集/NC/NC 1797 0.mat
+  - 轴承数据集/NC/NC 1800 0.mat
+  - 轴承数据集/NC/NC 1800 20.mat
+  - 轴承数据集/NC/NC 1800 40.mat
+  - 轴承数据集/NC/NC 1800 60.mat
+  - 轴承数据集/NC/NC 2000 0.mat
+  - 轴承数据集/NC/NC 2000 20.mat
+  - 轴承数据集/NC/NC 2000 40.mat
+  - 轴承数据集/NC/NC 2000 60.mat
+  - 轴承数据集/NC/NC 2500 0.mat
+  - 轴承数据集/NC/NC 2500 20.mat
+  - 轴承数据集/NC/NC 2500 40.mat
+  - 轴承数据集/NC/NC 2500 60.mat
+  - 轴承数据集/NC/NC 3000 0.mat
+  - 轴承数据集/NC/NC 3000 20.mat
+  - 轴承数据集/NC/NC 3000 40.mat
+  - 轴承数据集/NC/NC 3000 60.mat
+  - 轴承数据集/NC/NC 800~1500 0 1.mat
+  - 轴承数据集/NC/NC 800~1500 0 2.mat
+  - 轴承数据集/NC/NC 800~1500 20 1.mat
+  - 轴承数据集/NC/NC 800~1500 40 1.mat
+  - 轴承数据集/NC/NC 800~1500 40 2.mat
+  - 轴承数据集/NC/NC 800~1500 60 1.mat
+  - 轴承数据集/NC/NC 800~1500 60 2.mat
+  - 轴承数据集/OF0.2/OF0.2 1000 0.mat
+  - 轴承数据集/OF0.2/OF0.2 1000 20.mat
+  - 轴承数据集/OF0.2/OF0.2 1000 40.mat
+  - 轴承数据集/OF0.2/OF0.2 1000 60.mat
+  - 轴承数据集/OF0.2/OF0.2 1000~2000 0.mat
+  - 轴承数据集/OF0.2/OF0.2 1000~2000 20.mat
+  - 轴承数据集/OF0.2/OF0.2 1000~2000 40.mat
+  - 轴承数据集/OF0.2/OF0.2 1000~2000 60.mat
+  - 轴承数据集/OF0.2/OF0.2 1500 0.mat
+  - 轴承数据集/OF0.2/OF0.2 1500 20.mat
+  - 轴承数据集/OF0.2/OF0.2 1500 40.mat
+  - 轴承数据集/OF0.2/OF0.2 1500 60.mat
+  - 轴承数据集/OF0.2/OF0.2 1500~2500 0.mat
+  - 轴承数据集/OF0.2/OF0.2 1500~2500 20.mat
+  - 轴承数据集/OF0.2/OF0.2 1500~2500 40.mat
+  - 轴承数据集/OF0.2/OF0.2 1500~2500 60.mat
+  - 轴承数据集/OF0.2/OF0.2 1797 0.mat
+  - 轴承数据集/OF0.2/OF0.2 1800 0.mat
+  - 轴承数据集/OF0.2/OF0.2 1800 20.mat
+  - 轴承数据集/OF0.2/OF0.2 1800 40.mat
+  - 轴承数据集/OF0.2/OF0.2 1800 60.mat
+  - 轴承数据集/OF0.2/OF0.2 2000 0.mat
+  - 轴承数据集/OF0.2/OF0.2 2000 20.mat
+  - 轴承数据集/OF0.2/OF0.2 2000 40.mat
+  - 轴承数据集/OF0.2/OF0.2 2000 60.mat
+  - 轴承数据集/OF0.2/OF0.2 2500 0.mat
+  - 轴承数据集/OF0.2/OF0.2 2500 20.mat
+  - 轴承数据集/OF0.2/OF0.2 2500 40.mat
+  - 轴承数据集/OF0.2/OF0.2 2500 60.mat
+  - 轴承数据集/OF0.2/OF0.2 3000 0.mat
+  - 轴承数据集/OF0.2/OF0.2 3000 20.mat
+  - 轴承数据集/OF0.2/OF0.2 3000 40.mat
+  - 轴承数据集/OF0.2/OF0.2 3000 60.mat
+  - 轴承数据集/OF0.2/OF0.2 800~1500 0.mat
+  - 轴承数据集/OF0.2/OF0.2 800~1500 20.mat
+  - 轴承数据集/OF0.2/OF0.2 800~1500 40.mat
+  - 轴承数据集/OF0.2/OF0.2 800~1500 60.mat
+  - 轴承数据集/OF0.4/OF0.4 1000 0.mat
+  - 轴承数据集/OF0.4/OF0.4 1000 20.mat
+  - 轴承数据集/OF0.4/OF0.4 1000 40.mat
+  - 轴承数据集/OF0.4/OF0.4 1000 60.mat
+  - 轴承数据集/OF0.4/OF0.4 1000~2000 0.mat
+  - 轴承数据集/OF0.4/OF0.4 1000~2000 20.mat
+  - 轴承数据集/OF0.4/OF0.4 1000~2000 40.mat
+  - 轴承数据集/OF0.4/OF0.4 1000~2000 60.mat
+  - 轴承数据集/OF0.4/OF0.4 1500 0.mat
+  - 轴承数据集/OF0.4/OF0.4 1500 20.mat
+  - 轴承数据集/OF0.4/OF0.4 1500 40.mat
+  - 轴承数据集/OF0.4/OF0.4 1500 60.mat
+  - 轴承数据集/OF0.4/OF0.4 1500~2500 0.mat
+  - 轴承数据集/OF0.4/OF0.4 1500~2500 20.mat
+  - 轴承数据集/OF0.4/OF0.4 1500~2500 40.mat
+  - 轴承数据集/OF0.4/OF0.4 1500~2500 60.mat
+  - 轴承数据集/OF0.4/OF0.4 1797 0.mat
+  - 轴承数据集/OF0.4/OF0.4 1800 0.mat
+  - 轴承数据集/OF0.4/OF0.4 1800 20.mat
+  - 轴承数据集/OF0.4/OF0.4 1800 40.mat
+  - 轴承数据集/OF0.4/OF0.4 1800 60.mat
+  - 轴承数据集/OF0.4/OF0.4 2000 0.mat
+  - 轴承数据集/OF0.4/OF0.4 2000 20.mat
+  - 轴承数据集/OF0.4/OF0.4 2000 40.mat
+  - 轴承数据集/OF0.4/OF0.4 2000 60.mat
+  - 轴承数据集/OF0.4/OF0.4 2500 0.mat
+  - 轴承数据集/OF0.4/OF0.4 2500 20.mat
+  - 轴承数据集/OF0.4/OF0.4 2500 40.mat
+  - 轴承数据集/OF0.4/OF0.4 2500 60.mat
+  - 轴承数据集/OF0.4/OF0.4 3000 0.mat
+  - 轴承数据集/OF0.4/OF0.4 3000 20.mat
+  - 轴承数据集/OF0.4/OF0.4 3000 40.mat
+  - 轴承数据集/OF0.4/OF0.4 3000 60.mat
+  - 轴承数据集/OF0.4/OF0.4 800~1500 0.mat
+  - 轴承数据集/OF0.4/OF0.4 800~1500 20.mat
+  - 轴承数据集/OF0.4/OF0.4 800~1500 40.mat
+  - 轴承数据集/OF0.4/OF0.4 800~1500 60.mat
+  - 轴承数据集/OF0.6/OF0.6 1000 0.mat
+  - 轴承数据集/OF0.6/OF0.6 1000 20.mat
+  - 轴承数据集/OF0.6/OF0.6 1000 40.mat
+  - 轴承数据集/OF0.6/OF0.6 1000 60.mat
+  - 轴承数据集/OF0.6/OF0.6 1000-2000 0.mat
+  - 轴承数据集/OF0.6/OF0.6 1000-2000 20.mat
+  - 轴承数据集/OF0.6/OF0.6 1000-2000 40.mat
+  - 轴承数据集/OF0.6/OF0.6 1000-2000 60.mat
+  - 轴承数据集/OF0.6/OF0.6 1500 0.mat
+  - 轴承数据集/OF0.6/OF0.6 1500 20.mat
+  - 轴承数据集/OF0.6/OF0.6 1500 40.mat
+  - 轴承数据集/OF0.6/OF0.6 1500 60.mat
+  - 轴承数据集/OF0.6/OF0.6 1500-2500 0.mat
+  - 轴承数据集/OF0.6/OF0.6 1500-2500 20.mat
+  - 轴承数据集/OF0.6/OF0.6 1500-2500 40.mat
+  - 轴承数据集/OF0.6/OF0.6 1500-2500 60.mat
+  - 轴承数据集/OF0.6/OF0.6 1797 0.mat
+  - 轴承数据集/OF0.6/OF0.6 1800 0.mat
+  - 轴承数据集/OF0.6/OF0.6 1800 20.mat
+  - 轴承数据集/OF0.6/OF0.6 1800 40.mat
+  - 轴承数据集/OF0.6/OF0.6 1800 60.mat
+  - 轴承数据集/OF0.6/OF0.6 2000 0.mat
+  - 轴承数据集/OF0.6/OF0.6 2000 20.mat
+  - 轴承数据集/OF0.6/OF0.6 2000 40.mat
+  - 轴承数据集/OF0.6/OF0.6 2000 60.mat
+  - 轴承数据集/OF0.6/OF0.6 2500 0.mat
+  - 轴承数据集/OF0.6/OF0.6 2500 20.mat
+  - 轴承数据集/OF0.6/OF0.6 2500 40.mat
+  - 轴承数据集/OF0.6/OF0.6 2500 60.mat
+  - 轴承数据集/OF0.6/OF0.6 3000 0.mat
+  - 轴承数据集/OF0.6/OF0.6 3000 20.mat
+  - 轴承数据集/OF0.6/OF0.6 3000 40.mat
+  - 轴承数据集/OF0.6/OF0.6 3000 60.mat
+  - 轴承数据集/OF0.6/OF0.6 800-1500 0.mat
+  - 轴承数据集/OF0.6/OF0.6 800-1500 20.mat
+  - 轴承数据集/OF0.6/OF0.6 800-1500 40.mat
+  - 轴承数据集/OF0.6/OF0.6 800-1500 60.mat
+  - 轴承数据集/RF0.2/RF0.2 1000 0.mat
+  - 轴承数据集/RF0.2/RF0.2 1000 20.mat
+  - 轴承数据集/RF0.2/RF0.2 1000 40.mat
+  - 轴承数据集/RF0.2/RF0.2 1000 60.mat
+  - 轴承数据集/RF0.2/RF0.2 1000~2000 0.mat
+  - 轴承数据集/RF0.2/RF0.2 1000~2000 20.mat
+  - 轴承数据集/RF0.2/RF0.2 1000~2000 40.mat
+  - 轴承数据集/RF0.2/RF0.2 1000~2000 60.mat
+  - 轴承数据集/RF0.2/RF0.2 1500 0.mat
+  - 轴承数据集/RF0.2/RF0.2 1500 20.mat
+  - 轴承数据集/RF0.2/RF0.2 1500 40.mat
+  - 轴承数据集/RF0.2/RF0.2 1500 60.mat
+  - 轴承数据集/RF0.2/RF0.2 1500~2500 0.mat
+  - 轴承数据集/RF0.2/RF0.2 1500~2500 20.mat
+  - 轴承数据集/RF0.2/RF0.2 1500~2500 40.mat
+  - 轴承数据集/RF0.2/RF0.2 1500~2500 60.mat
+  - 轴承数据集/RF0.2/RF0.2 1797 0.mat
+  - 轴承数据集/RF0.2/RF0.2 1800 0.mat
+  - 轴承数据集/RF0.2/RF0.2 1800 20.mat
+  - 轴承数据集/RF0.2/RF0.2 1800 40.mat
+  - 轴承数据集/RF0.2/RF0.2 1800 60.mat
+  - 轴承数据集/RF0.2/RF0.2 2000 0.mat
+  - 轴承数据集/RF0.2/RF0.2 2000 20.mat
+  - 轴承数据集/RF0.2/RF0.2 2000 40.mat
+  - 轴承数据集/RF0.2/RF0.2 2000 60.mat
+  - 轴承数据集/RF0.2/RF0.2 2500 0.mat
+  - 轴承数据集/RF0.2/RF0.2 2500 20.mat
+  - 轴承数据集/RF0.2/RF0.2 2500 40.mat
+  - 轴承数据集/RF0.2/RF0.2 2500 60.mat
+  - 轴承数据集/RF0.2/RF0.2 3000 0.mat
+  - 轴承数据集/RF0.2/RF0.2 3000 20.mat
+  - 轴承数据集/RF0.2/RF0.2 3000 40.mat
+  - 轴承数据集/RF0.2/RF0.2 3000 60.mat
+  - 轴承数据集/RF0.2/RF0.2 800~1500 0.mat
+  - 轴承数据集/RF0.2/RF0.2 800~1500 20.mat
+  - 轴承数据集/RF0.2/RF0.2 800~1500 40.mat
+  - 轴承数据集/RF0.2/RF0.2 800~1500 60.mat
+  - 轴承数据集/RF0.4/RF0.4 1000 0.mat
+  - 轴承数据集/RF0.4/RF0.4 1000 20.mat
+  - 轴承数据集/RF0.4/RF0.4 1000 40.mat
+  - 轴承数据集/RF0.4/RF0.4 1000 60.mat
+  - 轴承数据集/RF0.4/RF0.4 1000~2000 0.mat
+  - 轴承数据集/RF0.4/RF0.4 1000~2000 20.mat
+  - 轴承数据集/RF0.4/RF0.4 1000~2000 40.mat
+  - 轴承数据集/RF0.4/RF0.4 1000~2000 60.mat
+  - 轴承数据集/RF0.4/RF0.4 1500 0.mat
+  - 轴承数据集/RF0.4/RF0.4 1500 20.mat
+  - 轴承数据集/RF0.4/RF0.4 1500 40.mat
+  - 轴承数据集/RF0.4/RF0.4 1500 60.mat
+  - 轴承数据集/RF0.4/RF0.4 1500~2500 0.mat
+  - 轴承数据集/RF0.4/RF0.4 1500~2500 20.mat
+  - 轴承数据集/RF0.4/RF0.4 1500~2500 40.mat
+  - 轴承数据集/RF0.4/RF0.4 1500~2500 60.mat
+  - 轴承数据集/RF0.4/RF0.4 1797 0.mat
+  - 轴承数据集/RF0.4/RF0.4 1800 0.mat
+  - 轴承数据集/RF0.4/RF0.4 1800 20.mat
+  - 轴承数据集/RF0.4/RF0.4 1800 40.mat
+  - 轴承数据集/RF0.4/RF0.4 1800 60.mat
+  - 轴承数据集/RF0.4/RF0.4 2000 0.mat
+  - 轴承数据集/RF0.4/RF0.4 2000 20.mat
+  - 轴承数据集/RF0.4/RF0.4 2000 40.mat
+  - 轴承数据集/RF0.4/RF0.4 2000 60.mat
+  - 轴承数据集/RF0.4/RF0.4 2500 0.mat
+  - 轴承数据集/RF0.4/RF0.4 2500 20.mat
+  - 轴承数据集/RF0.4/RF0.4 2500 40.mat
+  - 轴承数据集/RF0.4/RF0.4 2500 60.mat
+  - 轴承数据集/RF0.4/RF0.4 3000 0.mat
+  - 轴承数据集/RF0.4/RF0.4 3000 20.mat
+  - 轴承数据集/RF0.4/RF0.4 3000 40.mat
+  - 轴承数据集/RF0.4/RF0.4 3000 60.mat
+  - 轴承数据集/RF0.4/RF0.4 800~1500 0.mat
+  - 轴承数据集/RF0.4/RF0.4 800~1500 20.mat
+  - 轴承数据集/RF0.4/RF0.4 800~1500 40.mat
+  - 轴承数据集/RF0.4/RF0.4 800~1500 60.mat
+  - 轴承数据集/RF0.6/RF0.6 1000 0.mat
+  - 轴承数据集/RF0.6/RF0.6 1000 20.mat
+  - 轴承数据集/RF0.6/RF0.6 1000 40.mat
+  - 轴承数据集/RF0.6/RF0.6 1000 60.mat
+  - 轴承数据集/RF0.6/RF0.6 1000~2000 0.mat
+  - 轴承数据集/RF0.6/RF0.6 1000~2000 20.mat
+  - 轴承数据集/RF0.6/RF0.6 1000~2000 40.mat
+  - 轴承数据集/RF0.6/RF0.6 1000~2000 60.mat
+  - 轴承数据集/RF0.6/RF0.6 1500 0.mat
+  - 轴承数据集/RF0.6/RF0.6 1500 20.mat
+  - 轴承数据集/RF0.6/RF0.6 1500 40.mat
+  - 轴承数据集/RF0.6/RF0.6 1500 60.mat
+  - 轴承数据集/RF0.6/RF0.6 1500~2500 0.mat
+  - 轴承数据集/RF0.6/RF0.6 1500~2500 20.mat
+  - 轴承数据集/RF0.6/RF0.6 1500~2500 40.mat
+  - 轴承数据集/RF0.6/RF0.6 1500~2500 60.mat
+  - 轴承数据集/RF0.6/RF0.6 1797 0.mat
+  - 轴承数据集/RF0.6/RF0.6 1800 0.mat
+  - 轴承数据集/RF0.6/RF0.6 1800 20.mat
+  - 轴承数据集/RF0.6/RF0.6 1800 40.mat
+  - 轴承数据集/RF0.6/RF0.6 1800 60.mat
+  - 轴承数据集/RF0.6/RF0.6 2000 0.mat
+  - 轴承数据集/RF0.6/RF0.6 2000 20.mat
+  - 轴承数据集/RF0.6/RF0.6 2000 40.mat
+  - 轴承数据集/RF0.6/RF0.6 2000 60.mat
+  - 轴承数据集/RF0.6/RF0.6 2500 0.mat
+  - 轴承数据集/RF0.6/RF0.6 2500 20.mat
+  - 轴承数据集/RF0.6/RF0.6 2500 40.mat
+  - 轴承数据集/RF0.6/RF0.6 2500 60.mat
+  - 轴承数据集/RF0.6/RF0.6 3000 0.mat
+  - 轴承数据集/RF0.6/RF0.6 3000 20.mat
+  - 轴承数据集/RF0.6/RF0.6 3000 40.mat
+  - 轴承数据集/RF0.6/RF0.6 3000 60.mat
+  - 轴承数据集/RF0.6/RF0.6 800~1500 0.mat
+  - 轴承数据集/RF0.6/RF0.6 800~1500 20.mat
+  - 轴承数据集/RF0.6/RF0.6 800~1500 40.mat
+  - 轴承数据集/RF0.6/RF0.6 800~1500 60.mat
+columns:
+  bpfo: >-
+    6205 from the dataset PDF, Table 1 (9 balls of 7.938 mm, 0 deg); no pitch diameter
+    given: SKF 6205's 39.04 mm assumed
+  operating_condition: speed in rpm from the file name, constant (1000rpm) or a range (1000-2000rpm)
+  load: brake load in N (0, 20, 40, 60)
+  repetition: repeat number from the file name (1 when the file has none)

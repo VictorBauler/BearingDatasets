@@ -1,0 +1,202 @@
+[
+ {
+  "name": "F1_trail1_1100_rpm.xlsx",
+  "size": 7070619,
+  "sha256": "ef1fc72dc0117b153fb46b45d60ab1d3ff19b6b3cd5150a46fe6e263a233ee0e"
+ },
+ {
+  "name": "F1_trail1_1300_rpm.xlsx",
+  "size": 6765887,
+  "sha256": "e6d878d202dbb368752a451abb161cfa3e05f07f00a5a3f5f876ce9998f5cfd6"
+ },
+ {
+  "name": "F1_trail1_1500_rpm.xlsx",
+  "size": 7193748,
+  "sha256": "cb26fa40b644af670a3fc4e29e538ec60a8b402099b8b18b2d27615e0133ed50"
+ },
+ {
+  "name": "F1_trail1_900_rpm.xlsx",
+  "size": 7175856,
+  "sha256": "2450ec4da8151257f16a261b330b1f7275cb9899c778f6dc009f472bbc43e49c"
+ },
+ {
+  "name": "F1_trail2_1100_rpm.xlsx",
+  "size": 7092155,
+  "sha256": "084be9eeb3d3cd084205b1d6f7128d4c0d4a7fb4222a5c4bb07662e5381345cd"
+ },
+ {
+  "name": "F1_trail2_1300_rpm.xlsx",
+  "size": 7300966,
+  "sha256": "7b1a0021d69903caad8e76bd674416f854a0824677427107bc89e952ccf0783c"
+ },
+ {
+  "name": "F1_trail2_1500_rpm.xlsx",
+  "size": 7170658,
+  "sha256": "d1a4f734a3c8da4c473916198fe596db78e6265b60d87f33eb3482781cae3b2d"
+ },
+ {
+  "name": "F1_trail2_900_rpm.xlsx",
+  "size": 7238976,
+  "sha256": "7404b9a818277af91186808cb346e34dfc4e446ad7c65a084ea14fb4197b9786"
+ },
+ {
+  "name": "F2_trial1_1100rpm.xlsx",
+  "size": 7031639,
+  "sha256": "208a705923790e713144b856ce6d5acc6376401815e45c620867f8fa5fb318d3"
+ },
+ {
+  "name": "F2_trial1_1300rpm.xlsx",
+  "size": 7081875,
+  "sha256": "8376d2523bce7452f4c7e87620afd373836bdb6b9ddc0dcea781af3bfb8b0c25"
+ },
+ {
+  "name": "F2_trial1_1500rpm.xlsx",
+  "size": 7091654,
+  "sha256": "0b5e335f60edd08be275f2db39c6ab943b91bf43e019bb82b87734cc94931259"
+ },
+ {
+  "name": "F2_trial1_900rpm.xlsx",
+  "size": 7136063,
+  "sha256": "91ff3d459f7f901f8dba8e00c96523149b572b313eba2d52df3edaa4563f90fc"
+ },
+ {
+  "name": "F2_trial2_1100rpm.xlsx",
+  "size": 7098716,
+  "sha256": "090fc473aa12a445ade896599047bf5426f250019f9b14dec4b8becf31eaf001"
+ },
+ {
+  "name": "F2_trial2_1300rpm.xlsx",
+  "size": 7186471,
+  "sha256": "9e6901760aa02759cf98a6b26f3856ed84c9e1dd1ef445528721e1721e2fd247"
+ },
+ {
+  "name": "F2_trial2_1500rpm.xlsx",
+  "size": 7052658,
+  "sha256": "dc4d7465aac618b755250b978e1d47d3e15bf4fd603c2ab7654ac9136f3147c3"
+ },
+ {
+  "name": "F2_trial2_900rpm.xlsx",
+  "size": 7494684,
+  "sha256": "b96647b962aac217724bb9845fb98564cad8807d7405c7b55f484cff50b90926"
+ },
+ {
+  "name": "F3_trial1_1100rpm.xlsx",
+  "size": 7099332,
+  "sha256": "fefb0627f5ebe00adb119ef4f21cee07b507392056b2622d4df964e58c4a7082"
+ },
+ {
+  "name": "F3_trial1_1300rpm.xlsx",
+  "size": 7072871,
+  "sha256": "668f2b975c252d2ac79e2ebddc475b47facf1f58211dfc7dac69367315953e49"
+ },
+ {
+  "name": "F3_trial1_1500rpm.xlsx",
+  "size": 7086913,
+  "sha256": "8242257fea8abd9bad33f2b8e5194fa6fcc2d811f7ac609c3a16f7d9431ec390"
+ },
+ {
+  "name": "F3_trial1_900rpm.xlsx",
+  "size": 7093219,
+  "sha256": "b2ea7db3f99d0e905a5767e74abb4a064223a6e8f5b6be3fd78825fa775f60fc"
+ },
+ {
+  "name": "F3_trial2_1100rpm.xlsx",
+  "size": 7015665,
+  "sha256": "151a2ac8f57fdee38f2999ca3ed948bea0ac5a71d2249c1262da4f8d47dab7a0"
+ },
+ {
+  "name": "F3_trial2_1300rpm.xlsx",
+  "size": 7119119,
+  "sha256": "1ab38561ab03de2151a3da6daf6caf8d32df681e0e2a5789a07383c064b5a642"
+ },
+ {
+  "name": "F3_trial2_1500rpm.xlsx",
+  "size": 7130349,
+  "sha256": "5800a24846a2218c894f39ac92bf3b8361464a5397fb5b885baac8e1325649a2"
+ },
+ {
+  "name": "F3_trial2_900rpm.xlsx",
+  "size": 7115965,
+  "sha256": "c4692583b8e75e4293dc04c4f0ea0caf9661b1d0d9d6cd632f254f80622b8a2d"
+ },
+ {
+  "name": "F4_trial1_1100rpm.xlsx",
+  "size": 7204158,
+  "sha256": "d1e9f32188bd1421d82cbe963ac59cc0d5f4639aa1c8717a716b0b1bb0cb575f"
+ },
+ {
+  "name": "F4_trial1_1300rpm.xlsx",
+  "size": 7102608,
+  "sha256": "b3cf637bc6966a06479469dfdabd27d356243323b4fd55e3171417503b7cd345"
+ },
+ {
+  "name": "F4_trial1_1500rpm.xlsx",
+  "size": 7080342,
+  "sha256": "a01dcebecdc000e2af78828a23048e74aed717ddbedb3761dde5d1ba327386c6"
+ },
+ {
+  "name": "F4_trial1_900rpm.xlsx",
+  "size": 7113325,
+  "sha256": "6b23e9bafc1c9981492389a2c07c758ef542871dac135b3d960c08fe3fee4c51"
+ },
+ {
+  "name": "F4_trial2_1100rpm.xlsx",
+  "size": 7014603,
+  "sha256": "ef0582381ff4ea191712edf8dc418deda776ad526e78f991fce6dc930e0cac33"
+ },
+ {
+  "name": "F4_trial2_1300rpm.xlsx",
+  "size": 7079938,
+  "sha256": "fd7637e183ffc02f65d7bd509e44c01954ad269b710c3d0e8c71ca3d98481ac5"
+ },
+ {
+  "name": "F4_trial2_1500rpm.xlsx",
+  "size": 7081731,
+  "sha256": "444df70717d80bf0d59fe20a30297ad0e6de2dc2f3be0c95d7b489357f2a0842"
+ },
+ {
+  "name": "F4_trial2_900rpm.xlsx",
+  "size": 7135774,
+  "sha256": "6ec37a031b01452dece6b43ca275604f043e196ec04cb5a89bae87c30a010505"
+ },
+ {
+  "name": "H_Trail_1_at_1100_rpm.xlsx",
+  "size": 9161323,
+  "sha256": "908e7a9af51fcf0926a4b5ec10f3db5a4cf2df43e288e9f7e8b0a41f6e593a89"
+ },
+ {
+  "name": "H_Trail_1_at_1300_rpm.xlsx",
+  "size": 8864501,
+  "sha256": "99f75a430b6dbe5d5f6dde0ab9e6548afdc3cb3874fc2b73bc24ebbeb2f3ee84"
+ },
+ {
+  "name": "H_Trail_1_at_1500_rpm.xlsx",
+  "size": 8911523,
+  "sha256": "5779c6994abbcb654eccb7466c4bf9deca5bdbfd6aff51b443b57e4ff2fe0a37"
+ },
+ {
+  "name": "H_Trail_1_at_900_rpm.xlsx",
+  "size": 8457831,
+  "sha256": "ff366c6d7c3c548f06c5968ccaf5ffa7109e66405773731bd7975540eddcd8db"
+ },
+ {
+  "name": "H_Trail_2_at_1100_rpm.xlsx",
+  "size": 8921719,
+  "sha256": "bf354b2f4e4ef6aa7ef4f0e1d3784c901778ff557fecd358bad93947b21c1235"
+ },
+ {
+  "name": "H_Trail_2_at_1300_rpm.xlsx",
+  "size": 8937591,
+  "sha256": "a32aa66b2f233c8944eee7730981a2dfda1b2e6ca10d2fc7fecbf28a25aeab71"
+ },
+ {
+  "name": "H_Trail_2_at_1500_rpm.xlsx",
+  "size": 8937591,
+  "sha256": "a32aa66b2f233c8944eee7730981a2dfda1b2e6ca10d2fc7fecbf28a25aeab71"
+ },
+ {
+  "name": "H_Trail_2_at_900_rpm.xlsx",
+  "size": 7863514,
+  "sha256": "f3b800ee9d5aaa0867771a814c2b31eae3c021361af6904c3ec684eaf8c8f2eb"
+ }
+]

@@ -1,0 +1,68 @@
+name: hit_sm
+title: HIT-SM bearing datasets (Harbin Institute of Technology), SpectraQuest and self-built rigs
+description: |
+  Two test rigs of the Sensing and Measurement lab, Harbin Institute of Technology: a
+  SpectraQuest MFS (1 hp motor, 6205 bearings, faulty bearing at the non-drive end of the
+  shaft, 5 kg cantilever load) and a self-built rig (stronger motor, electric-cylinder
+  radial load). On each: normal and inner / outer raceway faults over an arc of 2, 5 or
+  8 degrees (slight, moderate, severe), at 600, 900 and 1200 rpm: 42 recordings of
+  262144 samples at 51.2 kHz, one vertical accelerometer each (the README mentions an
+  accelerometer on each bearing base of the SpectraQuest rig, but each file holds one
+  signal). Unit not stated.
+license: unspecified (cite the paper)
+size: "download 0.07 GB, built 0.03 GB (measured)"
+homepage: https://github.com/hitwzc/Bearing-datasets
+citation: |
+  Wang, Z., Huang, W., Chen, Y., Jiang, Y., & Peng, G. (2022). Multisource cross-domain
+  fault diagnosis of rolling bearing based on subdomain adaptation network. Measurement
+  Science and Technology, 33(10), 105109. doi:10.1088/1361-6501/ac7941
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/hitwzc/Bearing-datasets/12e46cd1b4a40f396c2bd6e245be5bafe18b1989/
+files:
+  - Self-built dataset/IR2_1200.mat
+  - Self-built dataset/IR2_600.mat
+  - Self-built dataset/IR2_900.mat
+  - Self-built dataset/IR5_1200.mat
+  - Self-built dataset/IR5_600.mat
+  - Self-built dataset/IR5_900.mat
+  - Self-built dataset/IR8_1200.mat
+  - Self-built dataset/IR8_600.mat
+  - Self-built dataset/IR8_900.mat
+  - Self-built dataset/Normal_1200.mat
+  - Self-built dataset/Normal_600.mat
+  - Self-built dataset/Normal_900.mat
+  - Self-built dataset/OR2_1200.mat
+  - Self-built dataset/OR2_600.mat
+  - Self-built dataset/OR2_900.mat
+  - Self-built dataset/OR5_1200.mat
+  - Self-built dataset/OR5_600.mat
+  - Self-built dataset/OR5_900.mat
+  - Self-built dataset/OR8_1200.mat
+  - Self-built dataset/OR8_600.mat
+  - Self-built dataset/OR8_900.mat
+  - SpectraQuest MFS dataset/IR2_1200.mat
+  - SpectraQuest MFS dataset/IR2_600.mat
+  - SpectraQuest MFS dataset/IR2_900.mat
+  - SpectraQuest MFS dataset/IR5_1200.mat
+  - SpectraQuest MFS dataset/IR5_600.mat
+  - SpectraQuest MFS dataset/IR5_900.mat
+  - SpectraQuest MFS dataset/IR8_1200.mat
+  - SpectraQuest MFS dataset/IR8_600.mat
+  - SpectraQuest MFS dataset/IR8_900.mat
+  - SpectraQuest MFS dataset/Normal_1200.mat
+  - SpectraQuest MFS dataset/Normal_600.mat
+  - SpectraQuest MFS dataset/Normal_900.mat
+  - SpectraQuest MFS dataset/OR2_1200.mat
+  - SpectraQuest MFS dataset/OR2_600.mat
+  - SpectraQuest MFS dataset/OR2_900.mat
+  - SpectraQuest MFS dataset/OR5_1200.mat
+  - SpectraQuest MFS dataset/OR5_600.mat
+  - SpectraQuest MFS dataset/OR5_900.mat
+  - SpectraQuest MFS dataset/OR8_1200.mat
+  - SpectraQuest MFS dataset/OR8_600.mat
+  - SpectraQuest MFS dataset/OR8_900.mat
+columns:
+  fault_arc_deg: arc of the raceway covered by the fault, in degrees (2, 5, 8; 0 if healthy)
+  rig: spectraquest (SpectraQuest MFS) or self_built

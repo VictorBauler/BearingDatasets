@@ -1,0 +1,42 @@
+[
+ {
+  "name": "E1.7z",
+  "size": 4854915774,
+  "sha256": "27ff5d8477006f3dccb387a66670dd477cf490ee9fb3d365208a32cfb6e31c4f"
+ },
+ {
+  "name": "E2.7z",
+  "size": 1968021746,
+  "sha256": "478530924e230981909d8a174e2f34d14f21649ba5a2949ddb6e08630cb0f928"
+ },
+ {
+  "name": "E3.7z",
+  "size": 2365092104,
+  "sha256": "dab8031c229b49da9472a44975d1baf3a0c8bcf6115d974459295a46670e5c82"
+ },
+ {
+  "name": "E4.7z",
+  "size": 659509193,
+  "sha256": "ae7670c184a972a7c2bd3338298bafd647ac6abafdc9ff674caee789d0f9816c"
+ },
+ {
+  "name": "E5.7z",
+  "size": 1695371381,
+  "sha256": "783ef3dcf20be25ac9a854206489a93383b506b4cdb818befe2ed650ae757ddb"
+ },
+ {
+  "name": "E6.7z",
+  "size": 504308607,
+  "sha256": "db9c90fe21c2ca1a87197c9bad6f6f98b91a280f0dcd7741173677617db964e9"
+ },
+ {
+  "name": "Readme_Part1_V2.pdf",
+  "size": 185033,
+  "sha256": "8dab59faefba37b870a9ddb509e17b69440c87357fb0c501a841ebd9607d30ea"
+ },
+ {
+  "name": "Readme_Part2_V2.pdf",
+  "size": 188284,
+  "sha256": "f1e04d054edac0ffffcc5490cae007d83f6f009ac3853972a995c8912a4fa532"
+ }
+]

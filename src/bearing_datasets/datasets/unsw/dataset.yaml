@@ -1,0 +1,29 @@
+name: unsw
+title: UNSW bearing run-to-failure datasets (natural spall growth)
+description: |
+  Four run-to-failure experiments (Test 1-4) at UNSW Sydney, 2019-2020, following the
+  natural evolution of spalls in the test bearing for fault severity assessment. The
+  bearing runs at 6 Hz; periodically a measurement is taken at 6 Hz, and on some
+  occasions also at 12, 15 and 20 Hz. Channels (all stored in V, 51.2 kHz): horizontal
+  and vertical acceleration (10 mV per m/s^2), two encoder channels (1024 pulses/rev),
+  the radial load cell (2.8 kN/V) and a 1/rev tacho. Progress is counted in shaft
+  cycles, from the file name: use run_id, shaft_cycles and rul_cycles (end of life =
+  last measurement). The condition of each measurement is unknown; the paper describes
+  the spall sizes. The 6 Hz files in the Multiple speeds folders are copies of files in
+  the 6Hz folders and are stored once.
+license: CC-BY-4.0
+size: "download 9.7 GB, built 8.0 GB (measured)"
+homepage: https://data.mendeley.com/datasets/h4df4mgrfb/3
+citation: |
+  Zhang, H., Borghesani, P., Randall, R. B., & Peng, Z. (2022). A benchmark of
+  measurement approaches to track the natural evolution of spall severity in rolling
+  element bearings. Mechanical Systems and Signal Processing, 166, 108466.
+  doi:10.1016/j.ymssp.2021.108466
+sources:
+  - type: mendeley
+    id: h4df4mgrfb
+    version: 3
+columns:
+  rpm: shaft speed from the file name (6, 12, 15 or 20 Hz)
+  shaft_cycles: shaft revolutions since the start of the test (from the file name)
+  rul_cycles: shaft revolutions left until the last measurement of the test

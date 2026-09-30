@@ -1,0 +1,39 @@
+name: seu
+title: Southeast University (SEU) gearbox dataset (drivetrain dynamic simulator)
+description: |
+  Drivetrain dynamic simulator with a planetary and a parallel gearbox. Two subsets:
+  bearing faults (ball, inner, outer, combined inner+outer, healthy) and gear faults
+  (chipped tooth, missing tooth, root crack, surface wear, healthy), each at two
+  speed-load settings (20 Hz / 0 V and 30 Hz / 2 V): 20 recordings.
+  8 channels: motor vibration, planetary gearbox vibration x/y/z, motor torque,
+  parallel gearbox vibration x/y/z (the authors call channels 2-4 the effective ones).
+  The sampling rate is not stated; 5120 Hz is inferred from the file header
+  (frequency limit 2000 Hz x 2.56). Each file is truncated at 1,048,560 rows although
+  the header announces 4,194,304 (the files were saved from a spreadsheet), and some
+  files start with a large offset that settles after a while.
+  Labels come from the file names: the titles written inside the files are often wrong.
+  The location of the faulty bearing/gear inside the gearbox is not documented.
+license: unspecified (no license in the repository; cite the paper)
+size: "download 1.6 GB, built 0.37 GB (measured)"
+homepage: https://github.com/cathysiyu/Mechanical-datasets
+citation: |
+  Shao, S., McAleer, S., Yan, R., & Baldi, P. (2019). Highly accurate machine fault
+  diagnosis using deep transfer learning. IEEE Transactions on Industrial Informatics,
+  15(4), 2446-2455. doi:10.1109/TII.2018.2864759
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/cathysiyu/Mechanical-datasets/master/gearbox/
+files: [bearingset/ball_20_0.csv, bearingset/ball_30_2.csv, bearingset/comb_20_0.csv,
+        bearingset/comb_30_2.csv, bearingset/health_20_0.csv, bearingset/health_30_2.csv,
+        bearingset/inner_20_0.csv, bearingset/inner_30_2.csv, bearingset/outer_20_0.csv,
+        bearingset/outer_30_2.csv, gearset/Chipped_20_0.csv, gearset/Chipped_30_2.csv,
+        gearset/Health_20_0.csv, gearset/Health_30_2.csv, gearset/Miss_20_0.csv,
+        gearset/Miss_30_2.csv, gearset/Root_20_0.csv, gearset/Root_30_2.csv,
+        gearset/Surface_20_0.csv, gearset/Surface_30_2.csv]
+columns:
+  fs: 5120 Hz, inferred from the file header (the dataset does not state it)
+  subset: bearingset (bearing faults) or gearset (gear faults)
+  fault_detail: the fault in words (e.g. gear root crack); 'none' if healthy
+  speed_hz: speed setting of the file name (20 or 30 Hz)
+  load_setting: load setting of the file name (0 or 2 V)

@@ -1,0 +1,29 @@
+name: uoemd
+title: University of Ottawa electric motor dataset, vibration and acoustic faults under constant and variable speed (UOEMD-VAFCVS)
+description: |
+  Eight Marathon D396 3 hp induction motors (6205 bearings) on a modified SpectraQuest
+  simulator, one healthy and seven each with one fault made by SpectraQuest: rotor
+  unbalance, rotor misalignment, stator winding fault, voltage unbalance and single
+  phasing, bowed rotor, broken rotor bars, faulty bearing (defect not described).
+  4 constant speeds (15-60 Hz) and 4 speed ramps, unloaded and loaded (a disk bolted
+  to the shaft): 128 recordings of 10 s at 42 kHz. Three accelerometers (m/s^2), a
+  microphone (V) and the motor surface temperature (degC).
+  Each fault is a different physical motor, so the motor is confounded with the label.
+license: CC-BY-4.0
+size: "download 0.60 GB, built 0.36 GB (measured)"
+homepage: https://data.mendeley.com/datasets/msxs4vj48g/2
+citation: |
+  Sehri, M., & Dumond, P. (2024). University of Ottawa constant and variable speed
+  electric motor vibration and acoustic fault signature dataset. Data in Brief, 53,
+  110144. doi:10.1016/j.dib.2024.110144
+sources:
+  - type: mendeley
+    id: msxs4vj48g
+    version: 2
+    include: ["3_MatLab_Data_Files/*/*.mat"]
+    strip_prefix: "3_MatLab_Data_Files/"
+columns:
+  fault: the motor's fault in words (each state is a different motor)
+  operating_condition: >-
+    drive frequency: 15Hz, 30Hz, 45Hz, 60Hz (constant) or a ramp such as 15-45Hz
+  load_condition: unloaded, or loaded (a disk bolted to the shaft)

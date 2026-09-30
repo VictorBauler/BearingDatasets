@@ -1,0 +1,131 @@
+name: sqv
+title: SQ variable-speed bearing dataset (SQV)
+description: |
+  NSK 6203 bearing at the drive end of the motor of a SpectraQuest simulator, in 7
+  states: normal and machined single-point inner (IF) and outer (OF) ring defects at 3
+  levels (mild 4 mm^2 x 0.5 mm deep, moderate 8 mm^2 x 4 mm, severe 12 mm^2 x 2 mm, as
+  given by the authors). Each recording is a full run: from standstill up to 3000 rpm,
+  hold, back down to 0, with the speed knob turned by hand; 6-9 runs per state (52
+  recordings of 1.5 to 30 s). Accelerometer on the drive-end cover (g) and a
+  speed pulse channel (V), 25.6 kHz, Crystal Instruments CoCo-80 (recorded in 2015).
+license: unspecified (cite the paper)
+size: "download 1.97 GB, built 0.34 GB (measured)"
+homepage: https://github.com/shenliuuu/SQ-dataset-with-variable-speed-for-fault-diagnosis
+citation: |
+  Liu, S., Chen, J., He, S., Shi, Z., & Zhou, Z. (2023). Few-shot learning under domain
+  shift: Attentional contrastive calibrated transformer of time series for fault
+  diagnosis under sharp speed variation. Mechanical Systems and Signal Processing, 189,
+  110071. doi:10.1016/j.ymssp.2022.110071
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/shenliuuu/SQ-dataset-with-variable-speed-for-fault-diagnosis/86e5e5c09dd01547f7d549b689cac1ab4dad4fd9/
+files:
+  - IF_1/REC3597_ch2.txt
+  - IF_1/REC3597_ch3.txt
+  - IF_1/REC3598_ch2.txt
+  - IF_1/REC3598_ch3.txt
+  - IF_1/REC3599_ch2.txt
+  - IF_1/REC3599_ch3.txt
+  - IF_1/REC3600_ch2.txt
+  - IF_1/REC3600_ch3.txt
+  - IF_1/REC3601_ch2.txt
+  - IF_1/REC3601_ch3.txt
+  - IF_1/REC3602_ch2.txt
+  - IF_1/REC3602_ch3.txt
+  - IF_1/REC3603_ch2.txt
+  - IF_1/REC3603_ch3.txt
+  - IF_1/REC3604_ch2.txt
+  - IF_1/REC3604_ch3.txt
+  - IF_1/REC3605_ch2.txt
+  - IF_1/REC3605_ch3.txt
+  - IF_1/REC3606_ch2.txt
+  - IF_1/REC3606_ch3.txt
+  - IF_2/REC3619_ch2.txt
+  - IF_2/REC3619_ch3.txt
+  - IF_2/REC3620_ch2.txt
+  - IF_2/REC3620_ch3.txt
+  - IF_2/REC3621_ch2.txt
+  - IF_2/REC3621_ch3.txt
+  - IF_2/REC3623_ch2.txt
+  - IF_2/REC3623_ch3.txt
+  - IF_2/REC3624_ch2.txt
+  - IF_2/REC3624_ch3.txt
+  - IF_2/REC3625_ch2.txt
+  - IF_2/REC3625_ch3.txt
+  - IF_2/REC3626_ch2.txt
+  - IF_2/REC3626_ch3.txt
+  - IF_2/REC3627_ch2.txt
+  - IF_2/REC3627_ch3.txt
+  - IF_2/REC3628_ch2.txt
+  - IF_2/REC3628_ch3.txt
+  - IF_3/REC3532_ch2.txt
+  - IF_3/REC3532_ch3.txt
+  - IF_3/REC3533_ch2.txt
+  - IF_3/REC3533_ch3.txt
+  - IF_3/REC3534_ch2.txt
+  - IF_3/REC3534_ch3.txt
+  - IF_3/REC3535_ch2.txt
+  - IF_3/REC3535_ch3.txt
+  - IF_3/REC3536_ch2.txt
+  - IF_3/REC3536_ch3.txt
+  - IF_3/REC3537_ch2.txt
+  - IF_3/REC3537_ch3.txt
+  - NC/REC3642_ch2.txt
+  - NC/REC3642_ch3.txt
+  - NC/REC3643_ch2.txt
+  - NC/REC3643_ch3.txt
+  - NC/REC3644_ch2.txt
+  - NC/REC3644_ch3.txt
+  - NC/REC3645_ch2.txt
+  - NC/REC3645_ch3.txt
+  - NC/REC3646_ch2.txt
+  - NC/REC3646_ch3.txt
+  - NC/REC3647_ch2.txt
+  - NC/REC3647_ch3.txt
+  - NC/REC3648_ch2.txt
+  - NC/REC3648_ch3.txt
+  - NC/REC3649_ch2.txt
+  - NC/REC3649_ch3.txt
+  - NC/REC3650_ch2.txt
+  - NC/REC3650_ch3.txt
+  - OF_1/REC3513_ch2.txt
+  - OF_1/REC3513_ch3.txt
+  - OF_1/REC3514_ch2.txt
+  - OF_1/REC3514_ch3.txt
+  - OF_1/REC3515_ch2.txt
+  - OF_1/REC3515_ch3.txt
+  - OF_1/REC3516_ch2.txt
+  - OF_1/REC3516_ch3.txt
+  - OF_1/REC3517_ch2.txt
+  - OF_1/REC3517_ch3.txt
+  - OF_1/REC3518_ch2.txt
+  - OF_1/REC3518_ch3.txt
+  - OF_2/REC3494_ch2.txt
+  - OF_2/REC3494_ch3.txt
+  - OF_2/REC3495_ch2.txt
+  - OF_2/REC3495_ch3.txt
+  - OF_2/REC3496_ch2.txt
+  - OF_2/REC3496_ch3.txt
+  - OF_2/REC3497_ch2.txt
+  - OF_2/REC3497_ch3.txt
+  - OF_2/REC3498_ch2.txt
+  - OF_2/REC3498_ch3.txt
+  - OF_2/REC3499_ch2.txt
+  - OF_2/REC3499_ch3.txt
+  - OF_3/REC3476_ch2.txt
+  - OF_3/REC3476_ch3.txt
+  - OF_3/REC3477_ch2.txt
+  - OF_3/REC3477_ch3.txt
+  - OF_3/REC3478_ch2.txt
+  - OF_3/REC3478_ch3.txt
+  - OF_3/REC3479_ch2.txt
+  - OF_3/REC3479_ch3.txt
+  - OF_3/REC3480_ch2.txt
+  - OF_3/REC3480_ch3.txt
+  - OF_3/REC3481_ch2.txt
+  - OF_3/REC3481_ch3.txt
+  - SpeedExtraction/data/REC3494_ch3.txt
+  - SpeedExtraction/data/REC3642_ch3.txt
+columns:
+  severity: mild, moderate or severe defect (folder number 1-3); none if normal

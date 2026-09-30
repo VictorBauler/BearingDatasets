@@ -1,0 +1,212 @@
+[
+ {
+  "name": "Self-built dataset/IR2_1200.mat",
+  "size": 1580481,
+  "sha256": "90e0e3dc235f69101d71e450818e3407588436e647a70ba672f01712c131961d"
+ },
+ {
+  "name": "Self-built dataset/IR2_600.mat",
+  "size": 1423623,
+  "sha256": "a54bc9b977ff36ab2f2f7c92b49706056318749c09e03f45172d6f34ae56d65f"
+ },
+ {
+  "name": "Self-built dataset/IR2_900.mat",
+  "size": 1491347,
+  "sha256": "e62cea5e5c1c91a6aea6baf00aa24cf7ffb67fa56f75a879605907580d5ebbfa"
+ },
+ {
+  "name": "Self-built dataset/IR5_1200.mat",
+  "size": 2007436,
+  "sha256": "05a095a915ecbab3959727332d7419eb517b2666cc13f3ea013085bc38d5ed5e"
+ },
+ {
+  "name": "Self-built dataset/IR5_600.mat",
+  "size": 1990846,
+  "sha256": "b9bb89badc458eef2a316c199b004fde7d87931a911dbb8e400fb52d8126b626"
+ },
+ {
+  "name": "Self-built dataset/IR5_900.mat",
+  "size": 2003694,
+  "sha256": "55e0d56b2ef52c9ea9b7a54e6b07fddb969551c88442ed62be7ae4d66dae7f3b"
+ },
+ {
+  "name": "Self-built dataset/IR8_1200.mat",
+  "size": 1544172,
+  "sha256": "881b87bf318abf5231eeab4bc80c5d908a66adbc10867ceedb64474c7c6137ab"
+ },
+ {
+  "name": "Self-built dataset/IR8_600.mat",
+  "size": 1392324,
+  "sha256": "627885b3e0812162f2ae921c724ef2833a1ac9ecd378717097adb4fc886df311"
+ },
+ {
+  "name": "Self-built dataset/IR8_900.mat",
+  "size": 1543133,
+  "sha256": "edf64995b93b041ec75c613ab989cfa5149d463f3cee13f9fbcf9f8bbc7b5fe6"
+ },
+ {
+  "name": "Self-built dataset/Normal_1200.mat",
+  "size": 1874801,
+  "sha256": "01dd58f148b0c662f159094d220caaac3a6122e42f868dc216bf4674cd34cdf5"
+ },
+ {
+  "name": "Self-built dataset/Normal_600.mat",
+  "size": 1873427,
+  "sha256": "bd8005d12cb0002188fafacc5f12876a21bc8c4b296f8ec1ced323f2a6723ecb"
+ },
+ {
+  "name": "Self-built dataset/Normal_900.mat",
+  "size": 1878542,
+  "sha256": "473966f58941267acac9143868da4c8c8a9f06e9d1a2d69a8415a77e48923ddb"
+ },
+ {
+  "name": "Self-built dataset/OR2_1200.mat",
+  "size": 1614929,
+  "sha256": "bff1b481efec59b0e6ffa76c93e0bc60c3e81faf75b7695f7a584ec6bf0c68c2"
+ },
+ {
+  "name": "Self-built dataset/OR2_600.mat",
+  "size": 1369172,
+  "sha256": "b01701ab545b1450806667566736c2b0e3f107bf2211cba39d59591f33fc3293"
+ },
+ {
+  "name": "Self-built dataset/OR2_900.mat",
+  "size": 1526634,
+  "sha256": "a4d48c8c01ffe718a83d71b1c905b4cf8a194aa6bec42a44f677c1e919203f6b"
+ },
+ {
+  "name": "Self-built dataset/OR5_1200.mat",
+  "size": 1999737,
+  "sha256": "191f7912682b3796df24a2ffc82790a6c10b94d6a89bdb5435d8fbbe873cf050"
+ },
+ {
+  "name": "Self-built dataset/OR5_600.mat",
+  "size": 1975218,
+  "sha256": "5770e4fd6a12dc4422f723c2beaf271d707b14c73d16b80826faa0251489de28"
+ },
+ {
+  "name": "Self-built dataset/OR5_900.mat",
+  "size": 1992400,
+  "sha256": "4bb36da4a15ef33457ac7aaf53e735da5b5d22a1dde8ffa58ef39adc43627e5f"
+ },
+ {
+  "name": "Self-built dataset/OR8_1200.mat",
+  "size": 1597231,
+  "sha256": "2fe017b246b25d2e35550cec1f289e48e980250cccdec962310520e2e78e8811"
+ },
+ {
+  "name": "Self-built dataset/OR8_600.mat",
+  "size": 1458165,
+  "sha256": "1618add5922bc5c5b42b4f275c21decd0aad4e7dd737836d5f792450fbb1a423"
+ },
+ {
+  "name": "Self-built dataset/OR8_900.mat",
+  "size": 1538838,
+  "sha256": "078de014c274f16e0ecdea85ad466f0af6b8fd6d699145dba20d3f2fa42bb0fe"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR2_1200.mat",
+  "size": 1928530,
+  "sha256": "28bae33f046020f3bfb223567711ccba5d50cdd66c7a3461a4776222c46276a8"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR2_600.mat",
+  "size": 1827841,
+  "sha256": "71eac6cf1b129ceb4f074d6e3d56d5feadf8a764e8fd3a5b38e91a1bcc1645a1"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR2_900.mat",
+  "size": 1902014,
+  "sha256": "9a307bc8d61fe79f7154d50d6811f490a551228f7c57c0d02efe39bbc2c6cef2"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR5_1200.mat",
+  "size": 1933486,
+  "sha256": "72afc227e70795bb015df0aebdffa33223dc7650bb62b8046d2a32fbca01ab72"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR5_600.mat",
+  "size": 1887562,
+  "sha256": "52ac7e7aabc670a0a6de267347572e6e9110c64783b8fabe662ee407a1c754c8"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR5_900.mat",
+  "size": 1921425,
+  "sha256": "e1c5e77952fb090c7656cd91811af8bcb6512e135602b8c926d1b800a41d7cf4"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR8_1200.mat",
+  "size": 1922865,
+  "sha256": "faca72b7efe952a340a5be15ce04efe39a24b9f5c5e329d0e8cf35c59e6e2d91"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR8_600.mat",
+  "size": 1845688,
+  "sha256": "d8a3c772834a828997c89559ffdb4cba6d6f886ab99ba1c1a129080497556789"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/IR8_900.mat",
+  "size": 1910381,
+  "sha256": "c8720261d5feb0bb8dc83e99bb9a8875a2cb3ab6c2572995d8dea067bc48676a"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/Normal_1200.mat",
+  "size": 1071633,
+  "sha256": "e0393c44e971231baeac5fe2fb5dedf42a03a5c4ec9f5bc4448d1376e80e0764"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/Normal_600.mat",
+  "size": 1058799,
+  "sha256": "6e8de88c4563f22b028dc0fb1b1f0880f77a6e580c437614284c099092f81a17"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/Normal_900.mat",
+  "size": 1040748,
+  "sha256": "91618b247e8bc65b1d515e9662e8c18219b3d4073426a64c1bb04487a9608ba1"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR2_1200.mat",
+  "size": 1931859,
+  "sha256": "5663525bdd773e2281167e534ec3f1b024064c9a575ca7446a1d46b2cc7a3bca"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR2_600.mat",
+  "size": 1886512,
+  "sha256": "61783f3ba7b2153bd80e586d4cc7fbb2bf5eb7f261007794faa8f542e6666489"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR2_900.mat",
+  "size": 1918858,
+  "sha256": "4b0f8e74dd0f56b01ec055a0e70b486ee619baa7d1da75ff8b36eee1f3f7bb5b"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR5_1200.mat",
+  "size": 1928552,
+  "sha256": "83d3918b67020ad91b5173fde5b0d39d0225763371fe331ee8a78aee43e361a1"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR5_600.mat",
+  "size": 1885255,
+  "sha256": "59f71b3919c3104753099155606162f14a7b194ad12ac650586377c9eb607ff8"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR5_900.mat",
+  "size": 1926364,
+  "sha256": "5fbfadce16c23cea3fb5c3a269136cc42a6744ab92cc0556c315584ec176b35b"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR8_1200.mat",
+  "size": 1929323,
+  "sha256": "008ee453e6731a87283e58d9aefa36f97b237a0b12e49adefb138b0bafe896d6"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR8_600.mat",
+  "size": 1857838,
+  "sha256": "d96d60f65fa1136ac5f56a4c4bfa531f99b12fcb3381a175ea6310928e8fb89d"
+ },
+ {
+  "name": "SpectraQuest MFS dataset/OR8_900.mat",
+  "size": 1918429,
+  "sha256": "391c990aadb196b79df15cc4b6fcbcb3fa206ef2551f1777e096901bd8b8ddf4"
+ }
+]

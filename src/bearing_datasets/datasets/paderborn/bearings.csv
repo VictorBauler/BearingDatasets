@@ -1,0 +1,33 @@
+bearing_id,manufacturer,condition,origin,severity,damage,pitch_diameter_mm
+K001,IBU,normal,none,0,none,29.05
+K002,IBU,normal,none,0,none,29.05
+K003,IBU,normal,none,0,none,29.05
+K004,IBU,normal,none,0,none,29.05
+K005,IBU,normal,none,0,none,29.05
+K006,IBU,normal,none,0,none,29.05
+KA01,MTK,outer,artificial,1,EDM,29.05
+KA03,MTK,outer,artificial,2,electric engraver,29.05
+KA05,IBU,outer,artificial,1,electric engraver,29.05
+KA06,IBU,outer,artificial,2,electric engraver,29.05
+KA07,IBU,outer,artificial,1,drilling,29.05
+KA08,IBU,outer,artificial,2,drilling,29.05
+KA09,IBU,outer,artificial,2,drilling,29.05
+KI01,MTK,inner,artificial,1,EDM,29.05
+KI03,MTK,inner,artificial,1,electric engraver,29.05
+KI05,IBU,inner,artificial,1,electric engraver,29.05
+KI07,IBU,inner,artificial,2,electric engraver,29.05
+KI08,IBU,inner,artificial,2,electric engraver,29.05
+KA04,FAG,outer,real,1,pitting,28.55
+KA15,FAG,outer,real,1,indentation,28.55
+KA16,MTK,outer,real,2,pitting,29.05
+KA22,IBU,outer,real,1,pitting,29.05
+KA30,MTK,outer,real,1,indentation,29.05
+KB23,MTK,inner+outer,real,2,pitting,29.05
+KB24,FAG,inner+outer,real,3,pitting,28.55
+KB27,FAG,inner+outer,real,1,indentation,28.55
+KI04,MTK,inner,real,1,pitting,29.05
+KI14,MTK,inner,real,1,pitting,29.05
+KI16,FAG,inner,real,3,pitting,28.55
+KI17,MTK,inner,real,1,pitting,29.05
+KI18,MTK,inner,real,2,pitting,29.05
+KI21,FAG,inner,real,1,pitting,28.55

@@ -1,0 +1,102 @@
+[
+ {
+  "name": "bearingset/ball_20_0.csv",
+  "size": 79957011,
+  "sha256": "9f76bcf11ef2817405eb47de020044adaf5e7f35f0496e6a42f7fb4784a0f0ee"
+ },
+ {
+  "name": "bearingset/ball_30_2.csv",
+  "size": 80200560,
+  "sha256": "6845b3b866420a11a9616c99abbcfe8e7b3d1a231698580c8c7cb65a102b06f9"
+ },
+ {
+  "name": "bearingset/comb_20_0.csv",
+  "size": 79868771,
+  "sha256": "ce78c42a51d302e7c856153807efcd0d9f5c0f975726c466eb97c8199276afb4"
+ },
+ {
+  "name": "bearingset/comb_30_2.csv",
+  "size": 80269961,
+  "sha256": "83b7f9616a1d7c17b63f6846d717d7e31a858788c52a37392fca410fc952fb4f"
+ },
+ {
+  "name": "bearingset/health_20_0.csv",
+  "size": 80061736,
+  "sha256": "12b9e98ecd8b29e23c8c931710f7031620382796e37022e6b7a147b6c502dc8a"
+ },
+ {
+  "name": "bearingset/health_30_2.csv",
+  "size": 80208353,
+  "sha256": "23404ca73e7b848c8d7afdbcb349ac4b8d04bea59c93fd48da5525ff5204584e"
+ },
+ {
+  "name": "bearingset/inner_20_0.csv",
+  "size": 80129050,
+  "sha256": "eace9f1e15bb0a8e02ad06eb2e12c9f660dcd806824430b8a9137f1d583c0a3a"
+ },
+ {
+  "name": "bearingset/inner_30_2.csv",
+  "size": 80291118,
+  "sha256": "fd2402b8e63cfeb446b8ee15915849fffde522cfa70adb4a2fa044dd04738560"
+ },
+ {
+  "name": "bearingset/outer_20_0.csv",
+  "size": 79732483,
+  "sha256": "340103613c44a6572933e8396f8369472a007f55bce0622fe3b1b64f88c775b6"
+ },
+ {
+  "name": "bearingset/outer_30_2.csv",
+  "size": 80174707,
+  "sha256": "bd742b6c2e6656b89ca1334a2d929026b22de6d5a2e06e2ae9a976c3299c91f5"
+ },
+ {
+  "name": "gearset/Chipped_20_0.csv",
+  "size": 80055432,
+  "sha256": "dd6571174764b56c93524332ddb2beaaea7b5f36211e0579838f3453110909b2"
+ },
+ {
+  "name": "gearset/Chipped_30_2.csv",
+  "size": 80257645,
+  "sha256": "2b6a9393d148fa2542c1318f131a4c27ff1ba4e3b6e0b5fddc3b76c16b1a41e9"
+ },
+ {
+  "name": "gearset/Health_20_0.csv",
+  "size": 80323854,
+  "sha256": "ca04b9a073e16a2571cd4fe84f0deca6831214726111effc8a34cb25a79ed4bf"
+ },
+ {
+  "name": "gearset/Health_30_2.csv",
+  "size": 80317583,
+  "sha256": "1fe71abc261df79e473f92b1059aafd28e018a8e39b04adebdc2a7d9873e184d"
+ },
+ {
+  "name": "gearset/Miss_20_0.csv",
+  "size": 80165741,
+  "sha256": "8f863a93b0e4137607e6459e23a1af7ed8457b9cac7fb917407e526537531275"
+ },
+ {
+  "name": "gearset/Miss_30_2.csv",
+  "size": 80290321,
+  "sha256": "55d4fb5de2b07dbcafe2014cd03b7170f78e8de4d63353c3ad9a555d9df91def"
+ },
+ {
+  "name": "gearset/Root_20_0.csv",
+  "size": 80220486,
+  "sha256": "2494a32c2e0c1d5643ade15cdfb19a6da15983dfa439a72cd7fd07ecd2e07b44"
+ },
+ {
+  "name": "gearset/Root_30_2.csv",
+  "size": 80270482,
+  "sha256": "e51cb418911e637b5db3464e34ce9df28893eea7dbc8411cd308bde6d186d8f0"
+ },
+ {
+  "name": "gearset/Surface_20_0.csv",
+  "size": 80115358,
+  "sha256": "f6dbf55ddf6a48d6aa894b81c85c9b28c4725fe1f77d8c3c29964ab9322d2c19"
+ },
+ {
+  "name": "gearset/Surface_30_2.csv",
+  "size": 80296794,
+  "sha256": "c698f1e2ddc4499bb008662d913548390238c47937d8caba0988420cbec7cce8"
+ }
+]

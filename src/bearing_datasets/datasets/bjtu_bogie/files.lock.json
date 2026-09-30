@@ -1,0 +1,17 @@
+[
+ {
+  "name": "BJTU_RAO_Bogie_Datasets.z01",
+  "size": 10737418240,
+  "sha256": "6e24b2ac452b1d6e27190295686e2581207dd606906ddd85a7da18a0e3b5afe6"
+ },
+ {
+  "name": "BJTU_RAO_Bogie_Datasets.z02",
+  "size": 10737418240,
+  "sha256": "74a58170ec2761b265303825fbc0a3faee6e2f35cf42471e93b24ad06c00cbca"
+ },
+ {
+  "name": "BJTU_RAO_Bogie_Datasets.zip",
+  "size": 8918723909,
+  "sha256": "81c6fd23e86e54df96154438c82ac7398913681ae477c56ca8a9eb0393f01703"
+ }
+]

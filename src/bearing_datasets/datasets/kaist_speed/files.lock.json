@@ -1,0 +1,17 @@
+[
+ {
+  "name": "part1.zip",
+  "size": 10350759860,
+  "sha256": "e0d6089fd132b4027866f0240232850503a3a788c6be5c0b7f2d52d535a42ba7"
+ },
+ {
+  "name": "part2.zip",
+  "size": 5529338644,
+  "sha256": "496b8031d22778b58cd66a35f9c1d7bf14b86940ebd6f73cebc94f4c88aded09"
+ },
+ {
+  "name": "part3.zip",
+  "size": 5536452993,
+  "sha256": "8b0f95eaccaa8f0c2ed73fb3ce19e319234cbcb2b8b3470a091ea4eb9394b22a"
+ }
+]

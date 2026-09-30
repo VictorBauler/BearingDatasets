@@ -1,0 +1,20 @@
+name: fstf
+title: FSTF sound datasets of a rolling element bearing under various operating conditions (Sidi Mohamed Ben Abdellah University)
+description: |
+  Gunt PT 500 rotor system with the PT 500.12 roller bearing faults kit, SKF 6004 ball
+  bearings: healthy, inner race, outer race and ball defects (artificial), combined inner +
+  outer + ball, and a looseness defect from prolonged operation. Sound recorded with a
+  smartphone app (VibroTeak) at 44.1 kHz near the bearing housing, through a stethoscope
+  (stethoscope = yes) or without it, at about 600-1800 rpm: 36 recordings of 10-20 s. Small
+  acoustic dataset for low-cost sensing studies. Unit not stated.
+license: CC-BY-4.0
+size: "download 0.08 GB, built 0.05 GB (measured)"
+homepage: https://doi.org/10.17632/n9y9c7xrz3.1
+citation: |
+  Ait Ben Ahmed, A. (2023). Sound datasets of a rolling element bearing under various
+  operating conditions. Mendeley Data, V1. doi:10.17632/n9y9c7xrz3.1
+sources:
+  - {type: mendeley, id: n9y9c7xrz3, version: 1, include: "Datasets*/*/*.mat"}
+columns:
+  rpm: shaft speed from the file name
+  stethoscope: yes if recorded through a stethoscope (Datasets 1), no otherwise (Datasets 2)

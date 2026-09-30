@@ -1,0 +1,22 @@
+[
+ {
+  "name": "Nextmon_MFS_1.txt",
+  "size": 39733353,
+  "sha256": "8577fca00078308df495c19f34ca8b374b1279c1855101e1286546f438120c72"
+ },
+ {
+  "name": "Nextmon_MFS_2.txt",
+  "size": 39583705,
+  "sha256": "adba7a039ddbb3210cdce921a5e4127fb60848ce8a1c847c0967b4f4b69307a8"
+ },
+ {
+  "name": "Nextmon_MFS_3.txt",
+  "size": 39591938,
+  "sha256": "a86dbcbafaa13768e26993fd6040b6e533f33f2dc809794a233788058a823d90"
+ },
+ {
+  "name": "Nextmon_MFS_4.txt",
+  "size": 39758465,
+  "sha256": "14d737b6cbf195bd3810565c66e8b8534371c0892aafb1fce1a9e02b362ec795"
+ }
+]

@@ -1,0 +1,35 @@
+name: mafaulda
+title: MAFAULDA - Machinery Fault Database (UFRJ)
+description: |
+  SpectraQuest machinery fault simulator: normal operation, rotor unbalance (6-35 g),
+  horizontal (0.5-2.0 mm) and vertical (0.51-1.90 mm) shaft misalignment, and bearing
+  faults (ball, cage, outer race) in the underhang or overhang bearing, alone or with an
+  added unbalance mass (0/6/20/35 g), at speeds from about 737 to 3686 rpm: 1,951
+  recordings of 5 s. 8 channels at 50 kHz: tachometer (one pulse per revolution),
+  underhang and overhang tri-axial accelerometers (axial, radial, tangential) and a
+  microphone. Values are raw volts. The site states 50 kHz (the NI 9234 hardware runs
+  at 51.2 kHz). The bearing-fault folders are named ball/cage/outer (there is no inner
+  race folder). Bearing: 8 balls; fault frequencies in bpfo, bpfi, bsf, ftf (the same bearing type in
+  both positions).
+  Large: 12.9 GB download (6 zips, read without unpacking 33 GB of CSV).
+license: unspecified (cite the database)
+size: "download 12.9 GB, built 13.0 GB (measured)"
+homepage: https://www02.smt.ufrj.br/~offshore/mfs/page_01.html
+citation: |
+  MAFAULDA - Machinery Fault Database. Signals, Multimedia and Telecommunications
+  Laboratory (SMT), COPPE/UFRJ. https://www02.smt.ufrj.br/~offshore/mfs/page_01.html
+sources:
+  - type: http
+    name: ufrj
+    base_url: https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/
+files: [normal.zip, imbalance.zip, horizontal-misalignment.zip, vertical-misalignment.zip,
+        underhang.zip, overhang.zip]
+extract: false          # CSVs are read directly from the zips
+columns:
+  bpfo: >-
+    official MAFAULDA page (in CPM/rpm, i.e. orders): 8 balls of 0.7145 cm, cage diameter
+    2.8519 cm
+  rpm: nominal speed, from the file name (rotation frequency in Hz x 60)
+  imbalance_g: added unbalance mass in grams (0 if none)
+  misalignment_mm: shaft misalignment in mm (0 if none)
+  misalignment_direction: horizontal, vertical or none

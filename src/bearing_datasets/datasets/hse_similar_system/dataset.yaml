@@ -1,0 +1,42 @@
+name: hse_similar_system
+title: HSE extended similar system data set for fault diagnosis (Esslingen University), bearings of different types on two rigs
+description: |
+  Two test rigs of the Institute for Technical Reliability and Prognostics (IZP),
+  Esslingen University of Applied Sciences, with four "bearing types": NU204-E
+  cylindrical roller bearings with a plastic cage on rig a and on rig b, NU204-E with a
+  metal cage on rig b, and STO20 needle bearings on rig b. Faults made by removing
+  material at one point: healthy (OK), inner race (IR), outer race (OR), rolling element
+  (RE); the metal-cage NU204-E has no OR fault. 2 set speeds (500, 1000 rpm, set by hand)
+  x 2 load levels x 10 recordings of 1 s at 15625 Hz: 600 recordings. One vibration sensor
+  opposite the load zone (stored in V). Made for transfer learning between similar
+  systems (bearing types, rigs).
+  This is the extended version (Kaggle, August 2026); it contains the 300 recordings of the
+  original set (IEEE Access 2025) plus 300 new ones: `original_recording` gives the number
+  of a recording in the original set (0 for new recordings), to reproduce the original paper.
+license: CC-BY-4.0
+size: "download 0.60 GB, built 0.02 GB (measured)"
+homepage: https://www.kaggle.com/datasets/prognosticshse/ext-similar-system-data-set-for-fault-diagnosis
+citation: |
+  Braig, M., & Zeiler, P. (2025). A study on using transfer learning to utilize information
+  from similar systems for data-driven condition diagnosis and prognosis. IEEE Access, 13,
+  98485-98503. doi:10.1109/ACCESS.2025.3576435
+  Braig, M., & Zeiler, P. (2026). Time series similarity-weighted training for data-driven
+  condition diagnostics and prognostics of similar engineering systems. Mechanical Systems
+  and Signal Processing (under review; the extended data set).
+sources:
+  - type: kaggle
+    dataset: prognosticshse/ext-similar-system-data-set-for-fault-diagnosis
+    version: 1
+    include: data.csv
+columns:
+  rpm: shaft speed measured from the rotation sensor (the file's Spead_Real, in Hz x 60)
+  load: load level, 1 or 2 (set by compressing a rubber bumper; not given in N)
+  bearing_id: >-
+    bearing model + cage + fault; assumes one physical bearing per model, cage and fault,
+    the plastic-cage NU204-E bearings being the same ones on both rigs (the description says
+    the bearing type was installed on both rigs)
+  bearing_model: NU204-E (cylindrical roller) or STO20 (needle)
+  cage: plastic or metal
+  rig: test rig a or b
+  speed_set_rpm: speed set on the potentiometer, 500 or 1000 rpm
+  original_recording: number of the recording in the original 300-recording set (Data_No there), 0 if new in the extension

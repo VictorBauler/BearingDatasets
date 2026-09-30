@@ -1,0 +1,28 @@
+name: ferrara_rtf
+title: University of Ferrara run-to-failure vibration dataset of self-aligning double-row ball bearings
+description: |
+  Six accelerated run-to-failure tests (E1-E6) of SKF 1205 ETN 9 self-aligning
+  double-row ball bearings at 40 Hz (2400 rpm) under a constant radial load (E1-E3
+  4 kN, E4 3 kN, E5 4.7 kN, E6 5 kN), until the acceleration peak reached 20 g. One
+  radial accelerometer on the test bearing housing (g); a 5 s snapshot at 25.6 kHz every
+  5 minutes (the first 453 snapshots of E4 hourly). At the end every bearing had an
+  extended outer raceway defect (the condition of each snapshot is unknown). Files carry
+  no time stamps: time_s is computed from the documented intervals (use run_id, time_s
+  and rul_s; end of life = last snapshot). For E4 this gives 19.6 days, the paper
+  reports 20.9.
+license: CC-BY-4.0
+size: "download 12.1 GB, built 12 GB (measured)"
+homepage: https://data.mendeley.com/datasets/htk59pp5wx/2
+citation: |
+  Arpa, L., Gabrielli, A., Battarra, M., & Mucchi, E. (2024). University of Ferrara
+  run-to-failure vibration dataset of self-aligning double-row ball bearings. Data in
+  Brief, 55, 110620. doi:10.1016/j.dib.2024.110620
+sources:
+  - {type: mendeley, name: part1, id: htk59pp5wx, version: 2}
+  - {type: mendeley, name: part2, id: zz8hpyx939, version: 2}
+columns:
+  bpfo: >-
+    SKF 1205 ETN9 from Arpa et al. (2024), Table 2, per row (12 balls of 7.12 mm, 10.2 deg,
+    pitch 38.09 mm from the race radii); matches the paper's Table 3
+  load: radial load in kN
+  time_s: nominal, from the 5-minute acquisition interval (1 hour for the first 453 files of E4)

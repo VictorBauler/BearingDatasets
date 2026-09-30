@@ -1,0 +1,33 @@
+name: dirg
+title: Politecnico di Torino DIRG rolling bearing test rig (high speed, aeronautical bearings)
+description: |
+  A high-speed spindle drives a hollow shaft on two identical roller bearings B1 and
+  B3; B1 carries the damage, and a central bearing B2 is loaded radially through a
+  sledge. Damage: Rockwell indentations on the inner ring (1A-3A) or on a roller
+  (4A-6A) of 450, 250 and 150 um diameter, plus undamaged (0A). Two triaxial
+  accelerometers (m/s^2): A1 on the B1 support, A2 on the B2 support.
+  Stationary session: speeds 100-500 Hz and loads 0-1800 N, 10 s at 51.2 kHz (some
+  cases repeated, `acquisition` = 2).
+  Endurance session: bearing 4A (450 um roller indentation) at 300 Hz (18000 rpm) and
+  1800 N, 8 s at 102.4 kHz, `acquisition` = file number (7-266). Files 7-99 start at a
+  bearing life of 19 h, 101-175 at 73 h, 183-266 at 127.5 h; the paper's Table A.2 gives
+  the temperature and time of each file (file 209 is not in that table). The damage grows
+  during the test; condition stays ball.
+license: CC-BY-4.0
+size: "download 3.2 GB, built 2.7 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.3559553
+citation: |
+  Daga, A. P., Fasana, A., Marchesiello, S., & Garibaldi, L. (2019). The Politecnico di
+  Torino rolling bearing test rig: Description and analysis of open access data.
+  Mechanical Systems and Signal Processing, 120, 252-273. doi:10.1016/j.ymssp.2018.10.010
+sources:
+  - type: zenodo
+    record: "3559553"
+columns:
+  bpfo: >-
+    from the dataset description, Table 1: A1 channels bearing B1 (10 rollers of 9.0 mm,
+    pitch 40.5 mm), A2 channels the loaded bearing B2 (16 rollers of 8.0 mm, pitch 54.0 mm)
+  load: radial load on B2 in N, from the load cell voltage in the file name (0.499 mV/N)
+  fault_size_mm: diameter of the conical indentation
+  session: stationary (speed and load combinations) or endurance (230 h monitoring)
+  acquisition: stationary, repetition 1 or 2; endurance, file number (increasing with time)

@@ -1,0 +1,37 @@
+name: susu
+title: SUSU bearing dataset with a shaft-mounted wireless sensor (South Ural State University)
+description: |
+  ER-16K bearings on a 1-inch shaft, measured by a wireless acceleration sensor fixed
+  on the rotating shaft near the test bearing (three tangential MEMS accelerometers on a
+  disk). Five test bearings: healthy, inner race, outer race, ball, and one with all
+  three faults, made with a rotary tool. 31.175 kHz, at 20 Hz (1200 rpm, the set
+  described in the paper, 64 s) and 18 Hz (an extra set in the repository, not
+  described, 19 s). Each file holds three signals that the authors call linear and
+  angular acceleration; their order and unit are not documented (ch1-ch3).
+license: unspecified (cite the paper)
+size: "download 0.29 GB, built 0.34 GB (measured)"
+homepage: https://github.com/SUSU-CM/Bearings-dataset
+citation: |
+  Sinitsin, V., Ibryaeva, O., Sakovskaya, V., & Eremeeva, V. (2022). Intelligent bearing
+  fault diagnosis method combining mixed input and hybrid CNN-MLP model. Mechanical
+  Systems and Signal Processing, 180, 109454. doi:10.1016/j.ymssp.2022.109454
+sources:
+  - type: http
+    name: github
+    base_url: https://raw.githubusercontent.com/SUSU-CM/Bearings-dataset/c31985c9c1c0058f97dcb94a648e962fa665de89/
+files:
+  - Data_18Hz/Ball_1_inch_18Hz.mat
+  - Data_18Hz/Combination_1_inch_18Hz.mat
+  - Data_18Hz/Inner_1_inch_18Hz.mat
+  - Data_18Hz/Normal_1_inch_18Hz.mat
+  - Data_18Hz/Outer_1_inch_18Hz.mat
+  - Data_20Hz/Ball_1_inch_20Hz.mat
+  - Data_20Hz/Combination_1_inch_20Hz.mat
+  - Data_20Hz/Inner_1_inch_20Hz.mat
+  - Data_20Hz/Normal_1_inch_20Hz.mat
+  - Data_20Hz/Outer_1_inch_20Hz.mat
+columns:
+  bpfo: >-
+    MB ER-16K (named in the paper) with the ER16K geometry of Huang & Baddour (2018): 9
+    balls of 7.94 mm, pitch 38.52 mm
+  rpm: shaft speed from the folder name (18 or 20 Hz)

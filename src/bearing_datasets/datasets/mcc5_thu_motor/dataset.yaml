@@ -1,0 +1,33 @@
+name: mcc5_thu_motor
+title: MCC5-THU multi-mode fault diagnosis dataset of a three-phase asynchronous motor under variable working conditions
+description: |
+  QABP-90L2 three-phase asynchronous motor (6205-2Z-C3 bearings) driving a load through a
+  gearbox and magnetic powder brake. 24 states: healthy; bearing faults (inner or outer
+  raceway notch 0.2 mm (light) or 0.6 mm (high) wide and 0.5 mm deep, laser cut; ball pitting
+  all around one ball; inner + outer); rotor bend (0.2 mm), broken bar, static and dynamic
+  eccentricity, stator winding short (light, high), voltage unbalance (4%); and compound
+  faults of a motor fault with a high inner or outer raceway fault. Each state with the
+  speed cycling up to 1000, 2000 or 3000 rpm at 20 or 40 Nm, and with the load cycling up
+  to 20 or 40 Nm at 1000, 2000 or 3000 rpm: 282 recordings of 90 s at 12.8 kHz. Channels
+  (raw V): key phase, gearbox input torque (100 mV/Nm), triaxial vibration at the motor
+  drive end (100 mV/g) and three phase currents (100 mV/A).
+  File naming anomaly: bearing_outer_H at 20 Nm / 3000 rpm with speed cycling exists twice
+  (recorded 2025-07-07 and 2025-08-21) while bearing_inner_H at that setting is missing;
+  both are kept as named. voltage_unbalance_L exists only with load cycling.
+license: CC-BY-4.0
+size: "download 9.2 GB, built 8.5 GB (measured)"
+homepage: https://doi.org/10.17632/6s3dggj9mw.2
+citation: |
+  Chen, S., Liu, Z., Li, C., Zou, D., He, X., & Zhou, D. (2026). Multi-mode fault diagnosis
+  datasets of three-phase asynchronous motor under variable working conditions. Data in
+  Brief, 112583. doi:10.1016/j.dib.2026.112583
+sources:
+  - {type: mendeley, id: 6s3dggj9mw, version: 2}
+columns:
+  bpfo: >-
+    SKF 6205-2Z-C3 from the data paper, Table 3 (9 balls of 7.94 mm, pitch 39.04 mm); its
+    Table 7 gives the same BPFO, BPFI and plain BSF
+  severity: severity of each fault in condition order (light or high; none if not graded), + joined
+  varying: which quantity cycles during the recording, speed or load
+  rpm_setting: motor speed in rpm (constant when the load varies, peak of the cycle when the speed varies)
+  torque_setting_nm: load torque in Nm (constant when the speed varies, peak of the cycle when the load varies)

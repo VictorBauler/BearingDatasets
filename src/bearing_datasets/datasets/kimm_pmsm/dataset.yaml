@@ -1,0 +1,28 @@
+name: kimm_pmsm
+title: KIMM in-house PMSM multi-speed, multi-location vibration under induced disturbances
+description: |
+  Frameless inrunner PMSM drive modules (CubeMars RI60 KV120) at 500, 750 and 1000 rpm
+  without load, in five states: normal, bearing fault (some balls removed), magnet fault
+  (3 of 28 rotor magnets removed), stator assembly fault (axial rotor-stator offset) and
+  eccentricity (0.5 mm radial at the output shaft). One tri-axial MEMS accelerometer
+  (LSM6DS3TR-C, +-8 g) logged at an effective 5 kHz for 10 s, placed at four positions on
+  the housing (S 12 o'clock, C 2 o'clock, B 11 o'clock, A 9 o'clock). Besides clean data,
+  physical disturbances were applied during recording: hammer impacts on the table in four
+  patterns (D1-D4) and an external vibration source (D5); the files numbered 1-5 in the
+  noise folders are presumably D1-D5 (the record does not map them). 450 recordings. The
+  logger timestamps are irregular (repeats and gaps up to 0.1 s), so fs is the nominal
+  rate and the exact times are in the time_s channel. Different positions were recorded
+  at different times. Research data for a manuscript under review.
+license: CC-BY-4.0
+size: "download 0.27 GB, built 0.23 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.22039010
+citation: |
+  Youn, D., Cho, J. H., Jeung, D., Sin, M., Joo, S., Lee, H., Ahn, B., & Lee, K. (2026).
+  In-house PMSM Multi-Speed and Multi-Location Vibration Dataset for Fault Diagnosis under
+  Physically Induced Disturbances. Zenodo. doi:10.5281/zenodo.22039010
+sources:
+  - {type: zenodo, record: 22039010}
+columns:
+  sensor_position: accelerometer position on the housing, S (12 o'clock), C (2), B (11) or A (9)
+  disturbance: none, or noise_1 to noise_5 (physical disturbances, presumably D1-D5)
+  kimm_folder: original folder (e.g. LocS_Train_Clean), which encodes the authors' split

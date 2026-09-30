@@ -1,0 +1,327 @@
+[
+ {
+  "name": "BF_1000_0gms.mat",
+  "size": 6208041,
+  "sha256": "3503fd2586af350257a3b7eede7714d3e69429a77354dc395b6508df1f53c9f1"
+ },
+ {
+  "name": "BF_1000_12gms.mat",
+  "size": 6323025,
+  "sha256": "269b5c0b8931b8226d8b49f75d4120aaa51d95b26f2444a7f49083f2f3c8d00a"
+ },
+ {
+  "name": "BF_1000_6gms.mat",
+  "size": 6059374,
+  "sha256": "def151dbeca7f70bd856e4d52f9ac44c3586b611f9c26b0e1bdadbeabe682b59"
+ },
+ {
+  "name": "BF_1000_SR12800.mat",
+  "size": 6208041,
+  "sha256": "3503fd2586af350257a3b7eede7714d3e69429a77354dc395b6508df1f53c9f1"
+ },
+ {
+  "name": "BF_1500_0gms.mat",
+  "size": 6557866,
+  "sha256": "a592e1a2029370d083ba98bdd37b640e75bae37635b7f89537944612fee13391"
+ },
+ {
+  "name": "BF_1500_12gms.mat",
+  "size": 7024656,
+  "sha256": "7c46d6d956eea9411bbecf58a3eb005017280599aaf1223b2f749aba38d15f4c"
+ },
+ {
+  "name": "BF_1500_6gms.mat",
+  "size": 6008717,
+  "sha256": "b6b2ce49059f2582716587177388be540d0f361a0a68bab4d1bc7dc54b0b5a9c"
+ },
+ {
+  "name": "BF_1500_SR12800.mat",
+  "size": 6557866,
+  "sha256": "a592e1a2029370d083ba98bdd37b640e75bae37635b7f89537944612fee13391"
+ },
+ {
+  "name": "BF_2000_0gms.mat",
+  "size": 6563339,
+  "sha256": "7450e0bce4b513fb3cbba5860fccc246178116c5142f04ca99f6ba5273a5df77"
+ },
+ {
+  "name": "BF_2000_12gms.mat",
+  "size": 7046798,
+  "sha256": "1087d40c32f0138194dfbd353427883b9890c5216316f99bfb43b15c9ff2767e"
+ },
+ {
+  "name": "BF_2000_6gms.mat",
+  "size": 4577803,
+  "sha256": "32df637b8da30362a1e63816340a9cf8f7dc51fd7c039d7b7d3b25614031e53b"
+ },
+ {
+  "name": "BF_2000_SR12800.mat",
+  "size": 6563339,
+  "sha256": "7450e0bce4b513fb3cbba5860fccc246178116c5142f04ca99f6ba5273a5df77"
+ },
+ {
+  "name": "BF_2500_SR12800.mat",
+  "size": 6605192,
+  "sha256": "4ff36e11e6d9634f297eadcdca0478e15e328d0b430f4feb2df274c7cba3287f"
+ },
+ {
+  "name": "CF_1000_0gms.mat",
+  "size": 5348178,
+  "sha256": "9f3b807cffade84ff666b964bc333f812bf3ac4e1d714691a66f6c8c290ca888"
+ },
+ {
+  "name": "CF_1000_12gms.mat",
+  "size": 4600837,
+  "sha256": "247aaa9c231cf3ef67b42942470414bcdf5f6699d64cb321a0da8bedbc18af52"
+ },
+ {
+  "name": "CF_1000_6gms.mat",
+  "size": 4436958,
+  "sha256": "b37a9b2f3b6dc0cb75305cea349599786a0dec5134ee43f78422a49e33fab739"
+ },
+ {
+  "name": "CF_1000_SR12800.mat",
+  "size": 5348178,
+  "sha256": "9f3b807cffade84ff666b964bc333f812bf3ac4e1d714691a66f6c8c290ca888"
+ },
+ {
+  "name": "CF_1500_0gms.mat",
+  "size": 4811302,
+  "sha256": "15886d13a90198893b5dab0900b3ab2efc6c9b2a447dc11f196a5c745b07eafd"
+ },
+ {
+  "name": "CF_1500_12gms.mat",
+  "size": 4456426,
+  "sha256": "c05150f032ef537f42aba05f77b938708c4aa7fefa2a13221f8b0d01ee307cdd"
+ },
+ {
+  "name": "CF_1500_6gms.mat",
+  "size": 4282474,
+  "sha256": "87796b304547ee9c9c9434b8bd7296bb71838110c3fa4820ec096d724a10560a"
+ },
+ {
+  "name": "CF_1500_SR12800.mat",
+  "size": 4811302,
+  "sha256": "15886d13a90198893b5dab0900b3ab2efc6c9b2a447dc11f196a5c745b07eafd"
+ },
+ {
+  "name": "CF_2000_0gms.mat",
+  "size": 4445726,
+  "sha256": "d524d7016948bef19c4d2b8991627dd8f577ffefcdc015c4272afbb4d4a763a0"
+ },
+ {
+  "name": "CF_2000_12gms.mat",
+  "size": 4445761,
+  "sha256": "a4f5045c4aa7cdb3dc2aa3ac1ff933f59e64c860bc72084857317f5a0a2129be"
+ },
+ {
+  "name": "CF_2000_6gms.mat",
+  "size": 4404516,
+  "sha256": "130ca163f980cf8d1033bed1910916f12a804d5bbcf54cca56578ff907f4d13b"
+ },
+ {
+  "name": "CF_2000_SR12800.mat",
+  "size": 4445726,
+  "sha256": "d524d7016948bef19c4d2b8991627dd8f577ffefcdc015c4272afbb4d4a763a0"
+ },
+ {
+  "name": "CF_2500_SR12800.mat",
+  "size": 4321197,
+  "sha256": "fe4483b65b1af2b7e053d32a0887ad68eeebfac859f8d9785db6513f717f3275"
+ },
+ {
+  "name": "HB_1000_0gms.mat",
+  "size": 6291194,
+  "sha256": "1ee87a46aff6c48c92c24290623b9be78eb566161b053cd516516e7493ed40b3"
+ },
+ {
+  "name": "HB_1000_12gms.mat",
+  "size": 5114619,
+  "sha256": "2770705365d633e895e54d1ee2b2a0507421cd345c71bec1f42ef2387eeb8098"
+ },
+ {
+  "name": "HB_1000_6gms.mat",
+  "size": 5995427,
+  "sha256": "3bd486987f4dcb27daac93dbfa8c4a7cd3ce0c94a9661acb650607ea31093b75"
+ },
+ {
+  "name": "HB_1000_SR12800.mat",
+  "size": 6291194,
+  "sha256": "1ee87a46aff6c48c92c24290623b9be78eb566161b053cd516516e7493ed40b3"
+ },
+ {
+  "name": "HB_1500_0gms.mat",
+  "size": 6056903,
+  "sha256": "edfed4b10e687c4a1dae1663a3ae22abfb19fcee08466d47977ecb2abd2cc269"
+ },
+ {
+  "name": "HB_1500_12gms.mat",
+  "size": 4389582,
+  "sha256": "08c1bd943829f424d599afcfe77b9e3f8e2529f255be2bb1ecbc2696033e99be"
+ },
+ {
+  "name": "HB_1500_6gms.mat",
+  "size": 4382023,
+  "sha256": "9259ba9eed71dc2b03d71ed5a08b382893c99c16bfb323dd6afd89430f0b9a75"
+ },
+ {
+  "name": "HB_1500_SR12800.mat",
+  "size": 6056903,
+  "sha256": "edfed4b10e687c4a1dae1663a3ae22abfb19fcee08466d47977ecb2abd2cc269"
+ },
+ {
+  "name": "HB_2000_0gms.mat",
+  "size": 6125121,
+  "sha256": "bc4c9a083f6185021cb2322d657b72695d5ef41abdc2e7d9d04369e8861e216b"
+ },
+ {
+  "name": "HB_2000_12gms.mat",
+  "size": 4341864,
+  "sha256": "fed82eaa509f669933e4f0815b3815e1811adf6ebf414db1b4101cc71fcf96b2"
+ },
+ {
+  "name": "HB_2000_6gms.mat",
+  "size": 4255575,
+  "sha256": "3abac585a90066d89371ac3e187db9a08915dbb7def2890c47e4ef8c775216c9"
+ },
+ {
+  "name": "HB_2000_SR12800.mat",
+  "size": 6125121,
+  "sha256": "bc4c9a083f6185021cb2322d657b72695d5ef41abdc2e7d9d04369e8861e216b"
+ },
+ {
+  "name": "HB_2500_SR12800.mat",
+  "size": 6599235,
+  "sha256": "343a56e4ab98ebe8905669a5105199fc07ba474709951c0b698a7e6a0c8578fa"
+ },
+ {
+  "name": "IRF_1000_0gms.mat",
+  "size": 4379724,
+  "sha256": "b23d534735fe7855b7de4b1f3e0a48915039cc4651c0bd0a3bc98eb0496458f0"
+ },
+ {
+  "name": "IRF_1000_12gms.mat",
+  "size": 2914596,
+  "sha256": "16f0ed928560e22c83508fa017d84963c706a7a133115db17014505f8f5e32d5"
+ },
+ {
+  "name": "IRF_1000_6gms.mat",
+  "size": 3219470,
+  "sha256": "60e0a27a8ea6d8f94f225ce56e53cbd5def51de4237c609341e0b219435ff519"
+ },
+ {
+  "name": "IRF_1000_SR12800.mat",
+  "size": 4379724,
+  "sha256": "b23d534735fe7855b7de4b1f3e0a48915039cc4651c0bd0a3bc98eb0496458f0"
+ },
+ {
+  "name": "IRF_1500_0gms.mat",
+  "size": 4477101,
+  "sha256": "ed7776df98b494b7401719b295488bd24cea4deb0de851e70bf60b79391ff8fc"
+ },
+ {
+  "name": "IRF_1500_12gms.mat",
+  "size": 2642571,
+  "sha256": "d329d300a023984e0c2d97599aa24912b5ae3d1fe983bd2d04543b2fb5dc46a8"
+ },
+ {
+  "name": "IRF_1500_6gms.mat",
+  "size": 2453984,
+  "sha256": "a9aabac2ee5d03a836e61388b988395d9b2c4edf1fd478b151de5793c05a2352"
+ },
+ {
+  "name": "IRF_1500_SR12800.mat",
+  "size": 4477101,
+  "sha256": "ed7776df98b494b7401719b295488bd24cea4deb0de851e70bf60b79391ff8fc"
+ },
+ {
+  "name": "IRF_2000_0gms.mat",
+  "size": 5375972,
+  "sha256": "505f0da6cfefefcde32cf0e12e1703e8846a92d3a5085090660576480cec7765"
+ },
+ {
+  "name": "IRF_2000_12gms.mat",
+  "size": 2581211,
+  "sha256": "b0ccc37f980c8c992702e8bb15a8208710cad8405f9c355557e92e1bc5eb9672"
+ },
+ {
+  "name": "IRF_2000_6gms.mat",
+  "size": 2466555,
+  "sha256": "6f0a314da52ee6bc3019338f6416d99391e64da8e6beda9e2db6dd116f7175e7"
+ },
+ {
+  "name": "IRF_2000_SR12800.mat",
+  "size": 5375972,
+  "sha256": "505f0da6cfefefcde32cf0e12e1703e8846a92d3a5085090660576480cec7765"
+ },
+ {
+  "name": "IRF_2500_SR12800.mat",
+  "size": 6465352,
+  "sha256": "080c1e64ce10829fe9f48a4e42df62e9e2e3753a84c5fcf55b9496e7e77383b6"
+ },
+ {
+  "name": "ORF_1000_0gms.mat",
+  "size": 4400973,
+  "sha256": "dd4a34c784fda9058cec3fc8ecb6d76c99e2fc73ed7b4815dd3c31e1111509f3"
+ },
+ {
+  "name": "ORF_1000_12gms.mat",
+  "size": 4463088,
+  "sha256": "95073108bbd96286f30ff6e674ba739bec837630c9bea3c17820d6f76a2b0b89"
+ },
+ {
+  "name": "ORF_1000_6gms.mat",
+  "size": 4405460,
+  "sha256": "8b160a0de834b8a2b4e91cca2fce3fb4bbe84a74c0c3c708544c60801b8193b5"
+ },
+ {
+  "name": "ORF_1000_SR12800.mat",
+  "size": 4400973,
+  "sha256": "dd4a34c784fda9058cec3fc8ecb6d76c99e2fc73ed7b4815dd3c31e1111509f3"
+ },
+ {
+  "name": "ORF_1500_0gms.mat",
+  "size": 4281550,
+  "sha256": "017730284ec0e424cbf2bae5fabe119b3a6ddf8f83fbc2bac2a1ef8b09fef206"
+ },
+ {
+  "name": "ORF_1500_12gms.mat",
+  "size": 4651242,
+  "sha256": "78316329ed93f7c97cc0d41e958b297954a01e304ede8f31e0f90f479bb1cd7c"
+ },
+ {
+  "name": "ORF_1500_6gms.mat",
+  "size": 4436276,
+  "sha256": "8618644d2b8a3f8c748bcc76a6bd01874246a2c336f3d7f761004d7fc899d9dc"
+ },
+ {
+  "name": "ORF_1500_SR12800.mat",
+  "size": 4281550,
+  "sha256": "017730284ec0e424cbf2bae5fabe119b3a6ddf8f83fbc2bac2a1ef8b09fef206"
+ },
+ {
+  "name": "ORF_2000_0gms.mat",
+  "size": 4152368,
+  "sha256": "13f0e857000765a061bac00a806fa2bd1f076758685597780eb94758c8ef0d25"
+ },
+ {
+  "name": "ORF_2000_12gms.mat",
+  "size": 5191446,
+  "sha256": "afac1430a5f75889e0cddd3645c3788f8d59e7e19ff7a86005dab2e9c2122baf"
+ },
+ {
+  "name": "ORF_2000_6gms.mat",
+  "size": 4526827,
+  "sha256": "fd1fb7b83b97779ef042ffd53408923e7f3c1ce5ef1349cccda8907ce3e45f9e"
+ },
+ {
+  "name": "ORF_2000_SR12800.mat",
+  "size": 4152368,
+  "sha256": "13f0e857000765a061bac00a806fa2bd1f076758685597780eb94758c8ef0d25"
+ },
+ {
+  "name": "ORF_2500_SR12800.mat",
+  "size": 4363407,
+  "sha256": "24845c5617e72f445c34e2583d157fa5c439bb1029e5917c94beafeadcfce179"
+ }
+]

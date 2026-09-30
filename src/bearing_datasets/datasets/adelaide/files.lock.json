@@ -1,0 +1,797 @@
+[
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_3000N_10Hz.mat",
+  "size": 27153364,
+  "sha256": "4118bcb1e91be00ee663cb969b4af7025998c68ed54ba051942a145a1f08a7d9"
+ },
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_3000N_12.5Hz.mat",
+  "size": 27249502,
+  "sha256": "3a789211063d688321ef0e751766d74e0450c2786ce1cbe313a710ad5e80b5dc"
+ },
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_3000N_5Hz.mat",
+  "size": 26644501,
+  "sha256": "3c3ba7fcfc6f8cc2675b0f2d45a5c354d43d2772bb24a0b3db059b385aa3fd24"
+ },
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_3000N_7.5Hz.mat",
+  "size": 26983278,
+  "sha256": "7cc1607604336e8f6fea2567cf9f9aa2584bbf68d7b6a9d7b6d6c6abd8c9750e"
+ },
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_500N_10Hz.mat",
+  "size": 27116806,
+  "sha256": "208756169f76989176d5ab69059724d7ec247276cb80875d73036046984082fa"
+ },
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_500N_12.5Hz.mat",
+  "size": 27134858,
+  "sha256": "eaa71c05894d3320cee81b24b5392751718b14b42c529f6f2886fc951cec6a6c"
+ },
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_500N_5Hz.mat",
+  "size": 26664385,
+  "sha256": "4ed12cd8431d036b07a062f12f607177dc813e6cd4a6bbc18cd754485f5e8733"
+ },
+ {
+  "name": "BallBearing90EDM3or_55.8degree_100depth_500N_7.5Hz.mat",
+  "size": 26933741,
+  "sha256": "b18d7a73f40465539fa25659faf5dc99119026f2b692640d76fde698ef533b5f"
+ },
+ {
+  "name": "BallBearing90EDM4or_55.8degree_100depth_500N_10Hz.mat",
+  "size": 27129669,
+  "sha256": "888019ce830047b828fb7de6e4e7551a6f31d508c2311ccc05cc8f0e0ad8df7a"
+ },
+ {
+  "name": "BallBearing90EDM4or_55.8degree_100depth_500N_12.5Hz.mat",
+  "size": 27178446,
+  "sha256": "c4379a97b359c1d8f8bb46490544f6b3e1b523c973c32edc862ef48435f56544"
+ },
+ {
+  "name": "BallBearing90EDM4or_55.8degree_100depth_500N_5Hz.mat",
+  "size": 26794751,
+  "sha256": "6b0e77d38af5481c5d57dd72ba2d4da6c99aad0048831901984a00b6f55d5ad6"
+ },
+ {
+  "name": "BallBearing90EDM4or_55.8degree_100depth_500N_7.5Hz.mat",
+  "size": 27018425,
+  "sha256": "932d1e554ee306010043c814d8d7a3ec683b14f831c815fcb6e58fadedd6cdcb"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_3000N_10Hz.mat",
+  "size": 26844866,
+  "sha256": "3b9df5d8cfdf23da45fd97d646205113d2fdb317223676a0af9e832b073d3ea4"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_3000N_12.5Hz.mat",
+  "size": 26958535,
+  "sha256": "6cb563b3cf33918a870ae1a38422d9b53f1bb346dc8644dbf39d07b73a6e2353"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_3000N_5Hz.mat",
+  "size": 26536722,
+  "sha256": "28af1a309560267fe8e29849867a93f38d1bd831ad5b0956eedf6ebbd38bafd4"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_3000N_7.5Hz.mat",
+  "size": 26712806,
+  "sha256": "d407609a2e4944fd55f012740dac3698725714cd888a0ee8df8b89028b2c6728"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_500N_10Hz.mat",
+  "size": 26841549,
+  "sha256": "7b6aa1a54f9f02064660b206f0bc81bd44da3313e9920d12d16e3c0221792d95"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_500N_12.5Hz.mat",
+  "size": 26915562,
+  "sha256": "24149a2701590fdeed3d952fac38204a457fe51eacce2dbe7e2813a9412f037a"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_500N_5Hz.mat",
+  "size": 26549060,
+  "sha256": "bd21defd5ca3d2414d1c65a41bfe52886427648ffa9e8b0d7b737b1a9d4d33f0"
+ },
+ {
+  "name": "BallBearing90EDM5or_15.8degree_100depth_500N_7.5Hz.mat",
+  "size": 26735013,
+  "sha256": "97b0d41dc59baaf75c872567b8484fd9885f57c9c6286a4577828cd7193cda3f"
+ },
+ {
+  "name": "BallBearing90EDM5or_55.8degree_100depth_3000N_10Hz.mat",
+  "size": 27024092,
+  "sha256": "cc0f5026710448d1e862ec43bc2588c1d82f2a729699fd6703aae6c315f1eba3"
+ },
+ {
+  "name": "BallBearing90EDM5or_55.8degree_100depth_3000N_12.5Hz.mat",
+  "size": 27140991,
+  "sha256": "2269cfe36882c9130d733ff6713833c6dbd6cbf8abbacc06fdd0ce0aa0781da1"
+ },
+ {
+  "name": "BallBearing90EDM5or_55.8degree_100depth_3000N_5Hz.mat",
+  "size": 26855154,
+  "sha256": "1f79e052da00c719337a68512ca9aecdbafba6c5cdc8d0eb03f8993eb2082f29"
+ },
+ {
+  "name": "BallBearing90EDM5or_55.8degree_100depth_3000N_7.5Hz.mat",
+  "size": 27001766,
+  "sha256": "251d4eea6d1f4196f817536455765c18bfc3228d3be5b3415b75e6415534fbe3"
+ },
+ {
+  "name": "BallBearing90EDM6or_15.8degree_100depth_3000N_10Hz.mat",
+  "size": 26728100,
+  "sha256": "04d763c3a681176713f468a15f8f79d872ad6f11b5d0cf30a86015615a33b6a1"
+ },
+ {
+  "name": "BallBearing90EDM6or_15.8degree_100depth_3000N_12.5Hz.mat",
+  "size": 26893264,
+  "sha256": "53f583b32bbd2b19dd3818afd2c6ac5867221b66c663af5f406dc57abba6dcd1"
+ },
+ {
+  "name": "BallBearing90EDM6or_15.8degree_100depth_3000N_5Hz.mat",
+  "size": 26465137,
+  "sha256": "06981d61c807f567fa2eefe759d11d2ccf2574afd3d38a6c8acf6be4a71a1647"
+ },
+ {
+  "name": "BallBearing90EDM6or_15.8degree_100depth_3000N_7.5Hz.mat",
+  "size": 26607337,
+  "sha256": "7afc27ef6ca66975d0435a9b629b6f739c4d569ad00abc2f692d235335777c63"
+ },
+ {
+  "name": "BallBearing90EDM6or_15.8degree_100depth_500N_10Hz.mat",
+  "size": 26751269,
+  "sha256": "d582e6554d5b3bba1afc602584b396fd5c30b10b283b5e029e92713acb8db7b8"
+ },
+ {
+  "name": "BallBearing90EDM6or_15.8degree_100depth_500N_12.5Hz.mat",
+  "size": 26844965,
+  "sha256": "7d3ccaa400a35db2a1c10d9007d63a8c89fb5c28e4daea0d55cf9aca8dc97d19"
+ },
+ {
+  "name": "BallBearing90EDM6or_15.8degree_100depth_500N_7.5Hz.mat",
+  "size": 26643459,
+  "sha256": "8501693358ab6bdc2229a9f572b3bec4c3a8b84e345d335bc5593270b4d83ce6"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1000N_10Hz.mat",
+  "size": 26997097,
+  "sha256": "9dd3df1b07d7f8d3554485a1ce3d38a697f97da688f28d76321260d719ba3c29"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1000N_12.5Hz.mat",
+  "size": 27067634,
+  "sha256": "a236e8b473e7d622fb7ad4ea98506609256289d701c225162da782b0abca52e7"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1000N_5Hz.mat",
+  "size": 26580062,
+  "sha256": "76256c8cc278c2641dff7973bf048fef52cb3367a04e691ff46bb4073eaeebbb"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1000N_7.5Hz.mat",
+  "size": 26845490,
+  "sha256": "0d617aff2bbc732ca36152a512dd89d154e6f2b6d122e14bd8614058df1e3877"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1600N_10Hz.mat",
+  "size": 27020529,
+  "sha256": "7ea7189bec284ae77f6a8df0ba6d1a78d18b557c719ebac96e835f2d52cf441c"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1600N_12.5Hz.mat",
+  "size": 27106200,
+  "sha256": "7022478643503fa2af9c24b71ba1b2140c9ba9f7eaf655d273275114f6287b44"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1600N_5Hz.mat",
+  "size": 26608534,
+  "sha256": "e130619314a28bcea156047d83abb114a97dff7cd255722281079a0232cbcfab"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_1600N_7.5Hz.mat",
+  "size": 26874741,
+  "sha256": "7d9e6c41564c6ccd497d04655e13f95373d3e65fbb056c18d02a992bdfd370a4"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_625N_10Hz.mat",
+  "size": 27037131,
+  "sha256": "2e6a6f60037e11b3cd75ba3a253cd894ea3ba64f81be0f6915a413b33fa3f4f3"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_625N_12.5Hz.mat",
+  "size": 27067814,
+  "sha256": "aa3d0573961de1504f4c096e9041aba4a3937dd22115d2dc5510cdadedf1cf2f"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_625N_5Hz.mat",
+  "size": 26625055,
+  "sha256": "eabd0cca5bbfd5ee29306bd1cac9c05b6b158abc71de922af6bdc9579150de3e"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_625N_7.5Hz.mat",
+  "size": 26854495,
+  "sha256": "cf05a884a9fbd1e257c64cc41438859193306b2835367bc40c8a9638581f6b88"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_750N_10Hz.mat",
+  "size": 27015259,
+  "sha256": "eefea806383950c266fcb2187d5dba292d3b69da5d89e8bd6cd044e9fe82c4c0"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_750N_12.5Hz.mat",
+  "size": 27068418,
+  "sha256": "8b1d21df547b06cc270233d23430ec0498f3d2fd9a3ddb68f4dc48f9fed4813d"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_750N_5Hz.mat",
+  "size": 26593417,
+  "sha256": "bee4caa949b705b19d1c45a6d91b2b5f7e32beb6f6a950cbbf6010fa9da1c39e"
+ },
+ {
+  "name": "BallBearing90EDMor_55.8degree_100depth_750N_7.5Hz.mat",
+  "size": 26864847,
+  "sha256": "d58c590e876c2cb7c0a90f106cc5a1c8011c992b755637f06a6b7b0b9070697c"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_10000N_10Hz.mat",
+  "size": 26452465,
+  "sha256": "2c531def0bbb48adcfae3fb3426371c9c7e81863fd1f63e730e6896e584149e8"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 26651781,
+  "sha256": "566454845f26b2e185d9ca745f720160b5f77d3c06f793d01975c2f13a731b22"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_10000N_5Hz.mat",
+  "size": 25489774,
+  "sha256": "55f72c00b4375552aefa848433d266504e2546b21db9ac64c572f55ea96488cc"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 26275716,
+  "sha256": "71448738892def29218161cd5d2a25bbd3dbcca6e21306797272e3d81981a804"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_2500N_10Hz.mat",
+  "size": 27159690,
+  "sha256": "23e1bf541f0db1a317c37017a80d304ffc7fa153bff8aca2f513ee25bdd4a91f"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 27072528,
+  "sha256": "b05b417920ec563eabcbb195a352ef243d2c9f8b8d2c16842479c99c403dbf4a"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26737390,
+  "sha256": "97818afe1545f85b73915580430b1903a7c54118148a0aa30fed911b9a17c095"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 27032579,
+  "sha256": "9095756583097e22a0447520c60e9d2ccce2d6494cc5eb78e97aabaedbf8b495"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_5000N_10Hz.mat",
+  "size": 27217018,
+  "sha256": "70a123018f94729029ab03a7a0381c0c8ddf9497ac0080be2cf9a8bdc4068e26"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 27316515,
+  "sha256": "5026f39edea1a061ce209e8f5879ed5b2acdfcc46464a75dafa3826c2ee0f52c"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_5000N_5Hz.mat",
+  "size": 26823340,
+  "sha256": "546a01fbba36e5afc22632bcd58986ba721c377340fb1e7cf3b1b6246ebab747"
+ },
+ {
+  "name": "Bearing20EDM1or_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 27048026,
+  "sha256": "7423c3b8f79ca257ff1e00bd92637521f40204de6acda2809a751fc7690f9bfb"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_10000N_10Hz.mat",
+  "size": 26750256,
+  "sha256": "15c7db4807eb4891f9fada50ea5ba1decca31c833423be7cd17a97a1ee694fb2"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 26840362,
+  "sha256": "787d0b5ba7c32fab58b0e5d1eead48e0cfdbbebd1b33ce803fd3feb5e5d5a38b"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_10000N_5Hz.mat",
+  "size": 26547453,
+  "sha256": "8bd5c55e895b8378c439a6311ff4de687c1a391fe4c5e0ceb55c946fb019a6d1"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 26671327,
+  "sha256": "659e08ca305824bcc61d0cc493a835d71ae1f3702465ac4efe072374be9870e8"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_2500N_10Hz.mat",
+  "size": 27119429,
+  "sha256": "face6b52cfedc4dbe037bf5d27b0dd1881e5c4169e9ac461fdcbd0e1637bf466"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 27212642,
+  "sha256": "9d56244563239985cc71384011557afa1bc3870c10b9a5bf0f2fb21bd6c661ac"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26810876,
+  "sha256": "93c53cd81733aa82a2744047d6e66cc4b8273ce8feae19c5acc684c849ffc9b1"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 27012659,
+  "sha256": "ed13f6564d14b68bed9950ad6764bebd9fa044efd7a74722f9fced6c50c395c7"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_5000N_10Hz.mat",
+  "size": 27003930,
+  "sha256": "4d65a4c7e1af4beab5ac2d634f0096e11f98e52acb337a8e7864a340c989855b"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 27238511,
+  "sha256": "b5ffbde36f1ab654d3f68d76d910bc1c821b4308f50265a5be49fd2065cd7804"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_5000N_5Hz.mat",
+  "size": 25751134,
+  "sha256": "3834f76bc8c71400289f6a62c8438014f9f88c1a3c6f76ce9dacc3b6de95b92d"
+ },
+ {
+  "name": "Bearing20EDMor_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 25966782,
+  "sha256": "55fb61ba36b8902f229faebe03a2af22ddaea50f25a4348dc45c44dc01e74258"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_10000N_10Hz.mat",
+  "size": 27412292,
+  "sha256": "f3fed52163b90606a1d8f6ae7b347b6fbfdfd7065152b9135774e10237f12ce7"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 27466886,
+  "sha256": "a6bf6dc9dadb46c128ba86d944b5c14e0bdbbd5f78ba81c5c0b85eaea009db84"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_10000N_5Hz.mat",
+  "size": 26999321,
+  "sha256": "4604a80cdc4b9185ce7a76ba2c0879aa6c15f04888be18cc87f08d6944e09b70"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 27265245,
+  "sha256": "7596f958b4def33a2ab847ddbd7d754fc3c49d726e1680c263c4d30864b77f14"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_2500N_10Hz.mat",
+  "size": 27207504,
+  "sha256": "46c67ee7bc2b0bbf0b7a076970c916843ece845a4f40f72417303646ebcdf072"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 27390721,
+  "sha256": "5fee9346d8101e29472319bd650092eb695ca0e7ad7d7c269dc30fb810bb666b"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26858816,
+  "sha256": "c97a72d6f168c465cc26c0b9f75c8d9eeaa2e46a0f814e20651c93a1176cc87e"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 27179024,
+  "sha256": "f3e75559e140a5bf9b9d9b8c843e3590da1a1f594255a47172eee4b8e39b553b"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_5000N_10Hz.mat",
+  "size": 27163625,
+  "sha256": "e3a72d04bf6fe6302ad32b3b1b9edb025fc429eb6ad3d4f55e20715f18f9492a"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 27340985,
+  "sha256": "ef11198de9b8da679b8dd3c3454214e996c2233419aecd2e1a73208cb43602ac"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_5000N_5Hz.mat",
+  "size": 26810434,
+  "sha256": "0bafdf5f0899a388b8876e583ca965435ce5cd94964b0465c835945f38408ad3"
+ },
+ {
+  "name": "Bearing30EDM1or_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 27130754,
+  "sha256": "fd4123ca3df2b81241c2e41f83ff4bb17c74ca1a2c26b87180b9fae06073260b"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_10000N_10Hz.mat",
+  "size": 27284528,
+  "sha256": "fe5bd869df32486dd9d281ddb42fb47bf538040e82c700e8a89b5b1ea28d4d15"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 27449848,
+  "sha256": "4f13543f5b9e6db77823e6fbadd26e386aa2f6e838a5cf466f292062281c7dca"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_10000N_5Hz.mat",
+  "size": 26822866,
+  "sha256": "0de4227932d52c147b2576eaac6f5d9115fa2eb6a2d2e7733d304f434d63415d"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 27105719,
+  "sha256": "331e9d3469c157c39ad1f77e597a18ca633fef5fb892af83e0218fa5573045da"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_2500N_10Hz.mat",
+  "size": 27220676,
+  "sha256": "d5169bbf37e56ec4fa8fd526e837066871e05bf8b94fcc6278e2b23d19c311ee"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 27374926,
+  "sha256": "e3fe07ce238d36843e84f92af69e71c7844cf535a396dd55d3653dd95c2bca40"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26866611,
+  "sha256": "21e570fc33fcaa91152e90ad1dd610412cde6860ab5cd4b8db7211dca061c971"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 27171681,
+  "sha256": "b9dc885abe490ddf966e8ab1e166282c85e4b72ced4b6cca9b086e188723a805"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_5000N_10Hz.mat",
+  "size": 27196256,
+  "sha256": "59bee47da70cc724b110a766db031b221f1d0f26380158ce691a523a3b025c79"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 27313308,
+  "sha256": "79ee98eb06b2d4c1becbd5ee45c095109df38061eff298f074f5e00c1707d290"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_5000N_5Hz.mat",
+  "size": 26816416,
+  "sha256": "332f9513ed75a3ba51d84fdd2ece1506de454665bd0761a8497c6d378a8cf88b"
+ },
+ {
+  "name": "Bearing30EDMor_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 27121729,
+  "sha256": "e959a175dbb73af4160724d11a7a7d50384d3c76e3c9e7e85aad7a8007064cd7"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_10000N_10Hz.mat",
+  "size": 26867227,
+  "sha256": "281b46115b869210cd2fff0ea966c103345d34c755d543fc694cfbefd01b2b8f"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 26937980,
+  "sha256": "76cd7a1c0baad4947d42206eb3a6d880410443d3cb79f45cecd69545e54bb26a"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_10000N_5Hz.mat",
+  "size": 26561878,
+  "sha256": "878cbc9ae42ec84b8eb008ba7f75aa9c18696049fb52d46038b771a7c7d70950"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 26774418,
+  "sha256": "01c492d3472fd011aff44553375f032c583e887e22cb082b5d399e5270b856b3"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_2500N_10Hz.mat",
+  "size": 27214535,
+  "sha256": "dc51105d2c3c9db5b29a4a81d58686fb7879a6907a9bf50407783c5591279c33"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 27224596,
+  "sha256": "26dfbe914a49f5cc5f6671521c4ae62cbc65358faa7fc247440f2f510cc7cef5"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26857378,
+  "sha256": "f0013f199d6d04b15cfbf9491f4265080f84b6c937014abe594ac4c1d6d651c4"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 27154754,
+  "sha256": "639a58b65cba96aafd13112f21e6ad413c87c82ec0203ec699861c8b2f3d44ae"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_5000N_10Hz.mat",
+  "size": 27111750,
+  "sha256": "1c3fdfcd0f9c419ec8afdf32d311cedd16070d16598363e388061388ccd05ac9"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 27127139,
+  "sha256": "5793c08ae6127f4e96f7f8a081ee757d1aa3233c299d49611fdb1a09320c36c5"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_5000N_5Hz.mat",
+  "size": 26752345,
+  "sha256": "a2858d34e389814fdeefc2fe85a7158ac4d15a1ca14a1bc0bb390505148db012"
+ },
+ {
+  "name": "Bearing45EDM1or_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 27064317,
+  "sha256": "b677604e9e14fe06330767751b6309d129f9aecaa010582cd4115298652d4068"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_10000N_10Hz.mat",
+  "size": 26814276,
+  "sha256": "136fa70fbb4c1b2e4260eb69cbecbe9dd207eb6e1cfa0651e15277aafe5ff055"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 26914168,
+  "sha256": "6cdffc64f49d82fc7995133bde470b9efc61b29b181932f3f9c65fbeffcfca94"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_10000N_5Hz.mat",
+  "size": 26642562,
+  "sha256": "05680bb1e2ae9ae4dd8b60ffefc15d9ee57b2d25cbda9f0aff32c53248ec001e"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_10000N_7.55Hz.mat",
+  "size": 26952336,
+  "sha256": "4254672197450f2d530a9dff616bcb730cf4ece6a3ccf2fe585021d7a9d239e3"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_2500N_10Hz.mat",
+  "size": 27493294,
+  "sha256": "13ac69274a8bfed6bbdc7b1e8ef211b60e8f6206374e1282b46d69bed224b1f7"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 27889332,
+  "sha256": "7ee7a6eccc8d48ffda5e5a7ab11b898abb33103f16e3c6f88bee1676fbed9a64"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26760341,
+  "sha256": "a892522a1c4f488825d1cd9f57202db1619863f41e6391df119bcf65026c1333"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 27047370,
+  "sha256": "aae4fbe1981502be757bde05b6163a1963a50eb28a72f6c5c0c0ad8c1910786e"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_5000N_10Hz.mat",
+  "size": 27177999,
+  "sha256": "ec3e6e22ef2ce2858cddfae941f715b32cc9be2fe17be717d0b835e3da46f856"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 27282301,
+  "sha256": "8ce0e2a2884ec29c3e47d2e9e6c7fbe772b94d46c619a8006e4c17f4d883bce4"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_5000N_5Hz.mat",
+  "size": 26326005,
+  "sha256": "904bb9b8cc3b5b19465bb5834e0405d6203009d3990f226309b96b069f8f7ded"
+ },
+ {
+  "name": "Bearing45EDMor_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 26603232,
+  "sha256": "6c18be472a866a6acad32a1415a4c8d28eefc7fb1955d276f82b4e6ef8dc1ef8"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_10000N_10Hz.mat",
+  "size": 25991200,
+  "sha256": "58c3a5f39bc35d94abdcb46a3626e0242c802140f32b351006608e145af88b84"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 26014150,
+  "sha256": "b91a667f6c4e7074048e298632204b08ecc9fa0ccf8d26b52a746c847cbfad10"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_10000N_5Hz.mat",
+  "size": 27034700,
+  "sha256": "3ca5f0baae7b4b0d051a969f6b9badd91f2db10721a3c52fbea751bd0f3378b1"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 25961481,
+  "sha256": "32213871f418330ec70fe9bee5fc67425d9bad1ab0b4078cc785c60a7fd99b5f"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_2500N_10Hz.mat",
+  "size": 25888959,
+  "sha256": "7320b9226ffdfb7de94b1ef7510a633deda4ee669e23a8d6fcd94f47c8a42547"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 25941636,
+  "sha256": "7eaae3c1e0b58e529336ab9740bbf6e8e4c936a57d5bcb4d910742dfb5b225ad"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_2500N_5Hz.mat",
+  "size": 25469525,
+  "sha256": "f1b739aa5be9cb4dc397cb4ce8cdea75a84b337291fef823154a9c43d46c6e24"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 25763050,
+  "sha256": "a0bf263e0f3a2314c21f12c573d6409ab46f90ad73ff05a888490fa360ef76f7"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_5000N_10Hz.mat",
+  "size": 26047473,
+  "sha256": "497b65780b68bc5aa3338aa829ee0cfc5c64942c04e04cd3c1d98d38e2fe4514"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 26014939,
+  "sha256": "1259f3b8546da3884031988c89fcdef9df165241fbaa6a40074cd7c7440f9a8b"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_5000N_5Hz.mat",
+  "size": 25591424,
+  "sha256": "1ceb81c3d2225fdd118f568782063e2b9b9f3a003f12259938d46e7a81874b1e"
+ },
+ {
+  "name": "Bearing5EDM2or_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 25894858,
+  "sha256": "af3b4ae4ea0ed533b7dc46f03fd5cf7140d26ee782f58d5e3ab8fa0b6543b9d9"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_10000N_10Hz.mat",
+  "size": 25901427,
+  "sha256": "b74784bf8c844156d64dfc5a3afb11431fe3467f22d2c389c01306d0d0b3517b"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 25922487,
+  "sha256": "c50b1328382b6dd84ff3133fab866108f821b36bac1a17d292725b831f3ed43a"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_10000N_5Hz.mat",
+  "size": 25572928,
+  "sha256": "0d448211ae2a41ab5640a3d30d60b1852cc249d43d8aba5b413604e8dbd0e3e5"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 25864539,
+  "sha256": "b509d9de7f4f652487453803a3eaf9196992da3b3304c9fb22cafd782f2aa2d0"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_2500N_10Hz.mat",
+  "size": 25934648,
+  "sha256": "14a9695f45e3ca08cf57497948b76bf9193ed6b94f294fad07fb80789c886f22"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 25913627,
+  "sha256": "113bceccc1c1c902439f0f6bd79a2397987623d0919ec454c059933a6488bb40"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_2500N_5Hz.mat",
+  "size": 25574567,
+  "sha256": "e78d1842cbfeb4f4279712dabb736429261ddbdc53880fcdc0ce9944747ef513"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 25834275,
+  "sha256": "3115ed3b8b5149dbe6e76aed3ffdf6c5340be127514041eb9fcce515d0a82df6"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_5000N_10Hz.mat",
+  "size": 25938569,
+  "sha256": "ab90a0af4afa2ee4a9f66d23c623214dbd55ea365c39400be61d1afc6f2f4103"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 25974729,
+  "sha256": "4ab7cf95f59fe171a93cba43e384dfd5756ce9ccc4b4e26e908cb98199049b80"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_5000N_5Hz.mat",
+  "size": 25698066,
+  "sha256": "7e7abd2952f2bbff19efd3fa956342cb1fc98424a77f1ff0275693751100b9e5"
+ },
+ {
+  "name": "Bearing5EDM3or_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 25965940,
+  "sha256": "66da5cd219b5b61f58b0989cc9101da7436616a88c770d3f98c9afe48cdb850f"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_2500N_10Hz.mat",
+  "size": 26663297,
+  "sha256": "1e804c28da6dfbf5e3ca01595b56ced5e8f8459c28c85520ff7e2fb911682ca2"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 26858174,
+  "sha256": "267c86d5db1b49b6555ce6b64cfaed43d7118cac7b49db95c897eb5643f7da77"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26378121,
+  "sha256": "3cfe8735592501fa11be506a723cf7f22839e887f26e0a7f78a72d6d7aac0a29"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 26611686,
+  "sha256": "fa015c9d9f407e80a009e7cf556fb353ac0f38e8152c3273f4b99dcd108c95b5"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_5000N_10Hz.mat",
+  "size": 27757216,
+  "sha256": "aaae3599593be5bbd80b348b4125f8f9538dd2b5d94e55754474ef2e1ae546ac"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_5000N_12.5Hz.mat",
+  "size": 28400090,
+  "sha256": "3379dcc41cbe3971b50282eed3a42057a9cbb60e227b7b71b8b1711ea373d41b"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_5000N_5Hz.mat",
+  "size": 28017620,
+  "sha256": "ba9b0f197a8e32d319f628c9c8edae75ffa0c0191490cdbb965e993c39593542"
+ },
+ {
+  "name": "Bearing90EDM2or_1000degree_110depth_5000N_7.5Hz.mat",
+  "size": 28342070,
+  "sha256": "2c087809488b441cfedba3ca3155968951047470637def66703c8eb04e07bbbd"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_10000N_10Hz.mat",
+  "size": 25926715,
+  "sha256": "f9d8044b63fc2698203695ee77c950200b65ed22fec671563fe2c274279ccd86"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_10000N_12.5Hz.mat",
+  "size": 26104024,
+  "sha256": "b791a1c0aa0a51c2996f6ecc917acaed9183060bb53097c511d551cf2f2023b5"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_10000N_5Hz.mat",
+  "size": 25592413,
+  "sha256": "c799cb7aaee579e9d4a193bdbd8c1a390d0602993fbc04f4c2807af88ac66523"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_10000N_7.5Hz.mat",
+  "size": 25864255,
+  "sha256": "8dcda949c2c6fe85f6396490d21aefb84caafd3d205564a1161cfe41789c15c0"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_2500N_10Hz.mat",
+  "size": 26759554,
+  "sha256": "8c6a111ec67112960f7831e42d0b647fdc206968840432ad1da0622b51e319c5"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_2500N_12.5Hz.mat",
+  "size": 26567007,
+  "sha256": "0cdc34b499501d5da78ddc83a3e9147bdb037eedfe18f8e353e6abea50e68e78"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_2500N_5Hz.mat",
+  "size": 26826693,
+  "sha256": "44e917768f10b543d51c2c4ea892e094163dadbec6a656fa0e826f3af579ee5f"
+ },
+ {
+  "name": "Bearing90EDM3or_1000degree_110depth_2500N_7.5Hz.mat",
+  "size": 26677789,
+  "sha256": "9cb2857b25f4b04ebb8463827d713f75aa651ac7f0aea441902909ae317ebf98"
+ }
+]

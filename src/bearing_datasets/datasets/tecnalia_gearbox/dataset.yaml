@@ -1,0 +1,28 @@
+name: tecnalia_gearbox
+title: Tecnalia gearbox with gear and bearing faults under variable speed and load conditions
+description: |
+  Tecnalia test rig: speed-controlled AC motor, two-stage Test Gearbox (29/100, 36/90), a
+  Load Gearbox and a torque-controlled load motor. Scenarios: baseline, broken tooth on the
+  36-tooth gear, outer race fault on the Test Gearbox input bearing (ER-16KCL; fault
+  frequencies in bpfo, bpfi, bsf, ftf), and both. Conditions: stationary (1500 rpm, 70% load),
+  variable speed (840 -> 1400 -> 1000 rpm at 70% load), variable load (20 -> 80 -> 50% at
+  1500 rpm) and both varying. 14 tests of 10-12.8 s (tests 9 and 13, bearing fault under
+  variable speed, are not in the release), 16 channels at 20.48 kHz: tachometer, two
+  encoders, torque, two motor currents, 8 accelerometers (drive motor, Test Gearbox input
+  and output bearings, Load Gearbox bearings, load motor) and the axial force of the Test
+  Gearbox bearing; channel16 is not described. Units are not stated (the file headers give
+  the sensor sensitivities in V/unit).
+license: CC-BY-4.0
+size: "download 0.57 GB, built 0.19 GB (measured)"
+homepage: https://doi.org/10.17632/whj3wxhw8j.1
+citation: |
+  Gutierrez, I. (2025). Gearbox with gear and bearing failures under variable conditions.
+  Mendeley Data, V1. doi:10.17632/whj3wxhw8j.1
+sources:
+  - {type: mendeley, id: whj3wxhw8j, version: 1}
+columns:
+  bpfo: >-
+    of the ER-16KCL test bearing for every channel, computed from the ER16K geometry (9 balls
+    of 7.94 mm, pitch 38.52 mm): the record gives BPFO 3.572, BPFI 5.43, BSF 2.322, which match,
+    and FTF 0.402, which does not (BPFO = 9 x FTF gives 0.397)
+  operating_condition: stationary, variable speed, variable load, or variable speed and load

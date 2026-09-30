@@ -1,0 +1,47 @@
+[
+ {
+  "name": "condition1.zip",
+  "size": 1484330344,
+  "sha256": "27b6add40a742668c52bfe683a23d33de398aaa59dbbd5fa9ec756c576de36e3"
+ },
+ {
+  "name": "condition2.zip",
+  "size": 1612605347,
+  "sha256": "3692e2173577e0df08bc823702debfbee81a9756892d304f5b9ac9a1d3e46878"
+ },
+ {
+  "name": "condition3.zip",
+  "size": 1558006294,
+  "sha256": "f31e147bdc9ed657604bab9c8cb114531777aa38d3b7a28257974611f7caa2ef"
+ },
+ {
+  "name": "condition4.zip",
+  "size": 1538893457,
+  "sha256": "74ccb0d69c0f24b35a5823ed4ace5ffa597a201950489e201340f52f3e098e48"
+ },
+ {
+  "name": "condition5.zip",
+  "size": 1649545043,
+  "sha256": "f94ec5334a33a84d908c9675a1d1acd4ad0c3d2f94ae75740af53dbd240caa7f"
+ },
+ {
+  "name": "condition6.zip",
+  "size": 1637295870,
+  "sha256": "7c30f4bc7cae20669ae0337183ead3eaafb2dd72965d5c63ef28d5da3a696a86"
+ },
+ {
+  "name": "condition7.zip",
+  "size": 1612200814,
+  "sha256": "d9c44e4249ae6855fc7700a8606b1d6d6dd8db442935cda772c36858cdc9fa81"
+ },
+ {
+  "name": "condition8.zip",
+  "size": 1722475071,
+  "sha256": "aa4bf09a8a35850c65a1a6d79aafeb6e8d4c854762ff602886cc087454c4f3ed"
+ },
+ {
+  "name": "condition9.zip",
+  "size": 1712524587,
+  "sha256": "c875f2c426f9e2d2fdbaed0c71528cc64dac7c645af025321fb370843eae64c6"
+ }
+]

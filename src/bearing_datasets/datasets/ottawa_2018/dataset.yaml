@@ -1,0 +1,24 @@
+name: ottawa_2018
+title: University of Ottawa bearing vibration data under time-varying rotational speed
+description: |
+  Healthy, inner race, outer race, ball and combined (inner + outer + ball) faults under
+  4 time-varying speed profiles (increasing, decreasing, increasing then decreasing,
+  decreasing then increasing), 3 trials each: 60 recordings of 10 s at 200 kHz.
+  Channels: accelerometer and the raw encoder pulse train (1024 pulses per revolution),
+  from which the instantaneous speed can be computed. There is no constant speed, so
+  the table has `speed_profile` instead of `rpm`.
+  ER16K bearing (9 balls of 7.94 mm, pitch 38.52 mm): fault frequencies in bpfo, bpfi, bsf, ftf.
+license: CC-BY-4.0
+size: "download 0.80 GB, built 0.27 GB (measured)"
+homepage: https://data.mendeley.com/datasets/v43hmbwxpm/2
+citation: |
+  Huang, H., & Baddour, N. (2018). Bearing vibration data collected under time-varying
+  rotational speed conditions. Data in Brief, 21, 1745-1749.
+  doi:10.1016/j.dib.2018.11.019. Data: Mendeley Data, V2, doi:10.17632/v43hmbwxpm.2
+sources:
+  - {type: mendeley, id: v43hmbwxpm, version: 2, include: "*.mat"}
+columns:
+  bpfo: >-
+    computed from the paper's ER16K geometry (9 balls of 7.94 mm, pitch diameter 38.52 mm);
+    matches its BPFO 3.57 and BPFI 5.43
+  trial: trial number 1-3 of the same condition and speed profile

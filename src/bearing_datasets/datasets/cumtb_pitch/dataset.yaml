@@ -1,0 +1,28 @@
+name: cumtb_pitch
+title: CUMTB wind turbine pitch bearing vibration and acoustic dataset under time-varying load
+description: |
+  Proportionally scaled wind turbine pitch bearing (408 x 200 x 80 mm, from a 2420 mm
+  bearing; 42CrMo rings) on a platform with time-varying axial and radial loads (three
+  load profiles, Cond_1-3, shown in the paper's Fig. 1) and a very low speed (1 or 3 rpm).
+  12 states: healthy; crack, spalling or wear on the inner raceway, the outer raceway or
+  both; a crack on a rolling body; a crack at the root of the inner ring's gear teeth.
+  Four accelerometers (PCB 352C03, x and y at points A and B of the outer ring) and a
+  microphone (PCB 377B02) near the outer ring, 38.5 kHz, 10 min per condition (unit not
+  stated). The files split each 10 min acquisition into chunks of 1,000,000 samples
+  (~26 s), stored as one recording each; chunk numbers them in time order.
+  Download: 3 RAR archives in 2 Mendeley records (11.7 GB).
+license: CC-BY-4.0
+size: "download 11.7 GB, built 4.6 GB (measured)"
+homepage: https://doi.org/10.17632/2n9jkd384k.1
+citation: |
+  Guo, Y., He, J., Pu, J., Wang, M., Jiao, B., Zhang, D., Meng, L., & Jiang, E. (2025).
+  Vibration and acoustic data of pitch bearing in wind turbines under time-varying load for
+  fault diagnosis. Data in Brief, 62, 111876. doi:10.1016/j.dib.2025.111876
+sources:
+  - {type: mendeley, name: cond1-2, id: 2n9jkd384k, version: 1}
+  - {type: mendeley, name: cond3, id: md6hnhpv3b, version: 1}
+columns:
+  fault_type: crack, spalling or wear (none if healthy)
+  rpm: bearing speed, 1 or 3 rpm
+  load_condition: time-varying load profile Cond_1, Cond_2 or Cond_3
+  chunk: number of the ~26 s chunk within the 10 min acquisition

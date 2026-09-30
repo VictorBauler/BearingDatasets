@@ -1,0 +1,40 @@
+name: mcc5_thu_gearbox
+title: MCC5-THU multi-mode gearbox fault dataset under time-varying speed and load
+description: |
+  Two-stage parallel gearbox driven by a 2.2 kW motor and loaded by a magnetic powder
+  brake. States: healthy; gear missing tooth, and teeth crack, wear, pitting and break
+  at 3 severities (light, medium, high); and a broken tooth combined with an inner or
+  outer raceway fault (0.1, 0.3, 0.5 mm wide) on the ER16K intermediate-shaft bearing.
+  All faults laser-etched. Each state is run with the speed cycling from 0 up to 1000,
+  2000 or 3000 rpm at 10 or 20 Nm, and with the load cycling up to 10 or 20 Nm at
+  1000, 2000 or 3000 rpm: 240 recordings of 60 s at 12.8 kHz. Channels: key phase
+  (speed) signal of the motor shaft, gearbox input torque (Nm), triaxial acceleration
+  (g) at the motor drive end and at the gearbox intermediate shaft bearing
+  (x axial, y horizontal, z vertical).
+  Bearing faults exist only together with a broken tooth (condition gear+inner or
+  gear+outer); there is no bearing-only class.
+license: CC-BY-4.0
+size: "download 6.9 GB, built 5.0 GB (measured)"
+homepage: https://data.mendeley.com/datasets/p92gj2732w/2
+citation: |
+  Chen, S., Liu, Z., He, X., Zou, D., & Zhou, D. (2024). Multi-mode fault diagnosis
+  datasets of gearbox under variable working conditions. Data in Brief, 54, 110453.
+  doi:10.1016/j.dib.2024.110453
+sources:
+  - type: mendeley
+    id: p92gj2732w
+    version: 2
+columns:
+  bpfo: >-
+    ER16K from the data paper, Table 3 (9 balls of 0.3125 in, pitch 1.516 in), equal to
+    Huang & Baddour's 7.94 / 38.52 mm
+  severity: >-
+    light, medium or high (bearing raceway fault width 0.1 / 0.3 / 0.5 mm; gear fault
+    sizes in the paper's Table 5); none for healthy and missing tooth
+  varying: which quantity cycles during the recording, speed or load
+  rpm_setting: >-
+    motor speed in rpm: the constant speed when the load varies, the peak of the speed
+    cycle when the speed varies
+  torque_setting_nm: >-
+    load torque in Nm: the constant load when the speed varies, the peak of the load
+    cycle when the load varies

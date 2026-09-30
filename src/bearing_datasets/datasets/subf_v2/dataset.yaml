@@ -1,0 +1,24 @@
+name: subf_v2
+title: SUBF v2.0 bearing faults sound data (microphone)
+description: |
+  Same kind of rig as subf_v1 (0.25 hp three-phase AC motor at 1440 rpm, 50 Hz; healthy,
+  inner race or outer race fault on the test bearing), recorded with an omnidirectional
+  condenser microphone (BOYA BY-M1) at 10 kHz. Six hours per class cut into consecutive
+  10 s segments: 2160 recordings per class, 6480 in total. Sound is 16-bit PCM normalised to
+  [-1, 1]. Recorded separately from subf_v1 (the segments do not match). How the faults were
+  made is not described. Non-commercial license.
+license: CC-BY-NC-SA-4.0
+size: "download 0.66 GB, built 0.26 GB (measured)"
+homepage: https://www.kaggle.com/datasets/sumairaziz/subf-v2-0-dataset-bearing-faults-sound-data
+citation: |
+  Aziz, S., Khan, M. U., Usman, A., Faraz, M., Ghadi, Y. Y., & Montes, G. A. (2025). Bearing
+  faults classification using novel log energy-based empirical mode decomposition and machine
+  Mel-frequency cepstral coefficients. Digital Signal Processing, 156, 104776.
+  doi:10.1016/j.dsp.2024.104776
+sources:
+  - type: kaggle
+    dataset: sumairaziz/subf-v2-0-dataset-bearing-faults-sound-data
+    version: 2
+    bundle: true
+columns:
+  segment: number of the 10 s segment within the class (1-2160, in the order of the file names)

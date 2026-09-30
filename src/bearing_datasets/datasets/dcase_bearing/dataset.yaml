@@ -1,0 +1,30 @@
+name: dcase_bearing
+title: DCASE 2022 Challenge Task 2 development dataset, bearing (anomalous sound detection under domain shift)
+description: |
+  The bearing machine of the DCASE 2022 Challenge Task 2 (unsupervised anomalous sound
+  detection under domain shift; data from MIMII DG by Hitachi and NTT): two ball bearings
+  supporting a shaft driven by a spindle motor, recorded in an anechoic chamber with real
+  factory noise mixed in. Three sections with different domain shifts (rotation velocity,
+  microphone location, factory noise); source and target domains; the challenge's train
+  set has only normal clips, the test set normal and anomalous ones. Anomalies were made by
+  damaging the machine (in 2022, bearing eccentricity); their type is not given per clip,
+  so condition is other. 3599 clips of 10 s, mono, 16 kHz (raw int16). dcase_split keeps
+  the challenge split for comparison with published results; the package itself makes no
+  splits. Later editions (2023-2026) reuse or emulate this machine and are not included.
+license: CC-BY-4.0
+size: "download 0.77 GB, built 0.67 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.6355122
+citation: |
+  Dohi, K., Nishida, T., Purohit, H., Tanabe, R., Endo, T., Yamamoto, M., Nikaido, Y., &
+  Kawaguchi, Y. (2022). MIMII DG: Sound dataset for malfunctioning industrial machine
+  investigation and inspection for domain generalization task. DCASE 2022 Workshop.
+  arXiv:2205.13879
+sources:
+  - {type: zenodo, record: "6355122", include: "dev_bearing.zip"}
+columns:
+  section: DCASE section 00-02 (each with its own domain shift)
+  domain: source or target domain
+  dcase_split: train (normal only) or test, as in the challenge
+  velocity: rotation velocity attribute from the file name (none if not given)
+  mic_location: microphone location attribute A-D (none if not given)
+  factory_noise: factory noise attribute A or B (none if not given)

@@ -1,0 +1,17 @@
+[
+ {
+  "name": "Data.zip",
+  "size": 38823790575,
+  "sha256": "83c3509d38f7a8a16e1adcd825c60e6844f25bbdaa99fb326991b20845d18699"
+ },
+ {
+  "name": "Metadata.zip",
+  "size": 11834705,
+  "sha256": "881dccff3f466fe903c87e4c120f26cd81cd683532903bfd17a2031ee2767435"
+ },
+ {
+  "name": "info.csv",
+  "size": 166132,
+  "sha256": "4b1e178b850a1a47da7bb270c286c752bc6055fb4cc5da26f6725c0653604dcb"
+ }
+]

@@ -1,0 +1,39 @@
+name: femto
+title: FEMTO-ST PRONOSTIA bearing dataset (IEEE PHM 2012 challenge), run-to-failure
+description: |
+  Accelerated degradation of 17 ball bearings on the PRONOSTIA platform until failure,
+  under 3 operating conditions (1: 1800 rpm / 4000 N, 2: 1650 rpm / 4200 N,
+  3: 1500 rpm / 5000 N). Every 10 s a 0.1 s snapshot of two accelerometers (horizontal,
+  vertical) at 25.6 kHz; every 60 s a 60 s temperature record at 10 Hz (missing for some
+  bearings), stored as separate recordings. The 6 learning runs and the 11 test runs
+  are complete (from the Full_Test_Set); `official_set` says which snapshots were in
+  the truncated test set given to the challenge participants. The condition of each
+  snapshot is unknown; use run_id, time_s and rul_s (end of life = last snapshot).
+  Official RUL of the truncated test runs (s): 1_3 5730, 1_4 339, 1_5 1610, 1_6 1460,
+  1_7 7570, 2_3 7530, 2_4 1390, 2_5 3090, 2_6 1290, 2_7 580, 3_3 820. They equal
+  (full length - truncated length) x 10 s, except Bearing1_4 (known inconsistency:
+  the full run is ~2890 s longer than its official RUL).
+  Time columns inside the files wrap around; time_s uses the snapshot index
+  (10 s for vibration, 60 s for temperature).
+license: unspecified (cite the paper)
+size: "download 1.2 GB, built 0.20 GB (measured)"
+homepage: https://phm-datasets.s3.amazonaws.com/NASA/10.+FEMTO+Bearing.zip
+citation: |
+  Nectoux, P., Gouriveau, R., Medjaher, K., Ramasso, E., Chebel-Morello, B.,
+  Zerhouni, N., & Varnier, C. (2012). PRONOSTIA: An experimental platform for bearings
+  accelerated degradation tests. IEEE International Conference on Prognostics and
+  Health Management (PHM 2012), Denver.
+sources:
+  - type: http
+    name: nasa-s3
+    urls:
+      "10. FEMTO Bearing.zip": https://phm-datasets.s3.amazonaws.com/NASA/10.+FEMTO+Bearing.zip
+files: ["10. FEMTO Bearing.zip"]
+columns:
+  bpfo: >-
+    PHM 2012 challenge document, App. A.1 (13 balls of 3.5 mm, pitch 25.6 mm; angle not
+    stated, 0 deg)
+  load: radial load in N (4000, 4200 or 5000)
+  operating_condition: operating condition 1, 2 or 3
+  official_set: learning (learning set), test (in the truncated official test set) or hidden (after the truncation)
+  snapshot: snapshot number inside the run (the file number)

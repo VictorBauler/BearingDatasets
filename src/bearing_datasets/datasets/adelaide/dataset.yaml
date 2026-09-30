@@ -1,0 +1,354 @@
+name: adelaide
+title: University of Adelaide outer race defect slope and defect length series
+license: CC-BY-4.0 (defect slope series), MIT (defect length series)
+description: |
+  Outer raceway defects machined by EDM, recorded on the same University of Adelaide rig to
+  study defect size estimation. Slope series (series=slope): N-type cylindrical roller
+  bearing, defects about 110 um deep and 7.5-9.7 mm long with entry/exit slopes of 5, 20,
+  30, 45 or 90 degrees, loads 2.5, 5 and 10 kN. Length series (series=length): ball bearing,
+  defects 100 um deep and 15.8 or 55.8 degrees long, loads 500-3000 N. Shaft speeds 5, 7.5,
+  10 and 12.5 Hz; 10 s at 25.6 kHz. Stored channels are the authors' scaled signals in each
+  file: Ex, Ey (eddy-current probes, 50 x V + 250), Ax, Ay (accelerometers, 3.16 x V, sign
+  flipped in some files), Load (2260 x V), SPL and Wenglor (unscaled; the file's channel list
+  calls this column Acc_z), plus the raw tachometer. Units are not stated. native_label is
+  the test prefix of the file name (e.g. Bearing20EDM1or); the same prefix can hold several
+  defects, so it is not a bearing identity. There are no healthy recordings.
+  License: CC BY 4.0 (slope series), MIT (length series).
+size: "download 4.3 GB, built 1.8 GB (measured)"
+homepage: https://doi.org/10.6084/m9.figshare.4256594
+citation: |
+  Larizza, F., Howard, C. Q., & Grainger, S. (2020). Defect size estimation in rolling
+  element bearings with angled leading and trailing edges. Structural Health Monitoring.
+  doi:10.1177/1475921720938296 (data: figshare, doi:10.6084/m9.figshare.4256594 and related)
+  Larizza, F., Moazen-Ahmadi, A., Howard, C. Q., & Grainger, S. (2018). The importance of
+  bearing stiffness and load when estimating the size of a defect in a rolling element
+  bearing. Structural Health Monitoring. doi:10.1177/1475921718808805
+sources:
+  - type: http
+    name: figshare
+    urls:
+      BallBearing90EDM3or_55.8degree_100depth_3000N_10Hz.mat: https://ndownloader.figshare.com/files/8282036
+      BallBearing90EDM3or_55.8degree_100depth_3000N_12.5Hz.mat: https://ndownloader.figshare.com/files/8282039
+      BallBearing90EDM3or_55.8degree_100depth_3000N_5Hz.mat: https://ndownloader.figshare.com/files/8282030
+      BallBearing90EDM3or_55.8degree_100depth_3000N_7.5Hz.mat: https://ndownloader.figshare.com/files/8282033
+      BallBearing90EDM3or_55.8degree_100depth_500N_10Hz.mat: https://ndownloader.figshare.com/files/8282024
+      BallBearing90EDM3or_55.8degree_100depth_500N_12.5Hz.mat: https://ndownloader.figshare.com/files/8282027
+      BallBearing90EDM3or_55.8degree_100depth_500N_5Hz.mat: https://ndownloader.figshare.com/files/8282018
+      BallBearing90EDM3or_55.8degree_100depth_500N_7.5Hz.mat: https://ndownloader.figshare.com/files/8282021
+      BallBearing90EDM4or_55.8degree_100depth_500N_10Hz.mat: https://ndownloader.figshare.com/files/8282048
+      BallBearing90EDM4or_55.8degree_100depth_500N_12.5Hz.mat: https://ndownloader.figshare.com/files/8282051
+      BallBearing90EDM4or_55.8degree_100depth_500N_5Hz.mat: https://ndownloader.figshare.com/files/8282042
+      BallBearing90EDM4or_55.8degree_100depth_500N_7.5Hz.mat: https://ndownloader.figshare.com/files/8282045
+      BallBearing90EDM5or_15.8degree_100depth_3000N_10Hz.mat: https://ndownloader.figshare.com/files/8281931
+      BallBearing90EDM5or_15.8degree_100depth_3000N_12.5Hz.mat: https://ndownloader.figshare.com/files/8281934
+      BallBearing90EDM5or_15.8degree_100depth_3000N_5Hz.mat: https://ndownloader.figshare.com/files/8281925
+      BallBearing90EDM5or_15.8degree_100depth_3000N_7.5Hz.mat: https://ndownloader.figshare.com/files/8281928
+      BallBearing90EDM5or_15.8degree_100depth_500N_10Hz.mat: https://ndownloader.figshare.com/files/8281907
+      BallBearing90EDM5or_15.8degree_100depth_500N_12.5Hz.mat: https://ndownloader.figshare.com/files/8281910
+      BallBearing90EDM5or_15.8degree_100depth_500N_5Hz.mat: https://ndownloader.figshare.com/files/8281901
+      BallBearing90EDM5or_15.8degree_100depth_500N_7.5Hz.mat: https://ndownloader.figshare.com/files/8281904
+      BallBearing90EDM5or_55.8degree_100depth_3000N_10Hz.mat: https://ndownloader.figshare.com/files/8668354
+      BallBearing90EDM5or_55.8degree_100depth_3000N_12.5Hz.mat: https://ndownloader.figshare.com/files/8668357
+      BallBearing90EDM5or_55.8degree_100depth_3000N_5Hz.mat: https://ndownloader.figshare.com/files/8668348
+      BallBearing90EDM5or_55.8degree_100depth_3000N_7.5Hz.mat: https://ndownloader.figshare.com/files/8668351
+      BallBearing90EDM6or_15.8degree_100depth_3000N_10Hz.mat: https://ndownloader.figshare.com/files/8281979
+      BallBearing90EDM6or_15.8degree_100depth_3000N_12.5Hz.mat: https://ndownloader.figshare.com/files/8281982
+      BallBearing90EDM6or_15.8degree_100depth_3000N_5Hz.mat: https://ndownloader.figshare.com/files/8281973
+      BallBearing90EDM6or_15.8degree_100depth_3000N_7.5Hz.mat: https://ndownloader.figshare.com/files/8281976
+      BallBearing90EDM6or_15.8degree_100depth_500N_10Hz.mat: https://ndownloader.figshare.com/files/8281955
+      BallBearing90EDM6or_15.8degree_100depth_500N_12.5Hz.mat: https://ndownloader.figshare.com/files/8281958
+      BallBearing90EDM6or_15.8degree_100depth_500N_7.5Hz.mat: https://ndownloader.figshare.com/files/8281952
+      BallBearing90EDMor_55.8degree_100depth_1000N_10Hz.mat: https://ndownloader.figshare.com/files/8668390
+      BallBearing90EDMor_55.8degree_100depth_1000N_12.5Hz.mat: https://ndownloader.figshare.com/files/8668393
+      BallBearing90EDMor_55.8degree_100depth_1000N_5Hz.mat: https://ndownloader.figshare.com/files/8668384
+      BallBearing90EDMor_55.8degree_100depth_1000N_7.5Hz.mat: https://ndownloader.figshare.com/files/8668387
+      BallBearing90EDMor_55.8degree_100depth_1600N_10Hz.mat: https://ndownloader.figshare.com/files/8668402
+      BallBearing90EDMor_55.8degree_100depth_1600N_12.5Hz.mat: https://ndownloader.figshare.com/files/8668405
+      BallBearing90EDMor_55.8degree_100depth_1600N_5Hz.mat: https://ndownloader.figshare.com/files/8668396
+      BallBearing90EDMor_55.8degree_100depth_1600N_7.5Hz.mat: https://ndownloader.figshare.com/files/8668399
+      BallBearing90EDMor_55.8degree_100depth_625N_10Hz.mat: https://ndownloader.figshare.com/files/8668366
+      BallBearing90EDMor_55.8degree_100depth_625N_12.5Hz.mat: https://ndownloader.figshare.com/files/8668369
+      BallBearing90EDMor_55.8degree_100depth_625N_5Hz.mat: https://ndownloader.figshare.com/files/8668360
+      BallBearing90EDMor_55.8degree_100depth_625N_7.5Hz.mat: https://ndownloader.figshare.com/files/8668363
+      BallBearing90EDMor_55.8degree_100depth_750N_10Hz.mat: https://ndownloader.figshare.com/files/8668378
+      BallBearing90EDMor_55.8degree_100depth_750N_12.5Hz.mat: https://ndownloader.figshare.com/files/8668381
+      BallBearing90EDMor_55.8degree_100depth_750N_5Hz.mat: https://ndownloader.figshare.com/files/8668372
+      BallBearing90EDMor_55.8degree_100depth_750N_7.5Hz.mat: https://ndownloader.figshare.com/files/8668375
+      Bearing20EDM1or_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6947606
+      Bearing20EDM1or_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947609
+      Bearing20EDM1or_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6947600
+      Bearing20EDM1or_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947603
+      Bearing20EDM1or_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6947579
+      Bearing20EDM1or_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947585
+      Bearing20EDM1or_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6947573
+      Bearing20EDM1or_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947576
+      Bearing20EDM1or_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6947594
+      Bearing20EDM1or_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947597
+      Bearing20EDM1or_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6947588
+      Bearing20EDM1or_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947591
+      Bearing20EDMor_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6947642
+      Bearing20EDMor_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947645
+      Bearing20EDMor_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6947636
+      Bearing20EDMor_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947639
+      Bearing20EDMor_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6947618
+      Bearing20EDMor_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947621
+      Bearing20EDMor_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6947612
+      Bearing20EDMor_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947615
+      Bearing20EDMor_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6947630
+      Bearing20EDMor_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947633
+      Bearing20EDMor_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6947624
+      Bearing20EDMor_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947627
+      Bearing30EDM1or_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6964553
+      Bearing30EDM1or_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964556
+      Bearing30EDM1or_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6964547
+      Bearing30EDM1or_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964550
+      Bearing30EDM1or_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6964529
+      Bearing30EDM1or_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964532
+      Bearing30EDM1or_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6964523
+      Bearing30EDM1or_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964526
+      Bearing30EDM1or_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6964541
+      Bearing30EDM1or_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964544
+      Bearing30EDM1or_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6964535
+      Bearing30EDM1or_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964538
+      Bearing30EDMor_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6964589
+      Bearing30EDMor_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964592
+      Bearing30EDMor_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6964583
+      Bearing30EDMor_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964586
+      Bearing30EDMor_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6964565
+      Bearing30EDMor_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964568
+      Bearing30EDMor_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6964559
+      Bearing30EDMor_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964562
+      Bearing30EDMor_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6964577
+      Bearing30EDMor_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964580
+      Bearing30EDMor_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6964571
+      Bearing30EDMor_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964574
+      Bearing45EDM1or_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6964637
+      Bearing45EDM1or_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964640
+      Bearing45EDM1or_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6964631
+      Bearing45EDM1or_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964634
+      Bearing45EDM1or_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6964613
+      Bearing45EDM1or_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964616
+      Bearing45EDM1or_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6964607
+      Bearing45EDM1or_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964610
+      Bearing45EDM1or_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6964625
+      Bearing45EDM1or_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964628
+      Bearing45EDM1or_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6964619
+      Bearing45EDM1or_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964622
+      Bearing45EDMor_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6964673
+      Bearing45EDMor_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964676
+      Bearing45EDMor_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6964667
+      Bearing45EDMor_1000degree_110depth_10000N_7.55Hz.mat: https://ndownloader.figshare.com/files/6964670
+      Bearing45EDMor_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6964649
+      Bearing45EDMor_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964652
+      Bearing45EDMor_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6964643
+      Bearing45EDMor_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964646
+      Bearing45EDMor_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6964661
+      Bearing45EDMor_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964664
+      Bearing45EDMor_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6964655
+      Bearing45EDMor_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964658
+      Bearing5EDM2or_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6947522
+      Bearing5EDM2or_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947528
+      Bearing5EDM2or_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6947516
+      Bearing5EDM2or_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947519
+      Bearing5EDM2or_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6947498
+      Bearing5EDM2or_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947501
+      Bearing5EDM2or_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6938027
+      Bearing5EDM2or_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947495
+      Bearing5EDM2or_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6947510
+      Bearing5EDM2or_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947513
+      Bearing5EDM2or_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6947504
+      Bearing5EDM2or_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947507
+      Bearing5EDM3or_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6947564
+      Bearing5EDM3or_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947567
+      Bearing5EDM3or_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6947558
+      Bearing5EDM3or_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947561
+      Bearing5EDM3or_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6947537
+      Bearing5EDM3or_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947540
+      Bearing5EDM3or_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6947531
+      Bearing5EDM3or_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947534
+      Bearing5EDM3or_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6947552
+      Bearing5EDM3or_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6947555
+      Bearing5EDM3or_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6947543
+      Bearing5EDM3or_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6947546
+      Bearing90EDM2or_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6964775
+      Bearing90EDM2or_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964778
+      Bearing90EDM2or_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6964769
+      Bearing90EDM2or_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964772
+      Bearing90EDM2or_1000degree_110depth_5000N_10Hz.mat: https://ndownloader.figshare.com/files/6964787
+      Bearing90EDM2or_1000degree_110depth_5000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964790
+      Bearing90EDM2or_1000degree_110depth_5000N_5Hz.mat: https://ndownloader.figshare.com/files/6964781
+      Bearing90EDM2or_1000degree_110depth_5000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964784
+      Bearing90EDM3or_1000degree_110depth_10000N_10Hz.mat: https://ndownloader.figshare.com/files/6964811
+      Bearing90EDM3or_1000degree_110depth_10000N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964814
+      Bearing90EDM3or_1000degree_110depth_10000N_5Hz.mat: https://ndownloader.figshare.com/files/6964805
+      Bearing90EDM3or_1000degree_110depth_10000N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964808
+      Bearing90EDM3or_1000degree_110depth_2500N_10Hz.mat: https://ndownloader.figshare.com/files/6964799
+      Bearing90EDM3or_1000degree_110depth_2500N_12.5Hz.mat: https://ndownloader.figshare.com/files/6964802
+      Bearing90EDM3or_1000degree_110depth_2500N_5Hz.mat: https://ndownloader.figshare.com/files/6964793
+      Bearing90EDM3or_1000degree_110depth_2500N_7.5Hz.mat: https://ndownloader.figshare.com/files/6964796
+files:
+  - BallBearing90EDM3or_55.8degree_100depth_3000N_10Hz.mat
+  - BallBearing90EDM3or_55.8degree_100depth_3000N_12.5Hz.mat
+  - BallBearing90EDM3or_55.8degree_100depth_3000N_5Hz.mat
+  - BallBearing90EDM3or_55.8degree_100depth_3000N_7.5Hz.mat
+  - BallBearing90EDM3or_55.8degree_100depth_500N_10Hz.mat
+  - BallBearing90EDM3or_55.8degree_100depth_500N_12.5Hz.mat
+  - BallBearing90EDM3or_55.8degree_100depth_500N_5Hz.mat
+  - BallBearing90EDM3or_55.8degree_100depth_500N_7.5Hz.mat
+  - BallBearing90EDM4or_55.8degree_100depth_500N_10Hz.mat
+  - BallBearing90EDM4or_55.8degree_100depth_500N_12.5Hz.mat
+  - BallBearing90EDM4or_55.8degree_100depth_500N_5Hz.mat
+  - BallBearing90EDM4or_55.8degree_100depth_500N_7.5Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_3000N_10Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_3000N_12.5Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_3000N_5Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_3000N_7.5Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_500N_10Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_500N_12.5Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_500N_5Hz.mat
+  - BallBearing90EDM5or_15.8degree_100depth_500N_7.5Hz.mat
+  - BallBearing90EDM5or_55.8degree_100depth_3000N_10Hz.mat
+  - BallBearing90EDM5or_55.8degree_100depth_3000N_12.5Hz.mat
+  - BallBearing90EDM5or_55.8degree_100depth_3000N_5Hz.mat
+  - BallBearing90EDM5or_55.8degree_100depth_3000N_7.5Hz.mat
+  - BallBearing90EDM6or_15.8degree_100depth_3000N_10Hz.mat
+  - BallBearing90EDM6or_15.8degree_100depth_3000N_12.5Hz.mat
+  - BallBearing90EDM6or_15.8degree_100depth_3000N_5Hz.mat
+  - BallBearing90EDM6or_15.8degree_100depth_3000N_7.5Hz.mat
+  - BallBearing90EDM6or_15.8degree_100depth_500N_10Hz.mat
+  - BallBearing90EDM6or_15.8degree_100depth_500N_12.5Hz.mat
+  - BallBearing90EDM6or_15.8degree_100depth_500N_7.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1000N_10Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1000N_12.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1000N_5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1000N_7.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1600N_10Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1600N_12.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1600N_5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_1600N_7.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_625N_10Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_625N_12.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_625N_5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_625N_7.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_750N_10Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_750N_12.5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_750N_5Hz.mat
+  - BallBearing90EDMor_55.8degree_100depth_750N_7.5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_10000N_10Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_10000N_5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_2500N_10Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_2500N_5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_5000N_10Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_5000N_5Hz.mat
+  - Bearing20EDM1or_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_10000N_10Hz.mat
+  - Bearing20EDMor_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_10000N_5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_2500N_10Hz.mat
+  - Bearing20EDMor_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_2500N_5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_5000N_10Hz.mat
+  - Bearing20EDMor_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_5000N_5Hz.mat
+  - Bearing20EDMor_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_10000N_10Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_10000N_5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_2500N_10Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_2500N_5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_5000N_10Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_5000N_5Hz.mat
+  - Bearing30EDM1or_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_10000N_10Hz.mat
+  - Bearing30EDMor_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_10000N_5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_2500N_10Hz.mat
+  - Bearing30EDMor_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_2500N_5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_5000N_10Hz.mat
+  - Bearing30EDMor_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_5000N_5Hz.mat
+  - Bearing30EDMor_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_10000N_10Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_10000N_5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_2500N_10Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_2500N_5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_5000N_10Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_5000N_5Hz.mat
+  - Bearing45EDM1or_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_10000N_10Hz.mat
+  - Bearing45EDMor_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_10000N_5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_10000N_7.55Hz.mat
+  - Bearing45EDMor_1000degree_110depth_2500N_10Hz.mat
+  - Bearing45EDMor_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_2500N_5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_5000N_10Hz.mat
+  - Bearing45EDMor_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_5000N_5Hz.mat
+  - Bearing45EDMor_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_10000N_10Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_10000N_5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_2500N_10Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_2500N_5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_5000N_10Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_5000N_5Hz.mat
+  - Bearing5EDM2or_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_10000N_10Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_10000N_5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_2500N_10Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_2500N_5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_5000N_10Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_5000N_5Hz.mat
+  - Bearing5EDM3or_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_2500N_10Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_2500N_5Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_2500N_7.5Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_5000N_10Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_5000N_12.5Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_5000N_5Hz.mat
+  - Bearing90EDM2or_1000degree_110depth_5000N_7.5Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_10000N_10Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_10000N_12.5Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_10000N_5Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_10000N_7.5Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_2500N_10Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_2500N_12.5Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_2500N_5Hz.mat
+  - Bearing90EDM3or_1000degree_110depth_2500N_7.5Hz.mat
+columns:
+  series: slope (defect entry/exit slope series) or length (defect length series)
+  defect_slope_deg: entry and exit slope of the defect edges in degrees (90 = square edges)
+  defect_length_deg: angular length of the defect for the length series; 0 for the slope series (length 7.5-9.7 mm)
+  defect_depth_um: defect depth in micrometres (110 slope series, 100 length series)
+  load: radial load in N

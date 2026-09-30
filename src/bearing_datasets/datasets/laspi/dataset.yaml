@@ -1,0 +1,33 @@
+name: laspi
+title: LASPI detection and diagnostics of bearing, gear and combined faults of a gearbox (motor current, voltage and vibration)
+description: |
+  LASPI test bench (Roanne): inverter-fed 1.5 kW induction motor driving a three-shaft
+  gearbox with an electromagnetic brake. The studied components are on the intermediate
+  shaft: ball bearing (9 balls, 0.3125 in ball, 1.5157 in pitch diameter) and gears. Seven
+  states: healthy, gear surface damage, gear half broken tooth, bearing inner race fault,
+  bearing outer race fault, gear surface + inner race, half broken tooth + outer race
+  (faulty components supplied with the platform; sizes not given). 3 supply frequencies
+  (25, 35, 45 Hz; measured rpm in the folder name) x 4 brake loads (0-75%) x 4
+  acquisitions of 10 s at 25.6 kHz: 336 recordings. Three currents and three voltages at
+  the inverter output and one accelerometer near the intermediate shaft, stored raw
+  (currents / 100, voltages / 200, vibration 100 mV/g). License CC BY 3.0.
+license: CC-BY-3.0
+size: "download 2.0 GB, built 2.1 GB (measured)"
+homepage: https://doi.org/10.25666/DATAUBFC-2023-03-06
+citation: |
+  Soualhi, M., Soualhi, A., Nguyen, T.-P. K., Medjaher, K., Clerc, G., & Razik, H. (2023).
+  LASPI detection and diagnostics of bearing, gear and combined faults of gearbox. UBFC
+  data. doi:10.25666/DATAUBFC-2023-03-06
+sources:
+  - type: http
+    name: ens2m
+    base_url: http://ressources.ens2m.fr/openscience/DATA-PHM/IndustrialData/LASPI-Detection_and_Diagnostics_of_Bearing_Gear_and_Combined_Faults_of_Gearbox/
+files: [LASPI-Detection_and_diagnostics_of_bearing_gear_and_combined_faults_of_gearbox.zip]
+columns:
+  bpfo: >-
+    computed from the record's bearing geometry (9 balls of 0.3125 in, pitch diameter
+    1.5157 in)
+  rpm: measured motor speed from the folder name
+  supply_hz: inverter frequency (25, 35 or 45 Hz)
+  load: brake load in % (0, 25, 50, 75)
+  acquisition: acquisition number 1-4 within the experiment

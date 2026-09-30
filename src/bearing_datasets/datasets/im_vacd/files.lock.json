@@ -1,0 +1,1282 @@
+[
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-B-R-1-0.csv",
+  "size": 15045938,
+  "sha256": "32fd8ed2ae358e028c06f40ab69b41a0bfb645a918ca33f0a89a2799ad69e2b1"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-B-R-4-0.csv",
+  "size": 15040104,
+  "sha256": "535f21ae26020073ee5a7b36dfd3f971c9f84e840ae7414488cb3ca89d983261"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-F-B-1-0.csv",
+  "size": 15045393,
+  "sha256": "4c3355a8676ee1bd48e224793ab665d572500613a8e2817a89e266f39296d87d"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-F-B-4-0.csv",
+  "size": 15038757,
+  "sha256": "538b0904b3b4b21de175e6c90fb8f7b9407fd8fe76d9bd365abb60209c3c0d31"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-H-H-1-0.csv",
+  "size": 15074483,
+  "sha256": "3829a8f51bce10d40d8910c9b7c460bca72f2db75ae291902ccecfdaa82d4348"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-H-H-4-0.csv",
+  "size": 15048539,
+  "sha256": "1554ecbbe40e1e73efa5fca41e9d57c6082ef7ca82864e3c087d8c9bc18acfee"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-K-A-1-0.csv",
+  "size": 15046219,
+  "sha256": "20f6cd3118c5c40ffd2f6c1a05693be3503dc02086e063e3751ebb0346e09230"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-K-A-4-0.csv",
+  "size": 15022845,
+  "sha256": "c3d3ee746d768ee726b26088be26f7015043359f53eb6366aaefcec3ab51cd79"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-M-1-0.csv",
+  "size": 14957593,
+  "sha256": "eed290ea3c69705c2240c509ab2019451b322b90edf7ef25372f0bb75ae3b660"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-M-4-0.csv",
+  "size": 15014374,
+  "sha256": "d1428ae076d6ffa4e03bf84d76cdf390713528f3ad496661248201ebc09ea48a"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-U-1-0.csv",
+  "size": 14802227,
+  "sha256": "4753556c0cdaa6647c53fa64b223ab9945a9795b4ebb8018993188bd814e47c4"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-U-4-0.csv",
+  "size": 14855416,
+  "sha256": "a3efe607b1250057ee21c3b216acfde5e1650d01b4641dcaad496787307877e8"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-S-W-1-0.csv",
+  "size": 15050745,
+  "sha256": "88cd5392cb8900f3963057399d15c191820dfaa0ff6f50b67931c4be985f570c"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-S-W-4-0.csv",
+  "size": 15044586,
+  "sha256": "5fecb97098bd994557344fcd3a3f23669491165f91fb82b8b1bafdfe38fdc81c"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-V-U-1-0.csv",
+  "size": 15050545,
+  "sha256": "7b1e023fa2b81285d730d918955afea494c8c9182dfa11e8e1c45acd991746ec"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-V-U-4-0.csv",
+  "size": 15025784,
+  "sha256": "3230e072ee1bc9891eaf08146aeb3fe868218488e2c15737bd89b6d00e2228f4"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-B-R-1-0.csv",
+  "size": 13888305,
+  "sha256": "03b9c9f55cf272bc6523d257ec059ead7e4e4bd855ff588653f0d33f6b296268"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-B-R-4-0.csv",
+  "size": 13870946,
+  "sha256": "cb9b576767dca93295bd4d098b725d9661204a57e55492d367cf078263d89c1d"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-F-B-1-0.csv",
+  "size": 13667540,
+  "sha256": "019a8372f9a2d9110d7ea5b0a8ae37c28d2afebd5c3cf1d35bf0832ff101b0fd"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-F-B-4-0.csv",
+  "size": 14093089,
+  "sha256": "6e5f3c1ce24ef9e67a1b879625da64bc76db924392eba5c609d72efb92542d16"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-H-H-1-0.csv",
+  "size": 14205963,
+  "sha256": "7be182666f68c8a03f5a7ff82292d9ad4e8c32e3a25a4dd440c37e152ecfa5ad"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-H-H-4-0.csv",
+  "size": 14094812,
+  "sha256": "64d299a2409cba365daa51acabc097cb40be0de2344003bafe0522790dca8aea"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-K-A-1-0.csv",
+  "size": 13888797,
+  "sha256": "46b5435847c19914fa89ea001e06302ee5bfa84683d77111ee499085cf07bd71"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-K-A-4-0.csv",
+  "size": 14083410,
+  "sha256": "2f49e03a95980364dffe4a7c00f6226480d58f3b829bd564b8e8c6b375588dcd"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-M-1-0.csv",
+  "size": 14104596,
+  "sha256": "fa79ea6b9ac757a92fe748839ec1baba446674489db55911c3171914bfa76293"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-M-4-0.csv",
+  "size": 14085100,
+  "sha256": "3eb565d1e12c3957481e64e422a2b06f4077de2cb2bf1ab8643f7eeba0e00311"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-U-1-0.csv",
+  "size": 13682519,
+  "sha256": "3a045407084df0b27ea7c270ffd044d32568e1fc2373585986d057fb32fdfdac"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-U-4-0.csv",
+  "size": 13908286,
+  "sha256": "18a3a90bef13ad29b3bd68901a5c894526000dd5869579a128c5c599f90c6c09"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-S-W-1-0.csv",
+  "size": 14109107,
+  "sha256": "1a84728c55dc1110d0aa46bc3cc3a799f0be41198c61e734b9fe557b32c47efa"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-S-W-4-0.csv",
+  "size": 14094743,
+  "sha256": "5f8b8ba691ed422504e6fa01beee4c3daf02119c16cbea9c8e8719fb348fce15"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-V-U-1-0.csv",
+  "size": 13886071,
+  "sha256": "7caf184cf34189004d5c7e51375a2b883feb35477d3a37437346c3c625592e98"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-V-U-4-0.csv",
+  "size": 13883317,
+  "sha256": "2841607452e5b6ab2626393e18f7dde06f78327520660ac9fdd927ba573edd76"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-B-R-1-0.csv",
+  "size": 14455556,
+  "sha256": "c4b205ca9016b7d5cbcd374bbf96aaa8b6e438fa02fd2dbbb5adae62a60bfe61"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-B-R-4-0.csv",
+  "size": 14455771,
+  "sha256": "0b06284302b01570ab8e74c91f3f56e24ef196863ad3d4083561047e374ac437"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-F-B-1-0.csv",
+  "size": 14455793,
+  "sha256": "418b2681c23129fc79eab4e9e60d06ef54806ef8790bf19b98a81658bf51a753"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-F-B-4-0.csv",
+  "size": 14451540,
+  "sha256": "7b23faba051b9e5ce8c0d5a7cb78d8c7922865ee909d128ebb2113262001d529"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-H-H-1-0.csv",
+  "size": 14452505,
+  "sha256": "ac7e436cdb53b8c0ded7e773f4355f1b900a6e9f1bf84e329a5893626cf24ec2"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-H-H-4-0.csv",
+  "size": 14455005,
+  "sha256": "db324c150d4b45e81985cf4ea6047a3c11fb52860562465035dacd6dc69d33eb"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-K-A-1-0.csv",
+  "size": 14454722,
+  "sha256": "bcc96a622fe231a8aaa94c680f5461fcac2ba446d442947226695cc73716414d"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-K-A-4-0.csv",
+  "size": 14443657,
+  "sha256": "ce6c7ba74d1cd255245ec67dde1cfdc95a7b35b882f28417f92354594c9114a0"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-M-1-0.csv",
+  "size": 14461960,
+  "sha256": "8e513bce326856a0af6620a8d9441b384fc4233b496a5f5c01f60e3482cfe8eb"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-M-4-0.csv",
+  "size": 14446316,
+  "sha256": "4adaee862fb9523bf3f63d05bcf83c9ec3bab9c0282e64c312f2e2955550e561"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-U-1-0.csv",
+  "size": 14241812,
+  "sha256": "71fcbbdc5466076689626af9297da6f6804136cc822699e46f4a5f6ff49a67b6"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-U-4-0.csv",
+  "size": 14466331,
+  "sha256": "ae1ee132f155ca7860caebef9f18cc96ce1ecce1c06fba4a9c7bee4676a9b63a"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-S-W-1-0.csv",
+  "size": 14243734,
+  "sha256": "9526531105000a46708b7c8492e3f9e1a03e8e2aefb8be4ad38120e3371f5455"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-S-W-4-0.csv",
+  "size": 14460552,
+  "sha256": "5f505088ded23f80fe834f54596bb5f0933f5d7b3090cec662d785a35f8032e8"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-V-U-1-0.csv",
+  "size": 14452023,
+  "sha256": "a63f7e5bbbb73459081c012430c88e02596dd56a559626bc4edbd191b3613beb"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-V-U-4-0.csv",
+  "size": 14445819,
+  "sha256": "84771fedfdb30028c4ca771c3e90723e660acb886153976315d42a54b030e14c"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-B-R-1-1.csv",
+  "size": 14833736,
+  "sha256": "599cb64774bca111448665d8bd4a8a2dca95da6376395addf7067255d5a4537e"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-B-R-2-1.csv",
+  "size": 15036798,
+  "sha256": "7e353f5c950647a7c80aa971791bef6ccad922e1a232833706e33d2b2cdb6261"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-F-B-1-1.csv",
+  "size": 15049570,
+  "sha256": "c6859b1e42d7b59aad341cc831bd58e01c90bfc7b77b1bcdd2f08c8aa7362428"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-F-B-2-1.csv",
+  "size": 15026703,
+  "sha256": "b101e3033302f8495ad677e957ff9af5173a5eb53273e28673933c7e3e1d6ec4"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-H-H-1-1.csv",
+  "size": 15046342,
+  "sha256": "263107821306e18470685fdc4fa699cc51e106f25b3d63d32abb05b4058aa916"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-H-H-2-1.csv",
+  "size": 15050461,
+  "sha256": "d9ea37a67662e0b505ed1f0d52054bdbe7e15ebf09218453c8b49630352df3d6"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-K-A-1-1.csv",
+  "size": 15020419,
+  "sha256": "d9806c62360add22282ae6b5678247e3627f82bf4cf2b216eabe4b18f53c01f8"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-K-A-2-1.csv",
+  "size": 15022720,
+  "sha256": "da679fc7c5e6c6e34465de34f8e8eb814e5261946b1b23e94fd222ca09585c65"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-R-M-1-1.csv",
+  "size": 15045889,
+  "sha256": "a06de217696f55e4a6a342cbc539c6df10fa07306eba6397aa2c77d756aaf256"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-R-M-2-1.csv",
+  "size": 15033088,
+  "sha256": "14d75c2d5d4a85f19b8ff0ea51418b54d750a613d40c9e197d83ec5d650d5645"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-R-U-1-1.csv",
+  "size": 15050074,
+  "sha256": "0b02e0ebdb1239cb2f8e972e1a4d8aee5182b9b6414a53e03f85eca1be30ffdb"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-R-U-2-1.csv",
+  "size": 15038939,
+  "sha256": "4887112fefad5c612350fac399b7f09c76fae9820e12ba2b2fbf94a47ec3dc06"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-S-W-1-1.csv",
+  "size": 15050543,
+  "sha256": "80e3efa4744f8986d69ead7b7f15cf663355b97fb5f77ea76d56f254b99926f1"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-S-W-2-1.csv",
+  "size": 15038558,
+  "sha256": "540ecafa794a4be56c4b29428ebc56facec751c725e7d82e500ebe646cdb0c1e"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-V-U-1-1.csv",
+  "size": 15067712,
+  "sha256": "e44de6a95e78a3deba419bfc4848b6a7406f1fab1e2d6cea1598528ef5133dfa"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/1_iPhone_13/A-V-U-2-1.csv",
+  "size": 14878219,
+  "sha256": "c6234181b6135b4b32c2acad4072bf4b1eccdec74d5402e634c3fba2ce04d701"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-B-R-1-1.csv",
+  "size": 13892972,
+  "sha256": "e349c3dcfe9737235e369a860e894876c8a19d181d0d8b0ec77ec1bd58d97ecd"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-B-R-2-1.csv",
+  "size": 13882317,
+  "sha256": "38257890dda5b14fd3b40baa954c51e6739f83070211bf97353f9e5f8a5f1368"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-F-B-1-1.csv",
+  "size": 14106637,
+  "sha256": "80819022f5e4648aadd3dddbf85d207339f26b430f51f4d980b1c82fcf41e6e7"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-F-B-2-1.csv",
+  "size": 14100376,
+  "sha256": "631f6223c88ca659c058580b2c78b7a5b5f86130cc9abdb5c7d9d341e7d99af5"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-H-H-1-1.csv",
+  "size": 14207169,
+  "sha256": "626e6dfd83fbd5ccedb8f50d6a4cb8d046357da7fdd91427a0eec330d531d101"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-H-H-2-1.csv",
+  "size": 14104126,
+  "sha256": "28cee4d82149e50ec327aeb6b7faf202a7dfdb8291ef9aba7a8eb156db4b8d7f"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-K-A-1-1.csv",
+  "size": 13896887,
+  "sha256": "61be027b4d3e5228f59d864aa7a8d41c0ffafe8e0afe77b3c94acdab3e43d6dc"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-K-A-2-1.csv",
+  "size": 14120488,
+  "sha256": "b9ba75819678c57bbd9321e9d8a2b5e90b61717a3fa3d820a65df3fe5455efae"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-M-1-1.csv",
+  "size": 14106937,
+  "sha256": "c81bd21c8ed6ff35d0223afcbd9d8be413ea2dd86af37c9a2d0a0dfdc0af5623"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-M-2-1.csv",
+  "size": 13889515,
+  "sha256": "8856f510bd429c4fb878723bbc45ae7dabc7f3825d2e4e22f462c8bb57c80b94"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-U-1-1.csv",
+  "size": 14097105,
+  "sha256": "185c41cb718b47b01da2bd21f76f34197ad8c553b6793c26362ef49dd0718850"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-U-2-1.csv",
+  "size": 14112001,
+  "sha256": "420404561161b22bc5a36b4b2c8ccd7ef9d6569e9de2e98ec40225b34f3c7288"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-S-W-1-1.csv",
+  "size": 13893373,
+  "sha256": "54f8127a2443bbd613ce4adf34a9a1a6f1b86ed1db5d24be46fb141ee0bdd3cd"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-S-W-2-1.csv",
+  "size": 14101548,
+  "sha256": "f14d4f59a93cf5e600c021f8ecc61124444986f6db6b76ddb48821625eddae64"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-V-U-1-1.csv",
+  "size": 13910750,
+  "sha256": "dda6d7e7c314d87ece64feb6fc64da5171d0a83c933ef1ff767a2d3fd6e1d1bb"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-V-U-2-1.csv",
+  "size": 14068142,
+  "sha256": "938b58448f785625717d9c843ccb9988868805d15d3211e7d1f5972bd91af732"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-B-R-1-1.csv",
+  "size": 14460078,
+  "sha256": "f9df21ea98d767aed98741ae4b1f0b2f2d4993c0b78825384c06cfac409e34dc"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-B-R-2-1.csv",
+  "size": 14457172,
+  "sha256": "c129229e933c4bd94643b7318af7689557d02aa4b95abb8d6c46155e4d6a9097"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-F-B-1-1.csv",
+  "size": 14455273,
+  "sha256": "27f06144cf1683ada2ae62d701acc2b774143c7654465dd7c4a93b59632f89c9"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-F-B-2-1.csv",
+  "size": 14455952,
+  "sha256": "4eb80bf7456794a951ad4406760e705aff7b0352e6eecadd989cf07c3a5ce32b"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-H-H-1-1.csv",
+  "size": 14450278,
+  "sha256": "66121b7778e322139c06266ea809a6b80f26faa3678e9c28606bffa1ae827187"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-H-H-2-1.csv",
+  "size": 14449614,
+  "sha256": "4188fee7a23953a079affb290bcfdd69cac58dab60960e4262b38073de090d5b"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-K-A-1-1.csv",
+  "size": 14456027,
+  "sha256": "b1a41520302b4365083c907aa235e8c4fd9f0c0b9ccdb2a74e43b3d57230f04e"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-K-A-2-1.csv",
+  "size": 14477937,
+  "sha256": "56896748aef6111fa73007946e130b79084e91f7d0788785e1d09c7dc58ada90"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-M-1-1.csv",
+  "size": 14451768,
+  "sha256": "70b68adce9f0259b21ac37306ad3822b98d836c87741e7b4fa6a9015ffb840ae"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-M-2-1.csv",
+  "size": 14465121,
+  "sha256": "19da31e518e97b7e9bb24c628053645dcc520c4ef953afd51734c73eea2c2a40"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-U-1-1.csv",
+  "size": 14451443,
+  "sha256": "b94eb51ac2ffb4649c654dffb940449e961ccdf1655842a52435265c5df3fa56"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-U-2-1.csv",
+  "size": 14455846,
+  "sha256": "a2d23ad7b11719c83504d9cb977ee9109ea682d51ff61833e7b2cec693cf3c4e"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-S-W-1-1.csv",
+  "size": 14454038,
+  "sha256": "31c9e21feaa489103f8bb9ede4dbeebc86f58ec2f980ceb993240c17a5e8a3a0"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-S-W-2-1.csv",
+  "size": 14466000,
+  "sha256": "296ebadb37c71a9fd9c0100bb92797f0d58094aad2d098ab014e8cf3bb8a1775"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-V-U-1-1.csv",
+  "size": 14439743,
+  "sha256": "8a145c061d84c36b559d173361bd870a859cae2dc3d3041552b68ac00e84df9b"
+ },
+ {
+  "name": "1_Hand_Held_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-V-U-2-1.csv",
+  "size": 14452018,
+  "sha256": "0371eed59e34cb907712ca3a962bb328c7e5727ced49c9bf683ebf489aac85c2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-B-R-1-0.csv",
+  "size": 15043903,
+  "sha256": "90847177b4805138972b8f18e7109365fe4f8acd372c5c9a8ce450f53c20ae91"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-B-R-4-0.csv",
+  "size": 15052907,
+  "sha256": "ef1457826cb089ba51dd3dec76515d7535b0fdf10bb333a336bbadef4efbdcb2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-F-B-1-0.csv",
+  "size": 14832137,
+  "sha256": "47cc2bb97765f619081565580ac27a9c11e8307bd7e0171c49a0fcb1dc91572e"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-F-B-4-0.csv",
+  "size": 15044661,
+  "sha256": "803c145e70d192d82cf888f64df80cb35a0686fb39f0a433ed4f4d7b4c87e2d0"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-H-H-1-0.csv",
+  "size": 14888427,
+  "sha256": "6bfd8a2e4c29b3b778edca1181fed12c31bb3373ffe20ffdafbca86c75d9c42e"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-H-H-4-0.csv",
+  "size": 15053002,
+  "sha256": "fd804eba5d8c84bfafe5b434d559d057decd977941c80556db67019d7d8951a0"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-K-A-1-0.csv",
+  "size": 15038793,
+  "sha256": "ebce907b66c00d165ce5352b6575fc581f56384b909bca503a2dedddc3f882e6"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-K-A-4-0.csv",
+  "size": 15046383,
+  "sha256": "08cbe9ade463c650d8cbe07bb893151b83179f6482617ec01aab694cf5f67c04"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-M-1-0.csv",
+  "size": 14857828,
+  "sha256": "e7d66dab1f1662ed7783ae8556c13bae68e91853d06db2d8d3625bab6bfd98da"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-M-4-0.csv",
+  "size": 15051038,
+  "sha256": "c64afc3d7329735fbb5ece76ed898f2117b7293a1f20297b3fe342c2be9bff55"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-U-1-0.csv",
+  "size": 15041532,
+  "sha256": "00274b4382e3a34716e1e6fbe62bef3c33fd3e4e119e0a2ed68e7c23782680b0"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-R-U-4-0.csv",
+  "size": 15044191,
+  "sha256": "d1c816f9335fada727159c3b8526ff6251009abfd4a559bbe762fd5e88a1d4d7"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-S-W-1-0.csv",
+  "size": 15051842,
+  "sha256": "f4a59fc20c8077354e73cc608514278245cdd74843c69d4d16360c6298368c53"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-S-W-4-0.csv",
+  "size": 15046697,
+  "sha256": "da24f61c8cb40da8a62fa67b910cf1115da679131d25e933c6f49cac4c657db2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-V-U-1-0.csv",
+  "size": 15038508,
+  "sha256": "bfe4e09e5ac1625616a59671712d1f32070d1bf1d166680623043f6bd2c2aec1"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/1_iPhone_13/A-V-U-4-0.csv",
+  "size": 15046321,
+  "sha256": "fa24dc8ced3d1e7fe54fd2d5529814ad3c9530d95de5ea09bde82a844996ccab"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-B-R-1-0.csv",
+  "size": 13804353,
+  "sha256": "99b1cefc28992574d05a748afd50324da6c660f3e867cbed8e15a214e0edc791"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-B-R-2-0.csv",
+  "size": 13663158,
+  "sha256": "ab07038cf0327c9c4f9fff8d4220dd26ab9956a8b4de6064c940249628545404"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-B-R-3-0.csv",
+  "size": 13674141,
+  "sha256": "13685ce09e3abe30a4686dd5e90330e0e2939d605b779a5d108e2fdfcc44cb78"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-B-R-4-0.csv",
+  "size": 13672654,
+  "sha256": "a325e9788a75fe96d67be8c2775f7eecb33495620b6114c81d7652c1aade10a9"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-F-B-1-0.csv",
+  "size": 13890384,
+  "sha256": "55b94bb1d67437ecf6f0ba495ed543cd25c6aaface2959c13c1b806535c06579"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-F-B-2-0.csv",
+  "size": 13872385,
+  "sha256": "745d6de7bafd4fbe860d130462d0225744d9902681c1ad439a471c3dc284e027"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-F-B-3-0.csv",
+  "size": 13870329,
+  "sha256": "a88246e27ffb1f6078741e05ca73913dbecdf133b0b1feb1870a66a4ca11c82f"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-F-B-4-0.csv",
+  "size": 13874723,
+  "sha256": "945422588021a7c4eeb30de5980b98a85dfd9c9fc7bb761cd69522b2fff56c9c"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-H-H-1-0.csv",
+  "size": 14044807,
+  "sha256": "9a7edc04c243375406bc47438716f7f65d365bc3d22cd0e2189652523a5d9e0d"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-H-H-2-0.csv",
+  "size": 14016798,
+  "sha256": "0f6b1d2fd9402a92234eff4782092c2d99f71155e616e82dfe0fc3f1c67a62f5"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-H-H-3-0.csv",
+  "size": 13895136,
+  "sha256": "2f7ad192f1fb2102c1dc66d6d8a375beb00889c59fa25b248547eb233e5a0ab6"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-H-H-4-0.csv",
+  "size": 13880529,
+  "sha256": "9d206cd0566b9e37108b46babe0edfa658f9a7d9553cbd2e6bbf17ecaa05c81a"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-K-A-1-0.csv",
+  "size": 13999794,
+  "sha256": "fb29eb33addab492ed436e12c5a0c07baba12aa01386906880d201d2fafc42be"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-K-A-2-0.csv",
+  "size": 13877903,
+  "sha256": "e79d5ee2404283a679174d19baff193edb2728535b0b4846c39c8be728ce54a8"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-K-A-3-0.csv",
+  "size": 13884103,
+  "sha256": "cc0ecaee4c2fc961e130b9efcedd18bea8836c599eccd9adf82761a2a8999e24"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-K-A-4-0.csv",
+  "size": 13881199,
+  "sha256": "651e83ae16d85581c84ae951b3022d1800aeeac40ce11126fd6cd98c90fc467a"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-M-1-0.csv",
+  "size": 13785461,
+  "sha256": "74dd34d6febbfd44d50a3cfa59555164c8c474deeed6588ed80c937098d9eed3"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-M-2-0.csv",
+  "size": 13883678,
+  "sha256": "9fde6a7667958084a65b60c750c028259765a6d350e2bab5a95e963aa0c36984"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-M-3-0.csv",
+  "size": 13886102,
+  "sha256": "bd92e88b53d780276f3739049e11034a60efd8362f7c55ea88b9fa5c409c79fd"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-M-4-0.csv",
+  "size": 13669167,
+  "sha256": "78672eb56c6a6b1ac4990aa51b081059847a33c18f2495b66d827163754750a5"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-U-1-0.csv",
+  "size": 14034228,
+  "sha256": "9ae27db41f10fbdd3b4d37b0c8ba6dae617d3a7649778c96d3c86dabc35df5c5"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-U-2-0.csv",
+  "size": 13899341,
+  "sha256": "ea128b2bcaf51becab420c1f33d427285da9750b9ad450264c4daf6f46feffb6"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-U-3-0.csv",
+  "size": 13885851,
+  "sha256": "815f50ae60f92f1c2bc1c6417d15afa2297f22de024285ba0edf12046a6085d7"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-R-U-4-0.csv",
+  "size": 13869684,
+  "sha256": "0bd7d29518d6543c019940a70f52c1ddd19ab3c6c38afb9c3a1521a750a86e12"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-S-W-1-0.csv",
+  "size": 14003737,
+  "sha256": "b07c623d83d161989572d4730e1c292c024799247c1ddabce05de68b3fc1dc43"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-S-W-2-0.csv",
+  "size": 13869292,
+  "sha256": "3683689a00dffdc0cfe33bc4acbb0165a3a68bde348ed2f4a575313344008811"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-S-W-3-0.csv",
+  "size": 13886288,
+  "sha256": "936156a1a3bcf1e9c0cde9e8706d772df0efdee41425d8b437f196ed7757b53d"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-S-W-4-0.csv",
+  "size": 13888950,
+  "sha256": "cc92fa29dadcaa900b15a46cdd70baaa3127988ce80fc8be82113425b7a131e2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-V-U-1-0.csv",
+  "size": 13556144,
+  "sha256": "fd1e78c19bc6d3d1d773acd8a27529beb7481f812f4689dd4483229a758e1ff3"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-V-U-2-0.csv",
+  "size": 13673934,
+  "sha256": "95bb3222d3effaff4e665cd60ad871a179c99a8160610a84557b61299113403b"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-V-U-3-0.csv",
+  "size": 13885596,
+  "sha256": "23dbcc9c099e989e6282c654b7fff652b121bb933c3ee55c6606b9b2893a7b73"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/2_Samsung_Galaxy_S6/B-V-U-4-0.csv",
+  "size": 13669922,
+  "sha256": "8e718855b98b94dcec3ee7815eecced4a48c8767fcdeb018998434c42a418779"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-B-R-1-0.csv",
+  "size": 14443738,
+  "sha256": "d4cc0913f393ed63fffaebb0300dfdd0c1d0904c15cbc6d0a29810b12ea6b598"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-B-R-2-0.csv",
+  "size": 14242776,
+  "sha256": "461cd9a29db07f733352f701b3981e503a908e2e8f0322927d002b00f5410ae4"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-B-R-3-0.csv",
+  "size": 14249512,
+  "sha256": "9f7c82f4e94ce8351e6a31b3a170e59342b006c5d8b4b94932196cf14cf55324"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-B-R-4-0.csv",
+  "size": 14456976,
+  "sha256": "7661ddd2be1609727be910572a305e4e99c08a4e3b0f995dbdb5a7ed9334104f"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-F-B-1-0.csv",
+  "size": 14450021,
+  "sha256": "5cb13b4c6201be06ae7c586b1d5bbb93339337908692de634c6d794926b28d52"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-F-B-2-0.csv",
+  "size": 14241251,
+  "sha256": "0dfb4533b06f9fc910db407a6df785922086abfc1aadcdcefeaa0df6d833c316"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-F-B-3-0.csv",
+  "size": 14449520,
+  "sha256": "6d7ca6dbc24bf55463fb3ce84a1c499b197d55d251a1ec6a3533128bc6324f4a"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-F-B-4-0.csv",
+  "size": 14450657,
+  "sha256": "b4b2886881eefc843848298a281eaed2efa9d8d359cbdb2226643d53f01788ca"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-H-H-1-0.csv",
+  "size": 14452580,
+  "sha256": "5f425c7eec80a52d9264e54671150ce126600caaf3a1f3fbf8f9ea94a3aa7023"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-H-H-2-0.csv",
+  "size": 14455963,
+  "sha256": "041a53fd02152f1b87024f986b5b971aedc35328637252305b34c8f568f93770"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-H-H-3-0.csv",
+  "size": 14452628,
+  "sha256": "a69e6a066d47bbc9a500989728b23f03da1acec250de06ec353b0ad6c5e6b162"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-H-H-4-0.csv",
+  "size": 14452368,
+  "sha256": "c1fc9644bff4e7cf7e1d8a3625d306c09e63d96bde02dca1e6f7a4d26559f8fa"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-K-A-1-0.csv",
+  "size": 14454019,
+  "sha256": "f7d3b927fb1697f0510ffc7f18bc56fc2d9722c9e5f2e9e81a45530e03277daf"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-K-A-2-0.csv",
+  "size": 14458983,
+  "sha256": "d341aabce76aa28f5ca2ed6dfef1785fdba93e0775cb54aab85b3a1a34ed2fc5"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-K-A-3-0.csv",
+  "size": 14454738,
+  "sha256": "b02db56905a231155a5b0d9937c2e94faca667f3f011fd81f1f9c4352bd0b9d4"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-K-A-4-0.csv",
+  "size": 14449834,
+  "sha256": "289e11aa52afceffd2047f603e8fd723a2d927643c1f9fb2876b0cf880024ea5"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-M-1-0.csv",
+  "size": 14238813,
+  "sha256": "9bd87c5cd51da696cbb971ed42c6eb209a5674c7f86d36a2f587c8a829a12119"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-M-2-0.csv",
+  "size": 14448808,
+  "sha256": "bb00fac2ba64903c536863e88344c5aff2d278a63f12dbab3cf797d44c51d16b"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-M-3-0.csv",
+  "size": 14456275,
+  "sha256": "b3ac93879ee7764b14c435db3fdede0b8bc575a71456bc6f8db2430a104869ac"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-M-4-0.csv",
+  "size": 14236013,
+  "sha256": "b3aedb9a5176c562c6a98e3ef02f5ca3a1c2c014dbf4dce568779d8111ec4a25"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-U-1-0.csv",
+  "size": 14452203,
+  "sha256": "0979ce9bba10bf7b56f3227be035baa3c89012e9af6453cee9e163e3dc3c27a1"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-U-2-0.csv",
+  "size": 14451738,
+  "sha256": "e0a8097cd1932e5cfdd41647a2d92dfb621fb3643003987a7e2495ec064bbf66"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-U-3-0.csv",
+  "size": 14452559,
+  "sha256": "3d06dce81a74325eb5345982f8d4f9c01b5d458a1d874658db5995392a721ee8"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-R-U-4-0.csv",
+  "size": 14443757,
+  "sha256": "d8d58c19cce9ae95e910aa22ac9c50c992ff301cb352697bf0d47ae8f472be12"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-S-W-1-0.csv",
+  "size": 14445040,
+  "sha256": "d0ad7af6c72c6a25d70f2f64acbd7a940ff253b367ca43fbcf78f1b26f540ef1"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-S-W-2-0.csv",
+  "size": 14455453,
+  "sha256": "ffa3d271576d14f8c3304a477e6d166f02bbff2fa48eb5b1219b9c4fe6546d6d"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-S-W-3-0.csv",
+  "size": 14454413,
+  "sha256": "e2bef89752ecc3bb3db8b90ba103e63ed2f66dc87b7c915090f7465b4940db1e"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-S-W-4-0.csv",
+  "size": 14458525,
+  "sha256": "b22575005311d98f26c9c23b275ad29bbabd1c567e60aa488444959d1211f229"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-V-U-1-0.csv",
+  "size": 14448713,
+  "sha256": "1f3ea81600ddebcf4f470e5317a02638040135e67fada0d04d2d4dbc1ca52567"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-V-U-2-0.csv",
+  "size": 14450780,
+  "sha256": "23ff65c24c2b1dc68e6945b20c8f2a56668a9edab816e35f71b5538ee4de91c9"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-V-U-3-0.csv",
+  "size": 14457893,
+  "sha256": "b8bf0f954516880558dfe06d365a6070712ec0b009437d5d9b62585a44275537"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/1_Unloaded/3_Samsung_Galaxy_A50/C-V-U-4-0.csv",
+  "size": 14452495,
+  "sha256": "310763d8fe13185a742f2b6c008fc77be3617c7051207efd9e7de375c700a552"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-B-R-1-1.csv",
+  "size": 14856448,
+  "sha256": "5cde5866d018f39aee7db0bc6d4232c8f18e2a2332311e33e661227582bc26de"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-B-R-4-1.csv",
+  "size": 14990885,
+  "sha256": "99034dc873a0037f2ab3a65ca2b5bc7dd4234de4525b51913c7afe379f229ab2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-F-B-1-1.csv",
+  "size": 14733543,
+  "sha256": "de913328b6b2c31d0625f34d43a6340c9bfac961d361034202a5349508273e9f"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-F-B-4-1.csv",
+  "size": 15014341,
+  "sha256": "cc481c2afd5684bd94cc518c7060101ff3edfafcf43051c8891b5b6793cf2c87"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-H-H-1-1.csv",
+  "size": 15072719,
+  "sha256": "83a9145cbc409fd086a00d5e91ada1020e6439d4ef494d874559ec807474f57c"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-H-H-4-1.csv",
+  "size": 15016763,
+  "sha256": "91ad7e07cf786661efcc0c250999b09f96c2ced25b3c112a8bde4c26a623bdd8"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-K-A-1-1.csv",
+  "size": 15040634,
+  "sha256": "148a953c344a45e3ab922b24478510fd6821b2562be0bc528cd75760e6386c73"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-K-A-4-1.csv",
+  "size": 15048031,
+  "sha256": "1ca6eb650aa8f3d9e3a6772d21adcccb90f2a520a85208dbb4e342a31aec3cc9"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-R-M-1-1.csv",
+  "size": 15047967,
+  "sha256": "350e6ee4dfb485df72c7b14c778a2c9272408ba4633a85288aaed7f1211c3be6"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-R-M-4-1.csv",
+  "size": 15045166,
+  "sha256": "bc95957d3be4a96ea60f7670bb2be6e307017f74a7dc53c1aaa6205ba1498437"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-R-U-1-1.csv",
+  "size": 15014821,
+  "sha256": "a2b9c7b41cefb455a1d73975ca385027d4bac710c175043d94468c8d6c0cca0f"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-R-U-4-1.csv",
+  "size": 15051147,
+  "sha256": "6fc95e53de571ced7c75575af857c618ba68e41b2a9833e5d0af4d3d3d51710b"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-S-W-1-1.csv",
+  "size": 15052594,
+  "sha256": "fae99ac2400e464f071e72549fddc0754aeb47dfff5c1c64cd4c5a1ba34256a7"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-S-W-4-1.csv",
+  "size": 15051629,
+  "sha256": "fb43ce93a95bdf65c6c65b05c5270069ae9088b7f8c56bd72abb008ddbdaf1b4"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-V-U-1-1.csv",
+  "size": 14836302,
+  "sha256": "b3a93b6ae9e2595f2554b619fb8bbe3b9f24f9e8acbaa24663a462427f78779a"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/1_Iphone_13/A-V-U-4-1.csv",
+  "size": 15038082,
+  "sha256": "25d5c3776f952aae0693b45afb6a9349a1234432214af70c9b1528f4e5216e37"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-B-R-1-1.csv",
+  "size": 14043463,
+  "sha256": "985b40b4259e5fafd5bebe7c0b11bfbb40dc75e537c810c9b02f8af392cb673d"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-B-R-2-1.csv",
+  "size": 13883689,
+  "sha256": "58f232d205749d482d5104f9f2fd6822f5b92e99a57783f055aa4d435b253b26"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-B-R-3-1.csv",
+  "size": 13888543,
+  "sha256": "1a895ed1a9648cda06c83175b18e12ab16162108114aec4638f0ae1ef4c88b70"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-B-R-4-1.csv",
+  "size": 13884477,
+  "sha256": "4f6fc6a7797adf8ecfb0f190cc0066d7985feece97f08fbbe287f7aae75ebaf2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-F-B-1-1.csv",
+  "size": 13478754,
+  "sha256": "e5c5b91cabbf3a9aea64ff314859a16a9c251ce8d1725636d22895b82407a51b"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-F-B-2-1.csv",
+  "size": 13872951,
+  "sha256": "8ea14b611844c74a92d190e469711e94afccaf64c76187689c4d3212db1fc58f"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-F-B-3-1.csv",
+  "size": 13884527,
+  "sha256": "1c10adb0bb7a06d3a719f8fea7b69bacc6bdf794d4302225bc3e33c5036c8e5a"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-F-B-4-1.csv",
+  "size": 13663304,
+  "sha256": "31c51976d566c0e426e0c9ecaa197aeae23ad1a67ade0cabef3f212f74951c82"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-H-H-1-1.csv",
+  "size": 14042747,
+  "sha256": "31dde04b1d6672174fc00c8c827413e586efb336ac9602711f4b2688839cffca"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-H-H-2-1.csv",
+  "size": 13610157,
+  "sha256": "f2d2dcf7f5439a285998869f89573110707d0c965cecc4b2b95c129a16b4e3a4"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-H-H-3-1.csv",
+  "size": 13770342,
+  "sha256": "3103bda7331a4096f16801b15709e70e272df856381613198444b529b4db82b3"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-H-H-4-1.csv",
+  "size": 13915195,
+  "sha256": "dd46c3d019e665a05c401a58754075cdcb86aa3bafd25d7ea5189d8d37466921"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-K-A-1-1.csv",
+  "size": 13947890,
+  "sha256": "3bd70fee9339a5106202a39f49bdbdae94e25ee61522b4ab09a082d9c9f5843f"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-K-A-2-1.csv",
+  "size": 13885812,
+  "sha256": "a52cf5df9055710b9739502060c7246dc8318d9fb1b9573f69f2dad0278418e2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-K-A-3-1.csv",
+  "size": 13876360,
+  "sha256": "ab6b78727caaeb8390f25ddf95379129eff863068ab8435d024191f7cb84df60"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-K-A-4-1.csv",
+  "size": 13874717,
+  "sha256": "d6f7495d9883487a05453ca38943fe45c98d0be834ae4003bcb71d24abdcb52b"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-M-1-1.csv",
+  "size": 14052974,
+  "sha256": "c637ced510bf5b8fbd054efa619912ebaa5bce594b496d9982b69c3a74974685"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-M-2-1.csv",
+  "size": 13886748,
+  "sha256": "f2616f3a2e3e1f2f1ce9486701ff53170be3ce6ce1fad7b92d5fc4923d206377"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-M-3-1.csv",
+  "size": 13885783,
+  "sha256": "82240192d71eff28e0128ca9f59093db4532614d84ed9f78e113a42eff1ea6b4"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-M-4-1.csv",
+  "size": 13883681,
+  "sha256": "32db615db36b487d18aaf13529fbb706ccf84a13ff2345c53c9686064ee36c9a"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-U-1-1.csv",
+  "size": 14056312,
+  "sha256": "1db5ed1e717cb4db61f667885ed7f0291db74262479c945dcfab8496ac706499"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-U-2-1.csv",
+  "size": 13897180,
+  "sha256": "0f1d1152811cc49febf4f408847ba38ce5ec23d5254bfdf0c02adcf568a4f642"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-U-3-1.csv",
+  "size": 13888099,
+  "sha256": "d52d80c8562cb6082e63111ea21d0f01faac9cd43b6b641ee538c0238a119626"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-R-U-4-1.csv",
+  "size": 13880994,
+  "sha256": "564e3992589e5bc122d59f8706be78c971770a82a584ca85b90e7e74d0e99900"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-S-W-1-1.csv",
+  "size": 14048372,
+  "sha256": "546cd3d4ada121d425f625e30f8c1dbc1bfbd218e26c72b07dc63a0e35f430da"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-S-W-2-1.csv",
+  "size": 13872061,
+  "sha256": "b2dcbe2fc665f219a0dc7d83c282de2d328758ae514d142b5208f041bab38519"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-S-W-3-1.csv",
+  "size": 13882725,
+  "sha256": "443efbe06de36d176b01251909437eb9d286074340a34002511c3a87106fd3d0"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-S-W-4-1.csv",
+  "size": 13885158,
+  "sha256": "ef37c54520921820f902facb27c89344a05a1d0b1aca47f21647d4f1401f84c6"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-V-U-1-1.csv",
+  "size": 13987268,
+  "sha256": "78dc82ba55fc15ffcb50969095affb74e668a2b1b05c4576905b7f702db6e4c7"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-V-U-2-1.csv",
+  "size": 13882340,
+  "sha256": "0a632cd11585802ea244cb91acc8ef1ad7e5375a7e1141c65c0485dfa35a06ba"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-V-U-3-1.csv",
+  "size": 13886880,
+  "sha256": "33fb95d22982c1edcd6b1eb0d4e3267e3cb53faaae1325ac8cc842de3581b7cd"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/2_Samsung_Galaxy_S6/B-V-U-4-1.csv",
+  "size": 13880973,
+  "sha256": "869975beaeeaf4a5874a3e6befda953db1a7045e1ff8af420e729626ab9e7186"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-B-R-1-1.csv",
+  "size": 14450302,
+  "sha256": "f5f1c4a6d27633ab13603baafe41fca6248aa4927fd84c11f3e3db11d61580ef"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-B-R-2-1.csv",
+  "size": 14454066,
+  "sha256": "beae83a89a34a38c0161d831bf303f291afddd3a907425bf53b531485faea7e2"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-B-R-3-1.csv",
+  "size": 14450017,
+  "sha256": "6d0bc5fb554ac991f66d93643c1431391170dfb8172d15d468d48f87fd77bda9"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-B-R-4-1.csv",
+  "size": 14451165,
+  "sha256": "e3a44003acec5f8ccbefe500a6244309e70a99cc0693729e46f2488924f67567"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-F-B-1-1.csv",
+  "size": 14242303,
+  "sha256": "2f63a20f684ed54b4fe2b7e543caa2096e8ca31feb6c403b017e1eff6718a10b"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-F-B-2-1.csv",
+  "size": 14451665,
+  "sha256": "0c767d2aa3035212280baf8134e09b24ac2010424ca490bbe453d41033365483"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-F-B-3-1.csv",
+  "size": 14457630,
+  "sha256": "86e12f4649f18311f024788e7ab614fe72762aeaae403d1335a19ccdac1e297c"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-F-B-4-1.csv",
+  "size": 14448330,
+  "sha256": "1a49ecfca4d4821ce5837639dfd2c2268530b0d1c79d651c735f963db2001513"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-H-H-1-1.csv",
+  "size": 14251098,
+  "sha256": "c4837ba85ba502d43d0d864b65c12373ace68f0e74e80398d491c9c93941169e"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-H-H-2-1.csv",
+  "size": 14245011,
+  "sha256": "a6bdaf124a3b9de15f27ce894663d38dd668617c7ecdb06b8282baf8c1175f15"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-H-H-3-1.csv",
+  "size": 14455812,
+  "sha256": "d68a9ebbaf9c7e273c43e62ed70533e75c0c91758a36d07d3b0ebdab5f118467"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-H-H-4-1.csv",
+  "size": 14456075,
+  "sha256": "25d0e920fad979771203788e1d34f2f0498285fca2a6c377769d301764b0163a"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-K-A-1-1.csv",
+  "size": 14460952,
+  "sha256": "26ae1d01022eb1a4053cec14b0efc4c87065c684c69342b7d3e4437463901abd"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-K-A-2-1.csv",
+  "size": 14451748,
+  "sha256": "21a1cde118a709853855c07d9d8e0c4223eb222714541e66a187ac7b58889b40"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-K-A-3-1.csv",
+  "size": 14456573,
+  "sha256": "6721ef61dfd290bbd4087ed6232486e89564a3a9d0878c26764550f2e6aa604e"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-K-A-4-1.csv",
+  "size": 14446779,
+  "sha256": "b410f2cd2f78e93b672aa2bddd1e0a92eb61e258cf7cb6ca481856e873bdc876"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-M-1-1.csv",
+  "size": 14452446,
+  "sha256": "8c9171b21c3e65e5f9004d49349431a4566774decc957915248cd344927033c1"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-M-2-1.csv",
+  "size": 14457308,
+  "sha256": "7a3cf90f6e10323ba8922bc11a55e4fd32f4fa99d43bee4519aeede3e7a936c0"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-M-3-1.csv",
+  "size": 14457783,
+  "sha256": "35708a5d14e7d89c831f66d1cd5553dafceaad705bf6ea8d90a3d2f16d2a96bb"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-M-4-1.csv",
+  "size": 14448628,
+  "sha256": "2afd7b30de656f582e3af4f563006a55e66725c08071a28f1b54315cd27d19d7"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-U-1-1.csv",
+  "size": 14449398,
+  "sha256": "99a20b777efc8dee17f4e691bc8639e4f5872de9bf3c5a7bc6651e1603bab659"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-U-2-1.csv",
+  "size": 14451858,
+  "sha256": "b89bcfbaba53483eb3e310ff7087501b7ab182bc171528a5be8649b125f00a33"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-U-3-1.csv",
+  "size": 14459723,
+  "sha256": "280502e52eb56b55bd1dc275f481538a5eb91555d990a52cacb04fb3f8aea627"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-R-U-4-1.csv",
+  "size": 14238951,
+  "sha256": "91684312957f7128302a2798e8b744c8805f822505df909816a2f40ae873ad09"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-S-W-1-1.csv",
+  "size": 14447447,
+  "sha256": "48197938ab25e2a015487847d596eab30ff29a370e8a3a3e20fe809de4b5e800"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-S-W-2-1.csv",
+  "size": 14443352,
+  "sha256": "9536a50cd596790cd62c0610c96ece6e3cc86953edbe6778e27459f7b5cbdc58"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-S-W-3-1.csv",
+  "size": 14457454,
+  "sha256": "dcd4faa4eda3ddea6ccd854d0232ca5928e616fb4a77ec62dcb83ca1ea4f6223"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-S-W-4-1.csv",
+  "size": 14454541,
+  "sha256": "031a496c596e99b1cb3303c618b8a4b24312f487999912458342dc328aadd4c9"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-V-U-1-1.csv",
+  "size": 14453269,
+  "sha256": "513ce2de9d41c0c9a7d68fcebcd8dc2e02f76b78b4267fd59e444895f154ae44"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-V-U-2-1.csv",
+  "size": 14454765,
+  "sha256": "b3abcad2b1cef858b1ca6f99c651575457d09b98f364efda20ac9a9e1f6e5bf8"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-V-U-3-1.csv",
+  "size": 14457534,
+  "sha256": "4175d09e5289193af5ee2eaf27fe4c18064dd9f2eb15c6e02b1381ab4f78b041"
+ },
+ {
+  "name": "2_Rigid_Mounting_10_seconds/2_Loaded/3_Samsung_Galaxy_A50/C-V-U-4-1.csv",
+  "size": 14453452,
+  "sha256": "18db6523bbd74d9575e44adbfbc53e05f6826f3d6bb07ddc0943f65c8c69c71c"
+ }
+]

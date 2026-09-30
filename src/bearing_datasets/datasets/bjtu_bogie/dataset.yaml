@@ -1,0 +1,49 @@
+name: bjtu_bogie
+title: BJTU-RAO bogie dataset (Beijing Jiaotong University)
+description: |
+  A 1:2 scaled subway bogie: traction motor, gearbox (helical, 16/107 teeth) and a
+  wheelset with left and right axle boxes, under a constant 10 kN vertical load.
+  51 health states (motor, gearbox and axle box faults, single and compound)
+  x 9 working conditions (motor speed 20/40/60 Hz x lateral load 0/+10/-10 kN)
+  = 459 recordings of 10 s. 24 channels at 64 kHz: tri-axial accelerometers at
+  the motor drive end and fan end, gearbox input and output axles and both axle
+  box end covers, 3 motor phase currents, a speed signal and 2 microphones.
+  Health codes (native_label): M1 motor stator short circuit, M2 broken rotor bar,
+  M3 motor bearing fault, M4 bowed motor shaft; G1 cracked, G2 worn, G3 missing,
+  G4 chipped gear tooth; G5-G8 gearbox bearing inner race / outer race / rolling
+  element / cage; LA1-LA4 left axle box bearing inner race / outer race / rolling
+  element / cage; RA1 right axle box bearing inner race; 0 = healthy; "+" joins
+  faults of one component.
+  Fault frequencies (orders of the shaft speed): motor bearing 6205 BPFI 5.415,
+  BPFO 3.585, BSF 2.357, FTF 0.398; gearbox bearing 32305 BPFI 7.889, BPFO 5.111,
+  BSF 2.203, FTF 0.393; axle box bearing 352213 BPFI 10.929, BPFO 8.071, BSF 3.164,
+  FTF 0.425.
+  The download is a split zip (30 GB) holding 125 GB of CSV; it is read directly
+  from the zip parts, nothing is unpacked. The accelerometer axes are not
+  documented (axis 1/2/3 = the order of the channels).
+license: unspecified (see the dataset's ReadMe; contact the authors for other uses)
+size: "download 30.4 GB, built 22.8 GB (measured)"
+homepage: https://drive.google.com/drive/folders/1RlZvFw-v07VvsL2Ni9cS7iFrTPDIhn2r
+citation: |
+  BJTU-RAO Bogie Datasets, State Key Laboratory of Advanced Rail Autonomous
+  Operation, Beijing Jiaotong University. Dataset paper: IEEE Transactions on
+  Industrial Informatics (2025), doi:10.1109/TII.2025.3553042 (full reference in
+  the "Introduction to BJTU-RAO Bogie Datasets" PDF of the dataset).
+extract: false          # split zip: read by the builder, never unpacked
+sources:
+  - type: http
+    name: google-drive
+    urls:
+      BJTU_RAO_Bogie_Datasets.z01: https://drive.usercontent.google.com/download?id=1Tkr5-ci68e9GRuhnTcK7Ac-Vkr_rx0l_&export=download&confirm=t
+      BJTU_RAO_Bogie_Datasets.z02: https://drive.usercontent.google.com/download?id=1BWc5YQUyoNsEAzCstvXDRHj4xtZOG9_L&export=download&confirm=t
+      BJTU_RAO_Bogie_Datasets.zip: https://drive.usercontent.google.com/download?id=1uq0U3N3Oq4BPGhUZRw5XWdEVX1YWqijG&export=download&confirm=t
+files: [BJTU_RAO_Bogie_Datasets.z01, BJTU_RAO_Bogie_Datasets.z02, BJTU_RAO_Bogie_Datasets.zip]
+columns:
+  sensor_position: >-
+    where on the component the sensor is: drive_end, fan_end, cable (currents),
+    shaft (speed), input_axle, output_axle, end_cover, near (microphones)
+  fault_detail: the faults of the recording in words, from the health codes; 'none' if healthy
+  motor_speed_hz: motor speed of the working condition, in Hz (20, 40 or 60)
+  rpm: motor speed in rpm (motor_speed_hz x 60)
+  load: lateral load in kN (0, +10 toward the motor, -10 toward the gearbox)
+  working_condition: working condition 1-9 (Sample_1 ... Sample_9 folders)

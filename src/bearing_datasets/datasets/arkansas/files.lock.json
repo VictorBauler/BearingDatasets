@@ -1,0 +1,17 @@
+[
+ {
+  "name": "Fault data split 25.zip",
+  "size": 4726862392,
+  "sha256": "436635452bcdba3eb4058e50cf2e8aee1f5fd196ad08f03ea8f3d9326e592589"
+ },
+ {
+  "name": "Fault data split 50.zip",
+  "size": 4983597508,
+  "sha256": "e4fd7836ba557d410077f3910a918ebc1a1b5662a11354b8e728ef05c0d8985c"
+ },
+ {
+  "name": "Fault data split 75.zip",
+  "size": 5122519200,
+  "sha256": "ff58ff04453381338944298969d9886d513807328c28a874996d852b67753ccf"
+ }
+]

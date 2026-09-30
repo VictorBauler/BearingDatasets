@@ -1,0 +1,236 @@
+name: hustbearing
+title: HUSTbearing dataset (Huazhong University of Science and Technology), constant and time-varying speed
+description: |
+  ER-16K ball bearings on a SpectraQuest simulator in 9 health states (healthy;
+  inner race, outer race, ball and inner+outer faults, each medium and severe) at
+  10 constant speeds (20-80 Hz) and one time-varying speed (0-40-0 Hz): 99
+  recordings. Triaxial accelerometer (X, Y, Z), 25.6 kHz, 262144 samples (10.24 s).
+  All faults are artificial. Fault sizes: inner/outer race 0.15 mm (medium) and
+  0.3 mm (severe); ball 0.25 mm and 0.5 mm; the combination fault is inner+outer.
+  The files also hold a speed column that the authors say is meaningless (the speed
+  is in the file name), so it is not stored.
+  Download: 99 text files (.xls extension) from the authors' Google Drive.
+license: unspecified (cite the paper)
+size: "download 1.2 GB, built 0.28 GB (measured)"
+homepage: https://github.com/CHAOZHAO-1/HUSTbearing-dataset
+citation: |
+  Zhao, C., Zio, E., & Shen, W. (2024). Domain generalization for cross-domain fault
+  diagnosis: An application-oriented perspective and a benchmark study. Reliability
+  Engineering & System Safety, 245, 109964. doi:10.1016/j.ress.2024.109964
+sources:
+  - type: http
+    name: google-drive
+    urls:
+      0.5X_B_20Hz.xls: https://drive.usercontent.google.com/download?id=1w90CUOCdlq0C4rHc7ei3k05KseO0ifej&export=download&confirm=t
+      0.5X_B_25Hz.xls: https://drive.usercontent.google.com/download?id=1FgUprtM8RWJplQE_DhG2KUOZaH6NM95i&export=download&confirm=t
+      0.5X_B_30Hz.xls: https://drive.usercontent.google.com/download?id=11cz2vfeDZ57lKZPz-E4oWAtUIxFtYh7z&export=download&confirm=t
+      0.5X_B_35Hz.xls: https://drive.usercontent.google.com/download?id=1oeFAF87WT4wtjU9LLlR1ucICbWDeo248&export=download&confirm=t
+      0.5X_B_40Hz.xls: https://drive.usercontent.google.com/download?id=1K4tXMhc1klIBSrbaEW3SuDTEWXUdz9-7&export=download&confirm=t
+      0.5X_B_60Hz.xls: https://drive.usercontent.google.com/download?id=1yvs3-64HoFstcn5E2vt61w4mXPq1bx90&export=download&confirm=t
+      0.5X_B_65Hz.xls: https://drive.usercontent.google.com/download?id=1RYNL87L6JfswWwjJb9xCaD9L43FhzUhW&export=download&confirm=t
+      0.5X_B_70Hz.xls: https://drive.usercontent.google.com/download?id=1tHsVc_f9cO69fV-uSCub0KiycX32hYyr&export=download&confirm=t
+      0.5X_B_75Hz.xls: https://drive.usercontent.google.com/download?id=1dXc3-Biok9Elv5172eMtzOI3vtjs-F2U&export=download&confirm=t
+      0.5X_B_80Hz.xls: https://drive.usercontent.google.com/download?id=1QOnFC0_ilN7gyD4BcsbJwFSKybNT7xoA&export=download&confirm=t
+      0.5X_B_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=1v5l09b0rXpd6AOPyQzwqwIQqy5zttY7B&export=download&confirm=t
+      0.5X_C_20Hz.xls: https://drive.usercontent.google.com/download?id=1SOFw55NnyvWUJczhx05EsimHr3idEi5n&export=download&confirm=t
+      0.5X_C_25Hz.xls: https://drive.usercontent.google.com/download?id=16jB_HaFMbxWkuqRFbXYGNeZSma4juB6R&export=download&confirm=t
+      0.5X_C_30Hz.xls: https://drive.usercontent.google.com/download?id=1gx-0CYk-Jct3FH-pmcdLZgKH6gTgQsyC&export=download&confirm=t
+      0.5X_C_35Hz.xls: https://drive.usercontent.google.com/download?id=1n0IpnghGKpA__gfOCteXJ49vrjZzI-Ee&export=download&confirm=t
+      0.5X_C_40Hz.xls: https://drive.usercontent.google.com/download?id=1gCMFSf58RYa8aLsZ_uXgBnFd4prS9hJZ&export=download&confirm=t
+      0.5X_C_60Hz.xls: https://drive.usercontent.google.com/download?id=1rC-cxfP_bNtzKR7HrmCIqLbqJRgwZImX&export=download&confirm=t
+      0.5X_C_65Hz.xls: https://drive.usercontent.google.com/download?id=1ayiALZaZ58Lc9x64B3XFL6yR5tnQErD8&export=download&confirm=t
+      0.5X_C_70Hz.xls: https://drive.usercontent.google.com/download?id=1SMOekC_IrkdMXxrFR0c2fuYKiTC2h3L5&export=download&confirm=t
+      0.5X_C_75Hz.xls: https://drive.usercontent.google.com/download?id=1s2eHk5DtHuntsb51Orq5098OqPg9XRbE&export=download&confirm=t
+      0.5X_C_80Hz.xls: https://drive.usercontent.google.com/download?id=1skLzBCTLxjq9puXjmv9jzWF6SLpFpjgR&export=download&confirm=t
+      0.5X_C_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=1ex0hZlX9apQiudYEyoXwXFI2O2A06ji_&export=download&confirm=t
+      0.5X_I_20Hz.xls: https://drive.usercontent.google.com/download?id=1RoI87xe6wdwb2qHTLcHs4iu3thL2gURz&export=download&confirm=t
+      0.5X_I_25Hz.xls: https://drive.usercontent.google.com/download?id=1d4oZW5mVIbEvLR-LyaVH59-QMDIbawk1&export=download&confirm=t
+      0.5X_I_30Hz.xls: https://drive.usercontent.google.com/download?id=16T85a23kOa_NugBfKxpXWZMd59DqC_Y-&export=download&confirm=t
+      0.5X_I_35Hz.xls: https://drive.usercontent.google.com/download?id=1ugO_8lvG-TL_BHw7Q5YklY9iLEkAbLLo&export=download&confirm=t
+      0.5X_I_40Hz.xls: https://drive.usercontent.google.com/download?id=1MjSZa2fFkIIq5VL9D6NEdgJkO02FMyDc&export=download&confirm=t
+      0.5X_I_60Hz.xls: https://drive.usercontent.google.com/download?id=1NU2qSJRpfTzrzCt_Eolbivw1aqkzMP9N&export=download&confirm=t
+      0.5X_I_65Hz.xls: https://drive.usercontent.google.com/download?id=1csuzvuY7xKAn4cy7qPWqIx_HWoDhddCe&export=download&confirm=t
+      0.5X_I_70Hz.xls: https://drive.usercontent.google.com/download?id=1UYaY3vz_nJdWFhycgpJu7wD9p2qvLlOT&export=download&confirm=t
+      0.5X_I_75Hz.xls: https://drive.usercontent.google.com/download?id=1NHYw3n7GTl4zIazpr4GmCd4u9yiDVrXU&export=download&confirm=t
+      0.5X_I_80Hz.xls: https://drive.usercontent.google.com/download?id=1qoAEk3iN5y_T6mm0t3bYBmvyciOkjkLW&export=download&confirm=t
+      0.5X_I_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=1HP_EVa8hmEZMNphPZ57C4NxywS6K01mx&export=download&confirm=t
+      0.5X_O_20Hz.xls: https://drive.usercontent.google.com/download?id=1gWm6fIDmnDJLxjM6bxS29LmPq97afYT6&export=download&confirm=t
+      0.5X_O_25Hz.xls: https://drive.usercontent.google.com/download?id=1XpOK0foyyJoiJ40i8YXz3sILrLLYGKwR&export=download&confirm=t
+      0.5X_O_30Hz.xls: https://drive.usercontent.google.com/download?id=1ukpu99A3xcSrM-7BDkfm8n261zwxzXzb&export=download&confirm=t
+      0.5X_O_35Hz.xls: https://drive.usercontent.google.com/download?id=1AWKooERNBwrtdm2VI2QO_BJkED76DJSZ&export=download&confirm=t
+      0.5X_O_40Hz.xls: https://drive.usercontent.google.com/download?id=10A0J9ud3rdKEMq3Fs2oefP2BDuvAbjrq&export=download&confirm=t
+      0.5X_O_60Hz.xls: https://drive.usercontent.google.com/download?id=1HM5VrsSMaB6xLRRFEAg_dD4A1Dds8xhT&export=download&confirm=t
+      0.5X_O_65Hz.xls: https://drive.usercontent.google.com/download?id=1g4jAxJ_zEddrvYjaTnTvyxy2RFl29Drp&export=download&confirm=t
+      0.5X_O_70Hz.xls: https://drive.usercontent.google.com/download?id=1te2AOjiFNe1_B8yIIZi-GBSkVUcoknPG&export=download&confirm=t
+      0.5X_O_75Hz.xls: https://drive.usercontent.google.com/download?id=155oOZ_K1C4VsoF3yh6Ifh8vyOfl6USUT&export=download&confirm=t
+      0.5X_O_80Hz.xls: https://drive.usercontent.google.com/download?id=1TxjjTS-ZNQL4IBFYrjCOAvn_F6bhIt3t&export=download&confirm=t
+      0.5X_O_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=1ZzoyHeL120IKw3o_nn2DXRkV3KM5VkJt&export=download&confirm=t
+      B_20Hz.xls: https://drive.usercontent.google.com/download?id=11mfmfMmcna3EJ9sg8dAX6L7yJSmhPN6X&export=download&confirm=t
+      B_25Hz.xls: https://drive.usercontent.google.com/download?id=11r2kLv0FHgGUXq9QLV07SGWNc3Y0fomB&export=download&confirm=t
+      B_30Hz.xls: https://drive.usercontent.google.com/download?id=1jCyuJNORqnDVddwgGAvHDTjkCLj7r7_t&export=download&confirm=t
+      B_35Hz.xls: https://drive.usercontent.google.com/download?id=1YnAItusXUejNtFEZ3YVC7yAEhnxOKAMm&export=download&confirm=t
+      B_40Hz.xls: https://drive.usercontent.google.com/download?id=1nZ9W8B5WLAmmYHIvywd7AuiqLwaxBdz4&export=download&confirm=t
+      B_60Hz.xls: https://drive.usercontent.google.com/download?id=1v4s7QMSJpe7Y3Z2q0YdV120NnGozGdI3&export=download&confirm=t
+      B_65Hz.xls: https://drive.usercontent.google.com/download?id=18xaeuZAtgy5QCVkkXSk1-NRDCEM6KmEr&export=download&confirm=t
+      B_70Hz.xls: https://drive.usercontent.google.com/download?id=1VGVqNLQMZslC04pEJoCmzKrGuASpZ22B&export=download&confirm=t
+      B_75Hz.xls: https://drive.usercontent.google.com/download?id=1qVAZC4b88w8oNiIJ-Zz0N6kzbp4KbD3r&export=download&confirm=t
+      B_80Hz.xls: https://drive.usercontent.google.com/download?id=1q-TIRERwGwQOkXMTk2n1M10PNJhee-1v&export=download&confirm=t
+      B_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=119K0ZfT5HcNLHgT9TeXuKb9MHUppJNs5&export=download&confirm=t
+      C_20Hz.xls: https://drive.usercontent.google.com/download?id=1IGkjNbfUl6iN2R6jPSPSwc1mgiWxF9EU&export=download&confirm=t
+      C_25Hz.xls: https://drive.usercontent.google.com/download?id=1BgeKASWMmiZRnvmduX2-hmPSZjOsCHHv&export=download&confirm=t
+      C_30Hz.xls: https://drive.usercontent.google.com/download?id=11UP82wufbScRWb2zTbya6TeSubYDWg_P&export=download&confirm=t
+      C_35Hz.xls: https://drive.usercontent.google.com/download?id=1fJAoqcoZMHPtGV_sla4fuhcYnXUAqs_7&export=download&confirm=t
+      C_40Hz.xls: https://drive.usercontent.google.com/download?id=1e2o7dSaT-0QDYoYqtbaBbBFAhopNHPAB&export=download&confirm=t
+      C_60Hz.xls: https://drive.usercontent.google.com/download?id=1nALkiFdfLf4e7woDmYrUyL4PqohI8op3&export=download&confirm=t
+      C_65Hz.xls: https://drive.usercontent.google.com/download?id=11LP6Up-fuBBf9EhTAP6_VgzVH3mUsfuN&export=download&confirm=t
+      C_70Hz.xls: https://drive.usercontent.google.com/download?id=18ej8QcNmw36VewxvfoTl8Qdkk7Wy1qHQ&export=download&confirm=t
+      C_75Hz.xls: https://drive.usercontent.google.com/download?id=1xOQZa8HiQ15vhtXg-_FYhybH-xdntjue&export=download&confirm=t
+      C_80Hz.xls: https://drive.usercontent.google.com/download?id=1qzUvdVXFeh0HPe0c5VLbabp5BCQzXG6_&export=download&confirm=t
+      C_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=1yY_duwXIat8eyEXAun4DE9vYwPs5_HuR&export=download&confirm=t
+      H_20Hz.xls: https://drive.usercontent.google.com/download?id=10RK1bEXF76MlIUXgOiotMXYty6_XOV-L&export=download&confirm=t
+      H_25hz.xls: https://drive.usercontent.google.com/download?id=1UxE96Bb-2TTjQMD5CsNq9qZLHpSlJzc0&export=download&confirm=t
+      H_30Hz.xls: https://drive.usercontent.google.com/download?id=1XOUEXrS1kX3ZaC36oILrjwI3Wx2q9l0V&export=download&confirm=t
+      H_35Hz.xls: https://drive.usercontent.google.com/download?id=1m1BBpr2D6zhAztDapcBMWATYaYhn6JE-&export=download&confirm=t
+      H_40Hz.xls: https://drive.usercontent.google.com/download?id=1pEha7A2C_Vg7FoX4QV5JotjsXAe-LqiR&export=download&confirm=t
+      H_60Hz.xls: https://drive.usercontent.google.com/download?id=1MS6MipcpqeUUkHwxh36ISNf0d5qotSv6&export=download&confirm=t
+      H_65Hz.xls: https://drive.usercontent.google.com/download?id=1NGcAzvbh3nocIPwVxnW9053t--Cb4od5&export=download&confirm=t
+      H_70Hz.xls: https://drive.usercontent.google.com/download?id=16le5vYf9dKOmReSooB43GzhBaxEWk2dW&export=download&confirm=t
+      H_75Hz.xls: https://drive.usercontent.google.com/download?id=18zVjeqyQkHF2M7miKeLafKCSU_V1FOGw&export=download&confirm=t
+      H_80Hz.xls: https://drive.usercontent.google.com/download?id=1mhMZ_vraCNnokf4xZBupwybQPMHg_KNH&export=download&confirm=t
+      H_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=1ygR7U3-1LKeIv0LEUcZ6gS3tQPEB_xwQ&export=download&confirm=t
+      I_20Hz.xls: https://drive.usercontent.google.com/download?id=1TY5VcZcB2zdKjhQXUqSw2NovyXlhiiKw&export=download&confirm=t
+      I_25Hz.xls: https://drive.usercontent.google.com/download?id=1GPJAxVW-60IXwVmPQmv4AVa1yn0XTvHX&export=download&confirm=t
+      I_30Hz.xls: https://drive.usercontent.google.com/download?id=1x_zostBEzVNhRVtSeGuhtFmDLBpjO74O&export=download&confirm=t
+      I_35Hz.xls: https://drive.usercontent.google.com/download?id=1fnBN3JBAwwMm2szjsbjlqAfyWgJY1ZVn&export=download&confirm=t
+      I_40Hz.xls: https://drive.usercontent.google.com/download?id=1XYfNhGTD_E4jaZNCITRJCp4jE1lio3Rh&export=download&confirm=t
+      I_60Hz.xls: https://drive.usercontent.google.com/download?id=1kk3s4G0baHIKDfDo_jzeelLT9a6GEnbG&export=download&confirm=t
+      I_65Hz.xls: https://drive.usercontent.google.com/download?id=1u5Ik8epFrGI7DBBp6klUABCMjCSFfmmX&export=download&confirm=t
+      I_70Hz.xls: https://drive.usercontent.google.com/download?id=1U0_v024Zu7sdwGWspQLpdybc6XzoMJYg&export=download&confirm=t
+      I_75Hz.xls: https://drive.usercontent.google.com/download?id=1UVhy_0B4JT6WITGHDgvffSJ7IiyH2zsN&export=download&confirm=t
+      I_80Hz.xls: https://drive.usercontent.google.com/download?id=1zagnu-rd-BcCrRzFFlEzvWrkcCgwwmsW&export=download&confirm=t
+      I_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=1q8fj5rnrX6zWbl2l8R5xqmDae4pIEaLr&export=download&confirm=t
+      O_20Hz.xls: https://drive.usercontent.google.com/download?id=1riJb9P85Ry1e049lrotUOoQWtxwBEYnu&export=download&confirm=t
+      O_25Hz.xls: https://drive.usercontent.google.com/download?id=1x9EFVR6AtQKLI2Z4xlnM_6hFRK3JVDw1&export=download&confirm=t
+      O_30Hz.xls: https://drive.usercontent.google.com/download?id=1FuEU07tFdcmxsJ4727fUHZkH11TUAqA_&export=download&confirm=t
+      O_35Hz.xls: https://drive.usercontent.google.com/download?id=1AiVSES5yJ63Bd_kPyzeoPxaQoVNDLFD5&export=download&confirm=t
+      O_40Hz.xls: https://drive.usercontent.google.com/download?id=1arbXbMTNM7_LPFNiG7l_BDMugpXYqChy&export=download&confirm=t
+      O_60Hz.xls: https://drive.usercontent.google.com/download?id=1791i9V95YszwCRQUPRUyi7-z1jIRb_ac&export=download&confirm=t
+      O_65Hz.xls: https://drive.usercontent.google.com/download?id=1eExTt64emN_-a9JWjl0VL-Gd5WzHEUKT&export=download&confirm=t
+      O_70Hz.xls: https://drive.usercontent.google.com/download?id=1hjZu-zs7n4MAQQ8u2ZTJuASS3UptuRpC&export=download&confirm=t
+      O_75Hz.xls: https://drive.usercontent.google.com/download?id=1RUofkShiYlj0sKbCqckxk2ya3tiZPZ0V&export=download&confirm=t
+      O_80Hz.xls: https://drive.usercontent.google.com/download?id=10pvOFxApwElwz1uGGLxJIgUAoV3vzfhO&export=download&confirm=t
+      O_VS_0_40_0Hz.xls: https://drive.usercontent.google.com/download?id=12PMxRuZ3pNSxGIG92Kn-1zz-xkwOVI92&export=download&confirm=t
+files:
+  - 0.5X_B_20Hz.xls
+  - 0.5X_B_25Hz.xls
+  - 0.5X_B_30Hz.xls
+  - 0.5X_B_35Hz.xls
+  - 0.5X_B_40Hz.xls
+  - 0.5X_B_60Hz.xls
+  - 0.5X_B_65Hz.xls
+  - 0.5X_B_70Hz.xls
+  - 0.5X_B_75Hz.xls
+  - 0.5X_B_80Hz.xls
+  - 0.5X_B_VS_0_40_0Hz.xls
+  - 0.5X_C_20Hz.xls
+  - 0.5X_C_25Hz.xls
+  - 0.5X_C_30Hz.xls
+  - 0.5X_C_35Hz.xls
+  - 0.5X_C_40Hz.xls
+  - 0.5X_C_60Hz.xls
+  - 0.5X_C_65Hz.xls
+  - 0.5X_C_70Hz.xls
+  - 0.5X_C_75Hz.xls
+  - 0.5X_C_80Hz.xls
+  - 0.5X_C_VS_0_40_0Hz.xls
+  - 0.5X_I_20Hz.xls
+  - 0.5X_I_25Hz.xls
+  - 0.5X_I_30Hz.xls
+  - 0.5X_I_35Hz.xls
+  - 0.5X_I_40Hz.xls
+  - 0.5X_I_60Hz.xls
+  - 0.5X_I_65Hz.xls
+  - 0.5X_I_70Hz.xls
+  - 0.5X_I_75Hz.xls
+  - 0.5X_I_80Hz.xls
+  - 0.5X_I_VS_0_40_0Hz.xls
+  - 0.5X_O_20Hz.xls
+  - 0.5X_O_25Hz.xls
+  - 0.5X_O_30Hz.xls
+  - 0.5X_O_35Hz.xls
+  - 0.5X_O_40Hz.xls
+  - 0.5X_O_60Hz.xls
+  - 0.5X_O_65Hz.xls
+  - 0.5X_O_70Hz.xls
+  - 0.5X_O_75Hz.xls
+  - 0.5X_O_80Hz.xls
+  - 0.5X_O_VS_0_40_0Hz.xls
+  - B_20Hz.xls
+  - B_25Hz.xls
+  - B_30Hz.xls
+  - B_35Hz.xls
+  - B_40Hz.xls
+  - B_60Hz.xls
+  - B_65Hz.xls
+  - B_70Hz.xls
+  - B_75Hz.xls
+  - B_80Hz.xls
+  - B_VS_0_40_0Hz.xls
+  - C_20Hz.xls
+  - C_25Hz.xls
+  - C_30Hz.xls
+  - C_35Hz.xls
+  - C_40Hz.xls
+  - C_60Hz.xls
+  - C_65Hz.xls
+  - C_70Hz.xls
+  - C_75Hz.xls
+  - C_80Hz.xls
+  - C_VS_0_40_0Hz.xls
+  - H_20Hz.xls
+  - H_25hz.xls
+  - H_30Hz.xls
+  - H_35Hz.xls
+  - H_40Hz.xls
+  - H_60Hz.xls
+  - H_65Hz.xls
+  - H_70Hz.xls
+  - H_75Hz.xls
+  - H_80Hz.xls
+  - H_VS_0_40_0Hz.xls
+  - I_20Hz.xls
+  - I_25Hz.xls
+  - I_30Hz.xls
+  - I_35Hz.xls
+  - I_40Hz.xls
+  - I_60Hz.xls
+  - I_65Hz.xls
+  - I_70Hz.xls
+  - I_75Hz.xls
+  - I_80Hz.xls
+  - I_VS_0_40_0Hz.xls
+  - O_20Hz.xls
+  - O_25Hz.xls
+  - O_30Hz.xls
+  - O_35Hz.xls
+  - O_40Hz.xls
+  - O_60Hz.xls
+  - O_65Hz.xls
+  - O_70Hz.xls
+  - O_75Hz.xls
+  - O_80Hz.xls
+  - O_VS_0_40_0Hz.xls
+columns:
+  bpfo: >-
+    ER-16K (named in the dataset README) with the ER16K geometry of Huang & Baddour (2018):
+    9 balls of 7.94 mm, pitch 38.52 mm
+  operating_condition: >-
+    motor speed from the file name: 20Hz to 80Hz (constant) or 0-40-0Hz (speed
+    ramped up to 40 Hz and back down)
+  severity: medium or severe fault (medium files are prefixed 0.5X), none if healthy
+  fault_size_mm: >-
+    from the authors' README: race faults 0.15 mm (medium) / 0.3 mm (severe), ball faults
+    0.25 / 0.5 mm; the combination fault is listed with its race size
+  bearing_id: >-
+    severity + fault code (e.g. severe_B); assumes one bearing per health state, reused
+    at every speed

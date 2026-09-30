@@ -1,0 +1,19 @@
+name: neepu
+title: NEEPU bearing dataset (Northeast Electric Power University), single and compound faults
+description: |
+  Test rig of the Institute of Advanced Sensor Technology, Northeast Electric Power
+  University, China. Seven states: healthy, inner race, outer race and ball faults, and the
+  compound faults ball + outer, ball + inner and outer + inner (race faults: slot 1.0 mm wide
+  and 0.3 mm deep; ball fault: hole 1.0 mm in diameter and 0.3 mm deep), each at four loads
+  set by a magnetic brake (0, 0.1, 0.2, 0.3 Nm), motor speed 1443-1478 rpm. One
+  accelerometer (range +-50 g) at 12 kHz for 55 s: 28 recordings. Values are the sensor
+  voltage (+-5 V) divided by 5, so in [-1, 1]. No license is stated on Kaggle.
+license: unspecified (cite the paper)
+size: "download 0.15 GB, built 0.03 GB (measured)"
+homepage: https://www.kaggle.com/datasets/fushangdaren/bearing-dataset-of-you-can-get-smaller
+citation: |
+  Fang, H., Deng, J., Chen, D., Jiang, W., Shao, S., Tang, M., & Liu, J. (2023). You can get
+  smaller: A lightweight self-activation convolution unit modified by transformer for fault
+  diagnosis. Advanced Engineering Informatics, 55, 101890. doi:10.1016/j.aei.2023.101890
+sources:
+  - {type: kaggle, dataset: fushangdaren/bearing-dataset-of-you-can-get-smaller, version: 1}

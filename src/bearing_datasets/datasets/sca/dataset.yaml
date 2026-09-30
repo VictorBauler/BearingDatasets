@@ -1,0 +1,37 @@
+name: sca
+title: SCA factory bearing dataset (Mid Sweden University, pulp and paper mill)
+description: |
+  Vibration measured on real machines of a pulp and paper mill (rollers, pumps, engines,
+  a strainer, an agitator), one or more measurements per day over about four months,
+  in 11 cases where a bearing fault developed (case 11: shaft misalignment). Each case has
+  a train.mat and a test.mat, the dataset's own split: train holds healthy data, test the
+  data around the fault. Each measurement comes from one sensor position (drive side DS,
+  free side FS, or Upper/Lower), so one recording = one measurement at one position.
+  Labels per measurement and position: 0 normal, 1 inner race, 2 ball, 3 outer race,
+  -1 machine off or speed missing (condition unknown, machine_running false).
+  Sampling rate and speed change between cases and sometimes between measurements.
+  Case 11 is described by the authors as a confirmed shaft misalignment, but all its
+  measurements are labelled 0 (normal); the labels are kept as published.
+license: CC-BY-4.0
+size: "download 0.84 GB, built 0.20 GB (measured)"
+homepage: https://data.mendeley.com/datasets/tdn96mkkpt/2
+citation: |
+  Lundstrom, A., & O'Nils, M. (2023). Factory-Based Vibration Data for Bearing-Fault
+  Detection. Data, 8(7), 115. doi:10.3390/data8070115. Data: Mendeley Data, V2,
+  doi:10.17632/tdn96mkkpt.2
+sources:
+  - {type: mendeley, id: tdn96mkkpt, version: 2, include: "*.mat"}
+columns:
+  case: case number 1-11 (one machine and one fault per case)
+  asset: type of machine (Roller, Engine, Pump, Strainer, Agitator)
+  bearing_model: bearing at this sensor position (e.g. SKF6310)
+  measured_at: date and time of the measurement
+  machine_running: false when the dataset marks the measurement as machine off / speed missing (label -1)
+  fixed_speed: true when the machine runs at a fixed speed
+  source_file: train.mat (healthy data) or test.mat (around the fault) of the case, the dataset's own split
+  sca_label: label exactly as in the dataset (-1 off, 0 normal, 1 inner, 2 ball, 3 outer)
+  bpfo: >-
+    of the bearing at this position, as given by the dataset (BPFOMultiple). In cases 1, 3 and
+    10 the multiples are relative to another shaft than the bearing's (scaled by a constant
+    ratio, e.g. x 2.73 for the SKF6310 of case 3): use them with that case's rpm
+  bsf: the dataset's BSFMultiple, a plain ball spin frequency

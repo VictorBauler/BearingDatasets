@@ -1,0 +1,302 @@
+[
+ {
+  "name": "1_Healthy/H_10_0.mat",
+  "size": 3586275,
+  "sha256": "e3421cb9553f9900cf7a71edb5b46ebceba2838220ad548d680660a445c0bc60"
+ },
+ {
+  "name": "1_Healthy/H_11_0.mat",
+  "size": 4620658,
+  "sha256": "79ff3b9083c48893e788e90f999d5d9ec9343b837d5ae6e4bbeda92f73d5f5f6"
+ },
+ {
+  "name": "1_Healthy/H_12_0.mat",
+  "size": 4769874,
+  "sha256": "a4d696c7135a32e7e74fc992e4eba7f4c2aa3f0b15c66c02da4f331db1eeea61"
+ },
+ {
+  "name": "1_Healthy/H_13_0.mat",
+  "size": 5623296,
+  "sha256": "59bbd14f2172a34ac0bd4f88b5199c514f87b0bef0c1011cf0ee76ab25c45655"
+ },
+ {
+  "name": "1_Healthy/H_14_0.mat",
+  "size": 4019413,
+  "sha256": "5b5abbf0484b16e3ebeaa7fbff72cf760e4eff1f640582883cfe3ee804aade26"
+ },
+ {
+  "name": "1_Healthy/H_15_0.mat",
+  "size": 3994217,
+  "sha256": "82d5ef8d25ee80ca262cba01389540efe5bc23288848170f820a6a0aa032eb94"
+ },
+ {
+  "name": "1_Healthy/H_16_0.mat",
+  "size": 3854946,
+  "sha256": "5ec5c1ad6a25a24f3149fd7fb6405002ef6b79ad16ecc54bbce02fc78708bed4"
+ },
+ {
+  "name": "1_Healthy/H_17_0.mat",
+  "size": 3647593,
+  "sha256": "f3ae966d3beb0437fef7a44495977d634b9c154e2e7ab40d9b1cce899ed63970"
+ },
+ {
+  "name": "1_Healthy/H_18_0.mat",
+  "size": 4545542,
+  "sha256": "7e84e7191f3cfdd0b5b11120f7cc6a030aa09038d61cce48d6dd2582ad940e62"
+ },
+ {
+  "name": "1_Healthy/H_19_0.mat",
+  "size": 3724241,
+  "sha256": "799ed5f3e2a1d78a843537ad1cb331cf8f260705c4d6f716107ba7dd1acc5560"
+ },
+ {
+  "name": "1_Healthy/H_1_0.mat",
+  "size": 4097229,
+  "sha256": "fdf4bec5b066f2edf7773b58c6eb4738306f40ff9918002123db0b79bee7edb4"
+ },
+ {
+  "name": "1_Healthy/H_20_0.mat",
+  "size": 4024687,
+  "sha256": "21094144926090eea38b363f484594703c30d148ae981a8bcf82892499a6a108"
+ },
+ {
+  "name": "1_Healthy/H_2_0.mat",
+  "size": 3554940,
+  "sha256": "4ed5ad60c70a4a2e28918a1f454ad9646b7248f9b461f000c2993c46c5bbe4f5"
+ },
+ {
+  "name": "1_Healthy/H_3_0.mat",
+  "size": 3967922,
+  "sha256": "ed0f4ae24bb7f81411585f5ac5a1e3109fae5be7ad9e08d8ece5a23b7679bd2b"
+ },
+ {
+  "name": "1_Healthy/H_4_0.mat",
+  "size": 4125020,
+  "sha256": "de0ca170c6d434a039a271ac4952f603f7fd42a65c3d3a29154f4b129b7b366c"
+ },
+ {
+  "name": "1_Healthy/H_5_0.mat",
+  "size": 4623893,
+  "sha256": "1a44b9b9ba4cd9f70e59d970c3ef522c51760dba6158964c3a5353229e2c8a87"
+ },
+ {
+  "name": "1_Healthy/H_6_0.mat",
+  "size": 4558054,
+  "sha256": "09dbaf7edb17dfea0101dbec17bc40f48ee2b566c8fd11369c69b24dd8bf7a62"
+ },
+ {
+  "name": "1_Healthy/H_7_0.mat",
+  "size": 3879495,
+  "sha256": "9e52532743b5c9b8912f35807f11361290fdcf686a9400d75d6b26cf28bf144a"
+ },
+ {
+  "name": "1_Healthy/H_8_0.mat",
+  "size": 3583768,
+  "sha256": "03578c65ec6401997e2e98c6952dd9931901196a50139fc96d430d3b726f15ee"
+ },
+ {
+  "name": "1_Healthy/H_9_0.mat",
+  "size": 4415201,
+  "sha256": "cafc3455676186b13fbe6fb2679c0b9745b13ea9dbafeb3e896d775c25df0eb1"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_1_1.mat",
+  "size": 5871103,
+  "sha256": "d4dac99febcc7f4004ad463180c516a1a1614f764a88f845186d53d9b961cc5e"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_1_2.mat",
+  "size": 5602927,
+  "sha256": "a184840c4543020ed6cbc27f260bb4b58b284bfa344a13de830717bd8625a4a4"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_2_1.mat",
+  "size": 5909271,
+  "sha256": "5771a8295ce0683c290c7be520ef6bbbba77706b0ada434ca3c207ff0486e7c3"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_2_2.mat",
+  "size": 6005493,
+  "sha256": "8b3a772f147f2357ed6a64a7f044c25099fff8b5651894121a341116942795e4"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_3_1.mat",
+  "size": 5456533,
+  "sha256": "beb2da0db11f6308825be39bf7146f5969345ce323a2a48b5ed1c7e1e7a5eac3"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_3_2.mat",
+  "size": 5559933,
+  "sha256": "5eae38b2f7f53c5e3ffb9f1646d1ceecdd86a6a27beb174630022b2f6998b42f"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_4_1.mat",
+  "size": 5772984,
+  "sha256": "5a36a379219abf5ccf15f40f661f5f41c63c41dc1b006940e70fbe34741979b2"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_4_2.mat",
+  "size": 5730893,
+  "sha256": "a261dd8e6eea000987d8d9e0c9491839cce98ae72334e43b5b5e7bb385d5f9bf"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_5_1.mat",
+  "size": 5763572,
+  "sha256": "c5a4a97af6443675e68349714d2b4c7ad3d644fdd818df0b1a5a0d948f72dbea"
+ },
+ {
+  "name": "2_Inner_Race_Faults/I_5_2.mat",
+  "size": 6168826,
+  "sha256": "200e1f045cabc7ac239c874d7d2ce26cf9c8db88219a3efe9a1a48c04cd467d9"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_10_1.mat",
+  "size": 4775019,
+  "sha256": "dadd85c8b5d68bbe5536df848347e8e3be06db85694d44db4bcbd243f6092fcc"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_10_2.mat",
+  "size": 4890805,
+  "sha256": "5e058db02a2be6664e73f62808abbd1f56b169529b5b984b6a558529be7c66bf"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_6_1.mat",
+  "size": 5360778,
+  "sha256": "7933278ee81fd798ea46530ea4beec73f63854f320bc2342138aa7d7c9c70b05"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_6_2.mat",
+  "size": 5346023,
+  "sha256": "c4bf0c1a8677c88e52a99e920358d99487df6c0700355e9d73426d93992aa947"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_7_1.mat",
+  "size": 5033434,
+  "sha256": "9475931b1a44e078349734555beb36af0d3dc84dbad624ac481aefe7025c7b28"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_7_2.mat",
+  "size": 4996376,
+  "sha256": "cd271ac36e421404343d1f35e6b5f182b3ae1dc3897e44ba32916316f4aac4d3"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_8_1.mat",
+  "size": 4136491,
+  "sha256": "06e76467a20f87c4488725186e826209049c5f147e99ec2e693f4120c7e3a471"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_8_2.mat",
+  "size": 4063048,
+  "sha256": "2c84c4ca32b8315ab1dad6f20978265a9532848f3369f3b8525782933c02feaf"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_9_1.mat",
+  "size": 4626653,
+  "sha256": "83207d65d2ef8bb48e3b0ef4c6473c34bd34ae3036ae62c2b3011d17ebb99c19"
+ },
+ {
+  "name": "3_Outer_Race_Faults/O_9_2.mat",
+  "size": 4614969,
+  "sha256": "49badc23e740bd2b999894d51d038e006198b36c9ecfd002873b118a06801a0e"
+ },
+ {
+  "name": "4_Ball_Faults/B_11_1.mat",
+  "size": 5629549,
+  "sha256": "26e442425bab51ef46a5ad39fdea3adab1e63e9964cbfbea477a711c35ee6881"
+ },
+ {
+  "name": "4_Ball_Faults/B_11_2.mat",
+  "size": 5629987,
+  "sha256": "e87b53180411c12bbe0b99a3ea0737cd7e4023c28858912bbcebfebecf300cde"
+ },
+ {
+  "name": "4_Ball_Faults/B_12_1.mat",
+  "size": 5167484,
+  "sha256": "6c1e2eb08d2d551c1d17ba5708e2d3967ab72d1c989f57618c7fe601d8d2544f"
+ },
+ {
+  "name": "4_Ball_Faults/B_12_2.mat",
+  "size": 5428545,
+  "sha256": "d52e494fce323573c8d6adbc7e0941d043513426add3161a3273d970bddd8e21"
+ },
+ {
+  "name": "4_Ball_Faults/B_13_1.mat",
+  "size": 5802288,
+  "sha256": "7748f21326bf67b3c938ced35d1fd396e9ef54cbf44c56450709e981d2ef6f09"
+ },
+ {
+  "name": "4_Ball_Faults/B_13_2.mat",
+  "size": 5787292,
+  "sha256": "b0610a1bb687e823cf23f53a23ace0a0e8dfc0c6c31da1128a24706d008c998b"
+ },
+ {
+  "name": "4_Ball_Faults/B_14_1.mat",
+  "size": 5114885,
+  "sha256": "9e2a3c50fb8d25966118717c3cf1351d31776213f3b1a5e940a021a8ac3fc03a"
+ },
+ {
+  "name": "4_Ball_Faults/B_14_2.mat",
+  "size": 5679804,
+  "sha256": "53568568712a1a717b097bf675fcfa78201f16909bd5cef9efafbf89f3df0383"
+ },
+ {
+  "name": "4_Ball_Faults/B_15_1.mat",
+  "size": 4794713,
+  "sha256": "01567f9767e48bf610ea798aab3bcb40b5a46a3d72ea439868cf233256f82565"
+ },
+ {
+  "name": "4_Ball_Faults/B_15_2.mat",
+  "size": 5224956,
+  "sha256": "b08788ce46ff07f7799254edd48c0336f2ff508a68523538f3209d1e4711aa40"
+ },
+ {
+  "name": "5_Cage_Faults/C_16_1.mat",
+  "size": 6334629,
+  "sha256": "226c297f976ff6665ce31eaadffebb1ae613dd3674c347f2592fd6799538f2e4"
+ },
+ {
+  "name": "5_Cage_Faults/C_16_2.mat",
+  "size": 6332096,
+  "sha256": "27f8fa3de03b641fab4ae1b5013db70ecba325e0655151bb56386d9c13727a26"
+ },
+ {
+  "name": "5_Cage_Faults/C_17_1.mat",
+  "size": 7757375,
+  "sha256": "9fd1f79c30c1344c6309322b644d73a0527be24f4288e31240b2a74f37e09e9b"
+ },
+ {
+  "name": "5_Cage_Faults/C_17_2.mat",
+  "size": 7478848,
+  "sha256": "4a9e98fc2c295b18eb0edbeb672727269298b4415409bef1020eb872cd518e38"
+ },
+ {
+  "name": "5_Cage_Faults/C_18_1.mat",
+  "size": 5258306,
+  "sha256": "e9b1d2ac8152af33c6976128d62663d7dd3ea1f03c1882cdd63754ce38016782"
+ },
+ {
+  "name": "5_Cage_Faults/C_18_2.mat",
+  "size": 5794149,
+  "sha256": "6c790aa39411d42e77876b258fc1efaf6b442903ada92d02c568d367202611f9"
+ },
+ {
+  "name": "5_Cage_Faults/C_19_1.mat",
+  "size": 4761804,
+  "sha256": "9747de12b20b1c2eab86717c2645e341689df038bbeaf4761e077d433e665071"
+ },
+ {
+  "name": "5_Cage_Faults/C_19_2.mat",
+  "size": 4750811,
+  "sha256": "7fbf39bbd55662deab38b6fad1c4c53fa6cc18e856019c9a2dddc7a3e491980b"
+ },
+ {
+  "name": "5_Cage_Faults/C_20_1.mat",
+  "size": 5215173,
+  "sha256": "85f0aa56fc1c56dce5c3e5197121ea710c5d024ec8791724aad7a2281a5ed956"
+ },
+ {
+  "name": "5_Cage_Faults/C_20_2.mat",
+  "size": 5719485,
+  "sha256": "d689c83aedaf3eb583645d3994dd13540ec9d18225ee9b843621b196d696d43d"
+ }
+]

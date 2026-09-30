@@ -1,0 +1,102 @@
+[
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-H.csv",
+  "size": 53866401,
+  "sha256": "e8eae852c666493ad058d5be42284a7f985c0650e08ff7ec5a8545125895d3d9"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-I02.csv",
+  "size": 57443993,
+  "sha256": "91e3ae435afe47cabf7e718184b1ede3c5e273d559ddee6402590586dd699143"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-I03.csv",
+  "size": 57687396,
+  "sha256": "d523c4747711d69d37654c0bd7a98d29f8246e5b5fa8c7e772ee68ba7400bef8"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-I05.csv",
+  "size": 58278818,
+  "sha256": "dc19d16762cf8a85b1ab0013a4e111e052225c498643f1bf8ad5ac6518d2fe70"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-O02.csv",
+  "size": 56446701,
+  "sha256": "37eba09f5323da9fc6d2ae0623221484f2e2b757d919e59a27e00409386c10ae"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-O03.csv",
+  "size": 56552606,
+  "sha256": "c78eb30b4ec084050878856e30e94300fa4d234540cc7000dbd8d683571befc9"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-O05.csv",
+  "size": 56570535,
+  "sha256": "46f5686f1d77f0da119026240d647e209f8d5a23e9fa820e08ee576c2513f066"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-R05.csv",
+  "size": 56345049,
+  "sha256": "a1fe240a1b4e0597d2b935c3491db9f43d1f04fe96c9f0dcacf92f53587028ac"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-R08.csv",
+  "size": 54869909,
+  "sha256": "b4ab6950c309850ae03b308a77d982176a3cb33030a97367a0f6cddb8518f602"
+ },
+ {
+  "name": "Axial100-Radial0--1800rpm-48khz-6206/A-R10.csv",
+  "size": 54580709,
+  "sha256": "17bcf26d2853fecc011a2883ff85f1c84ceb25f215e6fb0bb83d32bce4310bab"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-H.csv",
+  "size": 54021758,
+  "sha256": "d8a010286feaa6cf03c75d0241d3ef2b78a14ad63676db54259b5c141fd8382e"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-I02.csv",
+  "size": 56583755,
+  "sha256": "8289938b58918bd597f33206ffc58e2e94f736be97717e24c5861758df60666d"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-I03.csv",
+  "size": 56926233,
+  "sha256": "af04f2373f8e6cdb0dc34da100a5c925148e10bbc74753be5edb987dd45daf9e"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-I05.csv",
+  "size": 57838557,
+  "sha256": "a70cb46007d16a1d350a603efe6898b6247c19144a098f1d338038fba6e6f6c8"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-O02.csv",
+  "size": 55677397,
+  "sha256": "09e5e27c8eae633d41da6d1cb7ce1d9c0da4269a1f98bb4a29f7b767b6e1af04"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-O03.csv",
+  "size": 57163212,
+  "sha256": "f8e9ad7c0a70de8098f25b4f2131d30e18b21aba97c461ff209187aa800e01d6"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-O05.csv",
+  "size": 56426305,
+  "sha256": "25767ca9fc112088a72abb25b302a0cea88b97c2eb7e281186ee445a37456a89"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-R05.csv",
+  "size": 55889667,
+  "sha256": "15cd2a8f93e6e8cfbbcef2b9151ffd4a3b109f49bb65bf7475c868d3efb3fc1c"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-R08.csv",
+  "size": 54761913,
+  "sha256": "d98afa34e29f5812117a83899d47c87bec14beacd83c4c1907c841584c8d5dfc"
+ },
+ {
+  "name": "Axial100-Radial50-1800rpm-48khz-6206/B-R10.csv",
+  "size": 54580709,
+  "sha256": "17bcf26d2853fecc011a2883ff85f1c84ceb25f215e6fb0bb83d32bce4310bab"
+ }
+]

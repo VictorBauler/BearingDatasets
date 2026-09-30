@@ -1,0 +1,32 @@
+name: kaist_speed
+title: KAIST vibration and motor current dataset of rolling element bearings under varying speed
+description: |
+  NSK 6205 ball bearings (normal, inner race, outer race and ball faults made by
+  spalling the surface with a diamond tip) on the KAIST rotating machine test bed, the
+  motor speed varying randomly between 680 and 2460 rpm without load: 7 runs of 300 s
+  per state. Vibration (x and y on housings A and B, 25.6 kHz), three motor phase
+  currents (100 kHz) and the shaft speed (rpm, irregularly sampled at about 9 Hz; exact
+  times in the speed_time_s channel) are separate recordings. One more 600 s vibration
+  recording per state at a constant 3010 rpm (`trial` = constant).
+  The faulty bearing is in housing B for the varying-speed runs; for the constant-speed
+  files the paper only says the ball fault bearing is in housing A (inner and outer:
+  fault_location unknown). Vibration unit: the paper says g; the amplitudes match
+  kaist_load, whose file headers say SI, so the unit is left as unknown.
+  The Mendeley record text lists only normal, inner and outer, but the files include
+  the ball fault described in the paper. Download: 3 records (subsets 1-3).
+license: CC-BY-4.0
+size: "download 21.4 GB, built 13 GB (measured)"
+homepage: https://data.mendeley.com/datasets/vxkj334rzv/7
+citation: |
+  Jung, W., Kim, S.-H., Yun, S.-H., Bae, J., & Park, Y.-H. (2023). Vibration, acoustic,
+  temperature, and motor current dataset of rotating machine under varying operating
+  conditions for fault diagnosis. Data in Brief, 48, 109049. doi:10.1016/j.dib.2023.109049
+sources:
+  - {type: mendeley, name: subset1, id: vxkj334rzv, version: 7}
+  - {type: mendeley, name: subset2, id: x3vhp8t6hg, version: 7}
+  - {type: mendeley, name: subset3, id: j8d8pfkvj2, version: 7}
+columns:
+  bpfo: >-
+    NSK 6205 from Jung et al. (2023), Table 1 (9 balls of 7.90 mm, pitch 38.5 mm)
+  trial: run number 0-6 (varying speed), or constant (the 600 s run at 3010 rpm)
+  speed_profile: varying (random speed between 680 and 2460 rpm) or constant

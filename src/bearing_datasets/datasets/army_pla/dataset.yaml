@@ -1,0 +1,26 @@
+name: army_pla
+title: Army Engineering University of PLA mixed fault dataset of bearings and gearboxes under variable operating conditions
+description: |
+  Drivetrain fault simulator (drive motor, parallel gearbox module, rolling bearing module
+  with an NU205 cylindrical roller bearing), constant 20 Nm load. Three subsets:
+  bearing (normal; cracks 15 mm long and 2 mm wide on the inner ring, outer ring, a
+  rolling element, the cage, or inner + outer ring), parallel gearbox (normal; tooth
+  surface wear, broken tooth, eccentric gear) and mixed (inner or outer ring crack combined
+  with each gear fault). Each state at 1200, 1800 and 2400 rpm and during a 200-2400-200
+  rpm sweep: 64 recordings of 30 s, one triaxial accelerometer (HF7051-1) at 16 kHz. The
+  sensor position (shown only in a figure) and the unit are not stated.
+license: CC-BY-4.0
+size: "download 1.19 GB, built 0.33 GB (measured)"
+homepage: https://doi.org/10.17632/yrms2v89p7.1
+citation: |
+  Hou, Y., Tang, J., Zhang, J., Pang, P., Zhang, H., & Li, X. (2025). Mixed fault dataset of
+  bearings and gearboxes under variable operating conditions. Data in Brief, 63, 112187.
+  doi:10.1016/j.dib.2025.112187
+sources:
+  - {type: mendeley, id: yrms2v89p7, version: 1}
+columns:
+  bpfo: >-
+    NU205 with 13 rollers on a 38.5 mm pitch (Hou et al., Table 5); d/D = 0.195 from the
+    paper's fault frequencies at 20 Hz (BPFI 155.35 Hz, BPFO 104.65 Hz)
+  subset: bearing, gearbox or mixed (the folder of the file)
+  operating_condition: motor speed, constant (1200rpm) or the sweep 200-2400-200rpm

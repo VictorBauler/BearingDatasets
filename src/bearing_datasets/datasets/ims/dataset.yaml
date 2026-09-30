@@ -1,0 +1,34 @@
+name: ims
+title: NASA IMS bearing dataset (University of Cincinnati), run-to-failure
+description: |
+  Four Rexnord ZA-2115 double-row bearings on one shaft at 2000 rpm, with a 6000 lbs
+  radial load on bearings 2 and 3, run until failure in 3 tests. A 1 s snapshot is taken
+  every 10 minutes (with gaps; the first 43 files of test 1 every 5 minutes), 20 kHz.
+  Test 1 has 8 channels (two accelerometers per bearing, x and y), tests 2 and 3 have 4
+  (one per bearing). Failures at the end of each test: test 1 bearing 3 inner race and
+  bearing 4 roller element; test 2 bearing 1 outer race; test 3 bearing 3 outer race.
+  The condition of each snapshot is unknown (the fault grows during the test); use
+  run_id, time_s and rul_s (end of life = the last snapshot of the test). The files of
+  test 3 sit in "3rd_test/4th_test/txt" and run until 2004-04-18 (6,324 snapshots,
+  more than the readme says); the snapshots on disk are used.
+license: other (NASA open data; cite the dataset)
+size: "download 1.1 GB, built 1.0 GB (measured)"
+homepage: https://data.nasa.gov/dataset/ims-bearings
+citation: |
+  Lee, J., Qiu, H., Yu, G., Lin, J., & Rexnord Technical Services (2007). Bearing Data
+  Set. IMS, University of Cincinnati. NASA Prognostics Data Repository, NASA Ames
+  Research Center.
+sources:
+  - type: http
+    name: nasa-s3
+    urls:
+      "4. Bearings.zip": https://phm-datasets.s3.amazonaws.com/NASA/4.+Bearings.zip
+files: ["4. Bearings.zip"]
+columns:
+  bpfo: >-
+    Rexnord ZA-2115 from Qiu et al. (2006), per row (16 rollers of 0.331 in, pitch 2.815 in,
+    15.17 deg)
+  load: radial load on bearings 2 and 3, in lbs
+  failure: failure found at the end of the test, in words
+  failed_bearing: bearing(s) that failed at the end of the test
+  measured_at: date and time of the snapshot (from the file name)

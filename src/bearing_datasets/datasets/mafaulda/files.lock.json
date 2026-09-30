@@ -1,0 +1,32 @@
+[
+ {
+  "name": "horizontal-misalignment.zip",
+  "size": 1306244927,
+  "sha256": "2ef4655fe17b3a8d41208a834d3c6a9084862ed155ec59a1c8f3785329bc970e"
+ },
+ {
+  "name": "imbalance.zip",
+  "size": 2212894986,
+  "sha256": "0e4217a49377615f020a599945b63c1e45c1611c32a3d47bcfadd7e45d808438"
+ },
+ {
+  "name": "normal.zip",
+  "size": 325307137,
+  "sha256": "e275cb48c23046a89b5971e8b802e7ff06f26e8a70d46973a231cc5fc56c2fce"
+ },
+ {
+  "name": "overhang.zip",
+  "size": 3375143053,
+  "sha256": "ece620b44370f17f7bcb4ab12aa25d45e22e8fac6269a8c92c8162c710ffc2e8"
+ },
+ {
+  "name": "underhang.zip",
+  "size": 3679617780,
+  "sha256": "bb6cfb904fc6af0a55b4d87a80e4dc91a0a2a9b6cbfc994e6082f26e74072a76"
+ },
+ {
+  "name": "vertical-misalignment.zip",
+  "size": 1997431337,
+  "sha256": "e0eee5b0a7f6d3faaa3c9595753a40140ff82bc1882f754fac5131241ab31ef8"
+ }
+]

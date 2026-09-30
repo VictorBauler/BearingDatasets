@@ -1,0 +1,22 @@
+name: urma_crti
+title: URMA-CRTI rolling element bearing vibration data (CRTI, Annaba, Algeria)
+description: |
+  A 0.37 kW induction motor driven by a variable speed drive; the tested bearing
+  supports the drive-side shaft. States: healthy, outer race, inner race, ball and
+  combined fault, at supply frequencies of 30, 35, 40, 45 and 50 Hz (healthy has no
+  50 Hz and outer race no 40 Hz recording): 23 recordings of 10.24 s at 25.6 kHz.
+  The record mentions three accelerometers (CTC AC140-2D, 100 mV/g), but the file
+  holds one signal per recording. Labels are the French codes of the variable names
+  (s = sain/healthy, ci/ce = inner/outer ring, b = bille/ball, c = combined); which
+  faults the combined bearing has is not stated, so its condition is `bearing`.
+license: CC-BY-4.0
+size: "download 0.05 GB, built 0.04 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.19109150
+citation: |
+  Oudjani, B. (2026). URMA-CRTI dataset for rolling element bearing vibration data.
+  Zenodo. doi:10.5281/zenodo.19109150
+sources:
+  - type: zenodo
+    record: "19109150"
+columns:
+  supply_hz: supply frequency of the motor set on the drive, in Hz (from the variable name)

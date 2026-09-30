@@ -1,0 +1,36 @@
+name: phm09
+title: PHM Society 2009 data challenge gearbox dataset (labeled "Expanded" set)
+description: |
+  Two-stage gearbox (input, idler and output shafts), spur gears (32/96/48/80 teeth) or
+  helical gears (16/48/24/40 teeth), 14 health cases (spur 1-8, helical 1-6; case 1 of
+  each is healthy) with gear faults (chipped, broken, eccentric), bearing faults
+  (inner race, ball, outer race, combination), input shaft unbalance or bent shaft and a
+  sheared output keyway, often several at once. 5 input shaft speeds (30-50 Hz) x high
+  and low load x 2 repeats = 280 recordings of about 4 s at 66.67 kHz: input-side and
+  output-side accelerometers and a tachometer (10 pulses per revolution).
+  The official downloads are gone; this is the labeled "Expanded" set as republished on
+  Mendeley Data (folder gearset/raw of gearset.zip; the rest of the zip is ignored).
+  The fault table per case comes from Chen et al. (arXiv:2002.07605), a secondary
+  source reproducing the challenge documents. A few files are slightly shorter.
+  Bearings ER-10K (8 elements, 0.3125 in, pitch 1.319 in).
+license: CC-BY-4.0 (Mendeley copy); original data (c) PHM Society
+size: "download 0.53 GB, built 0.25 GB (measured)"
+homepage: https://data.mendeley.com/datasets/65d3pzth7v/1
+citation: |
+  PHM Society (2009). PHM Data Challenge 2009: gearbox fault detection.
+  https://phmsociety.org/public-data-sets/ . Copy used: Mendeley Data 65d3pzth7v, V1
+  ("Paderborn bearing dataset and PHM2009 gearbox dataset").
+sources:
+  - {type: mendeley, id: 65d3pzth7v, version: 1, include: "gearset.zip"}
+extract: false          # the text files are read directly from the zip
+columns:
+  bpfo: >-
+    MB ER-10K, the bearing listed on the official PHM 2009 apparatus page (8 balls of 0.3125
+    in, pitch 1.319 in), assumed on every shaft
+  fault_location: shaft of each fault (input_shaft, idler_shaft, output_shaft), in the order of condition
+  fault_detail: the faults of the case in words (from the challenge fault table)
+  gear_type: spur or helical
+  speed_hz: input shaft speed in Hz (30, 35, 40, 45, 50)
+  rpm: input shaft speed in rpm (speed_hz x 60)
+  load_level: High or Low load
+  repeat: repeat 1 or 2 of the same case, speed and load

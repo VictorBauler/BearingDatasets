@@ -1,0 +1,37 @@
+name: xjtu_sy
+title: XJTU-SY bearing datasets (Xi'an Jiaotong University & Changxing Sumyoung), run-to-failure
+description: |
+  Accelerated life tests of 15 LDK UER204 ball bearings under 3 operating conditions
+  (35 Hz / 12 kN, 37.5 Hz / 11 kN, 40 Hz / 10 kN), 5 bearings each, until failure.
+  Every minute a 1.28 s snapshot of two accelerometers (horizontal, vertical) at 25.6 kHz.
+  The condition of each snapshot is unknown; the failed element(s) found at the end of
+  each run are in `failure`; use run_id, time_s and rul_s (end of life = last snapshot;
+  a run stops when the vibration amplitude exceeds 10 x the maximum of normal operation).
+  Download: 6 RAR5 volumes from the authors' Google Drive, extracted together.
+license: unspecified (cite the paper)
+size: "download 4.4 GB, built 2.6 GB (measured)"
+homepage: https://github.com/WangBiaoXJTU/xjtu-sy-bearing-datasets
+citation: |
+  Wang, B., Lei, Y., Li, N., & Li, N. (2020). A Hybrid Prognostics Approach for
+  Estimating Remaining Useful Life of Rolling Element Bearings. IEEE Transactions on
+  Reliability, 69(1), 401-412. doi:10.1109/TR.2018.2882682
+sources:
+  - type: http
+    name: google-drive
+    urls:
+      XJTU-SY_Bearing_Datasets.part01.rar: https://drive.usercontent.google.com/download?id=1ATvZuD6j3bPxhyR07Zm-PURmOC4b4uRn&export=download&confirm=t
+      XJTU-SY_Bearing_Datasets.part02.rar: https://drive.usercontent.google.com/download?id=162KvWNIpBGtd7EDWo4yP1j5XsaoNHOYU&export=download&confirm=t
+      XJTU-SY_Bearing_Datasets.part03.rar: https://drive.usercontent.google.com/download?id=1NvzrGW-KOSy48OZmiFxlE3TPV4CKAcw0&export=download&confirm=t
+      XJTU-SY_Bearing_Datasets.part04.rar: https://drive.usercontent.google.com/download?id=1VuQ5-mK11p1S2pTxUZaH_IxOwUlsmN0S&export=download&confirm=t
+      XJTU-SY_Bearing_Datasets.part05.rar: https://drive.usercontent.google.com/download?id=1WH4OU4MLaMGQkbh6DghxPA5Dwvsq8tEf&export=download&confirm=t
+      XJTU-SY_Bearing_Datasets.part06.rar: https://drive.usercontent.google.com/download?id=1wzQzQUx6-J8DuGczT81OkrkTgOUwL-I_&export=download&confirm=t
+files: [XJTU-SY_Bearing_Datasets.part01.rar, XJTU-SY_Bearing_Datasets.part02.rar,
+        XJTU-SY_Bearing_Datasets.part03.rar, XJTU-SY_Bearing_Datasets.part04.rar,
+        XJTU-SY_Bearing_Datasets.part05.rar, XJTU-SY_Bearing_Datasets.part06.rar]
+columns:
+  bpfo: >-
+    LDK UER204 from the authors' parameter table (8 balls of 7.92 mm, pitch 34.55 mm)
+  load: radial load in kN (12, 11 or 10)
+  failure: element(s) found failed at the end of the run (from the paper)
+  operating_condition: operating condition folder (35Hz12kN, 37.5Hz11kN, 40Hz10kN)
+  snapshot: snapshot number inside the run (the file number)

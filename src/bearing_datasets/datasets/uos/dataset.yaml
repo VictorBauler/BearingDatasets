@@ -1,0 +1,32 @@
+name: uos
+title: University of Seoul multi-domain vibration dataset with various bearing types under compound machine fault scenarios
+description: |
+  AST machinery fault simulator (40 W BLDC motor, shaft, two rotor disks, two bearing
+  housings) at the University of Seoul. Three bearing types, one record each: deep groove
+  ball (MOCHU 6204), cylindrical roller (NTN N204, and NJ204 for the inner race fault) and
+  tapered roller (NTN 30204). Bearing condition healthy, ball, inner race or outer race
+  fault, combined with rotor condition healthy, misalignment (3 levels), unbalance (3 levels)
+  or looseness: 32 states x 6 speeds (600-1600 rpm) x 2 sampling rates (8 kHz for 160 s,
+  16 kHz for 80 s; separate acquisitions, 1,280,000 samples each) x 3 bearing types = 1152
+  recordings. One accelerometer (PCB 333D01, g) on top of the bearing housing at the shaft
+  end. The files also hold precomputed spectrograms, which are not stored. Made for
+  multi-domain (bearing type, speed, sampling rate) and compound-fault studies.
+license: CC-BY-4.0
+size: "download 22.4 GB, built 4.7 GB (measured)"
+homepage: https://doi.org/10.17632/53vtnjy6c6.1
+citation: |
+  Lee, S., Kim, T., & Kim, T. (2024). Multi-domain vibration dataset with various bearing
+  types under compound machine fault scenarios. Data in Brief, 57, 110940.
+  doi:10.1016/j.dib.2024.110940
+sources:
+  - {type: mendeley, name: subset1-ball, id: 53vtnjy6c6, version: 1}
+  - {type: mendeley, name: subset2-cylindrical, id: 7trwzz77xh, version: 1}
+  - {type: mendeley, name: subset3-tapered, id: 2cygy6y4rk, version: 2}
+columns:
+  bpfo: >-
+    per bearing type from the data paper, Table 2: 6204 (8 balls of 7.94 mm, pitch 34.57
+    mm), N204/NJ204 (11 rollers of 7.50 mm, pitch 34 mm), 30204 (15 rollers of 6.20 mm,
+    pitch 35.8 mm, 12.6 deg)
+  severity: level 1-3 of the misalignment or unbalance fault (none otherwise)
+  bearing_model: bearing model from the file name (6204, N204, NJ204, 30204)
+  bearing_type: deep groove ball, cylindrical roller or tapered roller

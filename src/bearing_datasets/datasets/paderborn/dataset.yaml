@@ -1,0 +1,48 @@
+name: paderborn
+title: Paderborn University (KAt) bearing data center
+description: |
+  32 ball bearings (6203): 6 healthy, 12 with artificial damage (EDM, drilling,
+  electric engraver) and 14 with real damage from accelerated lifetime tests.
+  4 operating conditions (N15/N09 = 1500/900 rpm, M07/M01 = 0.7/0.1 Nm,
+  F10/F04 = 1000/400 N radial force) x 20 repetitions of 4 s = 2560 recordings.
+  Channels: housing vibration and 2 motor phase currents (64 kHz), radial force,
+  speed and torque (4 kHz), bearing-module temperature (1 Hz).
+  Damage method and extent level per bearing are in bearings.csv (from the KAt
+  fact sheets, Lessmeier et al. 2016).
+  2560 recordings. N15_M01_F10_KA08_2.mat in the official KA08.rar is cut off after
+  8,192,000 bytes and zero-filled (MATLAB cannot open it); it is read from its intact part:
+  all channels are complete except the vibration, which keeps its first 2.98 s
+  (190,937 samples instead of about 256,000).
+license: CC-BY-NC-4.0
+size: "download 5.4 GB, built 4.2 GB (measured)"
+homepage: https://groups.uni-paderborn.de/kat/BearingDataCenter/
+citation: |
+  Lessmeier, C., Kimotho, J. K., Zimmer, D., & Sextro, W. (2016). Condition
+  monitoring of bearing damage in electromechanical drive systems by using motor
+  current signals of electric motors: a benchmark data set for data-driven
+  classification. PHM Society European Conference, 3(1).
+sources:
+  - type: http
+    name: official
+    base_url: https://groups.uni-paderborn.de/kat/BearingDataCenter/
+  - type: zenodo
+    name: zenodo-mirror
+    record: "15845309"
+files: [K001.rar, K002.rar, K003.rar, K004.rar, K005.rar, K006.rar, KA01.rar, KA03.rar,
+        KA04.rar, KA05.rar, KA06.rar, KA07.rar, KA08.rar, KA09.rar, KA15.rar, KA16.rar,
+        KA22.rar, KA30.rar, KB23.rar, KB24.rar, KB27.rar, KI01.rar, KI03.rar, KI04.rar,
+        KI05.rar, KI07.rar, KI08.rar, KI14.rar, KI16.rar, KI17.rar, KI18.rar, KI21.rar]
+columns:
+  bpfo: >-
+    computed from each bearing's fact sheet (6203, 8 balls of 6.75 mm, 0 deg); the pitch
+    diameter differs by manufacturer: 28.55 mm (FAG) or 29.05 mm (IBU, MTK)
+  radial_force_n: radial force on the test bearing in N (F04 = 400, F10 = 1000)
+  repetition: repetition number 1-20 of the measurement for the same condition
+  damage: >-
+    how the damage was made: EDM, drilling, electric engraver (artificial) or pitting,
+    indentation (real, from accelerated lifetime tests); 'none' if healthy
+  bearing_manufacturer: manufacturer of the test bearing (FAG, IBU, MTK)
+  load: load torque in Nm (M01 = 0.1, M07 = 0.7)
+  rpm: nominal speed (N09 = 900, N15 = 1500)
+  severity: damage extent level 0-3 from the KAt fact sheets (0 = healthy)
+  bearing_id: KAt bearing code (K001-K006 healthy, KA outer race, KI inner race, KB both)

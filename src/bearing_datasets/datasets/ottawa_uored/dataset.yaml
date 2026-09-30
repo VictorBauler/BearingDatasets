@@ -1,0 +1,31 @@
+name: ottawa_uored
+title: University of Ottawa rolling-element dataset, vibration and acoustic faults under constant load and speed (UORED-VAFCLS)
+description: |
+  20 bearings, each recorded healthy (stage 0) and then with a developing (1)
+  and a fully developed (2) fault: inner race (bearings 1-5), outer race (6-10),
+  ball (11-15), cage (16-20). 42 kHz, 10 s; accelerometer, microphone and a
+  temperature-difference channel. The speed and load columns of the raw files
+  hold one value (first sample), stored as `rpm` and `load`.
+  Bearings NSK 6203ZZ and FAFNIR 203KD with the same geometry (8 balls of 6.77 mm,
+  pitch diameter 28.50 mm; paper Table 2): fault frequencies in bpfo, bpfi, bsf, ftf.
+license: CC-BY-4.0
+size: "download 0.30 GB, built 0.11 GB (measured)"
+homepage: https://data.mendeley.com/datasets/y2px5tg92h/5
+citation: |
+  Sehri, M., & Dumond, P. (2023). University of Ottawa Rolling-element Dataset -
+  Vibration and Acoustic Faults under Constant Load and Speed conditions
+  (UORED-VAFCLS). Mendeley Data, V5, doi:10.17632/y2px5tg92h.5
+sources:
+  - type: mendeley
+    id: y2px5tg92h
+    version: 5
+    include: ["3_MatLab_Raw_Data_Files (.mat)/*/*.mat"]
+    strip_prefix: "3_MatLab_Raw_Data_Files (.mat)/"
+columns:
+  bpfo: computed from the geometry in the paper's Table 2 (8 balls, 6.77 mm, pitch 28.50 mm)
+  severity: >-
+    stage of the bearing: healthy, developing or faulty (every bearing is recorded
+    at the 3 stages)
+  bearing_id: bearing number 1-20 (1-5 inner, 6-10 outer, 11-15 ball, 16-20 cage faults)
+  rpm: first sample of the speed column of the raw file
+  load: first sample of the load column of the raw file, in N

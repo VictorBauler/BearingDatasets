@@ -1,0 +1,28 @@
+name: vbl_va001
+title: VBL-VA001 lab-scale vibration analysis dataset (water pumps, ITS Surabaya)
+description: |
+  Five Panasonic GP-129JXK water pumps (NTN 6201 bearings), one per condition: normal,
+  misalignment (shaft coupled through a metal cylinder 3 mm off centre), unbalance of
+  6 gram.cm (4 g on the impeller) or 27 gram.cm (18 g; the files call it 24), and a bearing
+  fault made by hitting the outer ring with a hammer (both rings end up damaged). One enDAQ
+  LOG-0002-100G shock and vibration sensor taped to the pump, x/y/z at 20 kHz, 5 s per file:
+  1000 files per condition. Units are not stated; the enDAQ export is in g. Each condition is
+  a different pump, so the machine is confounded with the class. Part of each class carries
+  a "_z" in the file name (e.g. bearng_z, ub06_z), not explained by the authors; kept as
+  file_series. The 43 misalignment files named "... - Copy.csv" are byte copies of other
+  files and are skipped: 3957 recordings.
+license: CC-BY-4.0
+size: "download 3.80 GB, built 1.8 GB (measured)"
+homepage: https://doi.org/10.5281/zenodo.7006575
+citation: |
+  Atmaja, B. T., Ihsannur, H., Suyanto, & Arifianto, D. (2024). Lab-Scale Vibration Analysis
+  Dataset and Baseline Methods for Machinery Fault Diagnosis with Machine Learning. Journal of
+  Vibration Engineering & Technologies, 12(2), 1991-2001. doi:10.1007/s42417-023-00959-9
+sources:
+  - {type: zenodo, record: 7006575}
+columns:
+  bpfo: >-
+    NTN 6201: BPFO 2.62 and BPFI 4.38 from the datasheet quoted in the authors' README; FTF
+    and BSF derived from them (7 balls, d/D = 0.25143, 0 deg)
+  unbalance_gcm: unbalance in gram.cm (6 or 27; 0 for the other pumps)
+  file_series: main, or z for the files whose name carries "_z" (not explained by the authors)

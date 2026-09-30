@@ -1,0 +1,32 @@
+name: dlr_needle
+title: DLR needle bearing endurance test data for early fault detection (oscillating motion, run-to-failure)
+description: |
+  Eight run-to-failure tests of oscillating needle bearings at the German Aerospace Center
+  (DLR), two bearings per test, varying lubrication (Oil1, Oil2, Oil3 or none), oscillation
+  amplitude (10-20 deg), radial load (9-19.4 kN) and frequency (5-10 Hz). A 10 s snapshot
+  about every 15 min (every 910 s in Test 7) of: acceleration and radial displacement at
+  each bearing (10 kHz), torque (10 kHz), oscillation angle (1 kHz), radial force at each
+  bearing (100 Hz), bearing and ambient temperatures (10 Hz). Units are not stated. Each
+  snapshot is one recording with all channels (read fs per row). The files keep all
+  snapshots of a test one after the other; time_s is the start of the snapshot from the
+  file's time vector. Run-to-failure: use run_id, time_s and rul_s (end of life = last
+  snapshot of the test); which of the two bearings failed is not stated, and the condition
+  of each snapshot is unknown.
+  Large: 36.7 GB download, one zip per test (Test 3 in five parts); build a subset with
+  --files, e.g. --files "Test_7.zip" "Test_8.zip" --as dlr_needle_small. Test 3 needs about
+  8 GB of memory to build (1000 snapshots per file).
+license: CC-BY-4.0
+size: "download 36.7 GB, built ~7 GB (estimated from tests 4, 6, 7, 8: 1.9 GB download, 0.36 GB built)"
+homepage: https://doi.org/10.5281/zenodo.20742913
+citation: |
+  Seferli, T., Windelberg, J., & Bierig, A. (2026). Needle bearing endurance test data for
+  early fault detection. Zenodo. doi:10.5281/zenodo.20742913
+sources:
+  - type: zenodo
+    record: "20742913"
+columns:
+  lubrication: Oil1, Oil2, Oil3 or NoOil
+  amplitude_deg: oscillation amplitude in degrees
+  load: radial load in kN
+  oscillation_hz: oscillation frequency in Hz
+  snapshot: number of the snapshot in the test (as in the file names)

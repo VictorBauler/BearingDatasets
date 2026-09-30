@@ -1,0 +1,43 @@
+name: paderborn_rtf
+title: Paderborn University run-to-failure data set of ball bearings under time-varying load and speed
+description: |
+  17 run-to-failure experiments (B01-B17) on new 61806-2RS ball bearings (no initiated
+  defect) at Paderborn University (LDM). Before each measurement, the shaft speed and the
+  static and dynamic (shaker) load amplitudes are drawn at random from a range that
+  depends on the experiment (dynamic load sinusoidal at 2 Hz for B01-B06, Gaussian noise
+  up to 200 Hz for B07-B17). Every ~12 s, 1.6 s of vibration from two accelerometers on
+  the bearing housing (directions A and C; stored in V, 10 g/V for B01 per its log; see
+  the B<nn>_log.pdf of each experiment) at 128 kHz (B01-B09) or 64 kHz (B10-B17), plus the
+  measured speed, loads and temperatures of that measurement (from the csv files). An
+  experiment ends at a vibration (6-10 g) or temperature (110 degC) threshold (B01: no
+  threshold set; B05: interrupted). Each experiment starts with a warm-up phase (750 rpm,
+  no dynamic load). The defects found after dismantling are in `failure`; the condition
+  of each measurement is unknown. Use run_id, time_s and rul_s (end of life = last
+  measurement).
+  Large: 152 GB download. Build a subset with --files, e.g.
+  `bearing-datasets build paderborn_rtf --files "B01*" "B02*" --as paderborn_rtf_small`
+  (include every part of a split experiment; the csv files are in its first part).
+license: CC-BY-4.0
+size: "download 152 GB, built ~38 GB (estimated from B01-B03: 3 GB download, 1.3 GB built)"
+homepage: https://doi.org/10.5281/zenodo.10805042
+citation: |
+  Aimiyekagbon, O. K. (2024). Run-to-failure data set of ball bearings subjected to
+  time-varying load and speed conditions. Zenodo. doi:10.5281/zenodo.10868257
+  Javanmardi, A., Aimiyekagbon, O. K., Bender, A., Kimotho, J. K., Sextro, W., &
+  Huellermeier, E. (2024). Remaining useful lifetime estimation of bearings operating under
+  time-varying conditions. PHM Society European Conference, 8(1). doi:10.36001/phme.2024.v8i1.4101
+sources:
+  - type: zenodo
+    record: "10868257"
+    include: "*.zip"
+columns:
+  bpfo: >-
+    61806-2RS from the dataset document, Table 1 (19 balls of 3.18 mm, rolling circle 35.5
+    mm; 0 deg)
+  rpm: mean measured shaft speed during the measurement
+  load: mean measured static pre-load in N
+  dynamic_load_peak_n: peak of the measured dynamic (shaker) load in N
+  temperature_t1_c: mean bearing temperature at position T1 in degC
+  temperature_t2_c: mean bearing temperature at position T2 in degC
+  temperature_room_c: mean room temperature in degC
+  failure: defects found after the experiment (inner race, outer race, ball)

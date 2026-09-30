@@ -1,0 +1,322 @@
+[
+ {
+  "name": "Bearing Dataset/BF_1200.csv",
+  "size": 18501922,
+  "sha256": "18a8d8a914afdd3f3a52e47d0735f8808c4bf47e92bb4c44ea2e17a2938c436a"
+ },
+ {
+  "name": "Bearing Dataset/BF_1800.csv",
+  "size": 18266886,
+  "sha256": "cd1e61ac75a22b89d77148302678a29d32b400bf6f0247fc23052d071ce76e5a"
+ },
+ {
+  "name": "Bearing Dataset/BF_200-2400-200.csv",
+  "size": 18574904,
+  "sha256": "e32f4a0f9439552e33aa4c3f74a79d363cbbdf4c4e1e84cecd8ebedffacca2c3"
+ },
+ {
+  "name": "Bearing Dataset/BF_2400.csv",
+  "size": 18125068,
+  "sha256": "17894ab73275aea7ade33fafdb34661af5e08db207d8c47ed14f1b9c19383be4"
+ },
+ {
+  "name": "Bearing Dataset/CF_1200.csv",
+  "size": 18754014,
+  "sha256": "ca9df988539616298af03c957c3e749ed25184d21a6bf8f9db65489db20ee64c"
+ },
+ {
+  "name": "Bearing Dataset/CF_1800.csv",
+  "size": 18478386,
+  "sha256": "e0d0b0f67ae1c948adf7904c0bc99e0e59788ecd5a587e4cb15914ac42ccba1d"
+ },
+ {
+  "name": "Bearing Dataset/CF_200-2400-200.csv",
+  "size": 18643651,
+  "sha256": "f0d1d337d1b76afbdb792da5af1a6e62ff352acd30f8cb3abff94fe9673bda4b"
+ },
+ {
+  "name": "Bearing Dataset/CF_2400.csv",
+  "size": 18272359,
+  "sha256": "26af8b56cb5545ea7d85fca58331d3a7309b3544c4a2200818f556b2fb0cf547"
+ },
+ {
+  "name": "Bearing Dataset/IF+OF_1200.csv",
+  "size": 18799655,
+  "sha256": "15491d640fff0c5a0d1f908ce4eed1eb6bcf8c1c251b4b1485412d0e0303c173"
+ },
+ {
+  "name": "Bearing Dataset/IF+OF_1800.csv",
+  "size": 18377406,
+  "sha256": "4844c6e169b4536f03c3f0535f4c46b55757db692533dd23522b35b6d07b84e8"
+ },
+ {
+  "name": "Bearing Dataset/IF+OF_200-2400-200.csv",
+  "size": 18565625,
+  "sha256": "71048c110cecb4390b01e4a156304f9afea220a0bde750e646f67a61b994bdcb"
+ },
+ {
+  "name": "Bearing Dataset/IF+OF_2400.csv",
+  "size": 18148107,
+  "sha256": "1a1ffb0e692115f26d9284d806b3851a9e955f1f8b1d0d60eccf02690fb51dea"
+ },
+ {
+  "name": "Bearing Dataset/IF_1200.csv",
+  "size": 19036765,
+  "sha256": "71071be2fce7e1e8ad49450d7e1932d0a70b52eef77c6664f385312a1fbd8397"
+ },
+ {
+  "name": "Bearing Dataset/IF_1800.csv",
+  "size": 18624426,
+  "sha256": "484607157a167213aa85799ed7a3077287ee733c4a91090810ab0b1be64f714f"
+ },
+ {
+  "name": "Bearing Dataset/IF_200-2400-200.csv",
+  "size": 18854500,
+  "sha256": "5c7d0d5d7f3e79e17a29c943e05a8026d5ab8fb87c1f7a9c7e92c0cb111eeb62"
+ },
+ {
+  "name": "Bearing Dataset/IF_2400.csv",
+  "size": 18364473,
+  "sha256": "3dab1bbf3617080d6a2bf21a571370c52c798eb480ce487081abfb2a92617d94"
+ },
+ {
+  "name": "Bearing Dataset/Normal_1200.csv",
+  "size": 18766158,
+  "sha256": "94eeda7d7e9ce8e63186102e8fefc6eb0bd05ef92df4a0d46e49ca5d09ef0e8e"
+ },
+ {
+  "name": "Bearing Dataset/Normal_1800.csv",
+  "size": 18824400,
+  "sha256": "7ac666138ab69cefab630f1bbaa1747abeca2d54f9065e3ca41c22505394066d"
+ },
+ {
+  "name": "Bearing Dataset/Normal_200-2400-200.csv",
+  "size": 18813955,
+  "sha256": "ca3de7a0ec3e616d65cecb3dc42e85ab7b62ac1eb76c11c92b958b03c4e2b45b"
+ },
+ {
+  "name": "Bearing Dataset/Normal_2400.csv",
+  "size": 18436126,
+  "sha256": "232a821fb4d85beaa41a06eb41fa1310c22a6bf4d8ae005b38e4f0b3b5753cdc"
+ },
+ {
+  "name": "Bearing Dataset/OF_1200.csv",
+  "size": 18595534,
+  "sha256": "86d42c9faf8044ef605089b0819d5a8572edcd1d44ee7c9fa08d39523df2b00d"
+ },
+ {
+  "name": "Bearing Dataset/OF_1800.csv",
+  "size": 18294479,
+  "sha256": "d50e3830f768c752a2bfe01e02fb6f9486d09aedd1969df585406747311cba36"
+ },
+ {
+  "name": "Bearing Dataset/OF_200-2400-200.csv",
+  "size": 18553286,
+  "sha256": "5e358fbea6913e773ddd319e4c1f14026a03ef2b301436ae5f2d57449e8dc3ce"
+ },
+ {
+  "name": "Bearing Dataset/OF_2400.csv",
+  "size": 18090594,
+  "sha256": "35ad37653f61e8af0a756104c6c222feade9950de332100d6cfc5e20041c9a85"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+eccentric gear_1200.csv",
+  "size": 19020825,
+  "sha256": "b2e55573ef1fde172f6081b2989b3f0212bb2514eedc6e469d2c456f104d993a"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+eccentric gear_1800.csv",
+  "size": 18695979,
+  "sha256": "2a58ea889e19ac61cbb732560c3e0f3b7bb2358f9f65f41f98691f0fea1976f0"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+eccentric gear_200-2400-200.csv",
+  "size": 18832499,
+  "sha256": "0a769eeb8ef8588829f57b0348793847b949606e37074c38495578a6eaf90a59"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+eccentric gear_2400.csv",
+  "size": 18334960,
+  "sha256": "c077790464319a3955db0c9141dba4a299d729d251c1a7410f79658c1531c9e0"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear surface wear_1200.csv",
+  "size": 18761626,
+  "sha256": "1c084e7074f024992b6da76dfbe8203e067f5775eb643115ca57754552c268ee"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear surface wear_1800.csv",
+  "size": 18749828,
+  "sha256": "ad3beac230c3e1a50d2b6f8966af0cc3985b56eb163b99665f889d6533d7f086"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear surface wear_200-2400-200.csv",
+  "size": 19016885,
+  "sha256": "257209524417f623837d6e9f8b60b4367a5e2a8bad446dd1e650a449911228de"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear surface wear_2400.csv",
+  "size": 18384039,
+  "sha256": "e339bf4d3f2d327e84f0f4fbb0d9c3702583b3a91c12f7701f76db69e2bfca2d"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear tooth break_1200.csv",
+  "size": 18518578,
+  "sha256": "128775b9357779c4da8f25c4906ca7477849a668a4696534357d9733b7e94fec"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear tooth break_1800.csv",
+  "size": 18567248,
+  "sha256": "ced96d2e52bbc6caca07d415516b3519a775bde9ea5b9a867aa7c4d89725e71b"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear tooth break_200-2400-200.csv",
+  "size": 18685530,
+  "sha256": "5c2f02b71cd6f51d9328bf79a8ae934d86d4976eab59a96240e74ce2b4504efb"
+ },
+ {
+  "name": "Mixed Fault Dataset/IF+gear tooth break_2400.csv",
+  "size": 18242670,
+  "sha256": "1eea34876ad7d7e0f39e46304e782a68692ece6197faba29da3d3c7f9e9ef2ab"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+eccentric gear_1200.csv",
+  "size": 18901458,
+  "sha256": "9eb8b2fe20ef74e66686555e8f2098cca34ff814598865d57f74b1b691fe6860"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+eccentric gear_1800.csv",
+  "size": 18553312,
+  "sha256": "526d1ded0db40b0bd89694d2287b881501b6815dfa4a23f54fdaa01e78b79d8b"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+eccentric gear_200-2400-200.csv",
+  "size": 18717808,
+  "sha256": "8b312ced501da757e6107b00c8da1d8764bb29791c014a9086419369523d4c73"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+eccentric gear_2400.csv",
+  "size": 18283879,
+  "sha256": "feb18d19db829c9840688c38c9df3273b858db82d117e5432ff0ccdb87632cbb"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear surface wear_1200.csv",
+  "size": 18812122,
+  "sha256": "995fb3eff71b27df7ecba57b609fb7b30b0fc0b3535fbd67bd2af10d4e5273dd"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear surface wear_1800.csv",
+  "size": 18568378,
+  "sha256": "c1cc1324b348aa3c9655550bbfefadadadeee4d145fb4ac5d5019de7351de4f3"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear surface wear_200-2400-200.csv",
+  "size": 18687907,
+  "sha256": "d8dd33e267e6894cc02512fba5ff0d5ef9c39e8778106a30473fc5944748a46e"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear surface wear_2400.csv",
+  "size": 18330751,
+  "sha256": "b47c1383895f056348a991c59a64cc071144e879eaefa946f40be1446a4315ad"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear tooth break_1200.csv",
+  "size": 18879223,
+  "sha256": "4d84c213503ac8ddacbc8c52920a067ea46942dc56d4ae6bd42af5709ddcd750"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear tooth break_1800.csv",
+  "size": 18489356,
+  "sha256": "43b9c8508b828213d416dc6edee8ce44ba284239ebf1d8e6576111e9f4292c8f"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear tooth break_200-2400-200.csv",
+  "size": 18678214,
+  "sha256": "0bab580b0c83c3474153f87314b3c1596d6a143505adc9e0672ce8fbe4993560"
+ },
+ {
+  "name": "Mixed Fault Dataset/OF+gear tooth break_2400.csv",
+  "size": 18223442,
+  "sha256": "e755e51866dc820b8969f8fae3d3f6ae05b9950b4f846e21949c7be745175755"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/eccentric gear_1200.csv",
+  "size": 19046762,
+  "sha256": "73aec10ea52c266d0547eb620350ea76106de07dbefb7a44c13fad85e27a11e8"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/eccentric gear_1800.csv",
+  "size": 18572646,
+  "sha256": "e004f3071c325d171e13e538c1833664c22f718de510e422ac1c8c5df71de153"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/eccentric gear_200-2400-200.csv",
+  "size": 18700474,
+  "sha256": "03a6af6b504f11ac51d87f32e8936b9d27d73502caa652a6aa1def2a824311e5"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/eccentric gear_2400.csv",
+  "size": 18269639,
+  "sha256": "a17af961b596925bbf0df820ef3eddfe4b7d97d894c6b783845e5303625daec4"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear surface wear_1200.csv",
+  "size": 18182092,
+  "sha256": "f8f2d911c49f26db32eef7fe5c6045ca1c1f4d4405b49a86bd4c21bfe83311a0"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear surface wear_1800.csv",
+  "size": 18474777,
+  "sha256": "5a9fb35c2241f7ecf9780e470eb94742eb1aec7fcc39a3bcaaecb099ea827960"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear surface wear_200-2400-200.csv",
+  "size": 18731632,
+  "sha256": "311d5cdbc4bc023bb9cd2e2499dca568c9e67c2b08f7b01269dab9b0576f10ab"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear surface wear_2400.csv",
+  "size": 18226828,
+  "sha256": "01f18b4a46efdac96682b183502e9a005ef44cf800495b4a69c6998e45df5577"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear tooth break_1200.csv",
+  "size": 18976224,
+  "sha256": "098ca469bd1c28f59f04abc7c173e8a1f8f9f3d2fc34a63317f0b9cba00ebc4d"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear tooth break_1800.csv",
+  "size": 18510568,
+  "sha256": "5eedb426e21bdb942d12743995e5deeb83c22520c124a97ca98cd215938a9766"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear tooth break_200-2400-200.csv",
+  "size": 18732260,
+  "sha256": "c5e9addadb4b99df6c1974ae9435e61fb98395d42942c35daa43d99a53246f79"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/gear tooth break_2400.csv",
+  "size": 18206645,
+  "sha256": "9b795fcf544690f276adc9ce95255a7754a3477e5d572863d86b6f9bcac8b245"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/normal_1200.csv",
+  "size": 18640705,
+  "sha256": "1e16510030c02c15ddae5c9c145e25fa97bc10f2b3f45a337400facfb4acf7e0"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/normal_1800.csv",
+  "size": 18382427,
+  "sha256": "3fa010af1e7769132b29d95c03d6a01a0b16e688090ec05f539ac61f114e89a1"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/normal_200-2400-200.csv",
+  "size": 18606409,
+  "sha256": "331241eb2bcf78f1202d5b035e78da1ec42384ebbb645e6434149c1e3e3fcc39"
+ },
+ {
+  "name": "Parallel Gearbox Dataset/normal_2400.csv",
+  "size": 18017151,
+  "sha256": "ed3b9613038d848a4599aaaa0bbb8eea9d949c5a66156183e6dfcd53fd9028e4"
+ }
+]
