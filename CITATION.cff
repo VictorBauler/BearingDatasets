@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, together with each dataset you use."
+type: software
+title: "bearing-datasets: public bearing fault datasets in one common format"
+abstract: >-
+  Python library and command-line tool that downloads 69 public bearing and
+  rotating-machinery fault datasets (CWRU, Paderborn, XJTU-SY, FEMTO-ST PRONOSTIA,
+  NASA IMS, MFPT and others) from their original sources, checks them against pinned
+  sha256 checksums, and converts each one into the same format: one metadata table
+  (one row per signal) plus the signals in Parquet. Covers fault diagnosis and
+  prognostics (run-to-failure, remaining useful life) data. Code only: the datasets
+  keep their own licenses.
+authors:
+  - family-names: Bauler
+    given-names: Victor
+    orcid: "https://orcid.org/0009-0001-4754-9610"
+version: 0.1.0
+date-released: "2026-09-30"
+license: MIT
+repository-code: "https://github.com/VictorBauler/BearingDatasets"
+url: "https://github.com/VictorBauler/BearingDatasets"
+keywords:
+  - bearing fault diagnosis
+  - fault diagnosis
+  - prognostics
+  - remaining useful life
+  - predictive maintenance
+  - condition monitoring
+  - vibration analysis
+  - rotating machinery
+  - datasets
+  - reproducibility
+  - parquet
+  - CWRU
+  - Paderborn
+  - XJTU-SY
+  - FEMTO
+  - IMS

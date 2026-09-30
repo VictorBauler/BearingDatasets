@@ -5,6 +5,41 @@ description = "Reproducible download and standardized Parquet storage for bearin
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
+authors = [{ name = "Victor Bauler" }]
+keywords = [
+    "bearing",
+    "bearing-fault-diagnosis",
+    "fault-diagnosis",
+    "prognostics",
+    "remaining-useful-life",
+    "predictive-maintenance",
+    "condition-monitoring",
+    "vibration",
+    "rotating-machinery",
+    "phm",
+    "datasets",
+    "parquet",
+    "cwru",
+    "paderborn",
+    "xjtu-sy",
+    "femto",
+    "ims",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
 dependencies = [
     "numpy>=1.24",
     "pyarrow>=14",
