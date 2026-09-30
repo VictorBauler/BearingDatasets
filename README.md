@@ -8,6 +8,11 @@
 from their original sources. Every dataset becomes one metadata table (one row per signal) plus the
 signals themselves, ready for pandas, polars, NumPy or PyTorch.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/VictorBauler/BearingDatasets/main/docs/assets/banner-dark.png">
+  <img alt="100 ms of raw vibration from four datasets (cwru, jnu, dlr, hit_sm), sampled at 12 to 51.2 kHz, each labeled with the same metadata columns (condition=inner, ball, outer)" src="https://raw.githubusercontent.com/VictorBauler/BearingDatasets/main/docs/assets/banner-light.png">
+</picture>
+
 Why:
 
 * **Reproducible**: data comes from the official sources (with mirrors as fallback) and is
