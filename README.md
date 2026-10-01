@@ -336,7 +336,7 @@ Columns that only some datasets have, standard ones first:
 | column | meaning | datasets |
 |---|---|---|
 | `quantity` | physical quantity: `acceleration`, `velocity`, `displacement`, `current`, `voltage`, `sound_pressure`, `speed`, `torque`, `force`, `temperature`, `angle`, `tachometer`, `encoder`, `time` (pulse times), `unknown` | all (and my_cwru) |
-| `unit` | signal unit (`unknown` when not documented) | all except cwru, hust, jnu, upm_citef |
+| `unit` | signal unit (`unknown` when not documented) | all except cwru, hust, jnu |
 | `axis` | measurement direction (`x`/`y`/`z`, `horizontal`/`vertical`, `axial`/`radial`/`tangential`) or phase (`a`/`b`/`c`); `none` for single-axis sensors | all except cwru, dcase_bearing, dlr, dlr_needle, fstf, hse_similar_system, hust, hust_transmission, isac, just_slewing, mfpt, ottawa_2018, ottawa_uored, paderborn, sca, sqv, uc204, uoemd, upm_citef, urma_crti, vibrobox, wt_hss |
 | `sensor_mounting` | surface the sensor is on (ISO 20816-1): `pedestal` (stand-alone bearing housing), `casing` (machine casing at the bearing, e.g. a motor end shield), `outer_ring`, `shaft` (sensor on or probe aimed at the shaft), `base`; `none` without mechanical mounting (currents, microphones) | all (and my_cwru) |
 | `speed_rpm` | shaft speed (rpm), measured or documented as constant | all except arkansas, army_pla, dcase_bearing, dlr_needle, estogu, hit_intershaft, hust_transmission, hustbearing, kaist_speed, mcc5_thu_gearbox, mcc5_thu_motor, mehran_uet, neepu, ottawa_2018, phm09, sdust, seu, sqv, tecnalia_bearing, tecnalia_gearbox, uaq_upc, uoemd, urma_crti, vbl_va001, vibrobox, wt_hss (and my_cwru) |
