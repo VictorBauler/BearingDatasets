@@ -31,6 +31,7 @@ files: [data1.npy, data2.npy, data3.npy, data4.npy, data5.npy]
 columns:
   fault_depth_mm: depth of the wire-cut fault (0 if healthy)
   fault_length_mm: length of the wire-cut fault (0 if healthy)
+  fault_severity: length of the wire-cut fault (inner ring 0.5 or 1.0 mm, levels 1-2; outer ring 0.5 mm, level 1)
   bearing_id: data file = test; each test is a different bearing (data1 and data2 both healthy)
   lp_rpm: low-pressure rotor speed in rpm
   hp_rpm: high-pressure rotor speed in rpm

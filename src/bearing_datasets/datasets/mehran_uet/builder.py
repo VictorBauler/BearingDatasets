@@ -10,9 +10,10 @@ import re
 import pandas as pd
 
 
-def _ch(location, quantity, axis, unit):
+def _ch(location, mounting, quantity, axis, unit):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": unit,
@@ -21,13 +22,15 @@ def _ch(location, quantity, axis, unit):
 
 
 CHANNELS = {
-    "vibration_x": _ch("motor_de", "acceleration", "x", "g"),
-    "vibration_y": _ch("motor_de", "acceleration", "y", "g"),
-    "vibration_z": _ch("motor_de", "acceleration", "z", "g"),
-    "current_a": _ch("motor", "current", "a", "A"),
-    "current_b": _ch("motor", "current", "b", "A"),
-    "current_c": _ch("motor", "current", "c", "A"),
+    # on the motor housing near the drive-end bearing
+    "vibration_x": _ch("motor_bearing_de", "casing", "acceleration", "x", "g"),
+    "vibration_y": _ch("motor_bearing_de", "casing", "acceleration", "y", "g"),
+    "vibration_z": _ch("motor_bearing_de", "casing", "acceleration", "z", "g"),
+    "current_a": _ch("motor_supply", "none", "current", "a", "A"),
+    "current_b": _ch("motor_supply", "none", "current", "b", "A"),
+    "current_c": _ch("motor_supply", "none", "current", "c", "A"),
 }
+SIZES = ["0.7", "0.9", "1.1", "1.3", "1.5", "1.7"]  # fault width, mm: levels 1-6
 FAULT = re.compile(r"^(?P<size>\d\.\d)(?P<race>inner|outer)-(?P<load>\d+)watt(?:-\w{6})?$")
 
 
@@ -50,22 +53,28 @@ def recordings(raw_dir):
         yield {
             "recording_id": key,
             "native_label": key,
-            "condition": m["race"],
-            "fault_location": "motor_de_bearing",
+            "fault_type": m["race"],
+            "fault_location": "motor_bearing_de",
             "fault_size_mm": float(m["size"]),
-            "load_condition": f"{m['load']} W",
+            "fault_severity": f"{m['size']} mm",
+            "fault_severity_level": SIZES.index(m["size"]) + 1,
+            "operating_condition": f"{m['load']} W",
+            "bearing_model": "6204-2Z/C3",
             "signals": signals,
         }
     for path in sorted(raw_dir.glob("Healthy bearing data/*.csv")):
         yield {
             "recording_id": path.stem.lower().replace(" ", "_"),
             "native_label": path.stem,
-            "condition": "normal",
+            "fault_type": "normal",
             "fault_location": "none",
             "fault_size_mm": 0.0,
-            "load_condition": "belt load, not stated"
+            "fault_severity": "none",
+            "fault_severity_level": 0,
+            "operating_condition": "belt load, not stated"
             if "with pulley" in path.stem.lower()
             else "no load (without pulley)",
+            "bearing_model": "6204-2Z/C3",
             "signals": _read(path, list(CHANNELS)[:3]),
         }
     for key in ("healthy", "BRB-12-4-100watt", "BRB-12-4-300watt"):
@@ -73,11 +82,14 @@ def recordings(raw_dir):
         yield {
             "recording_id": f"current_{key.lower()}",
             "native_label": key,
-            "condition": "electrical" if brb else "normal",
-            "fault_location": "motor" if brb else "none",
+            "fault_type": "electrical" if brb else "normal",
+            "fault_location": "motor_rotor" if brb else "none",
             "fault_size_mm": 0.0,
-            "load_condition": f"{key.split('-')[-1].removesuffix('watt')} W"
+            "fault_severity": "none",  # broken rotor bar: not graded
+            "fault_severity_level": 1 if brb else 0,
+            "operating_condition": f"{key.split('-')[-1].removesuffix('watt')} W"
             if brb
             else "not stated",
+            "bearing_model": "6204-2Z/C3",
             "signals": _read(cur[key], list(CHANNELS)[3:]),
         }

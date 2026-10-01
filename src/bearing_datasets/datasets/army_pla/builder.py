@@ -10,6 +10,7 @@ ORDERS = {"bpfo": 5.2325, "bpfi": 7.7675, "bsf": 2.4666, "ftf": 0.4025}
 CHANNELS = {
     axis: {
         "sensor_location": "unknown",
+        "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": axis,
         "unit": "unknown",
@@ -17,24 +18,30 @@ CHANNELS = {
     }
     for axis in "xyz"
 }
-BEARING = {"IF": "inner", "OF": "outer", "BF": "ball", "CF": "cage", "IF+OF": "inner+outer"}
+BEARING = {
+    "IF": "inner",
+    "OF": "outer",
+    "BF": "rolling_element",
+    "CF": "cage",
+    "IF+OF": "inner+outer",
+}
 GEAR = {"gear surface wear", "gear tooth break", "eccentric gear"}
 SUBSET = {"Bearing Dataset": "bearing", "Parallel Gearbox Dataset": "gearbox",
           "Mixed Fault Dataset": "mixed"}  # fmt: skip
 
 
 def _label(state):
-    """File name state -> (condition, fault_location)."""
+    """File name state -> (fault_type, fault_location)."""
     if state.lower() == "normal":
         return "normal", "none"
     if state in BEARING:
         c = BEARING[state]
-        return c, "+".join(["bearing_module"] * len(c.split("+")))
+        return c, "+".join(["test_bearing"] * len(c.split("+")))
     if state in GEAR:
         return "gear", "gearbox"
     race, gear = state.split("+", 1)  # mixed: IF+eccentric gear
     assert gear in GEAR
-    return f"{BEARING[race]}+gear", "bearing_module+gearbox"
+    return f"{BEARING[race]}+gear", "test_bearing+gearbox"
 
 
 def recordings(raw_dir):
@@ -45,12 +52,13 @@ def recordings(raw_dir):
         yield {
             "recording_id": f"{SUBSET[path.parent.name]}_{path.stem.replace(' ', '_')}",
             "native_label": state,
-            "condition": condition,
+            "fault_type": condition,
             "fault_location": location,
             "fault_origin": "none" if condition == "normal" else "artificial",
             "subset": SUBSET[path.parent.name],
             "operating_condition": f"{speed}rpm",
             "speed_profile": "inc_dec" if "-" in speed else "constant",
+            "bearing_model": "NU205",
             **ORDERS,
             "signals": {axis: x.iloc[:, i].to_numpy() for i, axis in enumerate("xyz")},
         }

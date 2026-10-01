@@ -12,7 +12,8 @@ description: |
   1800 N, 8 s at 102.4 kHz, `acquisition` = file number (7-266). Files 7-99 start at a
   bearing life of 19 h, 101-175 at 73 h, 183-266 at 127.5 h; the paper's Table A.2 gives
   the temperature and time of each file (file 209 is not in that table). The damage grows
-  during the test; condition stays ball.
+  during the test; fault_type stays rolling_element and the severity stays that of the
+  initial indentation.
 license: CC-BY-4.0
 size: "download 3.2 GB, built 2.7 GB (measured)"
 homepage: https://doi.org/10.5281/zenodo.3559553
@@ -29,5 +30,6 @@ columns:
     pitch 40.5 mm), A2 channels the loaded bearing B2 (16 rollers of 8.0 mm, pitch 54.0 mm)
   load: radial load on B2 in N, from the load cell voltage in the file name (0.499 mV/N)
   fault_size_mm: diameter of the conical indentation
+  fault_severity: indentation diameter (150, 250, 450 um), levels 1-3
   session: stationary (speed and load combinations) or endurance (230 h monitoring)
   acquisition: stationary, repetition 1 or 2; endurance, file number (increasing with time)

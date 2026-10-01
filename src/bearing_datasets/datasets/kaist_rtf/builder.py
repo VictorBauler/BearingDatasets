@@ -13,6 +13,7 @@ ORDERS = fault_orders(9, 7.90, 38.5)
 CHANNELS = {
     "vibration_x": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "x",
         "unit": "unknown",
@@ -20,6 +21,7 @@ CHANNELS = {
     },
     "vibration_y": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "y",
         "unit": "unknown",
@@ -27,6 +29,7 @@ CHANNELS = {
     },
     "temperature_bearing": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "unknown",
         "quantity": "temperature",
         "axis": "none",
         "unit": "degC",
@@ -34,6 +37,7 @@ CHANNELS = {
     },
     "temperature_ambient": {
         "sensor_location": "ambient",
+        "sensor_mounting": "none",
         "quantity": "temperature",
         "axis": "none",
         "unit": "degC",
@@ -52,11 +56,12 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": "unknown",
-            "condition": "unknown",
+            "fault_type": "unknown",
             "fault_location": "unknown",
-            "rpm": 1775.0,
+            "speed_rpm": 1775.0,
             "load": 5.88,
             "load_unit": "kN",
+            "bearing_model": "6205",
             "run_id": "run1",
             "time_s": time_s,
             "rul_s": end_of_life - time_s,

@@ -10,7 +10,8 @@ description: |
   probes and two motor currents. Values are the recorded volts; divide by the file's
   Volts/Unit row to calibrate (0.087-0.101 V/unit for the accelerometers, 4.4 for the
   probes). The record calls the gearbox, probe and current channels not relevant to the
-  experiment. Same group and file format as tecnalia_gearbox.
+  experiment. The inboard bearing is test_bearing, the outboard one support_bearing.
+  Same group and file format as tecnalia_gearbox.
 license: CC-BY-4.0
 size: "download 0.16 GB, built 0.03 GB (measured)"
 homepage: https://doi.org/10.17632/sp3fbf8d9y.1
@@ -23,4 +24,4 @@ columns:
   bpfo: >-
     of the MB ER-12K test (inboard) bearing for every channel: manufacturer multipliers
     (BPFO 0.0508, BPFI 0.0825, BSF 0.0332 per rpm, x 60); ftf = bpfo / 8
-  shaft_hz: shaft frequency in Hz, "50" or the ramp sequence "14.2-23.4-17.6"
+  operating_condition: shaft frequency, 50Hz or the ramp sequence 14.2-23.4-17.6Hz

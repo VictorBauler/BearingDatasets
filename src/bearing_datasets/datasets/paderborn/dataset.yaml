@@ -43,6 +43,7 @@ columns:
     indentation (real, from accelerated lifetime tests); 'none' if healthy
   bearing_manufacturer: manufacturer of the test bearing (FAG, IBU, MTK)
   load: load torque in Nm (M01 = 0.1, M07 = 0.7)
-  rpm: nominal speed (N09 = 900, N15 = 1500)
-  severity: damage extent level 0-3 from the KAt fact sheets (0 = healthy)
+  speed_rpm: nominal speed (N09 = 900, N15 = 1500)
+  fault_severity: damage extent level 1-3 from the KAt fact sheets (none = healthy, level 0)
+  operating_condition: N<speed>_M<torque>_F<radial force> from the file name (e.g. N15_M07_F04)
   bearing_id: KAt bearing code (K001-K006 healthy, KA outer race, KI inner race, KB both)

@@ -13,7 +13,8 @@ from bearing_datasets.io import read_mat
 ORDERS = fault_orders(8, 7.939, 33.503)
 CHANNELS = {
     axis.lower(): {
-        "sensor_location": "test_bearing_housing",
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": axis.lower(),
         "unit": "unknown",
@@ -21,7 +22,13 @@ CHANNELS = {
     }
     for axis in "XYZ"
 }
-STATE = {"HB": "normal", "IRF": "inner", "ORF": "outer", "BF": "ball", "CF": "inner+outer+ball"}
+STATE = {
+    "HB": "normal",
+    "IRF": "inner",
+    "ORF": "outer",
+    "BF": "rolling_element",
+    "CF": "inner+outer+rolling_element",
+}
 NAME = re.compile(r"^(?P<state>HB|IRF|ORF|BF|CF)_(?P<rpm>\d+)_(?:(?P<mass>\d+)gms|SR12800)$")
 
 
@@ -30,17 +37,18 @@ def recordings(raw_dir):
         m = NAME.match(path.stem)
         if m["mass"] is None and m["rpm"] != "2500":
             continue  # duplicate of the 0 g file of the first record
-        condition = STATE[m["state"]]
+        fault_type = STATE[m["state"]]
         mat = read_mat(path)
         yield {
             "recording_id": f"{m['state']}_{m['rpm']}_{m['mass'] or 0}g",
             "native_label": m["state"],
-            "condition": condition,
+            "fault_type": fault_type,
             "fault_location": "none"
-            if condition == "normal"
-            else "+".join(["test_bearing"] * len(condition.split("+"))),
-            "fault_origin": "none" if condition == "normal" else "artificial",
-            "rpm": float(m["rpm"]),
+            if fault_type == "normal"
+            else "+".join(["test_bearing"] * len(fault_type.split("+"))),
+            "fault_origin": "none" if fault_type == "normal" else "artificial",
+            "bearing_model": "ER-10K",
+            "speed_rpm": float(m["rpm"]),
             "added_mass_g": float(m["mass"] or 0),
             **ORDERS,
             "signals": {

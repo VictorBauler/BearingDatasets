@@ -11,7 +11,7 @@ description: |
   measured speed, loads and temperatures of that measurement (from the csv files). An
   experiment ends at a vibration (6-10 g) or temperature (110 degC) threshold (B01: no
   threshold set; B05: interrupted). Each experiment starts with a warm-up phase (750 rpm,
-  no dynamic load). The defects found after dismantling are in `failure`; the condition
+  no dynamic load). The defects found after dismantling are in `failure`; the fault
   of each measurement is unknown. Use run_id, time_s and rul_s (end of life = last
   measurement).
   Large: 152 GB download. Build a subset with --files, e.g.
@@ -34,7 +34,7 @@ columns:
   bpfo: >-
     61806-2RS from the dataset document, Table 1 (19 balls of 3.18 mm, rolling circle 35.5
     mm; 0 deg)
-  rpm: mean measured shaft speed during the measurement
+  speed_rpm: mean measured shaft speed during the measurement
   load: mean measured static pre-load in N
   dynamic_load_peak_n: peak of the measured dynamic (shaker) load in N
   temperature_t1_c: mean bearing temperature at position T1 in degC

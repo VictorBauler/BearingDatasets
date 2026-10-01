@@ -10,8 +10,8 @@ description: |
   snapshot is one recording with all channels (read fs per row). The files keep all
   snapshots of a test one after the other; time_s is the start of the snapshot from the
   file's time vector. Run-to-failure: use run_id, time_s and rul_s (end of life = last
-  snapshot of the test); which of the two bearings failed is not stated, and the condition
-  of each snapshot is unknown.
+  snapshot of the test); which of the two bearings failed is not stated, and the fault
+  of each snapshot is unknown. Both needle bearings are test_bearing (channels _1 and _2).
   Large: 36.7 GB download, one zip per test (Test 3 in five parts); build a subset with
   --files, e.g. --files "Test_7.zip" "Test_8.zip" --as dlr_needle_small. Test 3 needs about
   8 GB of memory to build (1000 snapshots per file).

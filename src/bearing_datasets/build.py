@@ -13,6 +13,7 @@ import re
 import shutil
 import socket
 import time
+import warnings
 from pathlib import Path
 
 import numpy as np
@@ -24,7 +25,15 @@ from tqdm import tqdm
 
 from ._version import __version__
 from .dataset import UnknownIdError, _close, resolve_root
-from .schema import describe, order_columns, validate
+from .schema import (
+    RENAMED,
+    RENAMED_VALUES,
+    SCHEMA_VERSION,
+    at_fault,
+    describe,
+    order_columns,
+    validate,
+)
 from .sources import Cache, Sources, archive_role, archive_stem, fetch_all, make_lock
 
 log = logging.getLogger(__name__)
@@ -279,7 +288,7 @@ def build(
 
     * ``channels``: keep only these channels (e.g. ``["CH1", "CH2", "CH3"]``);
     * ``where``: keep only recordings whose values are in the lists, e.g.
-      ``{"condition": ["normal", "inner"], "load": [0]}`` (values compared as text);
+      ``{"fault_type": ["normal", "inner"], "load": [0]}`` (values compared as text);
     * ``files``: download only the raw files matching these globs (e.g. ``["B01*"]``),
       for datasets too big to download whole;
     * ``as_name``: folder name of the subset (required with a subset, so it never
@@ -320,6 +329,7 @@ def build(
         lock = [e for e in lock if any(fnmatch.fnmatch(e["name"], g) for g in files)]
         if not lock:
             raise ValueError(f"no raw file of {spec['name']} matches {files}")
+    where = _upgrade_where(where)
     wanted = {k: {str(v) for v in vs} for k, vs in (where or {}).items()}
 
     tmp = root / f".{name}.tmp-{socket.gethostname()}-{os.getpid()}"
@@ -360,6 +370,8 @@ def build(
             orient="index",
             columns=["signal_file", "signal_row_group", "signal_row"],
         )
+        if {"sensor_location", "fault_location"} <= set(meta.columns):
+            meta["sensor_at_fault"] = at_fault(meta["sensor_location"], meta["fault_location"])
         meta = order_columns(meta.join(loc, on="signal_id"))
         notes = spec.get("columns") or {}
         validate(meta, notes)
@@ -375,6 +387,7 @@ def build(
             "spec_dir": str(Path(spec["dir"]).resolve()),  # to rebuild private datasets by name
             "citation": spec["citation"],
             "package_version": __version__,
+            "schema_version": SCHEMA_VERSION,
             "built_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
             "content_hash": content_hash,
             "n_recordings": int(meta["recording_id"].nunique()),
@@ -402,6 +415,24 @@ def build(
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     _group_writable(out)
+    return out
+
+
+def _upgrade_where(where: dict[str, list] | None) -> dict[str, list] | None:
+    """``where`` with the column names and values of 0.1 (e.g. ``condition``) updated."""
+    if not where:
+        return where
+    out = {}
+    for key, values in where.items():
+        if key in RENAMED:
+            warnings.warn(
+                f"where={{{key!r}: ...}}: the column is now {RENAMED[key]!r}",
+                DeprecationWarning,
+                stacklevel=3,
+            )
+            key = RENAMED[key]
+        mapping = RENAMED_VALUES.get(key, {})
+        out[key] = ["+".join(mapping.get(p, p) for p in str(v).split("+")) for v in values]
     return out
 
 

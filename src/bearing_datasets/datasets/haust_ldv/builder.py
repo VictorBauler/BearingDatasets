@@ -11,22 +11,25 @@ from bearing_datasets.bearings import fault_orders
 # SKF 6206: 9 balls of 9.525 mm on a 46 mm pitch (from published studies of this bearing)
 ORDERS = fault_orders(9, 9.525, 46)
 CHANNELS = {
-    "ldv_velocity": {
-        "sensor_location": "test_bearing_outer_ring",
+    "ldv_velocity": {  # laser Doppler vibrometer aimed at the outer ring
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "outer_ring",
         "quantity": "velocity",
         "axis": "radial",
         "unit": "unknown",
         "fs": 48000,
     },
     "env1": {
-        "sensor_location": "test_bearing_outer_ring",
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "outer_ring",
         "quantity": "unknown",
         "axis": "radial",
         "unit": "unknown",
         "fs": 48000,
     },
 }
-CONDITION = {"H": "normal", "I": "inner", "O": "outer", "R": "ball"}
+FAULT_TYPE = {"H": "normal", "I": "inner", "O": "outer", "R": "rolling_element"}
+SIZES = {"I": ["02", "03", "05"], "O": ["02", "03", "05"], "R": ["05", "08", "10"]}  # levels 1-3
 NAME = re.compile(r"^(?P<load>[AB])-(?P<code>[HIOR])(?P<size>\d\d)?$")
 
 
@@ -38,13 +41,17 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": path.stem.split("-")[1],
-            "condition": CONDITION[m["code"]],
+            "fault_type": FAULT_TYPE[m["code"]],
             "fault_location": "none" if healthy else "test_bearing",
             "fault_origin": "none" if healthy else "artificial",
             "fault_size_mm": 0.0 if healthy else int(m["size"]) / 10,
-            "rpm": 1800.0,
-            "load_case": m["load"],
-            "radial_load_n": 0.0 if m["load"] == "A" else 50.0,
+            "fault_severity": "none" if healthy else f"{int(m['size']) / 10} mm",
+            "fault_severity_level": 0 if healthy else SIZES[m["code"]].index(m["size"]) + 1,
+            "speed_rpm": 1800.0,
+            "operating_condition": m["load"],
+            "load": 0.0 if m["load"] == "A" else 50.0,
+            "load_unit": "N",
+            "bearing_model": "6206",
             **ORDERS,
             "signals": {"ldv_velocity": x["side1"].to_numpy(), "env1": x["env1"].to_numpy()},
         }

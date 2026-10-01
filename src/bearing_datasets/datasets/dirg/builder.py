@@ -11,41 +11,45 @@ from bearing_datasets.io import read_mat
 CHANNELS = {
     f"{point}_{axis}": {
         "sensor_location": location,
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": axis,
         "unit": "m/s^2",
         "fs": 51200,
     }
-    for point, location in [("A1", "bearing_b1_support"), ("A2", "bearing_b2_support")]
+    # A1 on the support of the tested bearing B1, A2 on the support of the loaded bearing B2
+    for point, location in [("A1", "test_bearing"), ("A2", "support_bearing")]
     for axis in "xyz"
 }
 # dataset description, Table 1: B1 (and B3) 10 rollers of 9.0 mm on 40.5 mm; B2 16 of 8.0 on 54.0
 ORDERS_B1, ORDERS_B2 = fault_orders(10, 9.0, 40.5), fault_orders(16, 8.0, 54.0)
 ORDERS = {k: {ch: (ORDERS_B1 if ch.startswith("A1") else ORDERS_B2)[k] for ch in CHANNELS}
           for k in ORDERS_B1}  # fmt: skip
-DEFECT = {  # code -> (condition, indentation diameter in mm)
-    "0": ("normal", 0.0),
-    "1": ("inner", 0.45),
-    "2": ("inner", 0.25),
-    "3": ("inner", 0.15),
-    "4": ("ball", 0.45),  # roller
-    "5": ("ball", 0.25),
-    "6": ("ball", 0.15),
+DEFECT = {  # code -> (fault_type, indentation diameter in mm, severity level)
+    "0": ("normal", 0.0, 0),
+    "1": ("inner", 0.45, 3),
+    "2": ("inner", 0.25, 2),
+    "3": ("inner", 0.15, 1),
+    "4": ("rolling_element", 0.45, 3),  # roller
+    "5": ("rolling_element", 0.25, 2),
+    "6": ("rolling_element", 0.15, 1),
 }
 STATIONARY = re.compile(r"^C(?P<n>[0-6])A_(?P<hz>\d{3})_(?P<mv>\d{3})_(?P<m>[12])$")
 ENDURANCE = re.compile(r"^E4A_?(?P<nnn>\d{3})$")
 
 
 def _row(name, code, rpm, load, session, acquisition):
-    condition, size = DEFECT[code]
+    fault_type, size, level = DEFECT[code]
     return {
         "recording_id": name,
         "native_label": f"{code}A",
-        "condition": condition,
-        "fault_location": "none" if code == "0" else "bearing_b1",
+        "fault_type": fault_type,
+        "fault_location": "none" if code == "0" else "test_bearing",
         "fault_origin": "none" if code == "0" else "artificial",
         "fault_size_mm": size,
-        "rpm": rpm,
+        "fault_severity": f"{round(size * 1000)} um" if level else "none",
+        "fault_severity_level": level,
+        "speed_rpm": rpm,
         "load": load,
         "load_unit": "N",
         "session": session,

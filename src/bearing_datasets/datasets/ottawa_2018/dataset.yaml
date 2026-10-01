@@ -6,7 +6,7 @@ description: |
   decreasing then increasing), 3 trials each: 60 recordings of 10 s at 200 kHz.
   Channels: accelerometer and the raw encoder pulse train (1024 pulses per revolution),
   from which the instantaneous speed can be computed. There is no constant speed, so
-  the table has `speed_profile` instead of `rpm`.
+  the table has `speed_profile` instead of `speed_rpm`.
   ER16K bearing (9 balls of 7.94 mm, pitch 38.52 mm): fault frequencies in bpfo, bpfi, bsf, ftf.
 license: CC-BY-4.0
 size: "download 0.80 GB, built 0.27 GB (measured)"
@@ -21,4 +21,4 @@ columns:
   bpfo: >-
     computed from the paper's ER16K geometry (9 balls of 7.94 mm, pitch diameter 38.52 mm);
     matches its BPFO 3.57 and BPFI 5.43
-  trial: trial number 1-3 of the same condition and speed profile
+  repetition: trial number 1-3 of the same condition and speed profile

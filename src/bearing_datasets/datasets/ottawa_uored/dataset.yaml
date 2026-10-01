@@ -5,7 +5,7 @@ description: |
   and a fully developed (2) fault: inner race (bearings 1-5), outer race (6-10),
   ball (11-15), cage (16-20). 42 kHz, 10 s; accelerometer, microphone and a
   temperature-difference channel. The speed and load columns of the raw files
-  hold one value (first sample), stored as `rpm` and `load`.
+  hold one value (first sample), stored as `speed_rpm` and `load`.
   Bearings NSK 6203ZZ and FAFNIR 203KD with the same geometry (8 balls of 6.77 mm,
   pitch diameter 28.50 mm; paper Table 2): fault frequencies in bpfo, bpfi, bsf, ftf.
 license: CC-BY-4.0
@@ -23,9 +23,9 @@ sources:
     strip_prefix: "3_MatLab_Raw_Data_Files (.mat)/"
 columns:
   bpfo: computed from the geometry in the paper's Table 2 (8 balls, 6.77 mm, pitch 28.50 mm)
-  severity: >-
-    stage of the bearing: healthy, developing or faulty (every bearing is recorded
-    at the 3 stages)
+  fault_severity: >-
+    stage of the bearing: healthy, developing or faulty (levels 0-2; every bearing is
+    recorded at the 3 stages, the healthy stage with fault_type normal)
   bearing_id: bearing number 1-20 (1-5 inner, 6-10 outer, 11-15 ball, 16-20 cage faults)
-  rpm: first sample of the speed column of the raw file
+  speed_rpm: first sample of the speed column of the raw file
   load: first sample of the load column of the raw file, in N

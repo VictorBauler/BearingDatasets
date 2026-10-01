@@ -25,7 +25,7 @@ columns:
     computed from the paper's bearing dimensions (bore, outer and ball diameter, number of
     balls per type); the paper gives no pitch diameter, taken as (bore + outer) / 2
   bearing_model: bearing type, 6204 to 6208 (encoded in the file name)
-  rpm: from the shaft frequency stored in the `fs` variable of the .mat files
+  speed_rpm: from the shaft frequency stored in the `fs` variable of the .mat files
   load: motor load in W (0, 200 or 400)
   bearing_id: >-
     fault code + bearing type (e.g. IB7); assumes one bearing per fault and type,

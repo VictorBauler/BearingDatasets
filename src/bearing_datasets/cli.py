@@ -46,7 +46,7 @@ def main(argv: list[str] | None = None) -> None:
         action="append",
         default=[],
         metavar="COLUMN=V1,V2",
-        help="subset: keep only recordings with these values, e.g. condition=normal,inner "
+        help="subset: keep only recordings with these values, e.g. fault_type=normal,inner "
         "(repeatable; needs --as)",
     )
     b.add_argument(

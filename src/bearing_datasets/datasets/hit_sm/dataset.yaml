@@ -65,4 +65,6 @@ files:
   - SpectraQuest MFS dataset/OR8_900.mat
 columns:
   fault_arc_deg: arc of the raceway covered by the fault, in degrees (2, 5, 8; 0 if healthy)
+  fault_severity: slight, moderate or severe (fault arc of 2, 5 or 8 degrees)
+  bearing_model: 6205 on the SpectraQuest rig, not stated for the self-built rig
   rig: spectraquest (SpectraQuest MFS) or self_built

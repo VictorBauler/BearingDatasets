@@ -12,9 +12,21 @@ from bearing_datasets.io import read_mat
 # is 2 x BSF
 ORDERS = {"bpfo": 6.1852, "bpfi": 8.8148, "bsf": 5.4030 / 2, "ftf": 0.4123}
 CHANNELS = {
-    "Rod_1": {"sensor_location": "test_bearing_housing", "quantity": "acceleration"},
-    "Rod_2": {"sensor_location": "support_bearing_housing", "quantity": "acceleration"},
-    "Rod_3": {"sensor_location": "tightening_tower", "quantity": "acceleration"},
+    "Rod_1": {
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
+        "quantity": "acceleration",
+    },
+    "Rod_2": {
+        "sensor_location": "support_bearing",
+        "sensor_mounting": "pedestal",
+        "quantity": "acceleration",
+    },
+    "Rod_3": {
+        "sensor_location": "rig",
+        "sensor_mounting": "unknown",  # tightening tower
+        "quantity": "acceleration",
+    },
 }
 for _c in CHANNELS.values():
     _c["unit"] = "unknown"
@@ -60,20 +72,22 @@ def recordings(raw_dir):
         if level:
             for c in parts:
                 depth[c] = DEPTH_MM[study][c][level - 1]
-        names = {"OR": "outer", "IR": "inner", "RE": "ball"}
-        condition = "+".join(names[c] for c in parts) if level else "normal"
+        names = {"OR": "outer", "IR": "inner", "RE": "rolling_element"}
+        fault_type = "+".join(names[c] for c in parts) if level else "normal"
         mat = read_mat(path)
         yield {
             "recording_id": f"{study}_{path.stem}",
             "native_label": f"{m['comp']}_F{level}",
-            "condition": condition,
+            "fault_type": fault_type,
             "fault_location": "+".join(["test_bearing"] * len(parts)) if level else "none",
             "fault_origin": "artificial" if level else "none",
-            "severity": f"F{level}",
+            "fault_severity": f"F{level}" if level else "none",
+            "fault_severity_level": level,
+            "bearing_model": "22205E1KC3",
             "depth_or_mm": depth["OR"],
             "depth_ir_mm": depth["IR"],
             "depth_re_mm": depth["RE"],
-            "rpm": float(m["rpm"]),
+            "speed_rpm": float(m["rpm"]),
             "load": LOAD_KN[study],
             "load_unit": "kN",
             "study": study,

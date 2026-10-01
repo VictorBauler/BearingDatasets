@@ -4,7 +4,7 @@ description: |
   2-pole induction motor (Gamak AGM 90 L 2, 2.2 kW class) driving a synchronous generator
   with a resistor bank load, Electrical Machines Laboratory, Eskisehir Technical
   University. Six conditions: normal, bearing ball defect (BB), bearing ring defect (BR;
-  race not stated, condition bearing), 3 and 5 broken rotor bars (drilled), stator
+  race not stated, fault_type bearing), 3 and 5 broken rotor bars (drilled), stator
   inter-turn short. Inverter-fed at 11 frequencies (45-50 Hz, 0.5 Hz steps; nominal rpm =
   Hz x 60) and grid-fed at 50 Hz, each with 6 resistor-bank positions (no load, 111, 56,
   38, 29, 23 ohm): 432 recordings of 20 s at 35 kHz. Triaxial accelerometer on the motor fan
@@ -24,6 +24,6 @@ sources:
 columns:
   supply: inverter (With_Driver) or grid (Without_Driver)
   supply_hz: supply frequency in Hz
-  rpm: nominal speed (supply frequency x 60, from the dataset's Motor RPM Values table)
+  speed_setpoint_rpm: nominal speed (supply frequency x 60, from the dataset's Motor RPM Values table)
   load_position: resistor bank switch position 0-5
   load_resistance: resistance of that position (no load, 111, 56, 38, 29, 23 ohm)

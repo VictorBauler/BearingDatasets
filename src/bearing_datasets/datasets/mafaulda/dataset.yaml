@@ -11,6 +11,8 @@ description: |
   at 51.2 kHz). The bearing-fault folders are named ball/cage/outer (there is no inner
   race folder). Bearing: 8 balls; fault frequencies in bpfo, bpfi, bsf, ftf (the same bearing type in
   both positions).
+  The underhang bearing (between the motor and the rotor) is test_bearing_de, the
+  overhang bearing (at the shaft end) test_bearing_nde.
   Large: 12.9 GB download (6 zips, read without unpacking 33 GB of CSV).
 license: unspecified (cite the database)
 size: "download 12.9 GB, built 13.0 GB (measured)"
@@ -29,7 +31,7 @@ columns:
   bpfo: >-
     official MAFAULDA page (in CPM/rpm, i.e. orders): 8 balls of 0.7145 cm, cage diameter
     2.8519 cm
-  rpm: nominal speed, from the file name (rotation frequency in Hz x 60)
+  speed_rpm: nominal speed, from the file name (rotation frequency in Hz x 60)
   imbalance_g: added unbalance mass in grams (0 if none)
   misalignment_mm: shaft misalignment in mm (0 if none)
   misalignment_direction: horizontal, vertical or none

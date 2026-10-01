@@ -27,7 +27,11 @@ columns:
   bpfo: >-
     SKF 6205-2Z-C3 from the data paper, Table 3 (9 balls of 7.94 mm, pitch 39.04 mm); its
     Table 7 gives the same BPFO, BPFI and plain BSF
-  severity: severity of each fault in condition order (light or high; none if not graded), + joined
-  varying: which quantity cycles during the recording, speed or load
-  rpm_setting: motor speed in rpm (constant when the load varies, peak of the cycle when the speed varies)
-  torque_setting_nm: load torque in Nm (constant when the speed varies, peak of the cycle when the load varies)
+  fault_severity: >-
+    severity of each fault in fault_type order (light or high; none if not graded), + joined.
+    Level: 1 light, 2 high, 1 if not graded; the highest of the recording's faults
+  speed_profile: varying when the speed cycles, constant when the load cycles
+  speed_setpoint_rpm: >-
+    motor speed in rpm (constant when the load varies, peak of the cycle when the speed varies)
+  load: >-
+    load torque in Nm (constant when the speed varies, peak of the cycle when the load varies)

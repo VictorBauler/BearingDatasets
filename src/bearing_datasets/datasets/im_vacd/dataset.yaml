@@ -22,6 +22,6 @@ sources:
   - {type: mendeley, id: yc8yhg5xjd, version: 2}
 columns:
   phone: iphone_13, galaxy_s6 or galaxy_a50
-  mounting: hand_held or rigid
+  phone_mounting: hand_held or rigid
   acoustic_fs_set: microphone rate requested from the phone, Hz
   accelerometer_fs_set: accelerometer rate requested from the phone, Hz

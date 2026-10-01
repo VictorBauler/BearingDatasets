@@ -52,27 +52,31 @@ Follow `CONTRIBUTING.md`. Things that matter in practice:
 1. **Read the record and the paper first.** Before writing the builder, stage the raw files
    and inspect them. When the files disagree with the documentation (sampling rate, counts,
    durations, labels), trust the files and say so in `description`.
-2. `builder.py` defines `CHANNELS` (per-channel `sensor_location`, `quantity`, `axis`,
-   `unit`, `fs`) and `recordings(raw_dir)`, a generator of dicts with `recording_id`,
-   `native_label`, `condition`, `fault_location`, optional columns, optional per-recording
-   `fs`, and `signals`. Any value can be a `{channel: value}` dict covering every channel
+2. `builder.py` defines `CHANNELS` (per-channel `sensor_location`, `sensor_mounting`,
+   `quantity`, `axis`, `unit`, `fs`) and `recordings(raw_dir)`, a generator of dicts with
+   `recording_id`, `native_label`, `fault_type`, `fault_location`, optional columns,
+   optional per-recording `fs`, and `signals`. Any value can be a `{channel: value}` dict covering every channel
    (per-channel `fs`, or `bpfo` of the bearing each sensor is on). Its module docstring
    describes the raw file layout. Match the style of existing builders.
 3. Schema rules (enforced by `validate()`):
-   - `condition` uses only `CONDITIONS` words, joined with `+` in vocabulary order
-     (`inner+ball`); `fault_location` is `none` when healthy.
+   - Categorical columns use the `VOCABULARIES` of `schema.py`: `fault_type` (`FAULT_TYPES`,
+     `+`-joined, e.g. `inner+rolling_element`), `sensor_location` / `fault_location`
+     (`LOCATIONS`, `<unit>_<item>[_<position>]`; `fault_location` is `none` when healthy),
+     `sensor_mounting`, `quantity`, `axis`, `speed_profile`, `fault_origin`.
+     `sensor_at_fault` is computed by `build()`.
    - No nulls: use `none` (does not apply) or `unknown` (not documented). A column must
      apply to every row; otherwise leave it out.
    - Every non-standard column is described under `columns:` in `dataset.yaml`. Prefer the
-     standard `OPTIONAL` names (`rpm`, `load`/`load_unit`, `severity`, `fault_size_mm`,
+     standard `OPTIONAL` names (`speed_rpm`, `load`/`load_unit`, `operating_condition`,
+     `fault_severity`/`fault_severity_level`, `bearing_model`, `repetition`, `fault_size_mm`,
      `speed_profile`, `run_id`/`time_s`/`rul_s`, ...) over new ones.
    - Keep signals in their original dtype and values (no resampling or normalisation).
 4. Verify a build: recording count, `n_samples`/`fs` per channel, label balance, a few
    signal values, against the record and paper. Update `size:` with the measured sizes.
 5. Update `README.md`, which tests check: the dataset row in the right group, the group count,
-   the headline "**N public**", the "**N datasets**" line, and the dataset-specific
-   columns table. Also update the standard-columns table (not tested) and, if useful, a
-   note in `docs/guide.md` §6.
+   the headline "**N public**", the "**N datasets**" line, and the "Columns that only some
+   datasets have" table (dataset-specific columns are checked exactly; add the dataset to
+   the standard columns it has too). If useful, add a note in `docs/guide.md` §6.
 6. A half-finished dataset folder makes the README tests fail. Move it out of
    `src/bearing_datasets/datasets/` before running the full suite and committing.
 7. One commit per dataset; commit `dataset.yaml`, `builder.py`, `files.lock.json` and side

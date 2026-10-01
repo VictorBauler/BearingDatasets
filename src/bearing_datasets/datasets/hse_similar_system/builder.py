@@ -8,13 +8,14 @@ import pandas as pd
 
 CHANNELS = {
     "acceleration": {
-        "sensor_location": "test_bearing_socket",
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",  # on the bearing socket, opposite the load zone
         "quantity": "acceleration",
         "unit": "V",
         "fs": 15625,
     },
 }
-CONDITION = {"OK": "normal", "IR": "inner", "OR": "outer", "RE": "ball"}
+FAULT_TYPE = {"OK": "normal", "IR": "inner", "OR": "outer", "RE": "rolling_element"}
 BEARING = {  # Bearing+Rig -> (bearing model, cage, rig)
     "NU204_E_plastic_a": ("NU204-E", "plastic", "a"),
     "NU204_E_plastic_b": ("NU204-E", "plastic", "b"),
@@ -38,17 +39,17 @@ def recordings(raw_dir):
         yield {
             "recording_id": f"{int(number):03d}",
             "native_label": fault,
-            "condition": CONDITION[fault],
+            "fault_type": FAULT_TYPE[fault],
             "fault_location": "none" if fault == "OK" else "test_bearing",
             "fault_origin": "none" if fault == "OK" else "artificial",
-            "rpm": float(first["Spead_Real"]) * 60,
+            "speed_rpm": float(first["Spead_Real"]) * 60,
             "load": float(first["Force"]),
             "load_unit": "level",
             "bearing_id": f"{model}_{cage}_{fault}",
             "bearing_model": model,
             "cage": cage,
             "rig": rig,
-            "speed_set_rpm": float(first["Speed_Set"]),
+            "speed_setpoint_rpm": float(first["Speed_Set"]),
             "original_recording": _original(int(number)),
             "signals": {"acceleration": rec["Acceleration"].to_numpy()},
         }

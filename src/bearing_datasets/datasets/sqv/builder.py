@@ -8,20 +8,22 @@ import pandas as pd
 
 CHANNELS = {
     "vibration": {
-        "sensor_location": "motor_de",
+        "sensor_location": "motor_bearing_de",
+        "sensor_mounting": "casing",  # on the drive-end cover
         "quantity": "acceleration",
         "unit": "g",
         "fs": 25600,
     },
     "speed_pulse": {
-        "sensor_location": "shaft",
+        "sensor_location": "rig_shaft",
+        "sensor_mounting": "shaft",
         "quantity": "tachometer",
         "unit": "V",
         "fs": 25600,
     },
 }
 FOLDER = re.compile(r"^(?P<state>NC|IF|OF)(?:_(?P<level>[123]))?$")
-CONDITION = {"NC": "normal", "IF": "inner", "OF": "outer"}
+FAULT_TYPE = {"NC": "normal", "IF": "inner", "OF": "outer"}
 SEVERITY = {"1": "mild", "2": "moderate", "3": "severe", None: "none"}
 
 
@@ -38,10 +40,12 @@ def recordings(raw_dir):
         yield {
             "recording_id": rec,
             "native_label": vib.parent.name,
-            "condition": CONDITION[m["state"]],
-            "fault_location": "none" if m["state"] == "NC" else "motor_de_bearing",
+            "fault_type": FAULT_TYPE[m["state"]],
+            "fault_location": "none" if m["state"] == "NC" else "motor_bearing_de",
             "fault_origin": "none" if m["state"] == "NC" else "artificial",
-            "severity": SEVERITY[m["level"]],
+            "fault_severity": SEVERITY[m["level"]],
+            "fault_severity_level": int(m["level"] or 0),
+            "bearing_model": "6203",
             "speed_profile": "inc_dec",
             "signals": {
                 "vibration": _read(vib).to_numpy(),

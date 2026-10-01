@@ -9,7 +9,8 @@ import pandas as pd
 CHANNELS = {
     **{
         axis: {
-            "sensor_location": "test_bearing_housing",
+            "sensor_location": "test_bearing",
+            "sensor_mounting": "pedestal",
             "quantity": "acceleration",
             "axis": axis,
             "unit": "g",
@@ -19,15 +20,16 @@ CHANNELS = {
     },
     "exi": {
         "sensor_location": "unknown",
+        "sensor_mounting": "unknown",
         "quantity": "force",
         "axis": "none",
         "unit": "N",
         "fs": 12800,
     },
 }
-STATE = {  # code -> (condition, fault description from the record)
+STATE = {  # code -> (fault_type, fault description from the record)
     "H": ("normal", "healthy"),
-    "F1": ("ball", "single roller taper fault"),
+    "F1": ("rolling_element", "single roller taper fault"),
     "F2": ("inner", "inner wedge"),
     "F3": ("bearing", "wear damage on circumference"),
     "F4": ("cage", "inner cage fault"),
@@ -40,7 +42,7 @@ NAME = re.compile(
 def recordings(raw_dir):
     for path in sorted(raw_dir.glob("*.xlsx")):
         m = NAME.match(path.stem)
-        condition, fault = STATE[m["state"]]
+        fault_type, detail = STATE[m["state"]]
         sheet = pd.read_excel(path, sheet_name="Data1", header=None)
         names = [str(n).strip() for n in sheet.iloc[0]]
         data = sheet.iloc[2:]
@@ -52,11 +54,11 @@ def recordings(raw_dir):
         yield {
             "recording_id": f"{m['state']}_trial{m['trial']}_{m['rpm']}rpm",
             "native_label": m["state"],
-            "condition": condition,
-            "fault_location": "none" if condition == "normal" else "test_bearing",
-            "fault_origin": "none" if condition == "normal" else "artificial",
-            "fault": fault,
-            "rpm": float(m["rpm"]),
-            "trial": int(m["trial"]),
+            "fault_type": fault_type,
+            "fault_location": "none" if fault_type == "normal" else "test_bearing",
+            "fault_origin": "none" if fault_type == "normal" else "artificial",
+            "fault_detail": detail,
+            "speed_rpm": float(m["rpm"]),
+            "repetition": int(m["trial"]),
             "signals": signals,
         }

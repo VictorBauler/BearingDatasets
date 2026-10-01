@@ -29,7 +29,7 @@ sources:
     version: 1
     include: data.csv
 columns:
-  rpm: shaft speed measured from the rotation sensor (the file's Spead_Real, in Hz x 60)
+  speed_rpm: shaft speed measured from the rotation sensor (the file's Spead_Real, in Hz x 60)
   load: load level, 1 or 2 (set by compressing a rubber bumper; not given in N)
   bearing_id: >-
     bearing model + cage + fault; assumes one physical bearing per model, cage and fault,
@@ -38,5 +38,5 @@ columns:
   bearing_model: NU204-E (cylindrical roller) or STO20 (needle)
   cage: plastic or metal
   rig: test rig a or b
-  speed_set_rpm: speed set on the potentiometer, 500 or 1000 rpm
+  speed_setpoint_rpm: speed set on the potentiometer, 500 or 1000 rpm
   original_recording: number of the recording in the original 300-recording set (Data_No there), 0 if new in the extension

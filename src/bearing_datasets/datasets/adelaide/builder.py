@@ -10,9 +10,10 @@ import re
 from bearing_datasets.io import read_mat
 
 
-def _ch(location, quantity, axis="none"):
+def _ch(location, mounting, quantity, axis="none"):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": "unknown",
@@ -21,14 +22,14 @@ def _ch(location, quantity, axis="none"):
 
 
 CHANNELS = {
-    "Ex": _ch("test_bearing_outer_ring", "displacement", "x"),
-    "Ey": _ch("test_bearing_outer_ring", "displacement", "y"),
-    "Ax": _ch("test_bearing_housing", "acceleration", "x"),
-    "Ay": _ch("test_bearing_housing", "acceleration", "y"),
-    "Wenglor": _ch("unknown", "unknown"),
-    "Load": _ch("test_bearing", "force"),
-    "SPL": _ch("test_bearing", "sound_pressure"),
-    "tacho": _ch("shaft", "tachometer"),
+    "Ex": _ch("test_bearing", "outer_ring", "displacement", "x"),  # eddy-current probes
+    "Ey": _ch("test_bearing", "outer_ring", "displacement", "y"),
+    "Ax": _ch("test_bearing", "pedestal", "acceleration", "x"),
+    "Ay": _ch("test_bearing", "pedestal", "acceleration", "y"),
+    "Wenglor": _ch("unknown", "unknown", "unknown"),
+    "Load": _ch("test_bearing", "unknown", "force"),
+    "SPL": _ch("ambient", "none", "sound_pressure"),
+    "tacho": _ch("rig_shaft", "shaft", "tachometer"),
 }
 NAME = re.compile(
     r"^(?P<specimen>(?:Ball)?Bearing(?P<slope>\d+)EDM(?P<n>\d*)or)_(?P<len>[\d.]+)degree_"
@@ -46,14 +47,14 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": m["specimen"],
-            "condition": "outer",
+            "fault_type": "outer",
             "fault_location": "test_bearing",
             "fault_origin": "artificial",
             "series": "length" if length_series else "slope",
             "defect_slope_deg": float(m["slope"]),
             "defect_length_deg": float(m["len"]) if length_series else 0.0,
             "defect_depth_um": float(m["depth"]),
-            "rpm": float(m["hz"]) * 60,
+            "speed_rpm": float(m["hz"]) * 60,
             "load": float(m["load"]),
             "load_unit": "N",
             "fs": float(mat["Fs"].item()),

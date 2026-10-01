@@ -7,17 +7,23 @@ import re
 from bearing_datasets.io import read_mat
 
 
-def _ch(location, quantity, axis="none"):
-    return {"sensor_location": location, "quantity": quantity, "axis": axis, "unit": "V"}
+def _ch(location, mounting, quantity, axis="none"):
+    return {
+        "sensor_location": location,
+        "sensor_mounting": mounting,
+        "quantity": quantity,
+        "axis": axis,
+        "unit": "V",
+    }
 
 
 CHANNELS = {
-    "accH": _ch("test_bearing", "acceleration", "horizontal"),
-    "accV": _ch("test_bearing", "acceleration", "vertical"),
-    "enc1": _ch("shaft", "encoder"),
-    "enc2": _ch("shaft", "encoder"),
-    "loadCell": _ch("test_bearing", "force"),
-    "tacho": _ch("shaft", "tachometer"),
+    "accH": _ch("test_bearing", "unknown", "acceleration", "horizontal"),
+    "accV": _ch("test_bearing", "unknown", "acceleration", "vertical"),
+    "enc1": _ch("rig_shaft", "shaft", "encoder"),
+    "enc2": _ch("rig_shaft", "shaft", "encoder"),
+    "loadCell": _ch("test_bearing", "unknown", "force"),
+    "tacho": _ch("rig_shaft", "shaft", "tachometer"),
 }
 NAME = re.compile(r"^vib_(?P<cycles>\d+)_(?P<hz>\d+)$")
 
@@ -35,9 +41,9 @@ def recordings(raw_dir):
             yield {
                 "recording_id": f"{test.name.replace(' ', '')}_{path.stem}",
                 "native_label": "unknown",
-                "condition": "unknown",
+                "fault_type": "unknown",
                 "fault_location": "unknown",
-                "rpm": hz * 60.0,
+                "speed_rpm": hz * 60.0,
                 "run_id": test.name,
                 "shaft_cycles": cycles,
                 "rul_cycles": end_of_life - cycles,

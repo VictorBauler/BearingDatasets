@@ -10,9 +10,12 @@ from bearing_datasets.bearings import fault_orders
 # PHM 2012 challenge document, App. A.1: 13 balls of 3.5 mm, pitch diameter 25.6 mm (angle
 # not stated: 0 deg)
 ORDERS = fault_orders(13, 3.5, 25.6)
+# accelerometers radially on the bearing's outer ring; the temperature probe in a hole close
+# to it (Nectoux et al. 2012)
 CHANNELS = {
     "horizontal": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "outer_ring",
         "quantity": "acceleration",
         "axis": "horizontal",
         "unit": "g",
@@ -20,6 +23,7 @@ CHANNELS = {
     },
     "vertical": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "outer_ring",
         "quantity": "acceleration",
         "axis": "vertical",
         "unit": "g",
@@ -27,6 +31,7 @@ CHANNELS = {
     },
     "temperature": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "outer_ring",
         "quantity": "temperature",
         "axis": "none",
         "unit": "degC",
@@ -65,15 +70,15 @@ def recordings(raw_dir):
                     yield {
                         "recording_id": f"{run.name}_{path.stem}",
                         "native_label": "unknown",
-                        "condition": "unknown",
+                        "fault_type": "unknown",
                         "fault_location": "unknown",
-                        "rpm": rpm,
+                        "speed_rpm": rpm,
                         "load": load,
                         "load_unit": "N",
                         "run_id": run.name,
                         "time_s": time_s,
                         "rul_s": end_of_life - time_s,
-                        "operating_condition": int(run.name[7]),
+                        "operating_condition": run.name[7],
                         "official_set": official
                         if official == "learning"
                         else ("test" if i < n_official else "hidden"),

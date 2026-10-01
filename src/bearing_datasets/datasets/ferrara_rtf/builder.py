@@ -11,6 +11,7 @@ ORDERS = fault_orders(12, 7.12, 38.09, 10.2)
 CHANNELS = {
     "vibration": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": "radial",
         "unit": "g",
@@ -38,11 +39,12 @@ def recordings(raw_dir):
             yield {
                 "recording_id": path.stem,
                 "native_label": "unknown",
-                "condition": "unknown",
+                "fault_type": "unknown",
                 "fault_location": "unknown",
-                "rpm": 2400.0,
+                "speed_rpm": 2400.0,
                 "load": LOAD_KN[test],
                 "load_unit": "kN",
+                "bearing_model": "1205 ETN9",
                 "run_id": test,
                 "time_s": _time_s(test, i),
                 "rul_s": end_of_life - _time_s(test, i),

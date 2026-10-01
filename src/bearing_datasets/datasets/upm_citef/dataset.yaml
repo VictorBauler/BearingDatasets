@@ -31,7 +31,7 @@ columns:
   bpfo: >-
     official Schaeffler values of the FAG 22205E1KC3 test bearing from the companion paper
     (Sensors 2020, 20, 3493, Table 1); its BSF 5.4030 is 2 x BSF, halved
-  severity: fault level F0 (healthy) to F4 (deepest), as in the file name
+  fault_severity: fault level F1 to F4 (deepest), as in the file name (F0, healthy, is none); levels 1-4
   depth_or_mm: depth of the outer race defect (0 if none)
   depth_ir_mm: depth of the inner race defect (0 if none)
   depth_re_mm: depth of the rolling element defects (0 if none)

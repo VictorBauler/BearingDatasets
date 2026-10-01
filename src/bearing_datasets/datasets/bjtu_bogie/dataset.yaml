@@ -20,7 +20,10 @@ description: |
   FTF 0.425.
   The download is a split zip (30 GB) holding 125 GB of CSV; it is read directly
   from the zip parts, nothing is unpacked. The accelerometer axes are not
-  documented (axis 1/2/3 = the order of the channels).
+  documented (axis x/y/z = the order of the channels). Motor sensors are on the motor
+  casing at the drive and fan ends, gearbox sensors at its input and output axle
+  bearings, axle box sensors on the end covers. bearing_model is the bearing of each
+  sensor's position (none for currents, speed and microphones).
 license: unspecified (see the dataset's ReadMe; contact the authors for other uses)
 size: "download 30.4 GB, built 22.8 GB (measured)"
 homepage: https://drive.google.com/drive/folders/1RlZvFw-v07VvsL2Ni9cS7iFrTPDIhn2r
@@ -39,11 +42,9 @@ sources:
       BJTU_RAO_Bogie_Datasets.zip: https://drive.usercontent.google.com/download?id=1uq0U3N3Oq4BPGhUZRw5XWdEVX1YWqijG&export=download&confirm=t
 files: [BJTU_RAO_Bogie_Datasets.z01, BJTU_RAO_Bogie_Datasets.z02, BJTU_RAO_Bogie_Datasets.zip]
 columns:
-  sensor_position: >-
-    where on the component the sensor is: drive_end, fan_end, cable (currents),
-    shaft (speed), input_axle, output_axle, end_cover, near (microphones)
   fault_detail: the faults of the recording in words, from the health codes; 'none' if healthy
-  motor_speed_hz: motor speed of the working condition, in Hz (20, 40 or 60)
-  rpm: motor speed in rpm (motor_speed_hz x 60)
+  speed_rpm: motor speed in rpm (the working condition's 20, 40 or 60 Hz x 60)
   load: lateral load in kN (0, +10 toward the motor, -10 toward the gearbox)
-  working_condition: working condition 1-9 (Sample_1 ... Sample_9 folders)
+  operating_condition: >-
+    working condition <motor speed>Hz_<lateral load>kN (the Sample_1 ... Sample_9
+    folders)

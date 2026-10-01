@@ -6,7 +6,7 @@ description: |
   4 kN, E4 3 kN, E5 4.7 kN, E6 5 kN), until the acceleration peak reached 20 g. One
   radial accelerometer on the test bearing housing (g); a 5 s snapshot at 25.6 kHz every
   5 minutes (the first 453 snapshots of E4 hourly). At the end every bearing had an
-  extended outer raceway defect (the condition of each snapshot is unknown). Files carry
+  extended outer raceway defect (the fault of each snapshot is unknown). Files carry
   no time stamps: time_s is computed from the documented intervals (use run_id, time_s
   and rul_s; end of life = last snapshot). For E4 this gives 19.6 days, the paper
   reports 20.9.

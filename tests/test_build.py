@@ -14,6 +14,8 @@ import bearing_datasets as bd
 from bearing_datasets.build import build, list_datasets, load_spec
 from bearing_datasets.schema import REQUIRED, validate
 
+PRIVATE_EXAMPLE = Path(__file__).parents[1] / "examples" / "private_datasets" / "my_cwru"
+
 
 def test_layout_and_lock(toy_build, toy_dir):
     assert (toy_build / "metadata.parquet").exists()
@@ -35,8 +37,8 @@ def test_metadata_is_one_plain_table(toy_build):
     meta = pd.read_parquet(toy_build / "metadata.parquet")  # no package needed
     assert list(meta.columns[: len(REQUIRED)]) == list(REQUIRED)
     row = meta.set_index("signal_id").loc["compound_0/axle"]
-    assert row.condition == "electrical+outer" and row.fault_location == "motor+axlebox"
-    assert row.sensor_location == "axlebox" and row.fs == 2000 and row.n_samples == 1000
+    assert row.fault_type == "outer+electrical" and row.fault_location == "axle_bearing+motor"
+    assert row.sensor_location == "axle_bearing" and row.fs == 2000 and row.n_samples == 1000
     assert meta[meta.sensor_location == "gearbox"].axis.tolist()[:3] == ["x", "y", "z"]
 
 
@@ -121,11 +123,11 @@ def test_subset_build(toy_build, toy_dir, root):
         toy_dir,
         root,
         channels=["axle", "gb_x"],
-        where={"condition": ["normal", "gear"]},
+        where={"fault_type": ["normal", "gear"]},
         as_name="toy_small",
     )
     meta = bd.open("toy_small", root).metadata()
-    assert set(meta.channel) == {"axle", "gb_x"} and set(meta.condition) == {"normal", "gear"}
+    assert set(meta.channel) == {"axle", "gb_x"} and set(meta.fault_type) == {"normal", "gear"}
     assert (root / "toyrig" / "manifest.json").exists()  # the full build is untouched
     # rebuilding the subset by its name reproduces the same selection
     build("toy_small", root, force=True)
@@ -165,18 +167,114 @@ def test_cli_unknown_dataset_is_a_short_message(root):
         assert "unknown dataset 'cwrru'. Did you mean 'cwru'?" in run.stderr
 
 
+def _row(**values):
+    return {c: "x" for c in REQUIRED} | {
+        "fault_type": "normal",
+        "fault_location": "none",
+        "sensor_location": "test_bearing",
+        "sensor_at_fault": False,
+        **values,
+    }
+
+
 def test_validate_reports_problems():
-    with pytest.raises(ValueError, match="unknown condition"):
-        validate(pd.DataFrame([{c: "x" for c in REQUIRED} | {"condition": "inne"}]))
+    with pytest.raises(ValueError, match="unknown fault_type"):
+        validate(pd.DataFrame([_row(fault_type="inner+ball")]))
     with pytest.raises(ValueError, match="null values"):
-        validate(pd.DataFrame([{c: "x" for c in REQUIRED} | {"condition": "normal", "rpm": None}]))
+        validate(pd.DataFrame([_row(speed_rpm=None)]))
+    for column, value in [
+        ("sensor_location", "test_bearing_housing"),
+        ("fault_location", "test_bearing+bearing_de"),
+        ("sensor_mounting", "magnet"),
+        ("quantity", "acceleraton"),
+        ("axis", "1"),
+        ("speed_profile", "ramp"),
+        ("fault_origin", "seeded"),
+    ]:
+        with pytest.raises(ValueError, match=f"unknown {column} value"):
+            validate(pd.DataFrame([_row(**{column: value})]))
+    with pytest.raises(ValueError, match="sensor_at_fault must be"):
+        validate(pd.DataFrame([_row(sensor_at_fault="no")]))
+    faulty = _row(signal_id="y", fault_type="inner", fault_location="test_bearing")
+    with pytest.raises(ValueError, match="0 exactly for fault_type 'normal'"):
+        validate(pd.DataFrame([_row(fault_severity_level=1), faulty | {"fault_severity_level": 0}]))
+    with pytest.raises(ValueError, match="integer >= 0"):
+        validate(pd.DataFrame([_row(fault_severity_level=0.5)]))
+    validate(pd.DataFrame([_row(fault_severity_level=0), faulty | {"fault_severity_level": 2}]))
+
+
+def test_sensor_at_fault(toy_build):
+    meta = bd.Dataset(toy_build).metadata().set_index("signal_id")
+    assert meta.sensor_at_fault.dtype == bool
+    at = set(meta.index[meta.sensor_at_fault])
+    # motor_supply is in the faulty motor; at_fault also matches nested locations
+    assert at == {"gear_0/gb_x", "gear_0/gb_y", "gear_0/gb_z", "compound_0/axle",
+                  "compound_0/current"}  # fmt: skip
+    from bearing_datasets.schema import at_fault
+
+    sensors = pd.Series(["test_bearing_de", "test_bearing_nde", "gearbox_bearing_input", "base"])
+    faults = pd.Series(["test_bearing_de", "test_bearing_de", "gearbox", "test_bearing"])
+    assert at_fault(sensors, faults).tolist() == [True, False, True, False]
+
+
+def test_old_builds_read_with_new_names(toy_build, toy_dir, root):
+    """A build made before 0.2.0 (schema version 1) opens with today's names and values."""
+    build(toy_dir, root, as_name="toy_new", where={"fault_type": ["gear"]})
+    manifest_file, meta_file = toy_build / "manifest.json", toy_build / "metadata.parquet"
+    manifest = json.loads(manifest_file.read_text())
+    del manifest["schema_version"]
+    manifest["columns"] = {
+        {"fault_type": "condition", "speed_rpm": "rpm"}.get(k, k): v
+        for k, v in manifest["columns"].items()
+        if k != "sensor_at_fault"
+    }
+    manifest_file.write_text(json.dumps(manifest))
+    meta = pd.read_parquet(meta_file).drop(columns="sensor_at_fault")
+    meta = meta.rename(columns={"fault_type": "condition", "speed_rpm": "rpm"})
+    meta.loc[meta.native_label == "compound", "condition"] = "ball+electrical"
+    meta.to_parquet(meta_file)
+    with pytest.warns(UserWarning, match="renamed on read"):
+        ds = bd.Dataset(toy_build)
+    for m in [ds.metadata(), ds.metadata("polars").to_pandas()]:
+        assert "condition" not in m.columns and "rpm" not in m.columns
+        assert set(m.fault_type) == {"normal", "gear", "rolling_element+electrical"}
+        assert (m.speed_rpm == 1200.0).all()
+    assert {"fault_type", "speed_rpm"} <= set(ds.columns().column)
+    # old and new builds together: the shared columns keep today's names
+    with pytest.warns(UserWarning, match="renamed on read"):
+        both = bd.load_metadata(["toyrig", "toy_new"], root)
+    assert {"fault_type", "speed_rpm"} <= set(both.columns)
+    assert "sensor_at_fault" not in both.columns  # only in builds made with 0.2
+
+
+def test_where_accepts_old_column_names(toy_dir, root):
+    with pytest.warns(DeprecationWarning, match="now 'fault_type'"):
+        build(toy_dir, root, where={"condition": ["normal", "gear"]}, as_name="old_where")
+    assert set(bd.open("old_where", root).metadata().fault_type) == {"normal", "gear"}
+
+
+@pytest.mark.parametrize("name", [*list_datasets(), PRIVATE_EXAMPLE])
+def test_channel_values_use_the_vocabularies(name):
+    """The per-channel defaults of every builder use the standard vocabularies."""
+    import importlib.util
+
+    from bearing_datasets.schema import VOCABULARIES
+
+    path = load_spec(name)["dir"] / "builder.py"
+    spec = importlib.util.spec_from_file_location(f"_builder_{path.parent.name}", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    for channel, values in module.CHANNELS.items():
+        for column, value in values.items():
+            allowed = VOCABULARIES.get(column)
+            assert allowed is None or value in allowed, (channel, column, value)
 
 
 def test_every_column_is_described(toy_build):
     cols = bd.Dataset(toy_build).columns()
     assert set(cols.column) == set(pd.read_parquet(toy_build / "metadata.parquet").columns)
     assert cols.description.str.len().gt(0).all()
-    row = {c: "x" for c in REQUIRED} | {"condition": "normal", "mystery": 1}
+    row = _row(mystery=1)
     with pytest.raises(ValueError, match="without a description"):
         validate(pd.DataFrame([row]))
     validate(pd.DataFrame([row]), notes={"mystery": "a documented extra column"})
@@ -184,9 +282,6 @@ def test_every_column_is_described(toy_build):
 
 def test_no_nulls_in_metadata(toy_build):
     assert not pd.read_parquet(toy_build / "metadata.parquet").isna().any().any()
-
-
-PRIVATE_EXAMPLE = Path(__file__).parents[1] / "examples" / "private_datasets" / "my_cwru"
 
 
 @pytest.mark.parametrize("name", [*list_datasets(), PRIVATE_EXAMPLE])
@@ -225,22 +320,33 @@ def test_diversity_lists_every_dataset_once():
         assert int(count) == len(re.findall(r"^\| `", body, flags=re.M))
 
 
-def test_readme_lists_dataset_specific_columns():
-    """The README table of dataset-specific columns matches the columns in dataset.yaml."""
+def test_readme_lists_the_columns():
+    """The README tables list every column: the required ones, then every other column with the
+    datasets that have it (exactly, for the dataset-specific columns of dataset.yaml)."""
     import re
 
     from bearing_datasets.schema import OPTIONAL
 
-    text = (Path(__file__).parent.parent / "README.md").read_text()
-    section = text[text.index("Dataset-specific columns") : text.index("`ds.columns()` (or")]
+    text = (Path(__file__).parent.parent / "README.md").read_text(encoding="utf-8")
+    every = text[text.index("in **every** dataset") : text.index("Columns that only some")]
+    some = text[text.index("Columns that only some") : text.index("`ds.columns()` (or")]
+    listed = {
+        c for row in re.findall(r"^\| (.*?) \|", every, re.M) for c in re.findall(r"`(\w+)`", row)
+    }
+    assert listed == set(REQUIRED)
     table = {}
-    for name, cells in re.findall(r"^\| ([a-z0-9_]+)(?: \(private example\))? \| (.*) \|$",
-                                  section, flags=re.M):  # fmt: skip
-        table[name] = {c for cell in re.findall(r"`([^`]+)`", cells) for c in cell.split("/")}
+    for cols, datasets in re.findall(r"^\| ((?:`\w+`(?:, )?)+) \| .* \| (.*) \|$", some, re.M):
+        for c in re.findall(r"`(\w+)`", cols):
+            table[c] = datasets
+    assert set(OPTIONAL) <= set(table)
+    own = {}
     for name in [*list_datasets(), PRIVATE_EXAMPLE]:
         spec = load_spec(name)
-        own = set(spec.get("columns") or {}) - set(REQUIRED) - set(OPTIONAL)
-        assert table.get(spec["name"], set()) == own, spec["name"]
+        for c in set(spec.get("columns") or {}) - set(REQUIRED) - set(OPTIONAL):
+            own.setdefault(c, set()).add(spec["name"])
+    for c, names in own.items():
+        assert set(re.findall(r"[a-z0-9_]+", table.get(c, ""))) == names, c
+    assert set(table) == set(OPTIONAL) | set(own)
 
 
 def test_no_platform_default_encoding(toy_dir, root, tmp_path):

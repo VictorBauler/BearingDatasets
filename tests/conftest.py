@@ -20,20 +20,22 @@ CHANNELS = {
     "gb_x": {"sensor_location": "gearbox", "quantity": "acceleration", "axis": "x", "fs": 1000},
     "gb_y": {"sensor_location": "gearbox", "quantity": "acceleration", "axis": "y", "fs": 1000},
     "gb_z": {"sensor_location": "gearbox", "quantity": "acceleration", "axis": "z", "fs": 1000},
-    "axle": {"sensor_location": "axlebox", "quantity": "acceleration", "axis": "none", "fs": 2000},
-    "current": {"sensor_location": "motor", "quantity": "current", "axis": "none", "fs": 1000},
+    "axle": {"sensor_location": "axle_bearing", "quantity": "acceleration", "axis": "none",
+             "fs": 2000},
+    "current": {"sensor_location": "motor_supply", "quantity": "current", "axis": "none",
+                "fs": 1000},
 }
 LABELS = {"healthy": ("normal", "none"), "gear": ("gear", "gearbox"),
-          "compound": ("electrical+outer", "motor+axlebox")}
+          "compound": ("outer+electrical", "axle_bearing+motor")}
 
 
 def recordings(raw_dir):
     for path in sorted(raw_dir.glob("*.npz")):
         label = path.stem.rsplit("_", 1)[0]
         data = np.load(path)
-        condition, location = LABELS[label]
-        yield {"recording_id": path.stem, "native_label": label, "condition": condition,
-               "fault_location": location, "rpm": 1200.0, "run_id": "run1",
+        fault_type, location = LABELS[label]
+        yield {"recording_id": path.stem, "native_label": label, "fault_type": fault_type,
+               "fault_location": location, "speed_rpm": 1200.0, "run_id": "run1",
                "bpfo": {ch: 4.0 if ch == "axle" else 3.0 for ch in data.files},  # per channel
                "signals": {ch: data[ch] for ch in data.files}}
 """

@@ -1,5 +1,5 @@
 """CWRU: one .mat per recording with ``X<nnn>_{DE,FE,BA}_time`` arrays and ``X<nnn>RPM``.
-The condition of each file is in files.csv, one row per file of the four index pages of
+The fault of each file is in files.csv, one row per file of the four index pages of
 https://engineering.case.edu/bearingdatacenter."""
 
 import csv
@@ -8,12 +8,18 @@ from pathlib import Path
 
 from bearing_datasets.io import read_mat
 
+# on the motor casing at the drive end and fan (non-drive) end, and on the base plate
 CHANNELS = {
-    "DE": {"sensor_location": "bearing_de", "quantity": "acceleration"},
-    "FE": {"sensor_location": "bearing_fe", "quantity": "acceleration"},
-    "BA": {"sensor_location": "base", "quantity": "acceleration"},
-}
-CONDITION = {"inner_race": "inner", "outer_race": "outer", "rolling_element": "ball"}
+    "DE": {"sensor_location": "motor_bearing_de", "sensor_mounting": "casing",
+           "quantity": "acceleration"},
+    "FE": {"sensor_location": "motor_bearing_nde", "sensor_mounting": "casing",
+           "quantity": "acceleration"},
+    "BA": {"sensor_location": "base", "sensor_mounting": "base", "quantity": "acceleration"},
+}  # fmt: skip
+FAULT_TYPE = {"inner_race": "inner", "outer_race": "outer", "rolling_element": "rolling_element"}
+LOCATION = {"DE": "motor_bearing_de", "FE": "motor_bearing_nde"}
+MODEL = {"DE": "6205-2RS", "FE": "6203-2RS"}
+LEVEL = {"0.007": 1, "0.014": 2, "0.021": 3, "0.028": 4}  # fault diameter, inch
 # official CWRU table (orders of shaft speed); its "rolling element" column is 2 x BSF, halved
 ORDERS = {
     "DE": {"bpfi": 5.4152, "bpfo": 3.5848, "ftf": 0.39828, "bsf": 4.7135 / 2},  # 6205-2RS
@@ -44,15 +50,18 @@ def recordings(raw_dir):
         # the bearing of each sensor; the base plate gets the tested (faulty) bearing
         bearing = {"DE": "DE", "FE": "FE", "BA": end or "DE"}
         orders = {k: {ch: ORDERS[bearing[ch]][k] for ch in signals} for k in ORDERS["DE"]}
+        size = row["fault_size_in"]
         yield {
             "recording_id": f"{int(fs) // 1000}k_{end + '_' if end else ''}{row['native_label']}",
             "native_label": row["native_label"],
-            "condition": CONDITION.get(row["sub_element"], "normal"),
-            "fault_location": f"bearing_{end.lower()}" if end else "none",
+            "fault_type": FAULT_TYPE.get(row["sub_element"], "normal"),
+            "fault_location": LOCATION[end] if end else "none",
             "fault_origin": "artificial" if end else "none",
-            "fault_size_mm": round(float(row["fault_size_in"]) * 25.4, 4) if end else 0.0,
+            "fault_size_mm": round(float(size) * 25.4, 4) if end else 0.0,
+            "fault_severity": f"{size} in" if end else "none",
+            "fault_severity_level": LEVEL[size] if end else 0,
             "or_position": row["or_position"] or "none",  # outer race fault position
-            "rpm": float(mat[rpm_key].squeeze()) if rpm_key in mat else float(row["rpm"]),
+            "speed_rpm": float(mat[rpm_key].squeeze()) if rpm_key in mat else float(row["rpm"]),
             "load": float(row["load_hp"]),
             "load_unit": "hp",
             # outer race positions (@3, @6, @12) may be one bearing reinstalled: same id
@@ -60,6 +69,7 @@ def recordings(raw_dir):
             if end
             else "healthy",
             "source_file": row["file"],
+            "bearing_model": {ch: MODEL[bearing[ch]] for ch in signals},
             **orders,
             "fs": fs,
             "signals": signals,

@@ -5,6 +5,7 @@ from __future__ import annotations
 import difflib
 import json
 import os
+import warnings
 from collections.abc import Iterable, Iterator, Sequence
 from functools import lru_cache
 from pathlib import Path
@@ -12,6 +13,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
+
+from .schema import RENAMED, SCHEMA_VERSION, upgrade
 
 ENV_ROOT = "BEARING_DATASETS_ROOT"
 
@@ -74,6 +77,17 @@ class Dataset:
         self.path = Path(path)
         self.manifest = json.loads((self.path / "manifest.json").read_text(encoding="utf-8"))
         self.name = self.manifest["dataset"]
+        # built before 0.2.0: read with today's column names (see schema.upgrade)
+        self.outdated = self.manifest.get("schema_version", 1) < SCHEMA_VERSION
+        if self.outdated:
+            warnings.warn(
+                f"{self.name} was built with bearing-datasets "
+                f"{self.manifest.get('package_version', '<0.2')}: its columns are renamed on "
+                "read (condition -> fault_type, ...); rebuild it (`bearing-datasets build "
+                f"{self.name} --force`) for the standard locations, sensor_at_fault, "
+                "sensor_mounting and severity levels",
+                stacklevel=2,
+            )
         self._meta: pd.DataFrame | None = None
         self._loc: pd.DataFrame | None = None
 
@@ -86,14 +100,21 @@ class Dataset:
         if backend == "polars":
             import polars as pl
 
+            if self.outdated:
+                return pl.from_pandas(self.metadata())
             return pl.read_parquet(self.path / "metadata.parquet")
         if self._meta is None:
             self._meta = pd.read_parquet(self.path / "metadata.parquet")
+            if self.outdated:
+                self._meta = upgrade(self._meta)
         return self._meta.copy()
 
     def columns(self) -> pd.DataFrame:
         """Description of every metadata column of this dataset."""
         cols = self.manifest.get("columns", {})
+        if self.outdated:
+            new = {k: v for k, v in RENAMED.items() if v not in cols}
+            cols = {new.get(k, k): v for k, v in cols.items()}
         return pd.DataFrame({"column": list(cols), "description": list(cols.values())})
 
     def cite(self) -> str:
@@ -148,7 +169,7 @@ class Dataset:
         """``meta`` (default: all the metadata) with a ``signal`` column of numpy arrays.
 
         Loads the signals in memory: on large datasets, select rows first, e.g.
-        ``ds.with_signals(meta[meta.condition == "inner"])``. ``start``/``stop`` cut every signal.
+        ``ds.with_signals(meta[meta.fault_type == "inner"])``. ``start``/``stop`` cut every signal.
         """
         meta = self.metadata() if meta is None else meta.copy()
         if "signal_id" not in meta.columns:

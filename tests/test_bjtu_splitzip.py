@@ -44,6 +44,6 @@ def test_split_zip_reader(tmp_path, zip64):
 def test_labels():
     label = _builder()._label
     assert label("M0_G0_LA0_RA0") == ("normal", "none", "none")
-    condition, location, _ = label("M1_G1+G5_LA1_RA0")
-    assert condition == "electrical+gear+inner+inner"
-    assert location == "motor+gearbox+gearbox+axlebox_left"
+    fault_type, location, _ = label("M1_G1+G5_LA1_RA0")
+    assert fault_type == "electrical+gear+inner+inner"
+    assert location == "motor_stator+gearbox+gearbox_bearing+axle_bearing_left"

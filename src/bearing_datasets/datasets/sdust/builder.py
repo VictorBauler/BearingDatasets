@@ -14,7 +14,10 @@ from bearing_datasets.io import read_mat
 ORDERS = fault_orders(9, 7.938, 39.04)
 CHANNELS = {
     f"{pos}_{axis.lower()}": {
-        "sensor_location": f"sensor_{pos}",
+        # one sensor is on the bearing housing, the other on the gearbox support, which one
+        # is not stated
+        "sensor_location": "unknown",
+        "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": axis.lower(),
         "unit": "unknown",
@@ -23,7 +26,7 @@ CHANNELS = {
     for pos in ("upper", "lower")
     for axis in "ZYX"
 }
-CONDITION = {"NC": "normal", "IF": "inner", "OF": "outer", "RF": "ball"}
+FAULT_TYPE = {"NC": "normal", "IF": "inner", "OF": "outer", "RF": "rolling_element"}
 NAME = re.compile(
     r"^(?P<state>NC|IF|OF|RF)(?P<size>[0-9.]*) (?P<speed>\d+(?:[~-]\d+)?) (?P<load>\d+)"
     r"(?: (?P<rep>\d))?$"
@@ -40,10 +43,13 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem.replace(" ", "_").replace("~", "-"),
             "native_label": m["state"] + m["size"],
-            "condition": CONDITION[m["state"]],
+            "fault_type": FAULT_TYPE[m["state"]],
             "fault_location": "none" if healthy else "test_bearing",
             "fault_origin": "none" if healthy else "artificial",
             "fault_size_mm": 0.0 if healthy else float(m["size"]),
+            "fault_severity": "none" if healthy else f"{m['size']} mm",
+            "fault_severity_level": 0 if healthy else ["0.2", "0.4", "0.6"].index(m["size"]) + 1,
+            "bearing_model": "6205",
             "operating_condition": f"{speed}rpm",
             "speed_profile": "varying" if "-" in speed else "constant",
             "load": float(m["load"]),

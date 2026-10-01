@@ -7,9 +7,10 @@ import re
 import pandas as pd
 
 
-def _ch(location, quantity, axis="none"):
+def _ch(location, mounting, quantity, axis="none"):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": "unknown",
@@ -18,18 +19,19 @@ def _ch(location, quantity, axis="none"):
 
 
 CHANNELS = {
-    "motor_vibration": _ch("motor", "acceleration"),
-    "planetary_x": _ch("planetary_gearbox", "acceleration", "x"),
-    "planetary_y": _ch("planetary_gearbox", "acceleration", "y"),
-    "planetary_z": _ch("planetary_gearbox", "acceleration", "z"),
-    "motor_torque": _ch("motor", "torque"),
-    "parallel_x": _ch("parallel_gearbox", "acceleration", "x"),
-    "parallel_y": _ch("parallel_gearbox", "acceleration", "y"),
-    "parallel_z": _ch("parallel_gearbox", "acceleration", "z"),
+    "motor_vibration": _ch("motor", "casing", "acceleration"),
+    # two gearboxes, planetary and parallel (the channel name tells which)
+    "planetary_x": _ch("gearbox", "casing", "acceleration", "x"),
+    "planetary_y": _ch("gearbox", "casing", "acceleration", "y"),
+    "planetary_z": _ch("gearbox", "casing", "acceleration", "z"),
+    "motor_torque": _ch("motor_shaft", "shaft", "torque"),
+    "parallel_x": _ch("gearbox", "casing", "acceleration", "x"),
+    "parallel_y": _ch("gearbox", "casing", "acceleration", "y"),
+    "parallel_z": _ch("gearbox", "casing", "acceleration", "z"),
 }
-LABELS = {  # file name condition -> (condition, words)
+LABELS = {  # file name state -> (fault_type, words)
     "health": ("normal", "none"),
-    "ball": ("ball", "bearing ball"),
+    "ball": ("rolling_element", "bearing ball"),
     "inner": ("inner", "bearing inner race"),
     "outer": ("outer", "bearing outer race"),
     "comb": ("inner+outer", "bearing inner race; bearing outer race"),
@@ -44,22 +46,23 @@ NAME = re.compile(r"^(?P<cond>[A-Za-z]+)_(?P<speed>\d+)_(?P<load>\d+)$")
 def recordings(raw_dir):
     for path in sorted(raw_dir.glob("*/*.csv")):
         m = NAME.match(path.stem)
-        condition, detail = LABELS[m["cond"].lower()]
+        fault_type, detail = LABELS[m["cond"].lower()]
         lines = path.read_bytes().split(b"\n", 16)
         sep = "\t" if b"\t" in lines[16][:200] else ","
         table = pd.read_csv(
             io.BytesIO(lines[16]), sep=sep, header=None, engine="pyarrow", dtype="float64"
         )
         table = table.iloc[:, : len(CHANNELS)]  # drop the empty column of the trailing delimiter
-        faults = len(condition.split("+"))
+        faults = len(fault_type.split("+"))
         yield {
             "recording_id": f"{path.parent.name}_{path.stem}",
             "native_label": path.stem,
-            "condition": condition,
-            "fault_location": "none" if condition == "normal" else "+".join(["gearbox"] * faults),
+            "fault_type": fault_type,
+            "fault_location": "none" if fault_type == "normal" else "+".join(["gearbox"] * faults),
             "fault_detail": detail,
             "subset": path.parent.name,
-            "speed_hz": float(m["speed"]),
+            "speed_setpoint_rpm": float(m["speed"]) * 60,
             "load_setting": float(m["load"]),
+            "operating_condition": f"{m['speed']}Hz_{m['load']}V",
             "signals": {ch: table[i].to_numpy() for i, ch in enumerate(CHANNELS)},
         }

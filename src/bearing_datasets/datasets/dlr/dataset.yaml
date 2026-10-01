@@ -22,4 +22,5 @@ columns:
     FAG QJ212TVP from Ismail et al. (2023), Table 1 (15 balls of 15.87 mm, pitch 85.15 mm);
     contact angle 35 deg, not stated but matching the published BPFO and BPFI
   fault_size_mm: spall width (0 if healthy)
+  fault_severity: spall width; levels 1-3 per race (inner 1.0, 2.1, 3.8 mm; outer 1.4, 2.4, 4.0 mm)
   load: axial load in kN (5 or 8.8)

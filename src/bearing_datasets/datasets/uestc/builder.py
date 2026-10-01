@@ -9,13 +9,14 @@ from bearing_datasets.io import read_mat
 CHANNELS = {
     "vibration": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "unknown",
         "unit": "unknown",
         "fs": 20000,
     },
 }
-STATE = {"N": "normal", "B": "ball", "I": "inner", "O": "outer"}
+STATE = {"N": "normal", "B": "rolling_element", "I": "inner", "O": "outer"}
 
 
 def recordings(raw_dir):
@@ -28,10 +29,11 @@ def recordings(raw_dir):
         yield {
             "recording_id": folder.name,
             "native_label": state,
-            "condition": STATE[state],
+            "fault_type": STATE[state],
             "fault_location": "none" if healthy else "test_bearing",
             "fault_origin": "none" if healthy else "artificial",
-            "rpm": float(rpm),
+            "speed_rpm": float(rpm),
             "n_files": len(parts),
+            "bearing_model": "UCPH 20",
             "signals": {"vibration": np.concatenate([m["Data"].ravel() for m in mats])},
         }

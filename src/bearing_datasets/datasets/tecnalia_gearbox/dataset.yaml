@@ -10,7 +10,8 @@ description: |
   variable speed, are not in the release), 16 channels at 20.48 kHz: tachometer, two
   encoders, torque, two motor currents, 8 accelerometers (drive motor, Test Gearbox input
   and output bearings, Load Gearbox bearings, load motor) and the axial force of the Test
-  Gearbox bearing; channel16 is not described. Units are not stated (the file headers give
+  Gearbox bearing; channel16 is not described. The Test Gearbox and drive motor are
+  gearbox and motor; the Load Gearbox and load motor, the rig's loading system, are rig. Units are not stated (the file headers give
   the sensor sensitivities in V/unit).
 license: CC-BY-4.0
 size: "download 0.57 GB, built 0.19 GB (measured)"

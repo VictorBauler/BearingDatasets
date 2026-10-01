@@ -16,5 +16,5 @@ citation: |
 sources:
   - {type: mendeley, id: n9y9c7xrz3, version: 1, include: "Datasets*/*/*.mat"}
 columns:
-  rpm: shaft speed from the file name
+  speed_rpm: shaft speed from the file name
   stethoscope: yes if recorded through a stethoscope (Datasets 1), no otherwise (Datasets 2)

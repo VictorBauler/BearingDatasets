@@ -8,7 +8,7 @@ description: |
   and vertical acceleration (10 mV per m/s^2), two encoder channels (1024 pulses/rev),
   the radial load cell (2.8 kN/V) and a 1/rev tacho. Progress is counted in shaft
   cycles, from the file name: use run_id, shaft_cycles and rul_cycles (end of life =
-  last measurement). The condition of each measurement is unknown; the paper describes
+  last measurement). The fault of each measurement is unknown; the paper describes
   the spall sizes. The 6 Hz files in the Multiple speeds folders are copies of files in
   the 6Hz folders and are stored once.
 license: CC-BY-4.0
@@ -24,6 +24,6 @@ sources:
     id: h4df4mgrfb
     version: 3
 columns:
-  rpm: shaft speed from the file name (6, 12, 15 or 20 Hz)
+  speed_rpm: shaft speed from the file name (6, 12, 15 or 20 Hz)
   shaft_cycles: shaft revolutions since the start of the test (from the file name)
   rul_cycles: shaft revolutions left until the last measurement of the test

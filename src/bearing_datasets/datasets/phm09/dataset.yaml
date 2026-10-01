@@ -7,7 +7,7 @@ description: |
   (inner race, ball, outer race, combination), input shaft unbalance or bent shaft and a
   sheared output keyway, often several at once. 5 input shaft speeds (30-50 Hz) x high
   and low load x 2 repeats = 280 recordings of about 4 s at 66.67 kHz: input-side and
-  output-side accelerometers and a tachometer (10 pulses per revolution).
+  output-side accelerometers (on the casing) and a tachometer (10 pulses per revolution).
   The official downloads are gone; this is the labeled "Expanded" set as republished on
   Mendeley Data (folder gearset/raw of gearset.zip; the rest of the zip is ignored).
   The fault table per case comes from Chen et al. (arXiv:2002.07605), a secondary
@@ -27,10 +27,12 @@ columns:
   bpfo: >-
     MB ER-10K, the bearing listed on the official PHM 2009 apparatus page (8 balls of 0.3125
     in, pitch 1.319 in), assumed on every shaft
-  fault_location: shaft of each fault (input_shaft, idler_shaft, output_shaft), in the order of condition
+  fault_location: >-
+    gearbox part of each fault (gear, bearing or shaft) on the input, intermediate (idler) or
+    output shaft, in the order of fault_type
   fault_detail: the faults of the case in words (from the challenge fault table)
   gear_type: spur or helical
-  speed_hz: input shaft speed in Hz (30, 35, 40, 45, 50)
-  rpm: input shaft speed in rpm (speed_hz x 60)
+  operating_condition: input shaft speed and load, e.g. 30hz_High
+  speed_setpoint_rpm: nominal input shaft speed in rpm (30-50 Hz x 60)
   load_level: High or Low load
-  repeat: repeat 1 or 2 of the same case, speed and load
+  repetition: repeat 1 or 2 of the same case, speed and load

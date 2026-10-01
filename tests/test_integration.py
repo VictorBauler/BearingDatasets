@@ -59,6 +59,23 @@ def _raw(name, file, member=None):
     return path
 
 
+def _built():
+    root = os.environ.get("BEARING_DATASETS_ROOT")
+    return sorted(p.parent.name for p in Path(root).glob("*/manifest.json")) if root else []
+
+
+@pytest.mark.parametrize("name", _built())
+def test_built_datasets_use_the_current_schema(name):
+    """Every dataset built with this version passes today's validation."""
+    from bearing_datasets.schema import validate
+
+    ds = _open(name)
+    if ds.outdated:
+        pytest.skip(f"{name} was built before 0.2.0")
+    notes = {c: d for c, d in zip(ds.columns().column, ds.columns().description, strict=True)}
+    validate(ds.metadata(), notes)
+
+
 @pytest.mark.parametrize("name", sorted(COUNTS))
 def test_counts(name):
     meta = _open(name).metadata()
@@ -74,17 +91,28 @@ def test_cwru_matches_raw_files():
     }
     for (file, var), sid in pairs.items():
         np.testing.assert_array_equal(loadmat(_raw("cwru", file))[var].ravel(), ds.signal(sid))
-    row = ds.metadata().set_index("signal_id").loc["12k_FE_IR007_2/DE"]
-    assert (row.condition, row.fault_location, row.sensor_location) == (
+    meta = ds.metadata().set_index("signal_id")
+    row = meta.loc["12k_FE_IR007_2/DE"]
+    assert (row.fault_type, row.fault_location, row.sensor_location) == (
         "inner",
-        "bearing_fe",
-        "bearing_de",
+        "motor_bearing_nde",
+        "motor_bearing_de",
     )
+    # a fan-end fault: only the fan-end sensor is at the fault
+    rec = meta[meta.recording_id == "12k_FE_IR007_2"]
+    assert rec.sensor_at_fault.to_dict() == {
+        "12k_FE_IR007_2/DE": False,
+        "12k_FE_IR007_2/FE": True,
+        "12k_FE_IR007_2/BA": False,
+    }
+    levels = meta.groupby("fault_severity").fault_severity_level.unique().map(list).to_dict()
+    assert levels == {"none": [0], "0.007 in": [1], "0.014 in": [2], "0.021 in": [3],
+                      "0.028 in": [4]}  # fmt: skip
 
 
 def test_hust_sampling_rate_fixed():
     meta = _open("hust").metadata()
-    assert set(meta.fs) == {51200} and meta.rpm.between(1000, 1600).all()
+    assert set(meta.fs) == {51200} and meta.speed_rpm.between(1000, 1600).all()
 
 
 def test_ottawa_matches_raw_file():
@@ -100,7 +128,8 @@ def test_paderborn_matches_raw_file():
     raw = {y["Name"]: y["Data"] for y in mat["Y"]}
     np.testing.assert_array_equal(raw["vibration_1"], ds.signal(f"{sid}/vibration"))
     row = ds.metadata().set_index("signal_id").loc[f"{sid}/vibration"]
-    assert (row.condition, row.bearing_id) == ("outer", "KA08")
+    assert (row.fault_type, row.bearing_id, row.sensor_at_fault) == ("outer", "KA08", True)
+    assert row.operating_condition == "N15_M07_F04"
 
 
 def test_my_cwru_matches_cwru():
@@ -128,10 +157,11 @@ def test_bjtu_matches_the_csv_in_the_zip():
     csv = pd.read_csv(io.BytesIO(archive.read(member)), float_precision="round_trip")
     np.testing.assert_array_equal(csv["CH14"].to_numpy(), ds.signal("M4_G3_LA1_RA1_S9/CH14"))
     row = ds.metadata().set_index("signal_id").loc["M4_G3_LA1_RA1_S9/CH14"]
-    assert (row.condition, row.fault_location) == (
+    assert (row.fault_type, row.fault_location) == (
         "shaft+gear+inner+inner",
-        "motor+gearbox+axlebox_left+axlebox_right",
+        "motor_shaft+gearbox+axle_bearing_left+axle_bearing_right",
     )
+    assert row.sensor_location == "gearbox_bearing_output" and row.sensor_at_fault
     archive.close()
 
 

@@ -8,9 +8,10 @@ import pandas as pd
 from bearing_datasets.bearings import fault_orders
 
 
-def _ch(bearing, axis="none"):
-    return {
-        "sensor_location": f"bearing_{bearing}",
+def _ch(axis="none"):
+    return {  # all four bearings are test bearings (the channel name gives the number)
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": axis,
         "unit": "unknown",
@@ -21,8 +22,8 @@ def _ch(bearing, axis="none"):
 # Rexnord ZA-2115 (Qiu et al. 2006): 16 rollers per row of 0.331 in, pitch 2.815 in, 15.17 deg
 ORDERS = fault_orders(16, 0.331, 2.815, 15.17)
 CHANNELS = {
-    **{f"bearing{b}_{a}": _ch(b, a) for b in (1, 2, 3, 4) for a in ("x", "y")},
-    **{f"bearing{b}": _ch(b) for b in (1, 2, 3, 4)},
+    **{f"bearing{b}_{a}": _ch(a) for b in (1, 2, 3, 4) for a in ("x", "y")},
+    **{f"bearing{b}": _ch() for b in (1, 2, 3, 4)},
 }
 TESTS = {  # folder in the archive -> (run id, channels, failed bearings, failure)
     "1st_test": (
@@ -60,11 +61,12 @@ def recordings(raw_dir):
             yield {
                 "recording_id": f"{run}_{path.name}",
                 "native_label": "unknown",
-                "condition": "unknown",
+                "fault_type": "unknown",
                 "fault_location": "unknown",
-                "rpm": 2000.0,
+                "speed_rpm": 2000.0,
                 "load": 6000.0,
                 "load_unit": "lbs",
+                "bearing_model": "ZA-2115",
                 "run_id": run,
                 "time_s": (t - start).total_seconds(),
                 "rul_s": (end - t).total_seconds(),

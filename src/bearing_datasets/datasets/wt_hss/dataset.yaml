@@ -7,7 +7,7 @@ description: |
   pulses (channel tach_times_s: times in s, not a sampled signal; its fs is the mean
   pulse rate). Data by Eric Bechhoefer (Green Power Monitoring Systems), redistributed by
   MathWorks, who merged the sensor and tach files of each day. Run-to-failure: use run_id,
-  time_s and rul_s (end of life = last acquisition, from the time stamps); the condition
+  time_s and rul_s (end of life = last acquisition, from the time stamps); the fault
   of each day is unknown, the failure at the end was an inner race fault.
   License CC BY-NC-SA 4.0 (non-commercial).
 license: CC-BY-NC-SA-4.0

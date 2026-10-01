@@ -25,4 +25,5 @@ columns:
   bpfo: >-
     SKF 1205 ETN9 as in ferrara_rtf (same model and lab; Arpa et al. 2024, Table 2), per row
   fault_size_mm: measured width of the outer ring defect
+  fault_severity: nominal defect width D1 (~0.93 mm), D2 (~1.66 mm) or D3 (~2.50 mm), levels 1-3
   bearing_id: defect label = bearing (D1a-D3c)
