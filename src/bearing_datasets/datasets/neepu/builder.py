@@ -38,7 +38,9 @@ def recordings(raw_dir):
                 "recording_id": f"load{load}_{state}",
                 "native_label": state,
                 "fault_type": fault_type,
-                "fault_location": "none" if healthy else "test_bearing",
+                "fault_location": "none"
+                if healthy
+                else "+".join(["test_bearing"] * len(fault_type.split("+"))),
                 "fault_origin": "none" if healthy else "artificial",
                 "load": load / 10,
                 "load_unit": "Nm",

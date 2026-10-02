@@ -34,7 +34,9 @@ def recordings(raw_dir):
             "recording_id": path.stem,
             "native_label": m["fault"],
             "fault_type": FAULT_TYPE[m["fault"]],
-            "fault_location": "none" if m["fault"] == "N" else "test_bearing",
+            "fault_location": "none"
+            if m["fault"] == "N"
+            else "+".join(["test_bearing"] * len(FAULT_TYPE[m["fault"]].split("+"))),
             "fault_origin": "none" if m["fault"] == "N" else "artificial",
             "speed_rpm": float(mat["fs"].squeeze()) * 60,  # the file's `fs` is the shaft frequency
             "load": int(m["load"]) * 100.0,
