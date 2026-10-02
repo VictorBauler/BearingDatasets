@@ -7,7 +7,7 @@ description: |
   planet bearing). One accelerometer (g). Baseline and the first 3 outer race files are
   sampled at 97,656 Hz for 6 s, the variable-load files at 48,828 Hz for 3 s.
   The zip ships no document saying which element failed in the real-world recordings,
-  so their condition is "bearing". The official download page is gone; the file comes
+  so their fault_type is "bearing". The official download page is gone; the file comes
   from the Internet Archive copy of the official zip (checked by sha256).
   NICE bearing (8 rollers of 0.235 in, pitch diameter 1.245 in, 0 deg): fault
   frequencies in orders of the shaft speed BPFO 3.245, BPFI 4.755, BSF 2.555, FTF 0.406.
@@ -26,6 +26,6 @@ sources:
 files: [MFPT-Fault-Data-Sets-20200227T131140Z-001.zip]
 columns:
   load: radial load on the test bearing in lbs (real-world recordings - 0 if not given)
-  rpm: shaft speed (the `rate` of each file, in Hz, x 60)
+  speed_rpm: shaft speed (the `rate` of each file, in Hz, x 60)
   field_data: true for the 3 real-world recordings, false for the test rig
   source_file: original file inside the MFPT zip (folder/file)

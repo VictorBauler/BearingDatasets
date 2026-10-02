@@ -12,30 +12,33 @@ from bearing_datasets.bearings import fault_orders
 # official apparatus page: MB ER-10K bearings, 8 balls of 0.3125 in, pitch 1.319 in
 ORDERS = fault_orders(8, 0.3125, 1.319)
 CHANNELS = {
-    "input_accelerometer": {
-        "sensor_location": "gearbox_input_side",
+    "input_accelerometer": {  # on the casing, input side
+        "sensor_location": "gearbox_bearing_input",
+        "sensor_mounting": "casing",
         "quantity": "acceleration",
         "axis": "none",
         "unit": "V",
         "fs": 200000 / 3,
     },
     "output_accelerometer": {
-        "sensor_location": "gearbox_output_side",
+        "sensor_location": "gearbox_bearing_output",
+        "sensor_mounting": "casing",
         "quantity": "acceleration",
         "axis": "none",
         "unit": "V",
         "fs": 200000 / 3,
     },
     "tachometer": {
-        "sensor_location": "input_shaft",
+        "sensor_location": "gearbox_shaft_input",
+        "sensor_mounting": "shaft",
         "quantity": "tachometer",
         "axis": "none",
         "unit": "V",
         "fs": 200000 / 3,
     },
 }
-IN, ID, OUT = "input_shaft", "idler_shaft", "output_shaft"
-# case -> faults (condition, location, words); "IS:IS" = input shaft, input-side bearing
+IN, ID, OUT = "input", "intermediate", "output"  # input, idler, output shaft
+# case -> faults (fault_type, shaft, words); "IS:IS" = input shaft, input-side bearing
 CASES = {
     "spur 1": [],
     "spur 2": [("gear", IN, "32T gear chipped"), ("gear", ID, "48T gear eccentric")],
@@ -43,20 +46,20 @@ CASES = {
     "spur 4": [
         ("gear", ID, "48T gear eccentric"),
         ("gear", OUT, "80T gear broken"),
-        ("ball", IN, "bearing IS:IS ball"),
+        ("rolling_element", IN, "bearing IS:IS ball"),
     ],
     "spur 5": [
         ("gear", IN, "32T gear chipped"),
         ("gear", ID, "48T gear eccentric"),
         ("gear", OUT, "80T gear broken"),
         ("inner", IN, "bearing IS:IS inner race"),
-        ("ball", ID, "bearing ID:IS ball"),
+        ("rolling_element", ID, "bearing ID:IS ball"),
         ("outer", OUT, "bearing OS:IS outer race"),
     ],
     "spur 6": [
         ("gear", OUT, "80T gear broken"),
         ("inner", IN, "bearing IS:IS inner race"),
-        ("ball", ID, "bearing ID:IS ball"),
+        ("rolling_element", ID, "bearing ID:IS ball"),
         ("outer", OUT, "bearing OS:IS outer race"),
         ("unbalance", IN, "input shaft unbalance"),
     ],
@@ -65,7 +68,7 @@ CASES = {
         ("shaft", OUT, "output shaft keyway sheared"),
     ],
     "spur 8": [
-        ("ball", ID, "bearing ID:IS ball"),
+        ("rolling_element", ID, "bearing ID:IS ball"),
         ("outer", OUT, "bearing OS:IS outer race"),
         ("unbalance", IN, "input shaft unbalance"),
     ],
@@ -79,18 +82,25 @@ CASES = {
     ],
     "helical 4": [
         ("bearing", IN, "bearing IS:OS combination"),
-        ("ball", ID, "bearing ID:OS ball"),
+        ("rolling_element", ID, "bearing ID:OS ball"),
         ("unbalance", IN, "input shaft unbalance"),
     ],
     "helical 5": [("gear", ID, "24T gear broken"), ("inner", ID, "bearing ID:OS inner race")],
     "helical 6": [
         ("gear", OUT, "40T gear broken"),
         ("inner", IN, "bearing IS:IS inner race"),
-        ("ball", ID, "bearing ID:IS ball"),
+        ("rolling_element", ID, "bearing ID:IS ball"),
         ("outer", OUT, "bearing OS:IS outer race"),
         ("shaft", IN, "input shaft bent"),
     ],
 }
+PART = {"gear": "gear", "shaft": "shaft", "unbalance": "shaft"}  # others: bearing faults
+
+
+def _location(fault_type, shaft):
+    return f"gearbox_{PART.get(fault_type, 'bearing')}_{shaft}"
+
+
 NAME = re.compile(r"^(?P<case>(spur|helical) \d)_(?P<speed>\d+)hz_(?P<load>High|Low)_(?P<rep>\d)$")
 
 
@@ -108,14 +118,15 @@ def recordings(raw_dir):
             yield {
                 "recording_id": name.rsplit("/", 1)[1].removesuffix(".txt").replace(" ", ""),
                 "native_label": m["case"],
-                "condition": "+".join(f[0] for f in faults) or "normal",
-                "fault_location": "+".join(f[1] for f in faults) or "none",
+                "fault_type": "+".join(f[0] for f in faults) or "normal",
+                "fault_location": "+".join(_location(f[0], f[1]) for f in faults) or "none",
                 "fault_detail": "; ".join(f[2] for f in faults) or "none",
                 "gear_type": m["case"].split()[0],
-                "speed_hz": float(m["speed"]),
-                "rpm": float(m["speed"]) * 60,
+                "speed_rpm": float(m["speed"]) * 60,
                 "load_level": m["load"],
-                "repeat": int(m["rep"]),
+                "operating_condition": f"{m['speed']}hz_{m['load']}",
+                "repetition": int(m["rep"]),
+                "bearing_model": "ER-10K",
                 **ORDERS,
                 "signals": {ch: table[:, i] for i, ch in enumerate(CHANNELS)},
             }

@@ -7,9 +7,12 @@ import numpy as np
 from bearing_datasets.io import read_mat
 
 # sensor_location and fs are given per measurement (each measurement has its position)
-CHANNELS = {"vibration": {"quantity": "acceleration", "unit": "m/s^2"}}
-POSITION = {"DS": "drive_side", "FS": "free_side", "Upper": "upper", "Lower": "lower"}
-CONDITION = {-1: "unknown", 0: "normal", 1: "inner", 2: "ball", 3: "outer"}
+CHANNELS = {"vibration": {"sensor_mounting": "unknown", "quantity": "acceleration",
+                          "unit": "m/s^2"}}  # fmt: skip
+# the bearing at each sensor position of the machine (drive side, free side, upper, lower)
+POSITION = {"DS": "machine_bearing_de", "FS": "machine_bearing_nde", "Upper": "machine_bearing",
+            "Lower": "machine_bearing"}  # fmt: skip
+FAULT_TYPE = {-1: "unknown", 0: "normal", 1: "inner", 2: "rolling_element", 3: "outer"}
 
 
 def _rows(raw):
@@ -43,13 +46,14 @@ def recordings(raw_dir):
                 yield {
                     "recording_id": f"c{case}_{split}_{pos}_{i:04d}",
                     "native_label": str(label),
-                    "condition": CONDITION[label],
+                    "fault_type": FAULT_TYPE[label],
                     "fault_location": location
                     if label > 0
                     else ("unknown" if label < 0 else "none"),
                     "sensor_location": location,
-                    "rpm": float(rpm[i]),
+                    "speed_rpm": float(rpm[i]),
                     "case": case,
+                    "sensor_position": pos,
                     "asset": str(mat["assetDescription"]),
                     "bearing_model": str(s.assetName),
                     "measured_at": str(times[i]).strip(),

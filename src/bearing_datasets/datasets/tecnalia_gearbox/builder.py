@@ -7,9 +7,10 @@ import pandas as pd
 from bearing_datasets.bearings import fault_orders
 
 
-def _ch(location, quantity, axis="none"):
+def _ch(location, mounting, quantity, axis="none"):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": "unknown",
@@ -21,29 +22,32 @@ def _ch(location, quantity, axis="none"):
 # ottawa_2018): the record's BPFO 3.572, BPFI 5.43, BSF 2.322 match; its FTF 0.402 does not
 # (BPFO = 9 x FTF gives 0.397), so all four are computed from the geometry
 ORDERS = fault_orders(9, 7.94, 38.52)
+# gearbox and motor are the Test Gearbox and the drive motor; the Load Gearbox and the load
+# motor are the rig's loading system (rig)
 CHANNELS = {
-    "tacho": _ch("drive_motor", "tachometer"),
-    "encoder_in": _ch("drive_motor", "encoder"),
-    "encoder_out": _ch("load_motor", "encoder"),
-    "torque": _ch("shaft", "torque"),
-    "current_1": _ch("drive_motor", "current", "a"),
-    "current_2": _ch("drive_motor", "current", "b"),
-    "drive_motor_vertical": _ch("drive_motor", "acceleration", "vertical"),
-    "drive_motor_axial": _ch("drive_motor", "acceleration", "axial"),
-    "bearing_in_vertical": _ch("test_gearbox_input_bearing", "acceleration", "vertical"),
-    "bearing_in_axial": _ch("test_gearbox_input_bearing", "acceleration", "axial"),
-    "bearing_out_horizontal": _ch("test_gearbox_output_bearing", "acceleration", "horizontal"),
-    "load_bearing_vertical": _ch("load_gearbox_input_bearing", "acceleration", "vertical"),
-    "load_bearing_horizontal": _ch("load_gearbox_output_bearing", "acceleration", "horizontal"),
-    "load_motor_vertical": _ch("load_motor", "acceleration", "vertical"),
-    "bearing_force": _ch("test_gearbox_input_bearing", "force", "axial"),
-    "channel16": _ch("unknown", "unknown"),
-}
-STATE = {  # scenario -> (condition, fault_location)
+    "tacho": _ch("motor_shaft", "shaft", "tachometer"),
+    "encoder_in": _ch("motor_shaft", "shaft", "encoder"),
+    "encoder_out": _ch("rig_shaft", "shaft", "encoder"),
+    "torque": _ch("rig_shaft", "shaft", "torque"),
+    "current_1": _ch("motor_supply", "none", "current", "a"),
+    "current_2": _ch("motor_supply", "none", "current", "b"),
+    "drive_motor_vertical": _ch("motor", "casing", "acceleration", "vertical"),
+    "drive_motor_axial": _ch("motor", "casing", "acceleration", "axial"),
+    "bearing_in_vertical": _ch("gearbox_bearing_input", "casing", "acceleration", "vertical"),
+    "bearing_in_axial": _ch("gearbox_bearing_input", "casing", "acceleration", "axial"),
+    "bearing_out_horizontal": _ch("gearbox_bearing_output", "casing", "acceleration",
+                                  "horizontal"),
+    "load_bearing_vertical": _ch("rig", "casing", "acceleration", "vertical"),
+    "load_bearing_horizontal": _ch("rig", "casing", "acceleration", "horizontal"),
+    "load_motor_vertical": _ch("rig", "casing", "acceleration", "vertical"),
+    "bearing_force": _ch("gearbox_bearing_input", "unknown", "force", "axial"),
+    "channel16": _ch("unknown", "unknown", "unknown"),
+}  # fmt: skip
+STATE = {  # scenario -> (fault_type, fault_location)
     "baseline": ("normal", "none"),
-    "gear": ("gear", "test_gearbox"),
-    "bearing": ("outer", "test_gearbox_input_bearing"),
-    "gear+bearing": ("gear+outer", "test_gearbox+test_gearbox_input_bearing"),
+    "gear": ("gear", "gearbox"),
+    "bearing": ("outer", "gearbox_bearing_input"),
+    "gear+bearing": ("gear+outer", "gearbox+gearbox_bearing_input"),
 }
 TESTS = {  # test -> (scenario, operating condition)
     1: ("baseline", "variable speed"), 2: ("baseline", "variable load"),
@@ -60,17 +64,18 @@ def recordings(raw_dir):
     for path in sorted(raw_dir.glob("Nextmon_GPS_*.txt"), key=lambda p: int(p.stem.split("_")[-1])):
         test = int(path.stem.split("_")[-1])
         scenario, operating = TESTS[test]
-        condition, location = STATE[scenario]
+        fault_type, location = STATE[scenario]
         with path.open(encoding="utf-8") as f:
             header = next(i for i, line in enumerate(f) if line.startswith("Time (seconds)"))
         x = pd.read_csv(path, sep="\t", skiprows=header + 1, header=None, engine="c")
         yield {
             "recording_id": f"test{test:02d}",
             "native_label": scenario,
-            "condition": condition,
+            "fault_type": fault_type,
             "fault_location": location,
             "operating_condition": operating,
             "speed_profile": "varying" if "speed" in operating else "constant",
+            "bearing_model": "ER-16KCL",
             **ORDERS,
             "signals": {ch: x.iloc[:, i + 1].to_numpy() for i, ch in enumerate(CHANNELS)},
         }

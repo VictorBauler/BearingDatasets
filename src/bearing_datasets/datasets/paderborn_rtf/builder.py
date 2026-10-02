@@ -17,14 +17,16 @@ from bearing_datasets.io import read_mat
 ORDERS = fault_orders(19, 3.18, 35.5)
 CHANNELS = {
     "acc_A": {
-        "sensor_location": "test_bearing_housing_rear",
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",  # rear of the housing
         "quantity": "acceleration",
         "axis": "horizontal",
         "unit": "V",
         "fs": 128000,
     },
     "acc_C": {
-        "sensor_location": "test_bearing_housing_frontal",
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",  # front of the housing
         "quantity": "acceleration",
         "axis": "horizontal",
         "unit": "V",
@@ -80,11 +82,12 @@ def recordings(raw_dir):
             yield {
                 "recording_id": path.stem.removeprefix("data_"),
                 "native_label": "unknown",
-                "condition": "unknown",
+                "fault_type": "unknown",
                 "fault_location": "unknown",
-                "rpm": float(c["meanAbs_speed / rpm"]),
+                "speed_rpm": float(c["meanAbs_speed / rpm"]),
                 "load": float(c["meanAbs_statLoad / N"]),
                 "load_unit": "N",
+                "bearing_model": "61806-2RS",
                 "dynamic_load_peak_n": float(c["peak_dynLoad / N"]),
                 "temperature_t1_c": float(t.iloc[1]),
                 "temperature_t2_c": float(t.iloc[2]),

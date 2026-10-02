@@ -4,7 +4,7 @@ description: |
   Accelerated life tests of 15 LDK UER204 ball bearings under 3 operating conditions
   (35 Hz / 12 kN, 37.5 Hz / 11 kN, 40 Hz / 10 kN), 5 bearings each, until failure.
   Every minute a 1.28 s snapshot of two accelerometers (horizontal, vertical) at 25.6 kHz.
-  The condition of each snapshot is unknown; the failed element(s) found at the end of
+  The fault of each snapshot is unknown; the failed element(s) found at the end of
   each run are in `failure`; use run_id, time_s and rul_s (end of life = last snapshot;
   a run stops when the vibration amplitude exceeds 10 x the maximum of normal operation).
   Download: 6 RAR5 volumes from the authors' Google Drive, extracted together.

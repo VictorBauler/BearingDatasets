@@ -1,4 +1,4 @@
-bearing_id,manufacturer,condition,origin,severity,damage,pitch_diameter_mm
+bearing_id,manufacturer,fault_type,origin,severity,damage,pitch_diameter_mm
 K001,IBU,normal,none,0,none,29.05
 K002,IBU,normal,none,0,none,29.05
 K003,IBU,normal,none,0,none,29.05

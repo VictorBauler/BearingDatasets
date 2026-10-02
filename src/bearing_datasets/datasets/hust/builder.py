@@ -6,16 +6,17 @@ from bearing_datasets.bearings import fault_orders
 from bearing_datasets.io import read_mat
 
 CHANNELS = {
-    "vibration": {"sensor_location": "test_bearing", "quantity": "acceleration", "fs": 51200},
-}
-CONDITION = {
+    "vibration": {"sensor_location": "test_bearing", "sensor_mounting": "unknown",
+                  "quantity": "acceleration", "fs": 51200},
+}  # fmt: skip
+FAULT_TYPE = {
     "N": "normal",
     "I": "inner",
     "O": "outer",
-    "B": "ball",
-    "IB": "inner+ball",
+    "B": "rolling_element",
+    "IB": "inner+rolling_element",
     "IO": "inner+outer",
-    "OB": "outer+ball",
+    "OB": "outer+rolling_element",
 }
 # Thuan & Hong (2023), KG bearings: (bore, outer diameter, ball diameter in mm, balls); the
 # paper gives no pitch diameter, taken as (bore + outer) / 2
@@ -32,10 +33,12 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": m["fault"],
-            "condition": CONDITION[m["fault"]],
-            "fault_location": "none" if m["fault"] == "N" else "test_bearing",
+            "fault_type": FAULT_TYPE[m["fault"]],
+            "fault_location": "none"
+            if m["fault"] == "N"
+            else "+".join(["test_bearing"] * len(FAULT_TYPE[m["fault"]].split("+"))),
             "fault_origin": "none" if m["fault"] == "N" else "artificial",
-            "rpm": float(mat["fs"].squeeze()) * 60,  # the file's `fs` is the shaft frequency
+            "speed_rpm": float(mat["fs"].squeeze()) * 60,  # the file's `fs` is the shaft frequency
             "load": int(m["load"]) * 100.0,
             "load_unit": "W",
             "bearing_id": m["fault"] + m["type"],

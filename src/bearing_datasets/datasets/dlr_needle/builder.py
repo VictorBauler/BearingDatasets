@@ -11,24 +11,31 @@ import numpy as np
 from bearing_datasets.io import read_mat
 
 
-def _ch(location, quantity, fs):
-    return {"sensor_location": location, "quantity": quantity, "unit": "unknown", "fs": fs}
+def _ch(location, mounting, quantity, fs):
+    return {
+        "sensor_location": location,
+        "sensor_mounting": mounting,
+        "quantity": quantity,
+        "unit": "unknown",
+        "fs": fs,
+    }
 
 
-SENSORS = {  # file suffix -> (channel, location, quantity, fs)
-    "Acc_Sensor_1": ("acc_1", "needle_bearing_1", "acceleration", 10000),
-    "Acc_Sensor_2": ("acc_2", "needle_bearing_2", "acceleration", 10000),
-    "Distance_Sensor_1": ("distance_1", "needle_bearing_1", "displacement", 10000),
-    "Distance_Sensor_2": ("distance_2", "needle_bearing_2", "displacement", 10000),
-    "Torque": ("torque", "shaft", "torque", 10000),
-    "Position_deg": ("position_deg", "shaft", "angle", 1000),
-    "Force_Sensor_1": ("force_1", "needle_bearing_1", "force", 100),
-    "Force_Sensor_2": ("force_2", "needle_bearing_2", "force", 100),
-    "Temp_Sensor_1": ("temperature_1", "needle_bearing_1", "temperature", 10),
-    "Temp_Sensor_2": ("temperature_2", "needle_bearing_2", "temperature", 10),
-    "Ambient_Temp": ("temperature_ambient", "ambient", "temperature", 10),
+# both needle bearings are test bearings (the channel's _1 / _2 tells which)
+SENSORS = {  # file suffix -> (channel, location, mounting, quantity, fs)
+    "Acc_Sensor_1": ("acc_1", "test_bearing", "unknown", "acceleration", 10000),
+    "Acc_Sensor_2": ("acc_2", "test_bearing", "unknown", "acceleration", 10000),
+    "Distance_Sensor_1": ("distance_1", "test_bearing", "unknown", "displacement", 10000),
+    "Distance_Sensor_2": ("distance_2", "test_bearing", "unknown", "displacement", 10000),
+    "Torque": ("torque", "rig_shaft", "shaft", "torque", 10000),
+    "Position_deg": ("position_deg", "rig_shaft", "shaft", "angle", 1000),
+    "Force_Sensor_1": ("force_1", "test_bearing", "unknown", "force", 100),
+    "Force_Sensor_2": ("force_2", "test_bearing", "unknown", "force", 100),
+    "Temp_Sensor_1": ("temperature_1", "test_bearing", "unknown", "temperature", 10),
+    "Temp_Sensor_2": ("temperature_2", "test_bearing", "unknown", "temperature", 10),
+    "Ambient_Temp": ("temperature_ambient", "ambient", "none", "temperature", 10),
 }
-CHANNELS = {ch: _ch(loc, q, fs) for ch, loc, q, fs in SENSORS.values()}
+CHANNELS = {ch: _ch(loc, mnt, q, fs) for ch, loc, mnt, q, fs in SENSORS.values()}
 LAST_SNAPSHOT = {3: 4951}  # tests split over several zips: the last snapshot number
 NAME = re.compile(
     r"^Test(?P<test>\d)_(?P<oil>[A-Za-z0-9]+)_(?P<amp>[\d,]+)-(?P<load>[\d,]+)-(?P<freq>[\d,]+)"
@@ -71,7 +78,7 @@ def recordings(raw_dir):
             yield {
                 "recording_id": f"test{test}_{first + i:04d}",
                 "native_label": "unknown",
-                "condition": "unknown",
+                "fault_type": "unknown",
                 "fault_location": "unknown",
                 "run_id": f"test{test}",
                 "time_s": start,

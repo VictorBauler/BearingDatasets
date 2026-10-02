@@ -9,9 +9,10 @@ import re
 import pandas as pd
 
 
-def _ch(location, quantity, axis="none", unit="g"):
+def _ch(location, mounting, quantity, axis="none", unit="g"):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": unit,
@@ -20,30 +21,30 @@ def _ch(location, quantity, axis="none", unit="g"):
 
 
 CHANNELS = {
-    "tachometer": _ch("shaft", "tachometer", unit="V"),
-    "motor": _ch("motor", "acceleration"),
-    "bearing1_z": _ch("bearing_1", "acceleration", "z"),
-    "bearing1_y": _ch("bearing_1", "acceleration", "y"),
-    "bearing1_x": _ch("bearing_1", "acceleration", "x"),
-    "bearing2_z": _ch("bearing_2", "acceleration", "z"),
-    "bearing2_y": _ch("bearing_2", "acceleration", "y"),
-    "bearing2_x": _ch("bearing_2", "acceleration", "x"),
-    "gearbox": _ch("gearbox", "acceleration"),
+    "tachometer": _ch("rig_shaft", "shaft", "tachometer", unit="V"),
+    "motor": _ch("motor", "casing", "acceleration"),
+    "bearing1_z": _ch("test_bearing_de", "pedestal", "acceleration", "z"),
+    "bearing1_y": _ch("test_bearing_de", "pedestal", "acceleration", "y"),
+    "bearing1_x": _ch("test_bearing_de", "pedestal", "acceleration", "x"),
+    "bearing2_z": _ch("test_bearing_nde", "pedestal", "acceleration", "z"),
+    "bearing2_y": _ch("test_bearing_nde", "pedestal", "acceleration", "y"),
+    "bearing2_x": _ch("test_bearing_nde", "pedestal", "acceleration", "x"),
+    "gearbox": _ch("gearbox", "casing", "acceleration"),
 }
-BEARING_FAULT = {"ball": "ball", "inner": "inner", "outer": "outer", "comb": "bearing"}
+BEARING = {"1": "test_bearing_de", "2": "test_bearing_nde"}  # left (motor side), right
+BEARING_FAULT = {"ball": "rolling_element", "inner": "inner", "outer": "outer", "comb": "bearing"}
 NAME = re.compile(r"^(?P<scenario>.+?) Trial (?P<trial>\d+)$")
 
 
 def _part(text, last_bearing):
-    """One fault of a scenario name -> (condition, fault_location, bearing number)."""
+    """One fault of a scenario name -> (fault_type, fault_location, bearing number)."""
     t = text.lower()
-    if t.startswith("shaft"):
-        where = "coupling_end" if "coupling" in t else "center"
-        return "shaft", f"shaft_bent_{where}", last_bearing
+    if t.startswith("shaft"):  # bent at the center or at the coupling end
+        return "shaft", "rig_shaft", last_bearing
     m = re.search(r"bearing \((\d)\)", t)
     k = m.group(1) if m else last_bearing
     kind = next(v for key, v in BEARING_FAULT.items() if key in t)
-    return kind, f"bearing_{k}", k
+    return kind, BEARING[k], k
 
 
 def _label(scenario):
@@ -67,10 +68,10 @@ def recordings(raw_dir):
         yield {
             "recording_id": f"s{speed}_{slug}_{int(m['trial']):02d}",
             "native_label": scenario,
-            "condition": condition,
+            "fault_type": condition,
             "fault_location": location,
             "fault_origin": "none" if condition == "normal" else "artificial",
             "speed_setting": int(speed),
-            "trial": int(m["trial"]),
+            "repetition": int(m["trial"]),
             "signals": {ch: x.iloc[:, i].to_numpy() for i, ch in enumerate(CHANNELS)},
         }

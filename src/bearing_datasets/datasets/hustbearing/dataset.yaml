@@ -227,7 +227,7 @@ columns:
   operating_condition: >-
     motor speed from the file name: 20Hz to 80Hz (constant) or 0-40-0Hz (speed
     ramped up to 40 Hz and back down)
-  severity: medium or severe fault (medium files are prefixed 0.5X), none if healthy
+  fault_severity: medium or severe fault (medium files are prefixed 0.5X), none if healthy
   fault_size_mm: >-
     from the authors' README: race faults 0.15 mm (medium) / 0.3 mm (severe), ball faults
     0.25 / 0.5 mm; the combination fault is listed with its race size

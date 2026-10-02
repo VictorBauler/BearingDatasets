@@ -8,7 +8,7 @@ description: |
   microphone location, factory noise); source and target domains; the challenge's train
   set has only normal clips, the test set normal and anomalous ones. Anomalies were made by
   damaging the machine (in 2022, bearing eccentricity); their type is not given per clip,
-  so condition is other. 3599 clips of 10 s, mono, 16 kHz (raw int16). dcase_split keeps
+  so fault_type is other. 3599 clips of 10 s, mono, 16 kHz (raw int16). dcase_split keeps
   the challenge split for comparison with published results; the package itself makes no
   splits. Later editions (2023-2026) reuse or emulate this machine and are not included.
 license: CC-BY-4.0

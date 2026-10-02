@@ -27,6 +27,8 @@ columns:
   bpfo: >-
     FAG NU2205-E-XL-TVP2 from the dataset report (13 rollers; running diameters 31.5 and
     46.5 mm give rollers of 7.5 mm on a 39 mm pitch)
-  severity: pitting_I to pitting_V (local pitting) or scientific_fault (heavy artificial damage)
+  fault_severity: >-
+    pitting_I to pitting_V (local pitting, levels 1-5) or scientific_fault (heavy, wide
+    artificial damage, level 6)
   load: counter torque of the load machine in Nm (0 or 2)
   belt_tension: belt tension setting giving the radial force, 250 or 500 (stated as Nm, likely N)

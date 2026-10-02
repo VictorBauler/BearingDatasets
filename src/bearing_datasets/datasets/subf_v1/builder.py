@@ -8,8 +8,8 @@ import numpy as np
 from bearing_datasets.io import read_mat
 
 CHANNELS = {
-    a.lower(): {"sensor_location": "test_bearing", "quantity": "acceleration", "axis": a.lower(),
-                "unit": "g", "fs": 1000}
+    a.lower(): {"sensor_location": "test_bearing", "sensor_mounting": "unknown",
+                "quantity": "acceleration", "axis": a.lower(), "unit": "g", "fs": 1000}
     for a in "XYZ"
 }  # fmt: skip
 STATE = {"N": "normal", "IR": "inner", "OR": "outer"}
@@ -24,10 +24,10 @@ def recordings(raw_dir):
         yield {
             "recording_id": f"{m['state']}_{int(m['k']):04d}",
             "native_label": m["state"],
-            "condition": STATE[m["state"]],
+            "fault_type": STATE[m["state"]],
             "fault_location": "none" if healthy else "test_bearing",
             "fault_origin": "none" if healthy else "unknown",
-            "rpm": 1440.0,
+            "speed_rpm": 1440.0,
             "segment": int(m["k"]),
             "signals": {a.lower(): np.asarray(mat[a]).ravel() for a in "XYZ"},
         }

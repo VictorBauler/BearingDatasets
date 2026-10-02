@@ -23,7 +23,7 @@ sources:
     include: ["3_MatLab_Data_Files/*/*.mat"]
     strip_prefix: "3_MatLab_Data_Files/"
 columns:
-  fault: the motor's fault in words (each state is a different motor)
+  fault_detail: the motor's fault in words (each state is a different motor)
   operating_condition: >-
     drive frequency: 15Hz, 30Hz, 45Hz, 60Hz (constant) or a ramp such as 15-45Hz
-  load_condition: unloaded, or loaded (a disk bolted to the shaft)
+  load_state: unloaded, or loaded (a disk bolted to the shaft)

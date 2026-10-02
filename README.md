@@ -12,7 +12,7 @@ signals themselves, ready for pandas, polars, NumPy or PyTorch.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/VictorBauler/BearingDatasets/main/docs/assets/banner-dark.png">
-  <img alt="100 ms of raw vibration from four datasets (cwru, jnu, dlr, hit_sm), sampled at 12 to 51.2 kHz, each labeled with the same metadata columns (condition=inner, ball, outer)" src="https://raw.githubusercontent.com/VictorBauler/BearingDatasets/main/docs/assets/banner-light.png">
+  <img alt="100 ms of raw vibration from four datasets (cwru, jnu, dlr, hit_sm), sampled at 12 to 51.2 kHz, each labeled with the same metadata columns (fault_type=inner, rolling_element, outer)" src="https://raw.githubusercontent.com/VictorBauler/BearingDatasets/main/docs/assets/banner-light.png">
 </picture>
 
 Why:
@@ -113,7 +113,7 @@ import bearing_datasets as bd
 
 ds = bd.open("cwru")                         # fails with a hint if cwru is not built yet
 meta = ds.metadata()                         # pandas DataFrame, one row per signal
-inner = meta[(meta.condition == "inner") & (meta.fs == 12000)]
+inner = meta[(meta.fault_type == "inner") & (meta.fs == 12000)]
 
 x = ds.signal(inner.signal_id.iloc[0])     # one signal, as a numpy array
 df = ds.with_signals(inner)                  # the same rows + a "signal" column
@@ -253,15 +253,34 @@ files read from a local folder).
 ## Concepts in one minute
 
 * A **dataset** is one published dataset, e.g. `cwru`: `ds = bd.open("cwru")`.
-* A **recording** is one acquisition: the machine ran in one condition (fault, speed, load) and
-  one or more channels were recorded at the same time. Id: `recording_id`, e.g.
+* A **recording** is one acquisition: the machine ran in one state (its faults, speed and load)
+  and one or more channels were recorded at the same time. Id: `recording_id`, e.g.
   `12k_DE_IR007_1`.
-* A **channel** is one sensor, or one axis of a sensor, e.g. `DE` (the drive-end accelerometer).
+* A **channel** is one sensor, or one axis of a sensor, named as the dataset names it, e.g.
+  `DE` (the drive-end accelerometer of CWRU).
 * A **signal** is one channel of one recording. Id: `signal_id` = `<recording_id>/<channel>`,
   e.g. `12k_DE_IR007_1/DE`. Its samples are a numpy array: `ds.signal(signal_id)`; all the
   channels of a recording at once: `ds.recording(recording_id)`.
-* The **metadata** is a table with **one row per signal**, saying what it is: condition, sensor
-  location, sampling rate, speed, load, ...
+* The **metadata** is a table with **one row per signal**, saying what it is: the fault
+  (`fault_type`, `fault_location`), the sensor (`sensor_location`, `quantity`, `axis`), the
+  operating conditions (`speed_rpm`, `load`, …), the sampling rate, …
+
+The sensor columns, for two datasets with different layouts:
+
+| dataset | `channel` | `sensor_location` | `sensor_mounting` | `axis` | `quantity` |
+|---|---|---|---|---|---|
+| cwru | `DE` | `motor_bearing_de` | `casing` | `none` | `acceleration` |
+| cwru | `FE` | `motor_bearing_nde` | `casing` | `none` | `acceleration` |
+| cwru | `BA` | `base` | `base` | `none` | `acceleration` |
+| mafaulda | `underhang_axial` | `test_bearing_de` | `pedestal` | `axial` | `acceleration` |
+| mafaulda | `underhang_radial` | `test_bearing_de` | `pedestal` | `radial` | `acceleration` |
+| mafaulda | `overhang_radial` | `test_bearing_nde` | `pedestal` | `radial` | `acceleration` |
+| mafaulda | `microphone` | `ambient` | `none` | `none` | `sound_pressure` |
+
+`channel` is the dataset's own name (to reproduce papers); `sensor_location` says **which
+bearing or machine part** the sensor measures, with the same words in every dataset;
+`sensor_mounting` says **what surface** it sits on; `axis` the measurement direction. Several
+channels can share a location (a triaxial accelerometer is three channels).
 
 ## API
 
@@ -304,103 +323,159 @@ One row per signal. These columns exist in **every** dataset:
 | `dataset`, `signal_id` | ids |
 | `recording_id` | groups the channels recorded at the same time |
 | `native_label` | the label as the dataset names it (`IR007_1`, `KA04`, `IB`), for reproducing papers |
-| `channel`, `sensor_location` | which sensor, and where it is mounted (`bearing_de`, `motor`, …) |
+| `channel` | the channel name, as the dataset names it (`DE`, `CH14`, `underhang_axial`) |
+| `sensor_location` | the bearing or machine part the sensor measures (see [Locations](#locations)) |
 | `fs`, `n_samples` | sampling rate (Hz) and length |
-| `condition` | fault(s) in the machine: `normal`, `inner`, `outer`, `ball`, `cage`, `bearing`, `gear`, `shaft`, `unbalance`, `misalignment`, `looseness`, `electrical`, `other`, `unknown`, joined with `+` |
-| `fault_location` | where the fault(s) are (`bearing_de`, `bearing_module+gearbox`); `none` when normal |
+| `fault_type` | fault(s) in the machine: `normal`, `inner`, `outer`, `rolling_element`, `cage`, `bearing`, `gear`, `shaft`, `unbalance`, `misalignment`, `looseness`, `electrical`, `other`, `unknown`, joined with `+` (`inner+outer`) |
+| `fault_location` | the position of each faulty part, with the words of `sensor_location`, in the order of `fault_type` (`motor_bearing_de`, `test_bearing+gearbox`); `none` when normal |
+| `sensor_at_fault` | `True` when the sensor is at a faulty position (computed from the two columns above) |
 | `signal_file`, `signal_row_group`, `signal_row` | where the samples are stored |
 
-Columns that only some datasets have:
+Columns that only some datasets have, standard ones first:
 
 | column | meaning | datasets |
 |---|---|---|
-| `quantity` | physical quantity: `acceleration`, `current`, `sound_pressure`, `speed`, `torque`, `force`, `temperature`, `tachometer`, `encoder`, … | all |
+| `quantity` | physical quantity: `acceleration`, `velocity`, `displacement`, `current`, `voltage`, `sound_pressure`, `speed`, `torque`, `force`, `temperature`, `angle`, `tachometer`, `encoder`, `time` (pulse times), `unknown` | all (and my_cwru) |
 | `unit` | signal unit (`unknown` when not documented) | all except cwru, hust, jnu |
-| `axis` | axis of a multi-axis sensor (x/y/z, horizontal/vertical, axial/radial/tangential) or phase; `none` for single-axis sensors | all except cwru, dcase_bearing, dlr, dlr_needle, fstf, hse_similar_system, hust, hust_transmission, isac, just_slewing, mfpt, ottawa_2018, ottawa_uored, paderborn, sca, sqv, uc204, uoemd, upm_citef, urma_crti, vibrobox, wt_hss |
-| `rpm` | shaft speed (rpm); missing where the speed varies or is only given as a setting | all except arkansas, army_pla, dcase_bearing, dlr_needle, hit_intershaft, hust_transmission, hustbearing, kaist_speed, mcc5_thu_gearbox, mcc5_thu_motor, mehran_uet, neepu, ottawa_2018, sdust, seu, sqv, tecnalia_bearing, tecnalia_gearbox, uaq_upc, uoemd, urma_crti, vbl_va001, vibrobox, wt_hss |
-| `load`, `load_unit` | load applied to the machine, and its unit (hp, W, lbs, N, kN, Nm, …) | adelaide, bjtu_bogie, cwru, dirg, dlr, dlr_needle, femto, ferrara_or, ferrara_rtf, hse_similar_system, hust, im_vacd, ims, just_slewing, kaist_load, kaist_rtf, laspi, lenze_mb, mfpt, neepu, ottawa_uored, paderborn, paderborn_rtf, sdust, uc204, upm_citef, xjtu_sy |
-| `bearing_id` | physical bearing tested: the same id means the same bearing (for grouped train/test splits) | cwru, ferrara_or, hit_intershaft, hse_similar_system, hust, hustbearing, ottawa_uored, paderborn, saarland |
-| `fault_origin` | `artificial` (seeded) or `real` (grown in operation); `none` if healthy | all except bjtu_bogie, dcase_bearing, dlr_needle, femto, ferrara_rtf, hust_transmission, ims, isac, kaist_load, kaist_rtf, kaist_speed, laspi, lenze_mb, mafaulda, mcc5_thu_gearbox, mcc5_thu_motor, mehran_uet, mfpt, nln_emp, ottawa_2018, ottawa_uored, paderborn_rtf, phm09, sca, seu, tecnalia_gearbox, unsw, uoemd, urma_crti, vibrobox, wt_hss, xjtu_sy |
+| `axis` | measurement direction (`x`/`y`/`z`, `horizontal`/`vertical`, `axial`/`radial`/`tangential`) or phase (`a`/`b`/`c`); `none` for single-axis sensors | all except cwru, dcase_bearing, dlr, dlr_needle, fstf, hse_similar_system, hust, hust_transmission, isac, just_slewing, mfpt, ottawa_2018, ottawa_uored, paderborn, sca, sqv, uc204, uoemd, upm_citef, urma_crti, vibrobox, wt_hss |
+| `sensor_mounting` | surface the sensor is on (ISO 20816-1): `pedestal` (stand-alone bearing housing), `casing` (machine casing at the bearing, e.g. a motor end shield), `outer_ring`, `shaft` (sensor on or probe aimed at the shaft), `base`; `none` without mechanical mounting (currents, microphones) | all (and my_cwru) |
+| `speed_rpm` | shaft speed (rpm): measured, or the set or nominal speed when the dataset does not measure it (`ds.columns()` says which) | all except arkansas, army_pla, dcase_bearing, dlr_needle, hit_intershaft, hust_transmission, hustbearing, kaist_speed, mehran_uet, neepu, ottawa_2018, sdust, sqv, tecnalia_bearing, tecnalia_gearbox, uaq_upc, uoemd, urma_crti, vbl_va001, vibrobox, wt_hss (and my_cwru) |
+| `speed_profile` | how the speed changes: `constant`, `increasing`, `decreasing`, `inc_dec`, `dec_inc`, `varying`, `unknown` | army_pla, hust_transmission, hustbearing, kaist_speed, mcc5_thu_gearbox, mcc5_thu_motor, ottawa_2018, sdust, sqv, tecnalia_bearing, tecnalia_gearbox, uaq_upc, uoemd, vibrobox |
+| `load`, `load_unit` | load applied to the machine, in `load_unit` (hp, W, N, kN, Nm, …) | adelaide, bjtu_bogie, cwru, dirg, dlr, dlr_needle, femto, ferrara_or, ferrara_rtf, haust_ldv, hse_similar_system, hust, im_vacd, ims, just_slewing, kaist_load, kaist_rtf, laspi, lenze_mb, mcc5_thu_gearbox, mcc5_thu_motor, mfpt, neepu, ottawa_uored, paderborn, paderborn_rtf, sdust, uc204, upm_citef, xjtu_sy |
+| `operating_condition` | the dataset's own id of the operating regime (e.g. FEMTO `1`, XJTU `35Hz12kN`, Paderborn `N15_M07_F04`), for cross-condition tests | army_pla, bjtu_bogie, cumtb_pitch, femto, haust_ldv, hse_similar_system, hust_transmission, hustbearing, mehran_uet, paderborn, phm09, saarland, sdust, seu, tecnalia_bearing, tecnalia_gearbox, uoemd, xjtu_sy |
+| `fault_origin` | `artificial` (seeded) or `real` (grown in operation); `none` if healthy | adelaide, arkansas, army_pla, cumtb_pitch, cwru, dirg, dlr, estogu, ferrara_or, fstf, haust_ldv, hit_intershaft, hit_sm, hse_similar_system, hust, hustbearing, im_vacd, jnu, just_slewing, kimm_pmsm, neepu, paderborn, saarland, sdust, sqv, subf_v1, subf_v2, susu, tecnalia_bearing, uaq_upc, uc204, uestc, uos, upm_citef, vbl_va001, vit_sq, vit_taper |
 | `fault_size_mm` | fault size in mm; 0 if healthy | cwru, dirg, dlr, ferrara_or, haust_ldv, hustbearing, jnu, mehran_uet, saarland, sdust, uc204 |
-| `bpfo`, `bpfi`, `bsf`, `ftf` | bearing fault frequencies in orders of the shaft speed (Hz = order × rpm / 60) of the test bearing (nearest the sensor when several are documented); `bsf` is the ball spin frequency (ball defects show at 2 × `bsf`) | army_pla, cwru, dirg, dlr, femto, ferrara_or, ferrara_rtf, haust_ldv, hust, hust_transmission, hustbearing, ims, kaist_load, kaist_rtf, kaist_speed, laspi, lenze_mb, mafaulda, mcc5_thu_gearbox, mcc5_thu_motor, ottawa_2018, ottawa_uored, paderborn, paderborn_rtf, phm09, saarland, sca, sdust, susu, tecnalia_bearing, tecnalia_gearbox, uos, upm_citef, vbl_va001, vit_sq, xjtu_sy |
-| `severity` | fault severity as the dataset defines it (see `ds.columns()`) | hustbearing, kaist_load, lenze_mb, mcc5_thu_gearbox, mcc5_thu_motor, nln_emp, ottawa_uored, paderborn, sqv, uaq_upc, uos, upm_citef |
-| `speed_profile` | how the speed changes: constant, increasing, decreasing, inc_dec, dec_inc, varying | army_pla, hust_transmission, hustbearing, kaist_speed, ottawa_2018, sdust, sqv, tecnalia_bearing, tecnalia_gearbox, uaq_upc, uoemd, vibrobox |
+| `fault_severity` | fault severity in the dataset's own words (see `ds.columns()`); `not graded` for a fault the dataset does not grade, `none` if healthy | cwru, dirg, dlr, ferrara_or, haust_ldv, hit_intershaft, hit_sm, hustbearing, kaist_load, lenze_mb, mcc5_thu_gearbox, mcc5_thu_motor, mehran_uet, nln_emp, ottawa_uored, paderborn, sdust, sqv, uaq_upc, uc204, uos, upm_citef |
+| `fault_severity_level` | severity rank: 0 healthy, 1, 2, … from the mildest, within the dataset and fault type; 1 if not graded (not comparable across datasets) | cwru, dirg, dlr, ferrara_or, haust_ldv, hit_intershaft, hit_sm, hustbearing, kaist_load, lenze_mb, mcc5_thu_gearbox, mcc5_thu_motor, mehran_uet, nln_emp, ottawa_uored, paderborn, sdust, sqv, uaq_upc, uc204, uos, upm_citef, vbl_va001 |
+| `bearing_id` | physical bearing tested: the same id means the same bearing (for grouped train/test splits) | cwru, ferrara_or, hit_intershaft, hse_similar_system, hust, hustbearing, ottawa_uored, paderborn, saarland |
+| `bearing_model` | bearing designation (e.g. `6205-2RS`), per sensor when the bearings differ | all except adelaide, arkansas, cumtb_pitch, dcase_bearing, dirg, dlr_needle, estogu, femto, hit_intershaft, im_vacd, isac, jnu, just_slewing, kimm_pmsm, laspi, mafaulda, neepu, nln_emp, ottawa_uored, seu, subf_v1, subf_v2, uaq_upc, unsw, urma_crti, vit_taper, wt_hss |
+| `bpfo`, `bpfi`, `bsf`, `ftf` | bearing fault frequencies in orders of the shaft speed (Hz = order × rpm / 60), of the test bearing (nearest the sensor when several are documented); `bsf` is the ball spin frequency (rolling element defects show at 2 × `bsf`) | army_pla, cwru, dirg, dlr, femto, ferrara_or, ferrara_rtf, haust_ldv, hust, hust_transmission, hustbearing, ims, kaist_load, kaist_rtf, kaist_speed, laspi, lenze_mb, mafaulda, mcc5_thu_gearbox, mcc5_thu_motor, ottawa_2018, ottawa_uored, paderborn, paderborn_rtf, phm09, saarland, sca, sdust, susu, tecnalia_bearing, tecnalia_gearbox, uos, upm_citef, vbl_va001, vit_sq, xjtu_sy |
+| `repetition` | index of acquisitions repeated with the same settings | arkansas, just_slewing, laspi, nln_emp, ottawa_2018, paderborn, phm09, sdust, uaq_upc, upm_citef, vit_taper |
 | `run_id` | run-to-failure experiment | dlr_needle, femto, ferrara_rtf, ims, kaist_rtf, paderborn_rtf, unsw, wt_hss, xjtu_sy |
-| `time_s`, `rul_s` | time since the start of the run, remaining useful life (s) | dlr_needle, femto, ferrara_rtf, ims, kaist_rtf, paderborn_rtf, wt_hss, xjtu_sy |
-
-Dataset-specific columns (the `unsw` run-to-failure data counts shaft cycles instead of seconds):
-
-| dataset | columns |
-|---|---|
-| adelaide | `defect_depth_um`, `defect_length_deg`, `defect_slope_deg`, `series` |
-| arkansas | `speed_setting`, `trial` |
-| army_pla | `operating_condition`, `subset` |
-| bjtu_bogie | `sensor_position`, `fault_detail`, `motor_speed_hz`, `working_condition` |
-| cumtb_pitch | `chunk`, `fault_type`, `load_condition` |
-| cwru | `or_position` (outer race fault position), `source_file` (original CWRU file number) |
-| dcase_bearing | `dcase_split`, `domain`, `factory_noise`, `mic_location`, `section`, `velocity` |
-| dirg | `acquisition`, `session` |
-| dlr_needle | `amplitude_deg`, `lubrication`, `oscillation_hz`, `snapshot` |
-| estogu | `load_position`, `load_resistance`, `supply`, `supply_hz` |
-| femto | `operating_condition`, `official_set` (learning / test / hidden), `snapshot` |
-| fstf | `stethoscope` |
-| haust_ldv | `load_case`, `radial_load_n` |
-| hit_intershaft | `fault_depth_mm`, `fault_length_mm`, `hp_rpm`, `lp_rpm`, `segment` |
-| hit_sm | `fault_arc_deg`, `rig` |
-| hse_similar_system | `bearing_model`, `cage`, `original_recording`, `rig`, `speed_set_rpm` |
-| hust | `bearing_model` (6204-6208) |
-| hust_transmission | `operating_condition` |
-| hustbearing | `operating_condition` |
-| im_vacd | `accelerometer_fs_set`, `acoustic_fs_set`, `mounting`, `phone` |
-| ims | `measured_at`, `failed_bearing`, `failure` |
-| just_slewing | `repetition` |
-| kaist_speed | `trial` |
-| kimm_pmsm | `disturbance`, `kimm_folder`, `sensor_position` |
-| laspi | `acquisition`, `supply_hz` |
-| lenze_mb | `belt_tension` |
-| mafaulda | `imbalance_g`, `misalignment_mm`, `misalignment_direction` |
-| mcc5_thu_gearbox | `rpm_setting`, `torque_setting_nm`, `varying` |
-| mcc5_thu_motor | `rpm_setting`, `torque_setting_nm`, `varying` |
-| mehran_uet | `load_condition` |
-| mfpt | `field_data`, `source_file` |
-| nln_emp | `measurement`, `sample`, `setup`, `speed_pct` |
-| ottawa_2018 | `trial` |
-| paderborn | `radial_force_n`, `repetition`, `damage`, `bearing_manufacturer` |
-| paderborn_rtf | `dynamic_load_peak_n`, `failure`, `temperature_room_c`, `temperature_t1_c`, `temperature_t2_c` |
-| phm09 | `fault_detail`, `gear_type`, `speed_hz`, `load_level`, `repeat` |
-| saarland | `coupling_mounting`, `damage_length_mm`, `force_level`, `measurement_batch`, `measurement_day`, `mounting_position`, `run`, `second_shaft`, `sensor_mounting`, `speed_target_rpm`, `worker` |
-| sca | `case`, `asset`, `bearing_model`, `measured_at`, `machine_running`, `fixed_speed`, `source_file`, `sca_label` |
-| sdust | `operating_condition`, `repetition` |
-| seu | `subset`, `fault_detail`, `speed_hz`, `load_setting` |
-| subf_v1 | `segment` |
-| subf_v2 | `segment` |
-| tecnalia_bearing | `shaft_hz` |
-| tecnalia_gearbox | `operating_condition` |
-| uaq_upc | `repetition`, `supply_hz`, `test` |
-| uestc | `n_files` |
-| unsw | `rul_cycles`, `shaft_cycles` |
-| uoemd | `fault`, `load_condition`, `operating_condition` |
-| uos | `bearing_model`, `bearing_type` |
-| upm_citef | `depth_ir_mm`, `depth_or_mm`, `depth_re_mm`, `repetition`, `study` |
-| urma_crti | `supply_hz` |
-| vbl_va001 | `file_series`, `unbalance_gcm` |
-| vibrobox | `speed_setting`, `subset` |
-| vit_sq | `added_mass_g` |
-| vit_taper | `fault`, `trial` |
-| xjtu_sy | `failure`, `operating_condition`, `snapshot` |
-| my_cwru (private example) | `source_file` |
+| `time_s`, `rul_s` | time since the start of the run and remaining useful life (s) | dlr_needle, femto, ferrara_rtf, ims, kaist_rtf, paderborn_rtf, wt_hss, xjtu_sy |
+| `accelerometer_fs_set` | accelerometer rate requested from the phone, Hz | im_vacd |
+| `acoustic_fs_set` | microphone rate requested from the phone, Hz | im_vacd |
+| `acquisition` | stationary, repetition 1 or 2 | dirg |
+| `added_mass_g` | load in grams from the file name (0, 6, 12), presumably masses added on the balance rotor | vit_sq |
+| `amplitude_deg` | oscillation amplitude in degrees | dlr_needle |
+| `asset` | type of machine (Roller, Engine, Pump, Strainer, Agitator) | sca |
+| `bearing_manufacturer` | manufacturer of the test bearing (FAG, IBU, MTK) | paderborn |
+| `bearing_type` | deep groove ball, cylindrical roller or tapered roller | uos |
+| `belt_tension` | belt tension setting giving the radial force, 250 or 500 (stated as Nm, likely N) | lenze_mb |
+| `cage` | plastic or metal | hse_similar_system |
+| `case` | case number 1-11 (one machine and one fault per case) | sca |
+| `chunk` | number of the ~26 s chunk within the 10 min acquisition | cumtb_pitch |
+| `coupling_mounting` | assembly deviation code of the coupling mounting (0-2 | saarland |
+| `damage` | how the damage was made: EDM, drilling, electric engraver (artificial) or pitting, indentation (real, from accelerated lifetime tests) | paderborn |
+| `damage_length_mm` | length of the inner ring defect (0 if undamaged) | saarland |
+| `dcase_split` | train (normal only) or test, as in the challenge | dcase_bearing |
+| `defect_depth_um` | defect depth in micrometres (110 slope series, 100 length series) | adelaide |
+| `defect_length_deg` | angular length of the defect for the length series | adelaide |
+| `defect_slope_deg` | entry and exit slope of the defect edges in degrees (90 = square edges) | adelaide |
+| `depth_ir_mm` | depth of the inner race defect (0 if none) | upm_citef |
+| `depth_or_mm` | depth of the outer race defect (0 if none) | upm_citef |
+| `depth_re_mm` | depth of the rolling element defects (0 if none) | upm_citef |
+| `disturbance` | none, or noise_1 to noise_5 (physical disturbances, presumably D1-D5) | kimm_pmsm |
+| `domain` | source or target domain | dcase_bearing |
+| `dynamic_load_peak_n` | peak of the measured dynamic (shaker) load in N | paderborn_rtf |
+| `factory_noise` | factory noise attribute A or B (none if not given) | dcase_bearing |
+| `failed_bearing` | bearing(s) that failed at the end of the test | ims |
+| `failure` | failure found at the end of the test, in words | ims, paderborn_rtf, xjtu_sy |
+| `fault_arc_deg` | arc of the raceway covered by the fault, in degrees (2, 5, 8 | hit_sm |
+| `fault_depth_mm` | depth of the wire-cut fault (0 if healthy) | hit_intershaft |
+| `fault_detail` | the faults of the recording in words, from the health codes | bjtu_bogie, cumtb_pitch, phm09, seu, uoemd, vit_taper |
+| `fault_length_mm` | length of the wire-cut fault (0 if healthy) | hit_intershaft |
+| `field_data` | true for the 3 real-world recordings, false for the test rig | mfpt |
+| `file_series` | main, or z for the files whose name carries "_z" (not explained by the authors) | vbl_va001 |
+| `fixed_speed` | true when the machine runs at a fixed speed | sca |
+| `force_level` | radial load level 0-3 (about 0, 1600, 2500, 3300 N) | saarland |
+| `gear_type` | spur or helical | phm09 |
+| `hp_rpm` | high-pressure rotor speed in rpm | hit_intershaft |
+| `imbalance_g` | added unbalance mass in grams (0 if none) | mafaulda |
+| `kimm_folder` | original folder (e.g | kimm_pmsm |
+| `load_level` | High or Low load | phm09 |
+| `load_position` | resistor bank switch position 0-5 | estogu |
+| `load_resistance` | resistance of that position (no load, 111, 56, 38, 29, 23 ohm) | estogu |
+| `load_setting` | load setting of the file name (0 or 2 V) | seu |
+| `load_state` | unloaded, or loaded (a disk bolted to the shaft) | uoemd |
+| `lp_rpm` | low-pressure rotor speed in rpm | hit_intershaft |
+| `lubrication` | Oil1, Oil2, Oil3 or NoOil | dlr_needle |
+| `machine_running` | false when the dataset marks the measurement as machine off / speed missing (label -1) | sca |
+| `measured_at` | date and time of the snapshot (from the file name) | ims, sca |
+| `measurement` | vibration or electric (separate acquisition systems) | nln_emp |
+| `measurement_batch` | measurement batch 1-48 | saarland |
+| `measurement_day` | measurement day number | saarland |
+| `mic_location` | microphone location attribute A-D (none if not given) | dcase_bearing |
+| `misalignment_direction` | horizontal, vertical or none | mafaulda |
+| `misalignment_mm` | shaft misalignment in mm (0 if none) | mafaulda |
+| `mounting_position` | mounting position of the test bearing, A-D | saarland |
+| `n_files` | number of consecutive storage files joined into the recording | uestc |
+| `official_set` | learning (learning set), test (in the truncated official test set) or hidden (after the truncation) | femto |
+| `or_position` | position of an outer race fault relative to the load zone (6:00 centered, 3:00 orthogonal, 12:00 opposite) | cwru |
+| `original_recording` | number of the recording in the original 300-recording set (Data_No there), 0 if new in the extension | hse_similar_system |
+| `oscillation_hz` | oscillation frequency in Hz | dlr_needle |
+| `phone` | iphone_13, galaxy_s6 or galaxy_a50 | im_vacd |
+| `phone_mounting` | hand_held or rigid | im_vacd |
+| `radial_force_n` | radial force on the test bearing in N (F04 = 400, F10 = 1000) | paderborn |
+| `rig` | spectraquest (SpectraQuest MFS) or self_built | hit_sm, hse_similar_system |
+| `rul_cycles` | shaft revolutions left until the last measurement of the test | unsw |
+| `run` | sensor-mounting run 1-3 | saarland |
+| `sca_label` | label exactly as in the dataset (-1 off, 0 normal, 1 inner, 2 ball, 3 outer) | sca |
+| `second_shaft` | 1 if the second shaft was used (0/1 | saarland |
+| `section` | DCASE section 00-02 (each with its own domain shift) | dcase_bearing |
+| `segment` | number of the 20480-sample segment within the test and speed pair | hit_intershaft, subf_v1, subf_v2 |
+| `sensor_mounting_deviation` | assembly deviation code of the sensor mounting (0/1 | saarland |
+| `sensor_position` | accelerometer position on the housing, S (12 o'clock), C (2), B (11) or A (9) | kimm_pmsm, sca |
+| `series` | slope (defect entry/exit slope series) or length (defect length series) | adelaide |
+| `session` | stationary (speed and load combinations) or endurance (230 h monitoring) | dirg |
+| `setup` | motor_2 or motor_4 (motor-pump set) | nln_emp |
+| `shaft_cycles` | shaft revolutions since the start of the test (from the file name) | unsw |
+| `snapshot` | number of the snapshot in the test (as in the file names) | dlr_needle, femto, xjtu_sy |
+| `source_file` | original CWRU file (e.g | cwru, mfpt, my_cwru, sca |
+| `speed_pct` | motor speed in % of rated speed | nln_emp |
+| `speed_setting` | speed setting of the folder (25, 50 or 75 | arkansas, vibrobox |
+| `stethoscope` | yes if recorded through a stethoscope (Datasets 1), no otherwise (Datasets 2) | fstf |
+| `study` | 2020, 2021 or 2023 (Zenodo record) | upm_citef |
+| `subset` | bearing, gearbox or mixed (the folder of the file) | army_pla, seu, vibrobox |
+| `supply` | inverter (With_Driver) or grid (Without_Driver) | estogu |
+| `supply_hz` | supply frequency in Hz | estogu, laspi, uaq_upc, urma_crti |
+| `temperature_room_c` | mean room temperature in degC | paderborn_rtf |
+| `temperature_t1_c` | mean bearing temperature at position T1 in degC | paderborn_rtf |
+| `temperature_t2_c` | mean bearing temperature at position T2 in degC | paderborn_rtf |
+| `test` | stationary (37.5-50 min depending on the channel) or start-up (30 s) | uaq_upc |
+| `trial` | run number 0-6 (varying speed), or constant (the 600 s run at 3010 rpm) | kaist_speed |
+| `unbalance_gcm` | unbalance in gram.cm (6 or 27 | vbl_va001 |
+| `velocity` | rotation velocity attribute from the file name (none if not given) | dcase_bearing |
+| `worker` | worker who mounted the bearing, 1 or 2 | saarland |
 
 `ds.columns()` (or `bearing-datasets info <name>`) gives the exact meaning of every column in a
 dataset, including dataset notes such as how `bearing_id` was defined.
+
+### Locations
+
+`sensor_location` and `fault_location` use one vocabulary, `<unit>_<item>[_<position>]`, built
+from the terms of ISO 14224 (equipment units and maintainable items), IEC 60034-7 (drive end
+`de`, non-drive end `nde`) and ISO 20816-1 (measurement at each bearing):
+
+| part | values |
+|---|---|
+| unit | `motor`, `gearbox`, `pump`, `generator`, `axle` (railway wheelset), `machine` (a machine whose type the location does not say), `rig` (the structure and shaft line of a test rig) |
+| item | `bearing`, `shaft`, `rotor`, `stator`, `gear`, `impeller`, `supply` (the currents and voltages feeding a motor) |
+| position | `de`, `nde`; gearbox shaft stages `input`, `intermediate`, `output`; `left`, `right` |
+| test rigs | `test_bearing` (the bearing under study: seeded fault, swapped or run to failure), `support_bearing` (the rig's own bearings), with `_de` / `_nde` when there are two |
+| others | `coupling`, `base` (base plate), `ambient` (off the machine: microphones, room temperature), `unknown` |
+
+A location names the bearing or part measured, not the surface: a sensor on the housing of the
+drive-end motor bearing is at `motor_bearing_de`, with `sensor_mounting` = `casing`. The full
+list is `bearing_datasets.schema.LOCATIONS`.
 
 Three rules to keep in mind:
 
 * **No missing values.** When a value does not apply the table says `none` (e.g.
   `fault_origin` of a healthy bearing); when the dataset does not document it, `unknown`.
-* **`condition` describes the machine, not the sensor.** A CWRU fan-end signal recorded with a
-  faulty drive-end bearing has `condition="inner"`, `fault_location="bearing_de"` and
-  `sensor_location="bearing_fe"`. Compare `sensor_location` with `fault_location` to know
-  whether the sensor sits on the faulty bearing.
+* **`fault_type` describes the machine, not the sensor.** A CWRU fan-end signal recorded with a
+  faulty drive-end bearing has `fault_type="inner"`, `fault_location="motor_bearing_de"`,
+  `sensor_location="motor_bearing_nde"` and `sensor_at_fault=False`.
 * **No train/test splits are included.** They belong to each study; use `bearing_id` (or
   `recording_id`) to split without leakage.
 
@@ -428,6 +503,7 @@ The metadata can be read without this library: `pd.read_parquet(f"{root}/cwru/me
   in any Jupyter environment where the package is installed)
 * [CONTRIBUTING.md](CONTRIBUTING.md): add a public dataset to the package, or build a private
   one (internal lab data) without changing this repository
+* [CHANGELOG.md](CHANGELOG.md): what changed between versions (0.2.0 renamed several columns)
 
 ## Add your dataset
 

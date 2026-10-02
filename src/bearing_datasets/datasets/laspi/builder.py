@@ -9,9 +9,10 @@ import pandas as pd
 from bearing_datasets.bearings import fault_orders
 
 
-def _ch(location, quantity, axis, unit):
+def _ch(location, mounting, quantity, axis, unit):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": unit,
@@ -21,29 +22,26 @@ def _ch(location, quantity, axis, unit):
 
 # intermediate-shaft ball bearing from the record: 9 balls of 0.3125 in, pitch 1.5157 in
 ORDERS = fault_orders(9, 0.3125, 1.5157)
+# currents and voltages at the inverter output (the motor supply)
 CHANNELS = {
-    "current_1": _ch("inverter_output", "current", "a", "raw (current / 100)"),
-    "current_2": _ch("inverter_output", "current", "b", "raw (current / 100)"),
-    "current_3": _ch("inverter_output", "current", "c", "raw (current / 100)"),
-    "vibration": _ch("gearbox_intermediate_shaft", "acceleration", "none", "raw (100 mV/g)"),
-    "voltage_1": _ch("inverter_output", "voltage", "a", "raw (voltage / 200)"),
-    "voltage_2": _ch("inverter_output", "voltage", "b", "raw (voltage / 200)"),
-    "voltage_3": _ch("inverter_output", "voltage", "c", "raw (voltage / 200)"),
-}
-STATE = {  # folder -> (condition, fault_location)
+    "current_1": _ch("motor_supply", "none", "current", "a", "raw (current / 100)"),
+    "current_2": _ch("motor_supply", "none", "current", "b", "raw (current / 100)"),
+    "current_3": _ch("motor_supply", "none", "current", "c", "raw (current / 100)"),
+    "vibration": _ch("gearbox_bearing_intermediate", "casing", "acceleration", "none",
+                     "raw (100 mV/g)"),
+    "voltage_1": _ch("motor_supply", "none", "voltage", "a", "raw (voltage / 200)"),
+    "voltage_2": _ch("motor_supply", "none", "voltage", "b", "raw (voltage / 200)"),
+    "voltage_3": _ch("motor_supply", "none", "voltage", "c", "raw (voltage / 200)"),
+}  # fmt: skip
+BEARING = "gearbox_bearing_intermediate"
+STATE = {  # folder -> (fault_type, fault_location); the gears are on the intermediate shaft
     "Healthy_motor": ("normal", "none"),
-    "Bearing_inner_race_fault": ("inner", "intermediate_shaft_bearing"),
-    "Bearing_outer_race_fault": ("outer", "intermediate_shaft_bearing"),
+    "Bearing_inner_race_fault": ("inner", BEARING),
+    "Bearing_outer_race_fault": ("outer", BEARING),
     "Gear_surface_damage": ("gear", "gearbox"),
     "Gear_half_broken_tooth": ("gear", "gearbox"),
-    "Gear_surface_and_bearing_inner_race_faults": (
-        "gear+inner",
-        "gearbox+intermediate_shaft_bearing",
-    ),
-    "Gear_half_broken_tooth_and_bearing_outer_race_faults": (
-        "gear+outer",
-        "gearbox+intermediate_shaft_bearing",
-    ),
+    "Gear_surface_and_bearing_inner_race_faults": ("gear+inner", f"gearbox+{BEARING}"),
+    "Gear_half_broken_tooth_and_bearing_outer_race_faults": ("gear+outer", f"gearbox+{BEARING}"),
 }
 COND = re.compile(r"^(?P<hz>\d+)hz_(?P<load>\d+)%_(?P<rpm>\d+)rpm$")
 
@@ -53,18 +51,18 @@ def recordings(raw_dir):
         if path.name.startswith("._"):
             continue
         state, cond = path.parent.parent.name, COND.match(path.parent.name)
-        condition, location = STATE[state]
+        fault_type, location = STATE[state]
         x = pd.read_csv(path, header=None, engine="c")
         yield {
             "recording_id": f"{state}_{path.parent.name.replace('%', 'pct')}_{path.stem[-1]}",
             "native_label": state,
-            "condition": condition,
+            "fault_type": fault_type,
             "fault_location": location,
-            "rpm": float(cond["rpm"]),
+            "speed_rpm": float(cond["rpm"]),
             "supply_hz": float(cond["hz"]),
             "load": float(cond["load"]),
             "load_unit": "% of brake",
-            "acquisition": int(path.stem[-1]),
+            "repetition": int(path.stem[-1]),
             **ORDERS,
             "signals": {ch: x.iloc[:, i].to_numpy() for i, ch in enumerate(CHANNELS)},
         }

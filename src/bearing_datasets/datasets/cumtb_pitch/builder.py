@@ -8,9 +8,10 @@ import re
 import pandas as pd
 
 
-def _ch(location, quantity, axis):
+def _ch(location, mounting, quantity, axis):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": "unknown",
@@ -19,25 +20,25 @@ def _ch(location, quantity, axis):
 
 
 CHANNELS = {
-    "vib_y_A": _ch("outer_ring_A", "acceleration", "y"),
-    "vib_x_A": _ch("outer_ring_A", "acceleration", "x"),
-    "vib_y_B": _ch("outer_ring_B", "acceleration", "y"),
-    "vib_x_B": _ch("outer_ring_B", "acceleration", "x"),
-    "acoustic": _ch("near_outer_ring", "sound_pressure", "none"),
+    "vib_y_A": _ch("test_bearing", "outer_ring", "acceleration", "y"),  # point A
+    "vib_x_A": _ch("test_bearing", "outer_ring", "acceleration", "x"),
+    "vib_y_B": _ch("test_bearing", "outer_ring", "acceleration", "y"),  # point B
+    "vib_x_B": _ch("test_bearing", "outer_ring", "acceleration", "x"),
+    "acoustic": _ch("ambient", "none", "sound_pressure", "none"),  # near the outer ring
 }
-STATE = {  # code -> (condition, fault_location, fault type)
-    "Health": ("normal", "none", "none"),
-    "IRC": ("inner", "inner_raceway", "crack"),
-    "IRS": ("inner", "inner_raceway", "spalling"),
-    "IRW": ("inner", "inner_raceway", "wear"),
-    "ORC": ("outer", "outer_raceway", "crack"),
-    "ORS": ("outer", "outer_raceway", "spalling"),
-    "ORW": ("outer", "outer_raceway", "wear"),
-    "IORC": ("inner+outer", "inner_raceway+outer_raceway", "crack"),
-    "IORS": ("inner+outer", "inner_raceway+outer_raceway", "spalling"),
-    "IORW": ("inner+outer", "inner_raceway+outer_raceway", "wear"),
-    "RBC": ("ball", "rolling_element", "crack"),
-    "ITRC": ("gear", "inner_ring_gear_teeth", "crack"),
+STATE = {  # code -> (fault_type, fault_detail); every fault is in the pitch bearing
+    "Health": ("normal", "none"),
+    "IRC": ("inner", "crack"),
+    "IRS": ("inner", "spalling"),
+    "IRW": ("inner", "wear"),
+    "ORC": ("outer", "crack"),
+    "ORS": ("outer", "spalling"),
+    "ORW": ("outer", "wear"),
+    "IORC": ("inner+outer", "crack"),
+    "IORS": ("inner+outer", "spalling"),
+    "IORW": ("inner+outer", "wear"),
+    "RBC": ("rolling_element", "crack"),
+    "ITRC": ("gear", "crack"),  # at the root of the inner ring's gear teeth
 }
 CHUNK = re.compile(r"\((\d+)\)")
 
@@ -45,19 +46,21 @@ CHUNK = re.compile(r"\((\d+)\)")
 def recordings(raw_dir):
     for folder in sorted(raw_dir.glob("Cond_*/Cond_*/*rpm/*/vibandacoustic")):
         state, speed, cond = folder.parent.name, folder.parent.parent.name, folder.parts[-5]
-        condition, location, fault_type = STATE[state]
+        fault_type, detail = STATE[state]
+        parts = fault_type.split("+")
+        location = "none" if fault_type == "normal" else "+".join(["test_bearing"] * len(parts))
         for path in sorted(folder.glob("va (*).csv"), key=lambda p: int(CHUNK.search(p.name)[1])):
             chunk = int(CHUNK.search(path.name)[1])
             x = pd.read_csv(path, header=None, usecols=range(1, 6), engine="c")
             yield {
                 "recording_id": f"{cond}_{speed}_{state}_{chunk:02d}",
                 "native_label": state,
-                "condition": condition,
+                "fault_type": fault_type,
                 "fault_location": location,
                 "fault_origin": "none" if state == "Health" else "artificial",
-                "fault_type": fault_type,
-                "rpm": float(speed.removesuffix("rpm")),
-                "load_condition": cond,
+                "fault_detail": detail,
+                "speed_rpm": float(speed.removesuffix("rpm")),
+                "operating_condition": cond,
                 "chunk": chunk,
                 "signals": {ch: x.iloc[:, i].to_numpy() for i, ch in enumerate(CHANNELS)},
             }

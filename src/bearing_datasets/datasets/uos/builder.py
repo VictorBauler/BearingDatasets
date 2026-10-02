@@ -18,15 +18,17 @@ ORDERS = {
 }
 CHANNELS = {
     "vibration": {
-        "sensor_location": "bearing_housing_shaft_end",
+        "sensor_location": "test_bearing",  # on top of its housing, at the shaft end
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": "vertical",
         "unit": "g",
         "fs": 16000,
     },
 }
-ROTOR = {"M": ("misalignment", "shaft"), "U": ("unbalance", "rotor"), "L": ("looseness", "mount")}
-BEARING = {"B": "ball", "IR": "inner", "OR": "outer"}
+ROTOR = {"M": ("misalignment", "rig_shaft"), "U": ("unbalance", "rig_rotor"),
+         "L": ("looseness", "rig")}  # fmt: skip
+BEARING = {"B": "rolling_element", "IR": "inner", "OR": "outer"}
 TYPE = {"DeepGrooveBall": "deep groove ball", "CylindricalRoller": "cylindrical roller",
         "TaperedRoller": "tapered roller"}  # fmt: skip
 NAME = re.compile(
@@ -48,11 +50,13 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": f"{m['rotor']}_{m['bearing']}",
-            "condition": "+".join(conditions) or "normal",
+            "fault_type": "+".join(conditions) or "normal",
             "fault_location": "+".join(locations) or "none",
             "fault_origin": "artificial" if conditions else "none",
-            "severity": m["rotor"][1:] or "none",
-            "rpm": float(m["rpm"]),
+            "fault_severity": m["rotor"][1:] or ("not graded" if conditions else "none"),
+            # misalignment and unbalance levels 1-3; other faults are not graded (1)
+            "fault_severity_level": int(m["rotor"][1:] or 1) if conditions else 0,
+            "speed_rpm": float(m["rpm"]),
             "bearing_model": m["model"],
             "bearing_type": TYPE[path.parts[-4].removeprefix("BearingType_")],
             "fs": int(m["khz"]) * 1000,

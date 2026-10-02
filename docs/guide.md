@@ -36,8 +36,8 @@ models; those belong to each study. It gives you clean, well-described data to s
 |---|---|
 | **root** | the folder that holds the built datasets, e.g. `/data/bearing_datasets`. Everyone on a server can share one root. Save it once with `bearing-datasets root <folder>` (or `bd.set_root(folder)`); it is remembered for your user. |
 | **dataset** | one published dataset, e.g. `cwru`. In code: `ds = bd.open("cwru")`. |
-| **recording** | one acquisition: the machine ran in one condition (speed, load, fault) and one or more sensors were recorded **at the same time**. Identified by `recording_id`. |
-| **channel** | a sensor (e.g. `DE` = drive-end accelerometer) or one axis of a sensor. |
+| **recording** | one acquisition: the machine ran in one state (its faults, speed and load) and one or more sensors were recorded **at the same time**. Identified by `recording_id`. |
+| **channel** | a sensor (e.g. `DE` = drive-end accelerometer) or one axis of a sensor, named as the dataset names it. |
 | **signal** | one channel of one recording, i.e. one 1-D array of samples. Identified by `signal_id` = `<recording_id>/<channel>`; `ds.signal(signal_id)` returns the samples as a numpy array. |
 | **metadata** | the table describing all signals of a dataset, **one row per signal**. |
 
@@ -45,9 +45,11 @@ The most important metadata columns:
 
 | column | meaning | example |
 |---|---|---|
-| `condition` | the fault(s) present in the **machine** | `normal`, `inner`, `inner+outer` |
-| `fault_location` | where those faults are | `bearing_de`, `none` |
-| `sensor_location` | where the sensor of this signal is mounted | `bearing_fe` |
+| `fault_type` | the fault(s) present in the **machine** | `normal`, `inner`, `inner+outer` |
+| `fault_location` | the position of each faulty part | `motor_bearing_de`, `none` |
+| `sensor_location` | the bearing or part the sensor of this signal measures | `motor_bearing_nde` |
+| `sensor_at_fault` | whether this sensor is at a faulty position | `False` |
+| `operating_condition` | the dataset's own name of the operating regime (speed, load) | `N15_M07_F04` |
 | `fs` | sampling rate, in Hz | `12000` |
 | `native_label` | the label exactly as the original dataset names it (to compare with papers) | `IR007_1` |
 | `bearing_id` | the physical bearing that was tested; the same id means the same bearing | `KA04` |
@@ -136,9 +138,9 @@ The metadata is a pandas DataFrame, so use normal pandas:
 
 ```python
 meta = bd.open("cwru").metadata()
-meta[(meta.condition == "inner") & (meta.fs == 12000)]
-meta.query("sensor_location == 'bearing_de' and load == 1")
-meta.groupby("condition").size()
+meta[(meta.fault_type == "inner") & (meta.fs == 12000)]
+meta.query("sensor_location == 'motor_bearing_de' and load == 1")
+meta.groupby("fault_type").size()
 ```
 
 ### One signal, with a time axis
@@ -158,20 +160,25 @@ channels = ds.recording("12k_DE_IR007_1")    # {"DE": array, "FE": array, "BA": 
 
 ### Only sensors on the faulty bearing
 
-`condition` describes the machine: every sensor of a faulty machine has the fault label,
-even sensors far from the faulty bearing. Keep only the sensors on the faulty bearing, plus
-healthy machines:
+`fault_type` describes the machine: every sensor of a faulty machine has the fault label,
+even sensors far from the faulty bearing. `sensor_at_fault` says whether the sensor is at a
+faulty position (its `sensor_location` is in `fault_location`, or one contains the other, like
+`gearbox` and `gearbox_bearing_input`). Keep only those sensors, plus healthy machines:
 
 ```python
-on_fault = (meta.fault_location == meta.sensor_location) | (meta.condition == "normal")
-meta = meta[on_fault]
+meta = meta[meta.sensor_at_fault | (meta.fault_type == "normal")]
 ```
+
+This drops every faulty recording that has no sensor at the fault: datasets with only
+electrical sensors (`motor_supply`, e.g. lenze_mb), and most unbalance and misalignment
+faults, located at the rotor or the coupling where no sensor sits. Check what is left with
+`meta.groupby(["dataset", "fault_type"]).size()`. Unknown positions are never at the fault.
 
 ### Signals in a DataFrame
 
 ```python
 df = ds.with_signals()                                   # all rows, plus a "signal" column
-df = ds.with_signals(meta[meta.condition == "inner"])    # only the rows you selected
+df = ds.with_signals(meta[meta.fault_type == "inner"])   # only the rows you selected
 df = ds.with_signals(meta.head(5), start=0, stop=4096)   # the first 4096 samples of each
 ```
 
@@ -179,7 +186,7 @@ df = ds.with_signals(meta.head(5), start=0, stop=4096)   # the first 4096 sample
 (in the original dtype). Without the package, the same with pandas alone:
 
 ```python
-ids = meta.loc[meta.condition == "inner", "signal_id"].tolist()
+ids = meta.loc[meta.fault_type == "inner", "signal_id"].tolist()
 signals = pd.concat([pd.read_parquet(f, filters=[("signal_id", "in", ids)])
                      for f in ds.signal_files()])
 df = meta.merge(signals, on="signal_id")
@@ -200,7 +207,7 @@ for signal_id, x in ds.iter_signals(meta.signal_id):
 ```python
 window = 2048
 X, y = [], []
-for (sid, x), label in zip(ds.iter_signals(meta.signal_id), meta.condition):
+for (sid, x), label in zip(ds.iter_signals(meta.signal_id), meta.fault_type):
     n = len(x) // window
     X.append(x[: n * window].reshape(n, window))
     y += [label] * n
@@ -220,18 +227,19 @@ train_idx, test_idx = next(splitter.split(meta, groups=meta.bearing_id))
 train_meta, test_meta = meta.iloc[train_idx], meta.iloc[test_idx]
 ```
 
-For datasets without `bearing_id`, group by `recording_id`.
+For datasets without `bearing_id`, group by `recording_id`. To test generalisation to new
+operating conditions, group by `operating_condition` (or `load`, `speed_rpm`) instead.
 
 ### Bearing fault frequencies in Hz
 
 Datasets with `bpfo`, `bpfi`, `bsf`, `ftf` give them in orders of the shaft speed (multiples
-of the rotation frequency), so they hold at any speed. In Hz, for a recording at `rpm`:
+of the rotation frequency), so they hold at any speed. In Hz, for a recording at `speed_rpm`:
 
 ```python
-meta["bpfo_hz"] = meta.bpfo * meta.rpm / 60
+meta["bpfo_hz"] = meta.bpfo * meta.speed_rpm / 60
 ```
 
-`bsf` is the ball spin frequency; a ball defect mostly shows at 2 x `bsf` (it hits both
+`bsf` is the ball spin frequency; a rolling element defect mostly shows at 2 x `bsf` (it hits both
 races on each turn). Some tables, like CWRU's, list 2 x BSF under "rolling element".
 
 ### Resample to a common sampling rate
@@ -263,7 +271,7 @@ class Windows(torch.utils.data.Dataset):
     def __init__(self, ds, meta, window=2048, classes=None):
         self.ds, self.window = ds, window
         self.meta = meta.reset_index(drop=True)
-        self.classes = classes or {c: i for i, c in enumerate(sorted(meta.condition.unique()))}
+        self.classes = classes or {c: i for i, c in enumerate(sorted(meta.fault_type.unique()))}
 
     def __len__(self):
         return len(self.meta)
@@ -273,7 +281,7 @@ class Windows(torch.utils.data.Dataset):
         x = self.ds.signal(row.signal_id)
         start = np.random.randint(0, len(x) - self.window)     # a random window
         x = torch.tensor(x[start : start + self.window], dtype=torch.float32)
-        return x, self.classes[row.condition]
+        return x, self.classes[row.fault_type]
 ```
 
 `Dataset` objects work with several `DataLoader` workers.
@@ -290,7 +298,7 @@ bearing-datasets build bjtu_bogie --channels CH1 CH2 CH3 \
     --where native_label=M0_G0_LA0_RA0,M1_G0_LA0_RA0,M2_G0_LA0_RA0 --as bjtu_motor
 ```
 
-`--where` accepts any column of the recordings (`condition`, `load`, `rpm`, `native_label`,
+`--where` accepts any column of the recordings (`fault_type`, `load`, `speed_rpm`, `native_label`,
 ...) with a comma-separated list of values. In Python:
 `bd.build("bjtu_bogie", channels=[...], where={"load": [0]}, as_name="bjtu_load0")`.
 The selection is saved with the build: `bearing-datasets build bjtu_motor --force` rebuilds
@@ -334,8 +342,10 @@ Cite each dataset you use, and this library too (see [Citing](../README.md#citin
 `bearing-datasets info <name>` prints the full description, license and citation.
 
 **cwru**: Case Western Reserve University.
-* Seeded faults of 0.18-0.71 mm on the drive-end (DE) or fan-end (FE) bearing, loads 0-3 hp.
-* Each `.mat` file is one recording with up to 3 accelerometers: `DE`, `FE`, `BA` (base).
+* Seeded faults of 0.18-0.71 mm on the drive-end (DE) or fan-end (FE) bearing of the motor,
+  loads 0-3 hp; `fault_severity` is the fault diameter (levels 1-4).
+* Each `.mat` file is one recording with up to 3 accelerometers: `DE`, `FE` (on the motor
+  casing at each end: `motor_bearing_de`, `motor_bearing_nde`) and `BA` (base plate).
 * The normal (healthy) data exists **only at 48 kHz**, while many papers use the 12 kHz fault
   data: resample or decimate the normal data to 12 kHz.
 * Normal recordings have no `BA` channel.
@@ -347,10 +357,10 @@ Cite each dataset you use, and this library too (see [Citing](../README.md#citin
   number papers cite (e.g. `130.mat`).
 
 **hust**: Hanoi University of Science and Technology.
-* One accelerometer, 51.2 kHz; 5 bearing models (6204-6208); compound faults such as
-  `inner+ball`.
+* One accelerometer, 51.2 kHz; 5 bearing models (6204-6208, in `bearing_model`); compound
+  faults such as `inner+rolling_element`.
 * The original files contain a variable called `fs` that is actually the shaft frequency;
-  here it was converted to `rpm`, and the real sampling rate (51.2 kHz) is in `fs`.
+  here it was converted to `speed_rpm`, and the real sampling rate (51.2 kHz) is in `fs`.
 
 **hse_similar_system**: Esslingen University of Applied Sciences, extended similar-system set.
 * Downloaded from Kaggle's public API: no Kaggle account needed.
@@ -360,10 +370,10 @@ Cite each dataset you use, and this library too (see [Citing](../README.md#citin
 
 **hustbearing**: Huazhong University of Science and Technology (HUSTbearing), not to be
 confused with `hust` (Hanoi).
-* 9 health states (medium and severe faults, `severity`) x 11 speeds; triaxial accelerometer
+* 9 health states (medium and severe faults, `fault_severity`) x 11 speeds; triaxial accelerometer
   `X`, `Y`, `Z` at 25.6 kHz.
 * Speed is only known from the file name, in `operating_condition` (`20Hz` ... `80Hz`, or
-  `0-40-0Hz` with `speed_profile=inc_dec`); there is no `rpm` column.
+  `0-40-0Hz` with `speed_profile=inc_dec`); there is no `speed_rpm` column.
 * The raw files have a speed column that the authors call meaningless; it is not stored.
 
 **mehran_uet**: Mehran UET induction motor.
@@ -373,13 +383,14 @@ confused with `hust` (Hanoi).
 
 **ottawa_uored**: University of Ottawa (UORED-VAFCLS).
 * 20 bearings, each recorded healthy, then with a developing fault, then fully faulty
-  (`severity`).
+  (`fault_severity`, levels 0-2).
 * Channels: accelerometer, microphone and a temperature difference, all at 42 kHz.
 
 **upm_citef**: Universidad Politecnica de Madrid (CITEF), three studies in one dataset (`study`).
 * Very shallow milled defects (0.006-0.032 mm); depth per component in `depth_or_mm`,
-  `depth_ir_mm`, `depth_re_mm`; `severity` F0-F4 is only comparable within a study.
-* `Rod_1` is on the faulty bearing's housing.
+  `depth_ir_mm`, `depth_re_mm`; `fault_severity` F1-F4 is only comparable within a study.
+* `Rod_1` is on the faulty bearing's housing (`test_bearing`), `Rod_2` on the other one
+  (`support_bearing`), `Rod_3` on the tightening tower (`rig`).
 
 **vibrobox**: VibroBox, five records on one stand (`subset`) from constant to widely varying speed.
 * Vibration is the raw integer wav output of a 32 mV/g sensor; `speed_setting` keeps the record's
@@ -390,13 +401,13 @@ confused with `hust` (Hanoi).
 * One accelerometer, 25.6 kHz, 10.24 s; speed set by the drive's supply frequency
   (`supply_hz`, 30-50 Hz).
 * Labels come from French variable names; the combined fault's parts are not stated
-  (`condition=bearing`).
+  (`fault_type=bearing`).
 
 **uoemd**: University of Ottawa electric motors (UOEMD-VAFCVS).
 * 8 motors, one per state (healthy, faulty bearing and 6 other motor faults); the motor is
   confounded with the label, so a model can learn the motor instead of the fault.
 * Speed in `operating_condition` (constant `15Hz`...`60Hz`, or ramps like `15-45Hz`, with
-  `speed_profile`); `load_condition` loaded/unloaded.
+  `speed_profile`); `load_state` loaded/unloaded.
 
 **susu**: South Ural State University, sensor rotating with the shaft.
 * 5 bearings at 20 Hz (paper) and 18 Hz (extra, undocumented set).
@@ -417,7 +428,8 @@ channel to track it. Recordings last 1.5 to 30 s.
 * License CC BY-NC (non-commercial).
 
 **kaist_load**: KAIST rotating machine under 0/2/4 Nm.
-* Bearing faults (housing A), shaft misalignment and rotor unbalance, 3010 rpm.
+* Bearing faults (housing A: `test_bearing`; housing B: `support_bearing`), shaft
+  misalignment and rotor unbalance, 3010 rpm.
 * Vibration, temperature + motor current, and acoustic were recorded by different systems,
   so each state has up to 3 recordings (`..._vibration`, `..._current_temperature`,
   `..._acoustic`); group them by `native_label`. Channels have 3 sampling rates.
@@ -427,22 +439,23 @@ channel to track it. Recordings last 1.5 to 30 s.
 
 **kaist_speed**: KAIST, same test bed as `kaist_load`, speed varying randomly 680-2460 rpm.
 * Vibration (25.6 kHz), motor current (100 kHz) and speed are separate recordings of the
-  same run: group them by `native_label` + `trial`.
+  same run: group them by `native_label` + `trial`. Housing A is `test_bearing_de`, housing B
+  `test_bearing_nde` (the faulty bearing is in B, except the constant-speed ball fault).
 * The speed is irregularly sampled: its `fs` is only the mean rate; use the `speed_time_s`
   channel for the exact time of each sample.
 * `trial=constant`: one extra 600 s vibration recording per state at 3010 rpm.
 
 **cumtb_pitch**: CUMTB scaled wind turbine pitch bearing, very low speed (1-3 rpm) and heavy,
 time-varying load.
-* Each 10 min acquisition is stored as ~24 chunks of ~26 s (`chunk`): chunks of one condition
-  come from one acquisition, so split by condition, not by chunk.
-* `ITRC` is a crack at the root of the inner ring's gear teeth (`condition=gear`).
+* Each 10 min acquisition is stored as ~24 chunks of ~26 s (`chunk`): chunks of one state
+  come from one acquisition, so split by state, not by chunk.
+* `ITRC` is a crack at the root of the inner ring's gear teeth (`fault_type=gear`).
 
 **dcase_bearing**: DCASE 2022 Task 2 bearing, microphone only, made for unsupervised anomalous
 sound detection under domain shift.
 * `dcase_split` keeps the challenge split (train has only normal clips) so results can be
   compared with the literature; `section` / `domain` give the domain shift.
-* Anomalies are a damaged machine (eccentricity), labelled `condition=other`.
+* Anomalies are a damaged machine (eccentricity), labelled `fault_type=other`.
 
 **dirg**: Politecnico di Torino, high-speed aeronautical roller bearings.
 * `session=stationary`: 7 bearings (healthy, 3 inner ring and 3 roller indentations) at up to
@@ -453,13 +466,15 @@ sound detection under domain shift.
 **lenze_mb**: Lenze, bearing faults seen only through the drive's own signals.
 * No accelerometer: phase currents/voltages, DC bus, encoder angle and speed logged by the
   inverter at 16 kHz. Some channels are in internal inverter units (see `unit`).
-* 5 pitting levels + one heavy artificial damage (`severity`), 16 operating conditions each.
+* 5 pitting levels + one heavy artificial damage (`fault_severity`, levels 1-6), 16 operating
+  conditions each.
 * License CC BY-NC (non-commercial).
 
 **mcc5_thu_gearbox**: Tsinghua / MCC5 gearbox under time-varying speed or load.
 * Bearing faults only appear together with a broken tooth (`gear+inner`, `gear+outer`).
-* `varying` says whether speed or load cycles; `rpm_setting` / `torque_setting_nm` hold the
-  constant value or the peak of the cycle. The `speed` channel is a key-phase pulse signal.
+* `speed_profile` says whether the speed cycles (`varying`) or the load does (`constant`);
+  `speed_rpm` (the set speed) / `load` hold the constant value or the peak of the cycle. The `speed`
+  channel is a key-phase pulse signal.
 
 **hit_intershaft**: Harbin Institute of Technology, inter-shaft bearing inside a dual-rotor
 aero-engine.
@@ -479,24 +494,26 @@ aero-engine.
 * 10 states x constant (`1000rpm` ...) and randomly varying (`1000-2000rpm` ...) speeds x 4
   loads, in `operating_condition` / `speed_profile` / `load`.
 * The two triaxial sensors are named as in the files (`upper`, `lower`); which one sits on the
-  bearing housing is not documented.
+  bearing housing is not documented (`sensor_location=unknown`).
 
 **nln_emp**: Royal Netherlands Navy, two industrial motor-pump sets.
 * Bearing faults are one group among many faults (`native_label` keeps the folder name, e.g.
   `bearing bpfo 2`, `align angular 3`); `setup` motor_2 has the bearing faults.
 * Vibration (12 s) and electric (15 s) samples come from separate systems: `measurement`
-  says which. Several samples per test (`sample`), so split by test, not by sample.
+  says which. Several samples per test (`repetition`), so split by test, not by sample.
 * Four folders are empty in the published archive (listed in `bearing-datasets info nln_emp`).
 
 **bjtu_bogie**: Beijing Jiaotong University, subway bogie test rig.
 * Faults of the motor (electrical, bearing, bowed shaft), gearbox (gear teeth and bearing) and
   left/right axle box bearings, single and compound: 51 health states x 9 working conditions.
-* 24 channels at 64 kHz grouped by component: `sensor_location` is `motor`, `gearbox`,
-  `axlebox_left` or `axlebox_right`, and `sensor_position` says where on it (drive_end,
-  input_axle, end_cover, ...). Channel names are the dataset's (`CH1`...`CH24`).
-* Compound faults list every fault: `condition = "electrical+inner"` with
-  `fault_location = "motor+gearbox"` (same order); `fault_detail` says it in words.
-* The accelerometer axes are not documented: `axis` 1/2/3 is only the channel order.
+* 24 channels at 64 kHz: `sensor_location` is `motor_bearing_de` / `_nde`,
+  `gearbox_bearing_input` / `_output`, `axle_bearing_left` / `_right`, `motor_supply`
+  (currents), `motor_shaft` (speed) or `ambient` (microphones). Channel names are the
+  dataset's (`CH1`...`CH24`).
+* Compound faults list every fault: `fault_type = "electrical+inner"` with
+  `fault_location = "motor_stator+gearbox_bearing"` (same order); `fault_detail` says it in
+  words.
+* The accelerometer axes are not documented: `axis` x/y/z is only the channel order.
 * Large: 30 GB download, ~32 GB built. Consider a subset (see
   [Recipes](#store-only-part-of-a-large-dataset)).
 
@@ -506,10 +523,10 @@ and the amplitude is clipped at different ranges in different files.
 
 **mfpt**: MFPT Society test rig plus 3 real-world recordings (`field_data`). Two sampling rates
 (97,656 Hz for baseline and the first outer race files, 48,828 Hz for the variable-load
-ones). The failed element of the real-world recordings is not documented (`condition =
+ones). The failed element of the real-world recordings is not documented (`fault_type =
 bearing`).
 
-**ottawa_2018**: University of Ottawa, **time-varying speed**. There is no constant `rpm`;
+**ottawa_2018**: University of Ottawa, **time-varying speed**. There is no constant `speed_rpm`;
 `speed_profile` says how the speed changes, and the `encoder` channel (1024 pulses per
 revolution) gives the instantaneous speed. 200 kHz.
 
@@ -520,7 +537,7 @@ gearbox`).
 
 **sca**: real machines of a pulp and paper mill, measured daily for months. One recording is
 one measurement at one sensor position; the label can change over time (normal, then the
-fault). Measurements with the machine off have `condition = unknown` and
+fault). Measurements with the machine off have `fault_type = unknown` and
 `machine_running = False`. `source_file` keeps the dataset's own train/test files, and each
 position has its own bearing fault frequencies (`bpfo`, `bpfi`, `bsf`, `ftf` columns).
 
@@ -529,13 +546,14 @@ bearing faults (alone or with unbalance), 49 speeds; 8 channels incl. a tachomet
 microphone. Large (12.9 GB download).
 
 **phm09**: PHM 2009 gearbox challenge, labeled set: 14 cases with gear, bearing and shaft
-faults, often combined (e.g. `condition = gear+gear+ball`, with the shaft of each fault in
-`fault_location`), 5 speeds x 2 loads x 2 repeats.
+faults, often combined (e.g. `fault_type = gear+gear+rolling_element`, with the part and
+shaft of each fault in `fault_location`, e.g. `gearbox_gear_input`), 5 speeds x 2 loads x 2
+repeats.
 
 **Run-to-failure datasets (`ims`, `femto`, `xjtu_sy`, `kaist_rtf`, `unsw`, `wt_hss`, `ferrara_rtf`,
 `paderborn_rtf`, `dlr_needle`)**: a bearing runs until it fails and is
 recorded periodically. Each run has a `run_id`; each snapshot has `time_s` (since the start)
-and `rul_s` (remaining useful life, end of life = last snapshot). The condition of each
+and `rul_s` (remaining useful life, end of life = last snapshot). The fault of each
 snapshot is `unknown`; what failed at the end is in `failure` / `failed_bearing`. Split by
 `run_id`.
 * **ims**: 3 tests, 4 bearings on one shaft (test 1 has x/y channels per bearing).
@@ -546,14 +564,14 @@ snapshot is `unknown`; what failed at the end is in `failure` / `failed_bearing`
   temperatures); the failed element is not stated. The raw files contain short NaN gaps,
   kept as published: use `np.nanmean` or drop NaNs before processing.
 * **unsw**: 4 tests; progress is in shaft revolutions (`shaft_cycles`, `rul_cycles`), not
-  seconds. Most measurements are at 6 Hz; some occasions add 12, 15 and 20 Hz (`rpm`). All
+  seconds. Most measurements are at 6 Hz; some occasions add 12, 15 and 20 Hz (`speed_rpm`). All
   channels are in V (sensitivities in `bearing-datasets info unsw`).
 * **wt_hss**: field data from a wind turbine, one 6 s snapshot per day for 50 days.
   `tach_times_s` holds tachometer pulse *times*, not samples. License CC BY-NC-SA.
 * **ferrara_rtf**: 6 tests at 4 loads; every bearing ended with an outer raceway defect.
   `time_s` is nominal (5 min between snapshots, 1 h for the first 453 of E4).
 * **paderborn_rtf**: 17 tests, 1.6 s every ~12 s, 128 kHz (B01-B09) or 64 kHz (B10-B17);
-  speed and loads change at random between recordings (`rpm`, `load`,
+  speed and loads change at random between recordings (`speed_rpm`, `load`,
   `dynamic_load_peak_n` per row). 152 GB: build a subset with `--files`, e.g.
   `--files "B01*" "B02*" "B03*" --as paderborn_rtf_small` (3 GB).
 * **dlr_needle**: oscillating (not rotating) needle bearings, two per test; 11 channels at 4
@@ -600,9 +618,16 @@ download into `~/data/my_cwru`. Built by path the first time:
 : The dataset has not been converted in this root yet. Run
   `bearing-datasets build cwru` (or ask whoever manages the server).
 
-**Why does a fan-end sensor say `condition = inner`?**
-: `condition` describes the machine. Compare `fault_location` and `sensor_location` to know
-  whether the sensor is on the faulty bearing (see [Recipes](#only-sensors-on-the-faulty-bearing)).
+**Why does a fan-end sensor say `fault_type = inner`?**
+: `fault_type` describes the machine. `sensor_at_fault` says whether the sensor is at the
+  faulty bearing (see [Recipes](#only-sensors-on-the-faulty-bearing)).
+
+**I built a dataset with version 0.1 and the column names changed.**
+: 0.2.0 renamed `condition` to `fault_type` (and its value `ball` to `rolling_element`), `rpm`
+  to `speed_rpm` and `severity` to `fault_severity`. Datasets built with 0.1 are read with the
+  new names (with a warning); rebuild them (`bearing-datasets build <name> --force`, no new
+  download if the raw files are still cached) to get the standard locations,
+  `sensor_at_fault`, `sensor_mounting` and the severity levels.
 
 **Why did some columns disappear with `load_metadata`?**
 : It keeps only the columns that every selected dataset has, so there are no missing values.
@@ -646,13 +671,19 @@ download into `~/data/my_cwru`. Built by path the first time:
 
 | term | meaning |
 |---|---|
-| inner race / outer race | the inner and outer rings of a rolling bearing; faults there are `inner` / `outer` |
-| rolling element (ball) | the balls or rollers between the rings; faults there are `ball` |
+| inner race / outer race | the inner and outer rings of a rolling bearing (ISO 5593: inner ring, outer ring); faults there are `inner` / `outer` |
+| rolling element | the balls, rollers or needles between the rings; faults there are `rolling_element` |
 | cage | the part that keeps the rolling elements spaced; faults there are `cage` |
-| drive end (DE) / fan end (FE) | the two ends of a motor: the side of the coupling and the opposite side |
+| drive end (DE) / non-drive end (NDE) | the two ends of a motor (IEC 60034-7): the end with the shaft extension (coupling side) and the opposite end, also called fan end (FE); in locations, `_de` / `_nde` |
+| test bearing / support bearing | on a test rig, the bearing under study (seeded fault, swapped or run to failure) and the rig's own bearings that hold the shaft |
+| pedestal / casing | a stand-alone bearing housing (pillow block), or the machine casing that holds the bearing, like a motor end shield (ISO 20816-1, "pedestal" and "housing-type" bearings); in `sensor_mounting` |
 | seeded / artificial fault | a fault made on purpose (EDM, drilling, engraving) — `fault_origin = artificial` |
 | real fault | a fault that grew during operation (e.g. accelerated lifetime test) — `fault_origin = real` |
 | BPFO / BPFI / BSF / FTF | characteristic fault frequencies of the outer race, inner race, ball and cage, usually given in **orders** (multiples of the shaft frequency) |
-| order | frequency divided by the shaft frequency (`rpm / 60`); makes different speeds comparable |
+| order | frequency divided by the shaft frequency (`speed_rpm / 60`); makes different speeds comparable |
 | envelope spectrum | spectrum of the signal's amplitude; bearing faults show peaks at their fault frequency |
 | run-to-failure | an experiment where a bearing runs until it fails, recorded periodically |
+
+The location and mounting words follow ISO 20816-1 (measurement positions on bearing
+housings), ISO 13373-1 (transducer location and orientation), IEC 60034-7 (D-end, N-end),
+ISO 14224 (equipment units and maintainable items) and ISO 5593 (rolling bearing parts).

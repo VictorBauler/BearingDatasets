@@ -23,4 +23,6 @@ sources:
   - {type: mendeley, name: vibration, id: fm6xzxnf36, version: 2}
   - {type: mendeley, name: current, id: gxdd74czwh, version: 1}
 columns:
-  load_condition: motor load (100, 200 or 300 W) or a note when not stated
+  operating_condition: motor load (100, 200 or 300 W) or a note when not stated
+  fault_severity: fault width (0.7 to 1.7 mm, levels 1-6); broken rotor bar "not graded" (level 1)
+  bearing_model: the drive-end bearing

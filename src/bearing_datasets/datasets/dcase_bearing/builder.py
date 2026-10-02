@@ -9,7 +9,8 @@ from scipy.io import wavfile
 
 CHANNELS = {
     "microphone": {
-        "sensor_location": "near_bearing",
+        "sensor_location": "ambient",
+        "sensor_mounting": "none",
         "quantity": "sound_pressure",
         "unit": "raw (int16)",
         "fs": 16000,
@@ -30,7 +31,7 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": m["label"],
-            "condition": "other" if anomaly else "normal",
+            "fault_type": "other" if anomaly else "normal",
             "fault_location": "test_bearing" if anomaly else "none",
             "section": m["section"],
             "domain": m["domain"],

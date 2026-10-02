@@ -22,7 +22,7 @@ sources:
   - {type: mendeley, name: cond1-2, id: 2n9jkd384k, version: 1}
   - {type: mendeley, name: cond3, id: md6hnhpv3b, version: 1}
 columns:
-  fault_type: crack, spalling or wear (none if healthy)
-  rpm: bearing speed, 1 or 3 rpm
-  load_condition: time-varying load profile Cond_1, Cond_2 or Cond_3
+  fault_detail: crack, spalling or wear (none if healthy)
+  speed_rpm: bearing speed, 1 or 3 rpm
+  operating_condition: time-varying load profile Cond_1, Cond_2 or Cond_3
   chunk: number of the ~26 s chunk within the 10 min acquisition

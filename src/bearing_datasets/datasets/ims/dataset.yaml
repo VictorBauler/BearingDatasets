@@ -7,7 +7,7 @@ description: |
   Test 1 has 8 channels (two accelerometers per bearing, x and y), tests 2 and 3 have 4
   (one per bearing). Failures at the end of each test: test 1 bearing 3 inner race and
   bearing 4 roller element; test 2 bearing 1 outer race; test 3 bearing 3 outer race.
-  The condition of each snapshot is unknown (the fault grows during the test); use
+  The fault of each snapshot is unknown (the fault grows during the test); use
   run_id, time_s and rul_s (end of life = the last snapshot of the test). The files of
   test 3 sit in "3rd_test/4th_test/txt" and run until 2004-04-18 (6,324 snapshots,
   more than the readme says); the snapshots on disk are used.

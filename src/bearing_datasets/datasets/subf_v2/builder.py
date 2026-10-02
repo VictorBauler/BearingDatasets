@@ -7,7 +7,8 @@ import pandas as pd
 
 CHANNELS = {
     "sound": {
-        "sensor_location": "rig",
+        "sensor_location": "ambient",
+        "sensor_mounting": "none",
         "quantity": "sound_pressure",
         "axis": "none",
         "unit": "normalized",
@@ -25,10 +26,10 @@ def recordings(raw_dir):
         yield {
             "recording_id": f"{m['state']}_{int(m['k']):04d}",
             "native_label": m["state"],
-            "condition": STATE[m["state"]],
+            "fault_type": STATE[m["state"]],
             "fault_location": "none" if healthy else "test_bearing",
             "fault_origin": "none" if healthy else "unknown",
-            "rpm": 1440.0,
+            "speed_rpm": 1440.0,
             "segment": int(m["k"]),
             "signals": {"sound": pd.read_csv(path, header=None, engine="c")[0].to_numpy()},
         }

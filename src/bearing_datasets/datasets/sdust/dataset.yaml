@@ -411,4 +411,5 @@ columns:
     given: SKF 6205's 39.04 mm assumed
   operating_condition: speed in rpm from the file name, constant (1000rpm) or a range (1000-2000rpm)
   load: brake load in N (0, 20, 40, 60)
+  fault_severity: fault size 0.2, 0.4 or 0.6 mm (levels 1-3)
   repetition: repeat number from the file name (1 when the file has none)

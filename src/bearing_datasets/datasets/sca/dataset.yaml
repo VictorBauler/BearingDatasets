@@ -8,7 +8,7 @@ description: |
   data around the fault. Each measurement comes from one sensor position (drive side DS,
   free side FS, or Upper/Lower), so one recording = one measurement at one position.
   Labels per measurement and position: 0 normal, 1 inner race, 2 ball, 3 outer race,
-  -1 machine off or speed missing (condition unknown, machine_running false).
+  -1 machine off or speed missing (fault_type unknown, machine_running false).
   Sampling rate and speed change between cases and sometimes between measurements.
   Case 11 is described by the authors as a confirmed shaft misalignment, but all its
   measurements are labelled 0 (normal); the labels are kept as published.
@@ -23,6 +23,9 @@ sources:
   - {type: mendeley, id: tdn96mkkpt, version: 2, include: "*.mat"}
 columns:
   case: case number 1-11 (one machine and one fault per case)
+  sensor_position: >-
+    sensor position as the dataset names it: DS (drive side, machine_bearing_de), FS (free
+    side, machine_bearing_nde), Upper or Lower (machine_bearing)
   asset: type of machine (Roller, Engine, Pump, Strainer, Agitator)
   bearing_model: bearing at this sensor position (e.g. SKF6310)
   measured_at: date and time of the measurement

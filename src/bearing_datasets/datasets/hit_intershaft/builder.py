@@ -8,9 +8,10 @@ from collections import Counter
 import numpy as np
 
 
-def _ch(location, quantity, axis="none"):
+def _ch(location, mounting, quantity, axis="none"):
     return {
         "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": "unknown",
@@ -19,36 +20,39 @@ def _ch(location, quantity, axis="none"):
 
 
 CHANNELS = {
-    "displacement_lp_h": _ch("lp_rotor", "displacement", "horizontal"),
-    "displacement_lp_v": _ch("lp_rotor", "displacement", "vertical"),
-    **{f"acceleration_{p}": _ch(f"casing_point_{p}", "acceleration") for p in (3, 4, 5, 6)},
+    # eddy current probes on the LP rotor; accelerometers at casing measuring points 3-6
+    "displacement_lp_h": _ch("rig_rotor", "shaft", "displacement", "horizontal"),
+    "displacement_lp_v": _ch("rig_rotor", "shaft", "displacement", "vertical"),
+    **{f"acceleration_{p}": _ch("machine", "casing", "acceleration") for p in (3, 4, 5, 6)},
 }
-TESTS = {  # file -> (condition, fault depth mm, fault length mm)
-    "data1": ("normal", 0.0, 0.0),
-    "data2": ("normal", 0.0, 0.0),
-    "data3": ("inner", 0.5, 0.5),
-    "data4": ("inner", 0.5, 1.0),
-    "data5": ("outer", 0.5, 0.5),
+TESTS = {  # file -> (fault_type, fault depth mm, fault length mm, severity level)
+    "data1": ("normal", 0.0, 0.0, 0),
+    "data2": ("normal", 0.0, 0.0, 0),
+    "data3": ("inner", 0.5, 0.5, 1),
+    "data4": ("inner", 0.5, 1.0, 2),
+    "data5": ("outer", 0.5, 0.5, 1),
 }
 LABEL = {0: "normal", 1: "inner", 2: "outer"}
 
 
 def recordings(raw_dir):
-    for name, (condition, depth, length) in TESTS.items():
+    for name, (fault_type, depth, length, level) in TESTS.items():
         a = np.load(raw_dir / f"{name}.npy", mmap_mode="r")
         seen = Counter()
         for i in range(a.shape[0]):
             lp, hp = (float(v) for v in a[i, 6, :2])
-            assert LABEL[int(a[i, 7, 0])] == condition, f"{name} row {i}: unexpected label"
+            assert LABEL[int(a[i, 7, 0])] == fault_type, f"{name} row {i}: unexpected label"
             seen[(lp, hp)] += 1
             yield {
                 "recording_id": f"{name}_{i:03d}",
                 "native_label": str(int(a[i, 7, 0])),
-                "condition": condition,
-                "fault_location": "none" if condition == "normal" else "inter_shaft_bearing",
-                "fault_origin": "none" if condition == "normal" else "artificial",
+                "fault_type": fault_type,
+                "fault_location": "none" if level == 0 else "test_bearing",  # inter-shaft
+                "fault_origin": "none" if level == 0 else "artificial",
                 "fault_depth_mm": depth,
                 "fault_length_mm": length,
+                "fault_severity": f"{length} mm long" if level else "none",
+                "fault_severity_level": level,
                 "bearing_id": name,
                 "lp_rpm": lp,
                 "hp_rpm": hp,

@@ -32,7 +32,8 @@ A dataset can be added when:
   spectrograms or SCADA tables;
 * its files can be **downloaded without a login** (Zenodo, Mendeley Data, Kaggle datasets,
   Dataverse, a university page, ...), in an open format (`.mat`, `.csv`, `.txt`, `.tdms`, ...);
-* each recording can be **labelled**: which fault (or none), where, and under which conditions.
+* each recording can be **labelled**: which fault (or none), where, and under which operating
+  conditions.
 
 Any license can be listed: the package does not redistribute the data, and the license is
 shown to users (`bearing-datasets info`). Just report it faithfully.
@@ -72,7 +73,7 @@ columns:                       # describe every column that is not a standard on
 
 Every column your builder produces must be described: the standard ones are described in
 `schema.py`, the others under `columns:` (the build stops if one is missing). You can also
-add a note to a standard column, e.g. to say what `severity` means in your dataset.
+add a note to a standard column, e.g. to say what `fault_severity` means in your dataset.
 
 Source types:
 
@@ -95,7 +96,12 @@ builder reads directly, like `bjtu_bogie`).
 from bearing_datasets.io import read_mat
 
 CHANNELS = {  # per channel: at least sensor_location and fs
-    "vibration": {"sensor_location": "test_bearing", "quantity": "acceleration", "fs": 51200},
+    "vibration": {
+        "sensor_location": "test_bearing",  # which bearing or part (README: Locations)
+        "sensor_mounting": "pedestal",      # on its housing
+        "quantity": "acceleration",
+        "fs": 51200,
+    },
 }
 
 
@@ -105,9 +111,9 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": code,
-            "condition": "normal" if code == "N" else "inner",   # see README for the values
+            "fault_type": "normal" if code == "N" else "inner",  # see README for the values
             "fault_location": "none" if code == "N" else "test_bearing",
-            "rpm": 1500.0,                                       # any other column you want
+            "speed_rpm": 1500.0,                                  # any other column you want
             "signals": {"vibration": read_mat(path)["data"].ravel()},
         }
 ```
@@ -123,8 +129,23 @@ def recordings(raw_dir):
   `bearing_datasets.bearings.fault_orders(balls, ball_d, pitch_d, contact_deg)` from the
   geometry in the dataset's documents or the manufacturer's catalogue, and say where it comes
   from in a `columns:` note. Leave them out if the bearing is not known.
-* Use the optional column names from the README when they apply (`rpm`, `load`,
-  `bearing_id`, `severity`, …).
+* Use the standard column names from the README when they apply (`speed_rpm`, `load`,
+  `operating_condition`, `bearing_id`, `bearing_model`, `fault_severity`, `repetition`, …),
+  and the standard vocabularies for `fault_type`, `sensor_location` / `fault_location`,
+  `sensor_mounting`, `quantity`, `axis`, `speed_profile` and `fault_origin`
+  (`bearing_datasets.schema.VOCABULARIES`; the build checks them). `sensor_at_fault` is
+  computed for you.
+* Name a new column like the standard ones: `<subject>_<attribute>[_<unit>]`, with the unit
+  at the end when it is fixed (`fault_depth_mm`, `radial_force_n`), `_id` for an identifier,
+  `_level` for an ordinal integer (0 = healthy). Avoid
+  the bare word "condition": `operating_condition` is the regime, `fault_type` the fault.
+* Locations: name the bearing or part the sensor measures, as precisely as the dataset says
+  (`motor_bearing_de`, `gearbox_bearing_input`, `test_bearing`), and put the surface it is on
+  in `sensor_mounting`. Use the same words for `fault_location`, so that `sensor_at_fault`
+  works. Fall back to the unit (`motor`, `gearbox`), then `machine`, then `unknown`.
+* `fault_severity_level`: when the dataset grades its faults, rank the grades within each
+  fault type from 1 (mildest); 0 is healthy, and a fault that is not graded is 1
+  (`fault_severity="not graded"`).
 * **No missing values**: a column must have a value in every row. Use `"none"` when it does
   not apply (e.g. `fault_location` of a healthy recording), `"unknown"` when the dataset does
   not say, and leave the column out if it only makes sense for some rows. The build stops
@@ -151,7 +172,7 @@ ds = bd.open("<name>", root="~/scratch")
 meta = ds.metadata()
 meta.recording_id.nunique(), len(meta)                              # counts as documented?
 meta.groupby("channel")[["fs", "n_samples"]].agg(["min", "max"])    # rates and lengths
-meta.drop_duplicates("recording_id").condition.value_counts()       # label balance
+meta.drop_duplicates("recording_id").fault_type.value_counts()      # label balance
 ds.signal(meta.signal_id.iloc[0])                                  # same values as the raw file?
 ```
 
@@ -164,7 +185,8 @@ The tests check that the README lists every dataset. Add:
 
 * a row for the dataset in the right group of the [dataset tables](README.md#datasets), and
   update the group count, the "**N datasets**" line and the "**N public**" headline;
-* its own columns (those not in the standard tables) to the "Dataset-specific columns" table.
+* the dataset to the "datasets" cell of every column it has in the "Columns that only some
+  datasets have" table, and a row for each of its own columns (those not in `schema.py`).
 
 Optionally, add a note to [docs/guide.md](docs/guide.md) §6 for anything users should know.
 

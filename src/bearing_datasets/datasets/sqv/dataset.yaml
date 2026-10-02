@@ -128,4 +128,4 @@ files:
   - SpeedExtraction/data/REC3494_ch3.txt
   - SpeedExtraction/data/REC3642_ch3.txt
 columns:
-  severity: mild, moderate or severe defect (folder number 1-3); none if normal
+  fault_severity: mild, moderate or severe defect (folder number 1-3, the level); none if normal

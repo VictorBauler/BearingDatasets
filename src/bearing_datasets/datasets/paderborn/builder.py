@@ -12,18 +12,25 @@ from bearing_datasets.bearings import fault_orders
 from bearing_datasets.io import read_mat
 
 
-def _channel(location, quantity, unit, fs):
-    return {"sensor_location": location, "quantity": quantity, "unit": unit, "fs": fs}
+def _channel(location, mounting, quantity, unit, fs):
+    return {
+        "sensor_location": location,
+        "sensor_mounting": mounting,
+        "quantity": quantity,
+        "unit": unit,
+        "fs": fs,
+    }
 
 
+# the test bearing sits in the bearing module; its housing carries the accelerometer
 CHANNELS = {
-    "vibration": _channel("bearing_module", "acceleration", "unknown", 64000),
-    "phase_current_1": _channel("motor", "current", "A", 64000),
-    "phase_current_2": _channel("motor", "current", "A", 64000),
-    "force": _channel("shaft", "force", "N", 4000),
-    "speed": _channel("shaft", "speed", "rpm", 4000),
-    "torque": _channel("shaft", "torque", "Nm", 4000),
-    "temperature": _channel("bearing_module", "temperature", "degC", 1),
+    "vibration": _channel("test_bearing", "pedestal", "acceleration", "unknown", 64000),
+    "phase_current_1": _channel("motor_supply", "none", "current", "A", 64000),
+    "phase_current_2": _channel("motor_supply", "none", "current", "A", 64000),
+    "force": _channel("rig_shaft", "unknown", "force", "N", 4000),
+    "speed": _channel("rig_shaft", "shaft", "speed", "rpm", 4000),
+    "torque": _channel("rig_shaft", "shaft", "torque", "Nm", 4000),
+    "temperature": _channel("test_bearing", "pedestal", "temperature", "degC", 1),
 }
 RAW_NAMES = {"vibration_1": "vibration", "temp_2_bearing_module": "temperature"}
 NAME = re.compile(
@@ -54,12 +61,17 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": m["bearing"],
-            "condition": b["condition"],
-            "fault_location": "none" if b["condition"] == "normal" else "bearing_module",
+            "fault_type": b["fault_type"],
+            "fault_location": "none"
+            if b["fault_type"] == "normal"
+            else "+".join(["test_bearing"] * len(b["fault_type"].split("+"))),
             "fault_origin": b["origin"] or "none",
-            "severity": int(b["severity"]),
+            "fault_severity": "none" if b["severity"] == "0" else b["severity"],
+            "fault_severity_level": int(b["severity"]),
             "bearing_id": m["bearing"],
-            "rpm": int(m["n"]) * 100.0,
+            "bearing_model": "6203",
+            "operating_condition": f"N{m['n']}_M{m['m']}_F{m['f']}",
+            "speed_rpm": int(m["n"]) * 100.0,
             "load": int(m["m"]) / 10,
             "load_unit": "Nm",
             "radial_force_n": int(m["f"]) * 100.0,

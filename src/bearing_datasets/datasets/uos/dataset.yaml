@@ -27,6 +27,8 @@ columns:
     per bearing type from the data paper, Table 2: 6204 (8 balls of 7.94 mm, pitch 34.57
     mm), N204/NJ204 (11 rollers of 7.50 mm, pitch 34 mm), 30204 (15 rollers of 6.20 mm,
     pitch 35.8 mm, 12.6 deg)
-  severity: level 1-3 of the misalignment or unbalance fault (none otherwise)
+  fault_severity: >-
+    level 1-3 of the misalignment or unbalance fault; "not graded" for the other faults
+    (level 1), none if healthy
   bearing_model: bearing model from the file name (6204, N204, NJ204, 30204)
   bearing_type: deep groove ball, cylindrical roller or tapered roller

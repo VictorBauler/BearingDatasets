@@ -20,4 +20,4 @@ citation: |
 sources:
   - {type: zenodo, record: "17653852"}
 columns:
-  rpm: shaft frequency from the file name x 60
+  speed_rpm: shaft frequency from the file name x 60

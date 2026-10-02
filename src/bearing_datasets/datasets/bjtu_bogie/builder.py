@@ -18,10 +18,10 @@ PARTS = [
 ]
 
 
-def _ch(location, position, quantity, unit, axis="none"):
+def _ch(location, mounting, quantity, unit, axis="none"):
     return {
         "sensor_location": location,
-        "sensor_position": position,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "unit": unit,
         "axis": axis,
@@ -29,50 +29,54 @@ def _ch(location, position, quantity, unit, axis="none"):
     }
 
 
-CHANNELS = {
-    **{f"CH{i}": _ch("motor", "drive_end", "acceleration", "g", str(i)) for i in (1, 2, 3)},
-    **{f"CH{i}": _ch("motor", "fan_end", "acceleration", "g", str(i - 3)) for i in (4, 5, 6)},
-    **{f"CH{i}": _ch("motor", "cable", "current", "A", "abc"[i - 7]) for i in (7, 8, 9)},
-    "CH10": _ch("motor", "shaft", "speed", "V"),
-    **{
-        f"CH{i}": _ch("gearbox", "input_axle", "acceleration", "g", str(i - 10))
-        for i in (11, 12, 13)
-    },
-    **{
-        f"CH{i}": _ch("gearbox", "output_axle", "acceleration", "g", str(i - 13))
-        for i in (14, 15, 16)
-    },
-    **{
-        f"CH{i}": _ch("axlebox_left", "end_cover", "acceleration", "g", str(i - 16))
-        for i in (17, 18, 19)
-    },
-    "CH20": _ch("axlebox_left", "near", "sound_pressure", "Pa"),
-    **{
-        f"CH{i}": _ch("axlebox_right", "end_cover", "acceleration", "g", str(i - 20))
-        for i in (21, 22, 23)
-    },
-    "CH24": _ch("axlebox_right", "near", "sound_pressure", "Pa"),
-}
+def _triaxial(first, location, mounting):
+    """Channels CH<first>..CH<first+2>; x/y/z is the channel order (not documented)."""
+    return {f"CH{first + i}": _ch(location, mounting, "acceleration", "g", a) for i, a in
+            enumerate("xyz")}  # fmt: skip
 
-# health code -> (condition, location, words)
+
+CHANNELS = {
+    **_triaxial(1, "motor_bearing_de", "casing"),
+    **_triaxial(4, "motor_bearing_nde", "casing"),
+    **{f"CH{i}": _ch("motor_supply", "none", "current", "A", "abc"[i - 7]) for i in (7, 8, 9)},
+    "CH10": _ch("motor_shaft", "shaft", "speed", "V"),
+    **_triaxial(11, "gearbox_bearing_input", "casing"),
+    **_triaxial(14, "gearbox_bearing_output", "casing"),
+    **_triaxial(17, "axle_bearing_left", "pedestal"),  # on the axle box end cover
+    "CH20": _ch("ambient", "none", "sound_pressure", "Pa"),  # near the left axle box
+    **_triaxial(21, "axle_bearing_right", "pedestal"),
+    "CH24": _ch("ambient", "none", "sound_pressure", "Pa"),  # near the right axle box
+}
+# CSV file of each channel's group
+GROUP = {f"CH{i}": g for g, chs in [("motor", range(1, 11)), ("gearbox", range(11, 17)),
+         ("leftaxlebox", range(17, 21)), ("rightaxlebox", range(21, 25))] for i in chs}  # fmt: skip
+# bearing of each channel (designations from the paper)
+BEARING_MODEL = {
+    ch: "6205" if ch in {f"CH{i}" for i in range(1, 7)} else
+    "32305" if ch in {f"CH{i}" for i in range(11, 17)} else
+    "352213" if ch in {f"CH{i}" for i in (17, 18, 19, 21, 22, 23)} else "none"
+    for ch in CHANNELS
+}  # fmt: skip
+
+# health code -> (fault_type, fault_location, words)
 CODES = {
-    "M1": ("electrical", "motor", "motor stator short circuit"),
-    "M2": ("electrical", "motor", "motor broken rotor bar"),
-    "M3": ("bearing", "motor", "motor bearing fault"),
-    "M4": ("shaft", "motor", "motor bowed shaft"),
+    "M1": ("electrical", "motor_stator", "motor stator short circuit"),
+    "M2": ("electrical", "motor_rotor", "motor broken rotor bar"),
+    "M3": ("bearing", "motor_bearing", "motor bearing fault"),
+    "M4": ("shaft", "motor_shaft", "motor bowed shaft"),
     "G1": ("gear", "gearbox", "gear cracked tooth"),
     "G2": ("gear", "gearbox", "gear worn tooth"),
     "G3": ("gear", "gearbox", "gear missing tooth"),
     "G4": ("gear", "gearbox", "gear chipped tooth"),
-    "G5": ("inner", "gearbox", "gearbox bearing inner race"),
-    "G6": ("outer", "gearbox", "gearbox bearing outer race"),
-    "G7": ("ball", "gearbox", "gearbox bearing rolling element"),
-    "G8": ("cage", "gearbox", "gearbox bearing cage"),
-    "LA1": ("inner", "axlebox_left", "left axle box bearing inner race"),
-    "LA2": ("outer", "axlebox_left", "left axle box bearing outer race"),
-    "LA3": ("ball", "axlebox_left", "left axle box bearing rolling element"),
-    "LA4": ("cage", "axlebox_left", "left axle box bearing cage"),
-    "RA1": ("inner", "axlebox_right", "right axle box bearing inner race"),
+    "G5": ("inner", "gearbox_bearing", "gearbox bearing inner race"),
+    "G6": ("outer", "gearbox_bearing", "gearbox bearing outer race"),
+    "G7": ("rolling_element", "gearbox_bearing", "gearbox bearing rolling element"),
+    "G8": ("cage", "gearbox_bearing", "gearbox bearing cage"),
+    "LA1": ("inner", "axle_bearing_left", "left axle box bearing inner race"),
+    "LA2": ("outer", "axle_bearing_left", "left axle box bearing outer race"),
+    "LA3": ("rolling_element", "axle_bearing_left", "left axle box bearing rolling element"),
+    "LA4": ("cage", "axle_bearing_left", "left axle box bearing cage"),
+    "RA1": ("inner", "axle_bearing_right", "right axle box bearing inner race"),
 }
 # some file names have stray bytes before ".csv" (e.g. "..._0kN\ufffd\ufffd.csv")
 FILE = re.compile(
@@ -155,7 +159,7 @@ class SplitZip:
 
 
 def _label(code):
-    """``M1_G1+G5_LA0_RA0`` -> (condition, fault_location, fault_detail)."""
+    """``M1_G1+G5_LA0_RA0`` -> (fault_type, fault_location, fault_detail)."""
     faults = [CODES[c] for part in code.split("_") for c in part.split("+") if c in CODES]
     if not faults:
         return "normal", "none", "none"
@@ -164,14 +168,6 @@ def _label(code):
         "+".join(f[1] for f in faults),
         "; ".join(f[2] for f in faults),
     )
-
-
-GROUP_FILE = {
-    "motor": "motor",
-    "gearbox": "gearbox",
-    "axlebox_left": "leftaxlebox",
-    "axlebox_right": "rightaxlebox",
-}  # sensor_location -> CSV file of its channels
 
 
 def recordings(raw_dir):
@@ -190,13 +186,11 @@ def recordings(raw_dir):
     try:
         for (code, sample), files in sorted(groups.items()):
             speed, load = FILE.search(files["motor"]).group(2, 3)
-            condition, location, detail = _label(
-                code
-            )  # label from the folder: file names have typos
+            fault_type, location, detail = _label(code)  # from the folder: file names have typos
             tables = {}
 
             def channel(ch, files=files, tables=tables):
-                group = GROUP_FILE[CHANNELS[ch]["sensor_location"]]
+                group = GROUP[ch]
                 if group not in tables:  # each CSV is read once per recording
                     data = io.BytesIO(archive.read(files[group]))
                     tables.clear()  # keep one table in memory
@@ -207,14 +201,14 @@ def recordings(raw_dir):
             yield {
                 "recording_id": f"{code}_S{n}",
                 "native_label": code,
-                "condition": condition,
+                "fault_type": fault_type,
                 "fault_location": location,
                 "fault_detail": detail,
-                "rpm": float(speed) * 60,
-                "motor_speed_hz": float(speed),
+                "speed_rpm": float(speed) * 60,
                 "load": float(load),
                 "load_unit": "kN",
-                "working_condition": n,
+                "operating_condition": f"{speed}Hz_{load}kN",
+                "bearing_model": BEARING_MODEL,
                 "signals": {ch: (lambda ch=ch: channel(ch)) for ch in CHANNELS},
             }
     finally:

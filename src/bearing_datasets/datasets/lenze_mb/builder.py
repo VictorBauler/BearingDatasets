@@ -10,9 +10,10 @@ from bearing_datasets.bearings import fault_orders
 from bearing_datasets.io import read_mat
 
 
-def _ch(name, quantity, axis, unit):
-    return name, {
-        "sensor_location": "inverter",
+def _ch(name, quantity, axis, unit, location="motor_supply", mounting="none"):
+    return name, {  # logged by the inverter: the motor supply, or its encoder on the shaft
+        "sensor_location": location,
+        "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
         "unit": unit,
@@ -32,13 +33,22 @@ CHANNELS = dict(
         _ch("voltage_v", "voltage", "b", "V"),
         _ch("voltage_w", "voltage", "c", "V"),
         _ch("dc_bus_voltage", "voltage", "none", "V"),
-        _ch("angle", "angle", "none", "internal (x 20000 / 2^32 = revolutions)"),
+        _ch(
+            "angle",
+            "angle",
+            "none",
+            "internal (x 20000 / 2^32 = revolutions)",
+            "motor_shaft",
+            "shaft",
+        ),
         _ch("current_vector", "current", "none", "internal"),
-        _ch("speed", "speed", "none", "internal (x 3/4 = revolutions/s)"),
-        _ch("speed_deviation", "speed", "none", "internal"),
+        _ch("speed", "speed", "none", "internal (x 3/4 = revolutions/s)", "motor_shaft", "shaft"),
+        _ch("speed_deviation", "speed", "none", "internal", "motor_shaft", "shaft"),
     ]
 )
 META = Path(__file__).with_name("meta.csv")
+LEVEL = {"normal": 0, "pitting_I": 1, "pitting_II": 2, "pitting_III": 3, "pitting_IV": 4,
+         "pitting_V": 5, "scientific_fault": 6}  # fmt: skip
 
 
 def recordings(raw_dir):
@@ -49,10 +59,12 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": m["condition"],
-            "condition": "normal" if m["condition"] == "normal" else "inner",
+            "fault_type": "normal" if m["condition"] == "normal" else "inner",
             "fault_location": "none" if m["condition"] == "normal" else "test_bearing",
-            "severity": "none" if m["condition"] == "normal" else m["condition"],
-            "rpm": float(m["rpm"]),
+            "fault_severity": "none" if m["condition"] == "normal" else m["condition"],
+            "fault_severity_level": LEVEL[m["condition"]],
+            "bearing_model": "NU2205-E-XL-TVP2",
+            "speed_rpm": float(m["rpm"]),
             "load": float(m["counter_torque_nm"]),
             "load_unit": "Nm",
             "belt_tension": float(m["belt_tension"]),

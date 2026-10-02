@@ -29,8 +29,9 @@ columns:
   bpfo: >-
     NSK 6205 DDU in housing A from Jung et al. (2023), Table 1 (9 balls of 7.90 mm, pitch
     38.5 mm); the paper's BSF is 2 x BSF
-  severity: >-
+  fault_severity: >-
     bearing crack size (0.3, 1.0, 3.0 mm), shaft misalignment offset (0.1, 0.3, 0.5 mm)
-    or unbalance mass (583 to 3318 mg); none if normal
+    or unbalance mass (583 to 3318 mg); none if normal. The levels rank them within each
+    fault type
   load: brake torque in Nm (0, 2 or 4)
-  rpm: constant speed stated in the paper
+  speed_rpm: constant speed stated in the paper

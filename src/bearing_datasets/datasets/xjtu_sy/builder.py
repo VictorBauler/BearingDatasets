@@ -10,6 +10,7 @@ ORDERS = fault_orders(8, 7.92, 34.55)
 CHANNELS = {
     "horizontal": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": "horizontal",
         "unit": "g",
@@ -17,6 +18,7 @@ CHANNELS = {
     },
     "vertical": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": "vertical",
         "unit": "g",
@@ -54,11 +56,12 @@ def recordings(raw_dir):
                 yield {
                     "recording_id": f"{run.name}_{int(path.stem):04d}",
                     "native_label": "unknown",
-                    "condition": "unknown",
+                    "fault_type": "unknown",
                     "fault_location": "unknown",
-                    "rpm": rpm,
+                    "speed_rpm": rpm,
                     "load": load,
                     "load_unit": "kN",
+                    "bearing_model": "UER204",
                     "run_id": run.name,
                     "time_s": i * 60.0,
                     "rul_s": end_of_life - i * 60.0,

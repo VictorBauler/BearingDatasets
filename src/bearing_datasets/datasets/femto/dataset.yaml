@@ -7,7 +7,7 @@ description: |
   vertical) at 25.6 kHz; every 60 s a 60 s temperature record at 10 Hz (missing for some
   bearings), stored as separate recordings. The 6 learning runs and the 11 test runs
   are complete (from the Full_Test_Set); `official_set` says which snapshots were in
-  the truncated test set given to the challenge participants. The condition of each
+  the truncated test set given to the challenge participants. The fault of each
   snapshot is unknown; use run_id, time_s and rul_s (end of life = last snapshot).
   Official RUL of the truncated test runs (s): 1_3 5730, 1_4 339, 1_5 1610, 1_6 1460,
   1_7 7570, 2_3 7530, 2_4 1390, 2_5 3090, 2_6 1290, 2_7 580, 3_3 820. They equal

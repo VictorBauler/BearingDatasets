@@ -12,11 +12,14 @@ ORDERS = fault_orders(15, 15.87, 85.15, 35)
 CHANNELS = {
     "vibration": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "outer_ring",
         "quantity": "acceleration",
         "unit": "unknown",
         "fs": 25600,
     },
 }
+# spall width (mm) -> severity level, per race
+LEVEL = {"1.0": 1, "2.1": 2, "3.8": 3, "1.4": 1, "2.4": 2, "4.0": 3}
 NAME = re.compile(r"^N(?P<load>[\d.]+)k_(?P<rpm>\d+)_(?P<width>[\d.]+)(?:_(?P<race>inner|outer))?$")
 
 
@@ -27,11 +30,14 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": path.stem,
-            "condition": "normal" if healthy else m["race"],
+            "fault_type": "normal" if healthy else m["race"],
             "fault_location": "none" if healthy else "test_bearing",
             "fault_origin": "none" if healthy else "artificial",
             "fault_size_mm": float(m["width"]),
-            "rpm": float(m["rpm"]),
+            "fault_severity": "none" if healthy else f"{m['width']} mm",
+            "fault_severity_level": 0 if healthy else LEVEL[m["width"]],
+            "bearing_model": "QJ212TVP",
+            "speed_rpm": float(m["rpm"]),
             "load": float(m["load"]),
             "load_unit": "kN",
             **ORDERS,

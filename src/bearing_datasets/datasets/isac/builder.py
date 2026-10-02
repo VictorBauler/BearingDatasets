@@ -9,7 +9,13 @@ import re
 import pandas as pd
 
 CHANNELS = {
-    f"ai{i}": {"sensor_location": "unknown", "quantity": "unknown", "unit": "V", "fs": 10040}
+    f"ai{i}": {
+        "sensor_location": "unknown",
+        "sensor_mounting": "unknown",
+        "quantity": "unknown",
+        "unit": "V",
+        "fs": 10040,
+    }
     for i in range(12)
 }
 NAME = re.compile(
@@ -25,20 +31,20 @@ def recordings(raw_dir):
         dt = float(next(h for h in head if h.startswith("dt,")).split(",")[1].rstrip("s\n"))
         x = pd.read_csv(path, skiprows=24, engine="c").iloc[:, 1:13]
         if m["hz0"]:
-            label = {"condition": "normal", "fault_location": "none", "hz": m["hz0"]}
+            label = {"fault_type": "normal", "fault_location": "none", "hz": m["hz0"]}
         elif m["kind"] == "un":
-            disks = m["where"].split("_")
-            where = f"disk_{disks[0]}" if len(disks) == 1 else "disks_" + "_and_".join(disks)
-            label = {"condition": "unbalance", "fault_location": where, "hz": m["hz"]}
+            # on disk 1-6 (or on disks 1 and 4, see native_label)
+            label = {"fault_type": "unbalance", "fault_location": "rig_rotor", "hz": m["hz"]}
         else:
-            race = "outer" if m["kind"] == "out" else "ball"
-            label = {"condition": race, "fault_location": f"bearing_{m['where']}", "hz": m["hz"]}
+            race = "outer" if m["kind"] == "out" else "rolling_element"
+            # the defective bearing is in position 1, 2 or 3 (see native_label)
+            label = {"fault_type": race, "fault_location": "test_bearing", "hz": m["hz"]}
         yield {
             "recording_id": path.stem,
             "native_label": path.stem.removeprefix("Acquisition").strip("_") or path.stem,
-            "condition": label["condition"],
+            "fault_type": label["fault_type"],
             "fault_location": label["fault_location"],
-            "rpm": int(label["hz"]) * 60.0,
+            "speed_rpm": int(label["hz"]) * 60.0,
             "fs": round(1 / dt, 2),
             "signals": {f"ai{i}": x.iloc[:, i].to_numpy() for i in range(12)},
         }

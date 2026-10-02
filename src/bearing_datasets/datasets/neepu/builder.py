@@ -8,19 +8,20 @@ from bearing_datasets.io import read_mat
 CHANNELS = {
     "vibration": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "none",
         "unit": "V/5",
         "fs": 12000,
     },
 }
-STATE = {  # native -> condition
+STATE = {  # native -> fault_type
     "NB": "normal",
     "IF": "inner",
     "OF": "outer",
-    "BF": "ball",
-    "BO": "outer+ball",
-    "IB": "inner+ball",
+    "BF": "rolling_element",
+    "BO": "outer+rolling_element",
+    "IB": "inner+rolling_element",
     "OI": "inner+outer",
 }
 
@@ -31,13 +32,15 @@ def recordings(raw_dir):
     for load in range(4):
         struct = mat[f"load_{load}"][0, 0]
         for state in struct.dtype.names:
-            condition = STATE[state]
-            healthy = condition == "normal"
+            fault_type = STATE[state]
+            healthy = fault_type == "normal"
             yield {
                 "recording_id": f"load{load}_{state}",
                 "native_label": state,
-                "condition": condition,
-                "fault_location": "none" if healthy else "test_bearing",
+                "fault_type": fault_type,
+                "fault_location": "none"
+                if healthy
+                else "+".join(["test_bearing"] * len(fault_type.split("+"))),
                 "fault_origin": "none" if healthy else "artificial",
                 "load": load / 10,
                 "load_unit": "Nm",

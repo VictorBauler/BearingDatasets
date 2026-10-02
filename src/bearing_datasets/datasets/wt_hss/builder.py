@@ -8,13 +8,20 @@ from bearing_datasets.io import read_mat
 
 CHANNELS = {
     "vibration": {
-        "sensor_location": "hss_bearing",
+        "sensor_location": "gearbox_bearing_output",  # the high-speed shaft bearing
+        "sensor_mounting": "casing",
         "quantity": "acceleration",
         "unit": "unknown",
         "fs": 97656,
     },
     # pulse times, not samples: fs is the mean pulse rate of each recording
-    "tach_times_s": {"sensor_location": "hss", "quantity": "time", "unit": "s", "fs": 1},
+    "tach_times_s": {
+        "sensor_location": "gearbox_shaft_output",
+        "sensor_mounting": "shaft",
+        "quantity": "time",
+        "unit": "s",
+        "fs": 1,
+    },  # fmt: skip
 }
 
 
@@ -29,7 +36,7 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": "unknown",
-            "condition": "unknown",
+            "fault_type": "unknown",
             "fault_location": "unknown",
             "run_id": "wind_turbine",
             "time_s": time_s,

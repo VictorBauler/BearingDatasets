@@ -11,15 +11,15 @@ import pandas as pd
 # from them (7 balls, d/D = 0.25143, 0 deg)
 ORDERS = {"bpfo": 2.62, "bpfi": 4.38, "bsf": 1.86292, "ftf": 0.37429}
 CHANNELS = {
-    a: {"sensor_location": "pump", "quantity": "acceleration", "axis": a, "unit": "g",
-        "fs": 20000}
+    a: {"sensor_location": "pump", "sensor_mounting": "casing", "quantity": "acceleration",
+        "axis": a, "unit": "g", "fs": 20000}  # taped to the pump
     for a in "xyz"
 }  # fmt: skip
-CONDITION = {  # folder -> (condition, fault_location)
+FAULT = {  # folder -> (fault_type, fault_location)
     "normal": ("normal", "none"),
     "bearing": ("bearing", "pump_bearing"),
-    "misalignment": ("misalignment", "shaft"),
-    "unbalance": ("unbalance", "impeller"),
+    "misalignment": ("misalignment", "coupling"),
+    "unbalance": ("unbalance", "pump_impeller"),
 }
 NAME = re.compile(r"^(?P<prefix>[a-z_]+?\d*(_z)?)_\d{3}(-\d)?_Ch08_100g_PE_Acceleration$")
 
@@ -29,16 +29,19 @@ def recordings(raw_dir):
         if path.stem.endswith(" - Copy"):
             continue
         prefix = NAME.match(path.stem)["prefix"]
-        condition, location = CONDITION[path.parent.name]
+        fault_type, location = FAULT[path.parent.name]
         x = pd.read_csv(path, header=None, engine="c", dtype="float64")
         ub = {"06": 6.0, "24": 27.0}.get(re.sub(r"\D", "", prefix), 0.0)
         yield {
             "recording_id": path.stem.removesuffix("_Ch08_100g_PE_Acceleration"),
             "native_label": prefix,
-            "condition": condition,
+            "fault_type": fault_type,
             "fault_location": location,
-            "fault_origin": "none" if condition == "normal" else "artificial",
+            "fault_origin": "none" if fault_type == "normal" else "artificial",
+            # unbalance 6 / 27 gram.cm: levels 1 / 2; the other faults are not graded
+            "fault_severity_level": 0 if fault_type == "normal" else 2 if ub == 27.0 else 1,
             "unbalance_gcm": ub,
+            "bearing_model": "6201",
             "file_series": "z" if prefix.endswith("_z") else "main",
             **ORDERS,
             "signals": {a: x[i + 1].to_numpy() for i, a in enumerate("xyz")},

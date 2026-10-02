@@ -35,5 +35,6 @@ columns:
   fs: 5120 Hz, inferred from the file header (the dataset does not state it)
   subset: bearingset (bearing faults) or gearset (gear faults)
   fault_detail: the fault in words (e.g. gear root crack); 'none' if healthy
-  speed_hz: speed setting of the file name (20 or 30 Hz)
+  speed_rpm: set speed, not measured (speed setting of the file name, 20 or 30 Hz, x 60)
+  operating_condition: speed-load setting of the file name, 20Hz_0V or 30Hz_2V
   load_setting: load setting of the file name (0 or 2 V)

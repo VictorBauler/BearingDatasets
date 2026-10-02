@@ -17,5 +17,6 @@ sources:
   - {type: mendeley, id: 95ybrwzhm8, version: 1}
 columns:
   fault_size_mm: length of the outer race groove (0 if healthy)
+  fault_severity: groove length 0.18, 0.36, 0.54 or 0.72 mm (levels 1-4)
   load: motor load in hp
-  rpm: nominal shaft speed (about 1500 rpm)
+  speed_rpm: nominal shaft speed (about 1500 rpm)

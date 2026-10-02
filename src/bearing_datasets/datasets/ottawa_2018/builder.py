@@ -11,13 +11,26 @@ ORDERS = fault_orders(9, 7.94, 38.52)
 CHANNELS = {
     "accelerometer": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "unit": "unknown",
         "fs": 200000,
     },
-    "encoder": {"sensor_location": "shaft", "quantity": "encoder", "unit": "V", "fs": 200000},
+    "encoder": {
+        "sensor_location": "rig_shaft",
+        "sensor_mounting": "shaft",
+        "quantity": "encoder",
+        "unit": "V",
+        "fs": 200000,
+    },  # fmt: skip
 }
-CONDITION = {"H": "normal", "I": "inner", "O": "outer", "B": "ball", "C": "inner+outer+ball"}
+FAULT_TYPE = {
+    "H": "normal",
+    "I": "inner",
+    "O": "outer",
+    "B": "rolling_element",
+    "C": "inner+outer+rolling_element",
+}
 PROFILE = {"A": "increasing", "B": "decreasing", "C": "inc_dec", "D": "dec_inc"}
 NAME = re.compile(r"^(?P<fault>[HIOBC])-(?P<profile>[ABCD])-(?P<trial>\d)$")
 
@@ -26,16 +39,17 @@ def recordings(raw_dir):
     for path in sorted(raw_dir.glob("**/*.mat")):
         m = NAME.match(path.stem)
         mat = read_mat(path)
-        condition = CONDITION[m["fault"]]
+        fault_type = FAULT_TYPE[m["fault"]]
         yield {
             "recording_id": path.stem,
             "native_label": path.stem,
-            "condition": condition,
+            "fault_type": fault_type,
             "fault_location": "none"
-            if condition == "normal"
-            else "+".join(["test_bearing"] * len(condition.split("+"))),
+            if fault_type == "normal"
+            else "+".join(["test_bearing"] * len(fault_type.split("+"))),
             "speed_profile": PROFILE[m["profile"]],
-            "trial": int(m["trial"]),
+            "repetition": int(m["trial"]),
+            "bearing_model": "ER16K",
             **ORDERS,
             "signals": {
                 "accelerometer": mat["Channel_1"].ravel(),

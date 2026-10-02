@@ -8,6 +8,7 @@ description: |
   currents (100 kHz) and the shaft speed (rpm, irregularly sampled at about 9 Hz; exact
   times in the speed_time_s channel) are separate recordings. One more 600 s vibration
   recording per state at a constant 3010 rpm (`trial` = constant).
+  Housing A (motor side) is test_bearing_de, housing B test_bearing_nde.
   The faulty bearing is in housing B for the varying-speed runs; for the constant-speed
   files the paper only says the ball fault bearing is in housing A (inner and outer:
   fault_location unknown). Vibration unit: the paper says g; the amplitudes match

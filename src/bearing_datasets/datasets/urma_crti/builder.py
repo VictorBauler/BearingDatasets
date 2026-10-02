@@ -9,12 +9,13 @@ from bearing_datasets.io import read_mat
 CHANNELS = {
     "vibration": {
         "sensor_location": "test_bearing",
+        "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "unit": "unknown",
         "fs": 25600,
     },
 }
-CONDITION = {"s": "normal", "ci": "inner", "ce": "outer", "b": "ball", "c": "bearing"}
+FAULT_TYPE = {"s": "normal", "ci": "inner", "ce": "outer", "b": "rolling_element", "c": "bearing"}
 NAME = re.compile(r"^(?P<state>s|ci|ce|b|c)(?P<hz>\d{2})$")
 
 
@@ -27,7 +28,7 @@ def recordings(raw_dir):
         yield {
             "recording_id": name,
             "native_label": name,
-            "condition": CONDITION[m["state"]],
+            "fault_type": FAULT_TYPE[m["state"]],
             "fault_location": "none" if healthy else "test_bearing",
             "supply_hz": int(m["hz"]),
             "signals": {"vibration": x.ravel()},

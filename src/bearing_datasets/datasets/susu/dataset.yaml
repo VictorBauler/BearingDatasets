@@ -34,4 +34,4 @@ columns:
   bpfo: >-
     MB ER-16K (named in the paper) with the ER16K geometry of Huang & Baddour (2018): 9
     balls of 7.94 mm, pitch 38.52 mm
-  rpm: shaft speed from the folder name (18 or 20 Hz)
+  speed_rpm: shaft speed from the folder name (18 or 20 Hz)

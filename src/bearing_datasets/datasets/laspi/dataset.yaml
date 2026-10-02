@@ -27,7 +27,7 @@ columns:
   bpfo: >-
     computed from the record's bearing geometry (9 balls of 0.3125 in, pitch diameter
     1.5157 in)
-  rpm: measured motor speed from the folder name
+  speed_rpm: measured motor speed from the folder name
   supply_hz: inverter frequency (25, 35 or 45 Hz)
   load: brake load in % (0, 25, 50, 75)
-  acquisition: acquisition number 1-4 within the experiment
+  repetition: acquisition number 1-4 within the experiment

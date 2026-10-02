@@ -10,7 +10,8 @@ import pandas as pd
 ORDERS = {"bpfo": 5.24, "bpfi": 7.76, "bsf": 2.49, "ftf": 0.40}
 CHANNELS = {
     axis: {
-        "sensor_location": "test_bearing_housing",
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": axis,
         "unit": "unknown",
@@ -34,23 +35,24 @@ def recordings(raw_dir):
         yield {
             "recording_id": row.Filename.removesuffix(".csv"),
             "native_label": "DSmall" if damaged else "DNoD",
-            "condition": "inner" if damaged else "normal",
+            "fault_type": "inner" if damaged else "normal",
             "fault_location": "test_bearing" if damaged else "none",
             "fault_origin": "artificial" if damaged else "none",
             "fault_size_mm": float(row.DamageWidthMM),
             "damage_length_mm": float(row.DamageLengthMM),
             "bearing_id": f"B{row.Bearing}",
-            "rpm": float(row.SpeedRPM),
-            "speed_target_rpm": float(row.SpeedTarget),
+            "speed_rpm": float(row.SpeedRPM),
+            "operating_condition": f"{int(row.SpeedTarget)}rpm_F{int(row.ForceLevel)}",
             "force_level": int(row.ForceLevel),
             "mounting_position": POSITION[row.Position],
             "run": int(row.Run),
             "worker": int(row.Worker),
-            "sensor_mounting": _text(row.SensorMounting),
+            "sensor_mounting_deviation": _text(row.SensorMounting),
             "coupling_mounting": _text(row.CouplingMounting),
             "second_shaft": _text(row.SecondShaft),
             "measurement_batch": int(row.MeasurementBatch),
             "measurement_day": int(row.MeasurementDay),
+            "bearing_model": "NU206-E-XL-TVP2",
             **ORDERS,
             "signals": {axis: x.iloc[:, i].to_numpy() for i, axis in enumerate("xyz")},
         }

@@ -11,7 +11,7 @@ description: |
   650-975 rpm, 60 s); varying_0_900rpm (random, linear or triangle speed profiles over 0-900
   rpm, 60 s). The two varying-speed subsets include the tachometer (speed / 30, irregularly
   sampled; exact times in tach_time_unix). Labels and speeds come from the records' docx
-  tables (meta.csv).
+  tables (meta.csv). bearing_model: the 6213 the test bearing is analogous to.
 license: CC-BY-4.0
 size: "download 2.2 GB, built 2.0 GB (measured)"
 homepage: https://doi.org/10.17632/fbf6y8m4mv.1

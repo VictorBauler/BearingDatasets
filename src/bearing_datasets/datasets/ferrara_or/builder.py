@@ -11,7 +11,8 @@ from bearing_datasets.bearings import fault_orders
 ORDERS = fault_orders(12, 7.12, 38.09, 10.2)
 CHANNELS = {
     "acceleration": {
-        "sensor_location": "test_bearing_case",
+        "sensor_location": "test_bearing",
+        "sensor_mounting": "pedestal",  # on top of the bearing case
         "quantity": "acceleration",
         "axis": "radial",
         "unit": "g",
@@ -33,14 +34,17 @@ def recordings(raw_dir):
         yield {
             "recording_id": path.stem,
             "native_label": m["bearing"][:2],
-            "condition": "outer",
+            "fault_type": "outer",
             "fault_location": "test_bearing",
             "fault_origin": "artificial",
             "fault_size_mm": WIDTH_MM[m["bearing"]],
-            "rpm": int(m["hz"]) * 60.0,
+            "fault_severity": m["bearing"][:2],
+            "fault_severity_level": int(m["bearing"][1]),
+            "speed_rpm": int(m["hz"]) * 60.0,
             "load": float(m["load"]),
             "load_unit": "N",
             "bearing_id": m["bearing"],
+            "bearing_model": "1205 ETN9",
             "fs": 25600 if m["bearing"] == "D2a" else 51200,
             **ORDERS,
             "signals": {"acceleration": x},

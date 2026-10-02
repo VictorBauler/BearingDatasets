@@ -11,7 +11,7 @@ description: |
   (speed) signal of the motor shaft, gearbox input torque (Nm), triaxial acceleration
   (g) at the motor drive end and at the gearbox intermediate shaft bearing
   (x axial, y horizontal, z vertical).
-  Bearing faults exist only together with a broken tooth (condition gear+inner or
+  Bearing faults exist only together with a broken tooth (fault_type gear+inner or
   gear+outer); there is no bearing-only class.
 license: CC-BY-4.0
 size: "download 6.9 GB, built 5.0 GB (measured)"
@@ -28,13 +28,14 @@ columns:
   bpfo: >-
     ER16K from the data paper, Table 3 (9 balls of 0.3125 in, pitch 1.516 in), equal to
     Huang & Baddour's 7.94 / 38.52 mm
-  severity: >-
-    light, medium or high (bearing raceway fault width 0.1 / 0.3 / 0.5 mm; gear fault
-    sizes in the paper's Table 5); none for healthy and missing tooth
-  varying: which quantity cycles during the recording, speed or load
-  rpm_setting: >-
-    motor speed in rpm: the constant speed when the load varies, the peak of the speed
-    cycle when the speed varies
-  torque_setting_nm: >-
-    load torque in Nm: the constant load when the speed varies, the peak of the load
-    cycle when the load varies
+  fault_severity: >-
+    light, medium or high (levels 1-3; bearing raceway fault width 0.1 / 0.3 / 0.5 mm; gear
+    fault sizes in the paper's Table 5); "not graded" for missing tooth (level 1), none
+    for healthy
+  speed_profile: varying when the speed cycles, constant when the load cycles
+  speed_rpm: >-
+    set motor speed, not measured: the constant speed when the load varies, the peak of the speed cycle
+    when the speed varies
+  load: >-
+    load torque in Nm: the constant load when the speed varies, the peak of the load cycle when
+    the load varies
