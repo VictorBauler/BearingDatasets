@@ -22,11 +22,12 @@ Rebuild them (`bearing-datasets build <name> --force`) to get the new locations 
 ### New columns
 
 * `sensor_at_fault` (every dataset): True when the sensor is at a faulty position, computed
-  from `sensor_location` and `fault_location`.
+  from `sensor_location` and `fault_location`. `unknown` positions are never at the fault, and
+  `motor_supply` (currents, voltages) only matches a `motor_supply` fault.
 * `sensor_mounting`: the surface the sensor is on: `pedestal`, `casing`, `outer_ring`,
   `shaft`, `base`, `none`, `unknown`.
 * `fault_severity_level`: 0 healthy, then 1, 2, … from the mildest, within a dataset and
-  fault type.
+  fault type; 1 for a fault the dataset does not grade (`fault_severity="not graded"`).
 * `operating_condition` (now standard), `speed_setpoint_rpm`, `bearing_model` (now standard),
   `repetition` (now standard).
 
@@ -38,7 +39,11 @@ Rebuild them (`bearing-datasets build <name> --force`) to get the new locations 
   to `sensor_mounting`. Examples: CWRU `bearing_de` / `bearing_fe` are now `motor_bearing_de` /
   `motor_bearing_nde`; `test_bearing_housing` is `test_bearing` with `sensor_mounting=pedestal`.
 * `validate()` checks the vocabularies of `fault_type`, `fault_location`, `sensor_location`,
-  `sensor_mounting`, `quantity`, `axis`, `speed_profile` and `fault_origin`.
+  `sensor_mounting`, `quantity`, `axis`, `speed_profile` and `fault_origin`, and that
+  `fault_location` is `none` exactly for `normal` and has one part per `fault_type` part (or is
+  `unknown`).
+* `build(where=...)` raises an error for a column that is not set per recording (e.g.
+  `sensor_location`), instead of keeping nothing.
 * `speed_profile` gains `varying` (speed changes, shape not documented) and `unknown`.
 
 ### Dataset-specific columns folded into standard ones
@@ -55,6 +60,21 @@ Rebuild them (`bearing-datasets build <name> --force`) to get the new locations 
 * Removed (redundant): bjtu_bogie `motor_speed_hz` and `sensor_position`, tecnalia_bearing
   `shaft_hz`. Renamed: im_vacd `mounting` → `phone_mounting`, saarland `sensor_mounting` →
   `sensor_mounting_deviation`, uoemd `load_condition` → `load_state`.
+
+### Migrating a private dataset
+
+A builder written for 0.1 fails to build with 0.2 (missing `fault_type`, unknown values). In
+its `recordings()` and `CHANNELS`:
+
+* yield `fault_type` instead of `condition`, `speed_rpm` instead of `rpm`, `fault_severity`
+  instead of `severity`; write `rolling_element` instead of `ball`;
+* use the `LOCATIONS` of `schema.py` for `sensor_location` and `fault_location` (e.g.
+  `bearing_de` → `motor_bearing_de`, `test_bearing_housing` → `test_bearing`), and put the
+  surface in `sensor_mounting`;
+* rename a column of your own that now has a standard name (`fault_type`, `repetition`,
+  `operating_condition`, ...), or move its values into the standard column.
+
+The build lists every remaining problem at once.
 
 ### Documentation
 

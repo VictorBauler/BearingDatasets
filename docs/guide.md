@@ -169,6 +169,11 @@ faulty position (its `sensor_location` is in `fault_location`, or one contains t
 meta = meta[meta.sensor_at_fault | (meta.fault_type == "normal")]
 ```
 
+This drops every faulty recording that has no sensor at the fault: datasets with only
+electrical sensors (`motor_supply`, e.g. lenze_mb), and most unbalance and misalignment
+faults, located at the rotor or the coupling where no sensor sits. Check what is left with
+`meta.groupby(["dataset", "fault_type"]).size()`. Unknown positions are never at the fault.
+
 ### Signals in a DataFrame
 
 ```python

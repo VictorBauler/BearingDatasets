@@ -35,8 +35,8 @@ failing pytest/ruff and the commit goes through).
 - `src/bearing_datasets/build.py`: `build()` (lock -> stage raw -> run the builder ->
   validate -> write Parquet + `manifest.json`), subsets (`channels`, `where`, `files`,
   `as_name`), `clean_raw()`.
-- `src/bearing_datasets/schema.py`: `REQUIRED` and `OPTIONAL` columns, the `CONDITIONS`
-  vocabulary, `validate()`.
+- `src/bearing_datasets/schema.py`: `REQUIRED` and `OPTIONAL` columns, the `VOCABULARIES`
+  (`FAULT_TYPES`, `LOCATIONS`, ...), `at_fault()`, the 0.1 renames (`upgrade()`), `validate()`.
 - `src/bearing_datasets/dataset.py`: reading (`Dataset`, `open`, `load_metadata`, root config).
 - `src/bearing_datasets/cli.py`: `root | list | info | build | clean-raw | verify`.
 - `src/bearing_datasets/datasets/<name>/`: one folder per dataset: `dataset.yaml`,

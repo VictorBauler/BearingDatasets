@@ -144,7 +144,8 @@ def recordings(raw_dir):
   in `sensor_mounting`. Use the same words for `fault_location`, so that `sensor_at_fault`
   works. Fall back to the unit (`motor`, `gearbox`), then `machine`, then `unknown`.
 * `fault_severity_level`: when the dataset grades its faults, rank the grades within each
-  fault type from 1 (mildest); 0 is healthy, and a fault that is not graded is 1.
+  fault type from 1 (mildest); 0 is healthy, and a fault that is not graded is 1
+  (`fault_severity="not graded"`).
 * **No missing values**: a column must have a value in every row. Use `"none"` when it does
   not apply (e.g. `fault_location` of a healthy recording), `"unknown"` when the dataset does
   not say, and leave the column out if it only makes sense for some rows. The build stops
