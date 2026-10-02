@@ -33,6 +33,6 @@ columns:
   fault_detail: the faults of the case in words (from the challenge fault table)
   gear_type: spur or helical
   operating_condition: input shaft speed and load, e.g. 30hz_High
-  speed_setpoint_rpm: nominal input shaft speed in rpm (30-50 Hz x 60)
+  speed_rpm: nominal input shaft speed, not measured (30-50 Hz x 60)
   load_level: High or Low load
   repetition: repeat 1 or 2 of the same case, speed and load

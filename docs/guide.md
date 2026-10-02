@@ -473,7 +473,7 @@ sound detection under domain shift.
 **mcc5_thu_gearbox**: Tsinghua / MCC5 gearbox under time-varying speed or load.
 * Bearing faults only appear together with a broken tooth (`gear+inner`, `gear+outer`).
 * `speed_profile` says whether the speed cycles (`varying`) or the load does (`constant`);
-  `speed_setpoint_rpm` / `load` hold the constant value or the peak of the cycle. The `speed`
+  `speed_rpm` (the set speed) / `load` hold the constant value or the peak of the cycle. The `speed`
   channel is a key-phase pulse signal.
 
 **hit_intershaft**: Harbin Institute of Technology, inter-shaft bearing inside a dual-rotor

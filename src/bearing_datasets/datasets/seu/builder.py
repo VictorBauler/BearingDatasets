@@ -61,7 +61,7 @@ def recordings(raw_dir):
             "fault_location": "none" if fault_type == "normal" else "+".join(["gearbox"] * faults),
             "fault_detail": detail,
             "subset": path.parent.name,
-            "speed_setpoint_rpm": float(m["speed"]) * 60,
+            "speed_rpm": float(m["speed"]) * 60,
             "load_setting": float(m["load"]),
             "operating_condition": f"{m['speed']}Hz_{m['load']}V",
             "signals": {ch: table[i].to_numpy() for i, ch in enumerate(CHANNELS)},

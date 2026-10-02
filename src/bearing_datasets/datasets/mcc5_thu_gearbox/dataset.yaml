@@ -33,8 +33,8 @@ columns:
     fault sizes in the paper's Table 5); "not graded" for missing tooth (level 1), none
     for healthy
   speed_profile: varying when the speed cycles, constant when the load cycles
-  speed_setpoint_rpm: >-
-    motor speed in rpm: the constant speed when the load varies, the peak of the speed cycle
+  speed_rpm: >-
+    set motor speed, not measured: the constant speed when the load varies, the peak of the speed cycle
     when the speed varies
   load: >-
     load torque in Nm: the constant load when the speed varies, the peak of the load cycle when

@@ -28,8 +28,7 @@ Rebuild them (`bearing-datasets build <name> --force`) to get the new locations 
   `shaft`, `base`, `none`, `unknown`.
 * `fault_severity_level`: 0 healthy, then 1, 2, … from the mildest, within a dataset and
   fault type; 1 for a fault the dataset does not grade (`fault_severity="not graded"`).
-* `operating_condition` (now standard), `speed_setpoint_rpm`, `bearing_model` (now standard),
-  `repetition` (now standard).
+* `operating_condition`, `bearing_model` and `repetition` are now standard.
 
 ### Changed values
 
@@ -49,9 +48,12 @@ Rebuild them (`bearing-datasets build <name> --force`) to get the new locations 
 ### Dataset-specific columns folded into standard ones
 
 * `operating_condition` ← bjtu_bogie `working_condition`, cumtb_pitch and mehran_uet
-  `load_condition`, haust_ldv `load_case`; new in paderborn, phm09, seu, tecnalia_bearing.
-* `speed_setpoint_rpm` ← phm09 and seu `speed_hz` (x 60), saarland `speed_target_rpm`,
-  hse_similar_system `speed_set_rpm`, mcc5_thu_* `rpm_setting`; estogu's nominal speed.
+  `load_condition`, haust_ldv `load_case`, hse_similar_system `speed_set_rpm`; new in
+  paderborn, phm09, saarland (set speed and load level), seu, tecnalia_bearing.
+* `speed_rpm` is the one speed column: measured when the dataset measures it, else the set or
+  nominal speed (each dataset's note in `ds.columns()` says which). It now holds phm09 and seu
+  `speed_hz` (x 60), mcc5_thu_* `rpm_setting` and estogu's nominal speed. Saarland's set speed
+  is in its `operating_condition`.
 * `repetition` ← arkansas, ottawa_2018 and vit_taper `trial`, phm09 `repeat`, laspi
   `acquisition`, nln_emp `sample`.
 * `load` / `load_unit` ← haust_ldv `radial_load_n`, mcc5_thu_* `torque_setting_nm`;

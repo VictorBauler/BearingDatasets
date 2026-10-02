@@ -122,7 +122,7 @@ def recordings(raw_dir):
                 "fault_location": "+".join(_location(f[0], f[1]) for f in faults) or "none",
                 "fault_detail": "; ".join(f[2] for f in faults) or "none",
                 "gear_type": m["case"].split()[0],
-                "speed_setpoint_rpm": float(m["speed"]) * 60,
+                "speed_rpm": float(m["speed"]) * 60,
                 "load_level": m["load"],
                 "operating_condition": f"{m['speed']}hz_{m['load']}",
                 "repetition": int(m["rep"]),

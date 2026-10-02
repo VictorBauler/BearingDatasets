@@ -73,7 +73,7 @@ def recordings(raw_dir):
             "fault_severity_level": level,
             # the speed cycles, or the load cycles at a constant speed
             "speed_profile": "varying" if m["varying"] == "speed" else "constant",
-            "speed_setpoint_rpm": float(m["rpm1"] or m["rpm2"]),
+            "speed_rpm": float(m["rpm1"] or m["rpm2"]),
             "load": float(m["nm1"] or m["nm2"]),
             "load_unit": "Nm",
             "bearing_model": "ER-16K",

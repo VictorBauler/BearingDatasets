@@ -137,7 +137,7 @@ def recordings(raw_dir):
   computed for you.
 * Name a new column like the standard ones: `<subject>_<attribute>[_<unit>]`, with the unit
   at the end when it is fixed (`fault_depth_mm`, `radial_force_n`), `_id` for an identifier,
-  `_level` for an ordinal integer (0 = healthy) and `_setpoint` for a nominal value. Avoid
+  `_level` for an ordinal integer (0 = healthy). Avoid
   the bare word "condition": `operating_condition` is the regime, `fault_type` the fault.
 * Locations: name the bearing or part the sensor measures, as precisely as the dataset says
   (`motor_bearing_de`, `gearbox_bearing_input`, `test_bearing`), and put the surface it is on

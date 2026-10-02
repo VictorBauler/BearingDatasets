@@ -38,5 +38,5 @@ columns:
   bearing_model: NU204-E (cylindrical roller) or STO20 (needle)
   cage: plastic or metal
   rig: test rig a or b
-  speed_setpoint_rpm: speed set on the potentiometer, 500 or 1000 rpm
+  operating_condition: speed set on the potentiometer, 500 rpm or 1000 rpm
   original_recording: number of the recording in the original 300-recording set (Data_No there), 0 if new in the extension

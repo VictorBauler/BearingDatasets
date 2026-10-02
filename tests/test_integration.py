@@ -76,6 +76,24 @@ def test_built_datasets_use_the_current_schema(name):
     validate(ds.metadata(), notes)
 
 
+@pytest.mark.parametrize("name", _built())
+def test_readme_lists_the_standard_columns(name):
+    """The README "Columns that only some datasets have" table lists this dataset for exactly
+    the standard columns it has (a subset: those of the dataset it is taken from)."""
+    from test_build import readme_columns
+
+    from bearing_datasets.schema import OPTIONAL
+
+    ds = _open(name)
+    if ds.outdated:
+        pytest.skip(f"{name} was built before 0.2.0")
+    name = ds.manifest.get("selection", {}).get("of", name)
+    _, table = readme_columns()
+    columns = set(ds.metadata().columns)
+    wrong = {c for c in OPTIONAL if (c in columns) != (name in table[c])}
+    assert not wrong, f"README rows to fix for {name}: {sorted(wrong)}"
+
+
 @pytest.mark.parametrize("name", sorted(COUNTS))
 def test_counts(name):
     meta = _open(name).metadata()

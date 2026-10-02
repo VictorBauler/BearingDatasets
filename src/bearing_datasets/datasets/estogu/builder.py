@@ -53,7 +53,7 @@ def recordings(raw_dir):
             "fault_origin": origin,
             "supply": "inverter" if inverter else "grid",
             "supply_hz": float(m["hz"]),
-            "speed_setpoint_rpm": float(m["hz"]) * 60,
+            "speed_rpm": float(m["hz"]) * 60,
             "load_position": int(m["load"][0]),
             "load_resistance": RESISTANCE[int(m["load"][0])],
             "signals": {ch: x.iloc[:, i].to_numpy() for i, ch in enumerate(CHANNELS)},

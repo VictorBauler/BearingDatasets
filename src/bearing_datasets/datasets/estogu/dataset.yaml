@@ -24,6 +24,6 @@ sources:
 columns:
   supply: inverter (With_Driver) or grid (Without_Driver)
   supply_hz: supply frequency in Hz
-  speed_setpoint_rpm: nominal speed (supply frequency x 60, from the dataset's Motor RPM Values table)
+  speed_rpm: nominal speed, not measured (supply frequency x 60, from the dataset's Motor RPM Values table)
   load_position: resistor bank switch position 0-5
   load_resistance: resistance of that position (no load, 111, 56, 38, 29, 23 ohm)

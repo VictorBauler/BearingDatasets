@@ -49,7 +49,7 @@ def recordings(raw_dir):
             "bearing_model": model,
             "cage": cage,
             "rig": rig,
-            "speed_setpoint_rpm": float(first["Speed_Set"]),
+            "operating_condition": f"{int(float(first['Speed_Set']))} rpm",
             "original_recording": _original(int(number)),
             "signals": {"acceleration": rec["Acceleration"].to_numpy()},
         }

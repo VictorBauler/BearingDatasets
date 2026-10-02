@@ -3,9 +3,8 @@
 Column names follow one pattern, ``<subject>_<attribute>[_<unit>]``: related columns share a
 prefix (``fault_*``, ``bearing_*``, ``speed_*``, ``sensor_*``), numeric columns with a fixed
 unit end in it (``fault_size_mm``, ``time_s``, ``speed_rpm``), ``_id`` marks an identifier of a
-physical or experimental entity, ``_level`` an ordinal integer (0 = healthy) and ``_setpoint`` a
-nominal, not measured, value. Categorical values come from fixed vocabularies (VOCABULARIES),
-checked by ``validate()``.
+physical or experimental entity and ``_level`` an ordinal integer (0 = healthy). Categorical
+values come from fixed vocabularies (VOCABULARIES), checked by ``validate()``.
 """
 
 from __future__ import annotations
@@ -52,8 +51,8 @@ OPTIONAL = {
     "housing), casing (machine casing at the bearing, e.g. a motor end shield), outer_ring, "
     "shaft (non-contact probe), base; 'none' without mechanical mounting (current, microphone)",
     # operating
-    "speed_rpm": "shaft speed in revolutions per minute (measured, or documented as constant)",
-    "speed_setpoint_rpm": "nominal or set speed in revolutions per minute (not measured)",
+    "speed_rpm": "shaft speed in revolutions per minute: measured when the dataset measures it, "
+    "else the set or nominal speed (the dataset's note says which)",
     "speed_profile": "how the speed changes during the recording: constant, increasing, "
     "decreasing, inc_dec (increasing then decreasing), dec_inc, or varying (shape not given)",
     "load": "load applied to the machine, in load_unit",

@@ -42,7 +42,7 @@ def recordings(raw_dir):
             "damage_length_mm": float(row.DamageLengthMM),
             "bearing_id": f"B{row.Bearing}",
             "speed_rpm": float(row.SpeedRPM),
-            "speed_setpoint_rpm": float(row.SpeedTarget),
+            "operating_condition": f"{int(row.SpeedTarget)}rpm_F{int(row.ForceLevel)}",
             "force_level": int(row.ForceLevel),
             "mounting_position": POSITION[row.Position],
             "run": int(row.Run),

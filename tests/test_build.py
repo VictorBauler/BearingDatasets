@@ -358,32 +358,54 @@ def test_diversity_lists_every_dataset_once():
         assert int(count) == len(re.findall(r"^\| `", body, flags=re.M))
 
 
-def test_readme_lists_the_columns():
-    """The README tables list every column: the required ones, then every other column with the
-    datasets that have it (exactly, for the dataset-specific columns of dataset.yaml)."""
+def readme_columns() -> tuple[set[str], dict[str, set[str]]]:
+    """The README column tables: the columns of every dataset, and {column: datasets that have
+    it} for the others ("all", "all except a, b", "a, b", each optionally "(and my_cwru)")."""
     import re
-
-    from bearing_datasets.schema import OPTIONAL
 
     text = (Path(__file__).parent.parent / "README.md").read_text(encoding="utf-8")
     every = text[text.index("in **every** dataset") : text.index("Columns that only some")]
     some = text[text.index("Columns that only some") : text.index("`ds.columns()` (or")]
-    listed = {
+    required = {
         c for row in re.findall(r"^\| (.*?) \|", every, re.M) for c in re.findall(r"`(\w+)`", row)
     }
-    assert listed == set(REQUIRED)
+    package = set(list_datasets())
     table = {}
-    for cols, datasets in re.findall(r"^\| ((?:`\w+`(?:, )?)+) \| .* \| (.*) \|$", some, re.M):
+    for cols, cell in re.findall(r"^\| ((?:`\w+`(?:, )?)+) \| .* \| (.*) \|$", some, re.M):
+        extra = (
+            set(re.findall(r"\(and ([a-z0-9_, ]+)\)", cell)[0].split(", "))
+            if "(and" in cell
+            else set()
+        )
+        cell = re.sub(r"\(and [^)]*\)", "", cell).strip()
+        if cell.startswith("all"):
+            names = package - set(re.findall(r"[a-z0-9_]+", cell.removeprefix("all")))
+            names.discard("except")
+        else:
+            names = set(re.findall(r"[a-z0-9_]+", cell))
         for c in re.findall(r"`(\w+)`", cols):
-            table[c] = datasets
+            table[c] = names | extra
+    return required, table
+
+
+def test_readme_lists_the_columns():
+    """The README tables list every column: the required ones, then every other column with the
+    datasets that have it (exactly for dataset-specific columns; standard columns are checked
+    exactly against built datasets by test_integration, here from the dataset.yaml notes)."""
+    from bearing_datasets.schema import OPTIONAL
+
+    required, table = readme_columns()
+    assert required == set(REQUIRED)
     assert set(OPTIONAL) <= set(table)
-    own = {}
+    noted, own = {}, {}
     for name in [*list_datasets(), PRIVATE_EXAMPLE]:
         spec = load_spec(name)
-        for c in set(spec.get("columns") or {}) - set(REQUIRED) - set(OPTIONAL):
-            own.setdefault(c, set()).add(spec["name"])
+        for c in set(spec.get("columns") or {}) - set(REQUIRED):
+            (noted if c in OPTIONAL else own).setdefault(c, set()).add(spec["name"])
     for c, names in own.items():
-        assert set(re.findall(r"[a-z0-9_]+", table.get(c, ""))) == names, c
+        assert table.get(c) == names, c
+    for c, names in noted.items():  # a note on a standard column: the dataset has it
+        assert names <= table[c], (c, names - table[c])
     assert set(table) == set(OPTIONAL) | set(own)
 
 
