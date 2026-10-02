@@ -503,7 +503,6 @@ The metadata can be read without this library: `pd.read_parquet(f"{root}/cwru/me
   in any Jupyter environment where the package is installed)
 * [CONTRIBUTING.md](CONTRIBUTING.md): add a public dataset to the package, or build a private
   one (internal lab data) without changing this repository
-* [CHANGELOG.md](CHANGELOG.md): what changed between versions (0.2.0 renamed several columns)
 
 ## Add your dataset
 
