@@ -51,7 +51,7 @@ def recordings(raw_dir):
             "load": float(x[0, 3]),
             "load_unit": "N",
             "bearing_id": m["bearing"],
-            "fault_severity": ["healthy", "developing", "faulty"][int(m["stage"])],
+            "fault_severity": ["none", "developing", "faulty"][int(m["stage"])],
             "fault_severity_level": int(m["stage"]),
             "signals": {
                 "accelerometer": x[:, 0],

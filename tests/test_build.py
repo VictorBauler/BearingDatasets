@@ -193,6 +193,13 @@ def test_validate_reports_problems():
     ]:
         with pytest.raises(ValueError, match=f"unknown {column} value"):
             validate(pd.DataFrame([_row(**{column: value})]))
+    with pytest.raises(ValueError, match="'none' exactly for fault_type 'normal'"):
+        validate(pd.DataFrame([_row(fault_location="test_bearing")]))
+    with pytest.raises(ValueError, match="'none' exactly for fault_type 'normal'"):
+        validate(pd.DataFrame([_row(fault_type="inner")]))
+    with pytest.raises(ValueError, match="one '\\+'-joined part per fault_type part"):
+        validate(pd.DataFrame([_row(fault_type="inner+gear", fault_location="test_bearing")]))
+    validate(pd.DataFrame([_row(fault_type="unknown+inner", fault_location="unknown")]))
     with pytest.raises(ValueError, match="sensor_at_fault must be"):
         validate(pd.DataFrame([_row(sensor_at_fault="no")]))
     faulty = _row(signal_id="y", fault_type="inner", fault_location="test_bearing")
@@ -207,14 +214,25 @@ def test_sensor_at_fault(toy_build):
     meta = bd.Dataset(toy_build).metadata().set_index("signal_id")
     assert meta.sensor_at_fault.dtype == bool
     at = set(meta.index[meta.sensor_at_fault])
-    # motor_supply is in the faulty motor; at_fault also matches nested locations
-    assert at == {"gear_0/gb_x", "gear_0/gb_y", "gear_0/gb_z", "compound_0/axle",
-                  "compound_0/current"}  # fmt: skip
+    # nested locations match (gearbox); the motor supply is not a part of the faulty motor
+    assert at == {"gear_0/gb_x", "gear_0/gb_y", "gear_0/gb_z", "compound_0/axle"}
     from bearing_datasets.schema import at_fault
 
-    sensors = pd.Series(["test_bearing_de", "test_bearing_nde", "gearbox_bearing_input", "base"])
-    faults = pd.Series(["test_bearing_de", "test_bearing_de", "gearbox", "test_bearing"])
-    assert at_fault(sensors, faults).tolist() == [True, False, True, False]
+    pairs = [  # sensor, fault, at fault
+        ("test_bearing_de", "test_bearing_de", True),
+        ("test_bearing_nde", "test_bearing_de", False),
+        ("gearbox_bearing_input", "gearbox", True),
+        ("motor_bearing", "motor_bearing_de", True),
+        ("base", "test_bearing", False),
+        ("motor_supply", "motor", False),
+        ("motor", "motor_supply", False),
+        ("motor_supply", "motor_rotor+motor_supply", True),
+        ("unknown", "unknown", False),
+        ("motor", "unknown", False),
+        ("unknown", "motor", False),
+    ]
+    sensors, faults, expected = (pd.Series(x) for x in zip(*pairs, strict=True))
+    assert at_fault(sensors, faults).tolist() == expected.tolist()
 
 
 def test_old_builds_read_with_new_names(toy_build, toy_dir, root):
@@ -247,10 +265,30 @@ def test_old_builds_read_with_new_names(toy_build, toy_dir, root):
     assert "sensor_at_fault" not in both.columns  # only in builds made with 0.2
 
 
+def test_old_build_with_a_column_named_like_a_new_one():
+    """cumtb_pitch 0.1 had its own fault_type column next to condition: it becomes
+    fault_detail, and condition becomes fault_type."""
+    from bearing_datasets.schema import renamed_columns, upgrade
+
+    old = pd.DataFrame({"condition": ["normal", "ball"], "fault_type": ["none", "crack"]})
+    new = upgrade(old)
+    assert new.fault_type.tolist() == ["normal", "rolling_element"]
+    assert new.fault_detail.tolist() == ["none", "crack"]
+    assert renamed_columns(["fault_type", "rpm"]) == {"rpm": "speed_rpm"}  # no clash
+
+
 def test_where_accepts_old_column_names(toy_dir, root):
     with pytest.warns(DeprecationWarning, match="now 'fault_type'"):
         build(toy_dir, root, where={"condition": ["normal", "gear"]}, as_name="old_where")
     assert set(bd.open("old_where", root).metadata().fault_type) == {"normal", "gear"}
+    with pytest.raises(ValueError, match="both 'condition' and 'fault_type'"):
+        build(toy_dir, root, where={"condition": ["gear"], "fault_type": ["normal"]}, as_name="x")
+
+
+def test_where_rejects_per_channel_columns(toy_dir, root):
+    with pytest.raises(ValueError, match="not set per recording"):
+        build(toy_dir, root, where={"sensor_location": ["gearbox"]}, as_name="by_sensor")
+    assert not (root / "by_sensor").exists()
 
 
 @pytest.mark.parametrize("name", [*list_datasets(), PRIVATE_EXAMPLE])

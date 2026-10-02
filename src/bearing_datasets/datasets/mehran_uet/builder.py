@@ -85,7 +85,7 @@ def recordings(raw_dir):
             "fault_type": "electrical" if brb else "normal",
             "fault_location": "motor_rotor" if brb else "none",
             "fault_size_mm": 0.0,
-            "fault_severity": "none",  # broken rotor bar: not graded
+            "fault_severity": "not graded" if brb else "none",
             "fault_severity_level": 1 if brb else 0,
             "operating_condition": f"{key.split('-')[-1].removesuffix('watt')} W"
             if brb

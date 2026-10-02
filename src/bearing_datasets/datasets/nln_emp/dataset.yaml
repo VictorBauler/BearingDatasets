@@ -33,8 +33,9 @@ files: ["NLN-EMP.7z"]
 columns:
   fault_severity: >-
     severity number from the folder name (higher is worse; coupling 2D is a two-sided cut),
-    none if healthy or single-level. Levels rank the numbers within each fault (2D after 2);
-    single-level faults are level 1
+    "not graded" for single-level faults, none if healthy. Levels rank the numbers within each
+    native fault (2D after 2), e.g. impeller and cavitation separately although both are
+    fault_type other; single-level faults are level 1
   setup: motor_2 or motor_4 (motor-pump set)
   speed_pct: motor speed in % of rated speed
   speed_rpm: motor speed measured during the test (measurement overview), +- 5 rpm

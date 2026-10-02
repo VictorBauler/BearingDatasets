@@ -30,8 +30,8 @@ columns:
     Huang & Baddour's 7.94 / 38.52 mm
   fault_severity: >-
     light, medium or high (levels 1-3; bearing raceway fault width 0.1 / 0.3 / 0.5 mm; gear
-    fault sizes in the paper's Table 5); none for healthy and missing tooth (not graded,
-    level 1)
+    fault sizes in the paper's Table 5); "not graded" for missing tooth (level 1), none
+    for healthy
   speed_profile: varying when the speed cycles, constant when the load cycles
   speed_setpoint_rpm: >-
     motor speed in rpm: the constant speed when the load varies, the peak of the speed cycle

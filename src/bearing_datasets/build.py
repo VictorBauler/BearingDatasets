@@ -341,7 +341,13 @@ def build(
         for rec in tqdm(
             builder.recordings(tmp / "raw"), desc=f"{name}: convert", unit=" recordings"
         ):
-            if any(str(rec.get(k)) not in vs for k, vs in wanted.items()):
+            if missing := set(wanted) - set(rec):
+                raise ValueError(
+                    f"where: {sorted(missing)} not set per recording by the {name} builder "
+                    "(per-channel columns such as sensor_location cannot be used): use "
+                    "channels=, or filter the metadata after building"
+                )
+            if any(str(rec[k]) not in vs for k, vs in wanted.items()):
                 continue
             signals, fs = rec.pop("signals"), rec.pop("fs", None)
             for channel, x in signals.items():
@@ -425,6 +431,8 @@ def _upgrade_where(where: dict[str, list] | None) -> dict[str, list] | None:
     out = {}
     for key, values in where.items():
         if key in RENAMED:
+            if RENAMED[key] in where:
+                raise ValueError(f"where has both {key!r} and {RENAMED[key]!r}")
             warnings.warn(
                 f"where={{{key!r}: ...}}: the column is now {RENAMED[key]!r}",
                 DeprecationWarning,

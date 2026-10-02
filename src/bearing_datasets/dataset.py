@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
-from .schema import RENAMED, SCHEMA_VERSION, upgrade
+from .schema import SCHEMA_VERSION, renamed_columns, upgrade
 
 ENV_ROOT = "BEARING_DATASETS_ROOT"
 
@@ -113,7 +113,7 @@ class Dataset:
         """Description of every metadata column of this dataset."""
         cols = self.manifest.get("columns", {})
         if self.outdated:
-            new = {k: v for k, v in RENAMED.items() if v not in cols}
+            new = renamed_columns(cols)
             cols = {new.get(k, k): v for k, v in cols.items()}
         return pd.DataFrame({"column": list(cols), "description": list(cols.values())})
 

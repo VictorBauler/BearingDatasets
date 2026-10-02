@@ -49,7 +49,7 @@ STATE = {  # state -> (fault_type, fault_location)
     "teeth_break_and_bearing_outer": ("gear+outer", f"gearbox+{BEARING}"),
 }
 # severity -> (words, level); missing teeth is not graded: level 1
-SEVERITY = {"L": ("light", 1), "M": ("medium", 2), "H": ("high", 3), None: ("none", 1)}
+SEVERITY = {"L": ("light", 1), "M": ("medium", 2), "H": ("high", 3), None: ("not graded", 1)}
 NAME = re.compile(
     r"^(?P<state>[a-z_]+?)(?:_(?P<sev>[LMH]))?_(?P<varying>speed|torque)_circulation_"
     r"(?:(?P<nm1>\d+)Nm-(?P<rpm1>\d+)rpm|(?P<rpm2>\d+)rpm_(?P<nm2>\d+)Nm)$"

@@ -53,7 +53,7 @@ def recordings(raw_dir):
             "fault_type": "+".join(conditions) or "normal",
             "fault_location": "+".join(locations) or "none",
             "fault_origin": "artificial" if conditions else "none",
-            "fault_severity": m["rotor"][1:] or "none",
+            "fault_severity": m["rotor"][1:] or ("not graded" if conditions else "none"),
             # misalignment and unbalance levels 1-3; other faults are not graded (1)
             "fault_severity_level": int(m["rotor"][1:] or 1) if conditions else 0,
             "speed_rpm": float(m["rpm"]),

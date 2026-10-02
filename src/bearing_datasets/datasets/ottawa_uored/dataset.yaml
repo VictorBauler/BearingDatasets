@@ -24,7 +24,7 @@ sources:
 columns:
   bpfo: computed from the geometry in the paper's Table 2 (8 balls, 6.77 mm, pitch 28.50 mm)
   fault_severity: >-
-    stage of the bearing: healthy, developing or faulty (levels 0-2; every bearing is
+    stage of the bearing: none (healthy), developing or faulty (levels 0-2; every bearing is
     recorded at the 3 stages, the healthy stage with fault_type normal)
   bearing_id: bearing number 1-20 (1-5 inner, 6-10 outer, 11-15 ball, 16-20 cage faults)
   speed_rpm: first sample of the speed column of the raw file

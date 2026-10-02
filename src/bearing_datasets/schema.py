@@ -30,7 +30,8 @@ REQUIRED = {
     "vocabulary and in the order of fault_type; 'none' if normal",
     "sensor_at_fault": "True when the sensor is at a faulty position: its sensor_location is a "
     "fault_location part or contains it, or the reverse (a fault in the gearbox and a sensor at "
-    "gearbox_bearing_input); computed from the two",
+    "gearbox_bearing_input); never for unknown positions, and the motor supply only matches a "
+    "motor_supply fault; computed from the two",
     "signal_file": "signals/ file holding the samples",
     "signal_row_group": "row group of signal_file holding the samples",
     "signal_row": "row inside that row group",
@@ -63,9 +64,11 @@ OPTIONAL = {
     "fault_origin": "how the fault was made: artificial (seeded) or real (grown in operation); "
     "'none' if healthy",
     "fault_size_mm": "size of the fault in mm; 0 if healthy",
-    "fault_severity": "severity of the fault, in the dataset's own words; 'none' if healthy",
+    "fault_severity": "severity of the fault, in the dataset's own words; 'not graded' for a "
+    "fault the dataset does not grade, 'none' if healthy",
     "fault_severity_level": "severity rank: 0 healthy, then 1, 2, ... from the mildest, within "
-    "this dataset and fault_type (not comparable across datasets)",
+    "this dataset and fault (fault_type, or the finer fault the dataset names); 1 for a fault "
+    "that is not graded (not comparable across datasets)",
     # bearing
     "bearing_id": "physical bearing tested: the same id means the same bearing (use it for "
     "grouped train/test splits)",
@@ -147,6 +150,20 @@ JOINED = {"fault_type", "fault_location"}  # '+'-joined values
 # Builds made before 0.2.0 (schema version 1), read with today's names.
 RENAMED = {"condition": "fault_type", "severity": "fault_severity", "rpm": "speed_rpm"}
 RENAMED_VALUES = {"fault_type": {"ball": "rolling_element"}}
+# 0.1 dataset columns whose name is now standard: moved aside first (cumtb_pitch fault_type)
+DISPLACED = {"fault_type": "fault_detail"}
+
+
+def renamed_columns(columns) -> dict[str, str]:
+    """0.1 column name -> today's name, for the columns of a build made before 0.2.0."""
+    columns = set(columns)
+    out = {
+        c: DISPLACED[c]
+        for c in columns & set(DISPLACED)
+        if any(RENAMED.get(old) == c for old in columns)
+    }
+    taken = (columns - set(out)) | set(out.values())
+    return out | {old: new for old, new in RENAMED.items() if old in columns and new not in taken}
 
 
 def order_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -165,8 +182,9 @@ def describe(df: pd.DataFrame, notes: dict[str, str] | None = None) -> dict[str,
 
 
 def _contains(a: str, b: str) -> bool:
-    """``a`` is ``b`` or a less specific location containing it (gearbox, gearbox_bearing)."""
-    return a == b or b.startswith(a + "_")
+    """``a`` is ``b`` or a less specific location containing it (gearbox, gearbox_bearing). The
+    motor supply (currents, voltages) is not a part of the motor."""
+    return a == b or (b.startswith(a + "_") and not b.endswith("_supply"))
 
 
 def at_fault(sensor_location: pd.Series, fault_location: pd.Series) -> pd.Series:
@@ -174,7 +192,8 @@ def at_fault(sensor_location: pd.Series, fault_location: pd.Series) -> pd.Series
     parts = fault_location.astype(str).str.split("+")
     return pd.Series(
         [
-            any(_contains(s, f) or _contains(f, s) for f in p if f != "none")
+            s != "unknown"
+            and any(_contains(s, f) or _contains(f, s) for f in p if f not in ("none", "unknown"))
             for s, p in zip(sensor_location.astype(str), parts, strict=True)
         ],
         index=sensor_location.index,
@@ -184,7 +203,7 @@ def at_fault(sensor_location: pd.Series, fault_location: pd.Series) -> pd.Series
 
 def upgrade(df: pd.DataFrame) -> pd.DataFrame:
     """Metadata of a build made before 0.2.0, with today's column names and fault types."""
-    df = df.rename(columns={k: v for k, v in RENAMED.items() if v not in df.columns})
+    df = df.rename(columns=renamed_columns(df.columns))
     for col, mapping in RENAMED_VALUES.items():
         if col in df.columns:
             df[col] = (
@@ -219,6 +238,15 @@ def validate(df: pd.DataFrame, notes: dict[str, str] | None = None) -> None:
         parts = {p for v in values for p in v.split("+")} if col in JOINED else set(values)
         if bad := parts - allowed:
             errors.append(f"unknown {col} value(s) {sorted(bad)}; allowed: {sorted(allowed)}")
+    if "fault_type" in df and "fault_location" in df:
+        ft, loc = df["fault_type"].astype(str), df["fault_location"].astype(str)
+        if ((ft == "normal") != (loc == "none")).any():
+            errors.append("fault_location must be 'none' exactly for fault_type 'normal'")
+        n_parts = ft.str.count(r"\+") != loc.str.count(r"\+")
+        if (n_parts & (loc != "unknown")).any():
+            errors.append(
+                "fault_location must have one '+'-joined part per fault_type part (or be 'unknown')"
+            )
     if "sensor_at_fault" in df and not pd.api.types.is_bool_dtype(df["sensor_at_fault"]):
         errors.append("sensor_at_fault must be True/False")
     if "fault_severity_level" in df:

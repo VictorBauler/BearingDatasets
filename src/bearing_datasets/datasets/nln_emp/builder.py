@@ -111,7 +111,9 @@ def recordings(raw_dir):
                     "native_label": folder.name,
                     "fault_type": fault_type,
                     "fault_location": location,
-                    "fault_severity": m["sev"] if m["sev"] and fault_type != "normal" else "none",
+                    "fault_severity": "none"
+                    if fault_type == "normal"
+                    else m["sev"] or "not graded",
                     "fault_severity_level": level(folder.name),
                     "setup": f"motor_{motor}",
                     "speed_pct": int(speed),

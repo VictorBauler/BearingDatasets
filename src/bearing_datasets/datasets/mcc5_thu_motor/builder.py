@@ -45,7 +45,7 @@ FAULT = {  # fault -> (fault_type, fault_location); the faulty bearing's end is 
     "winding": ("electrical", "motor_stator"),
 }
 # severity -> (words, level); faults that are not graded get level 1
-SEVERITY = {"L": ("light", 1), "H": ("high", 2), None: ("none", 1)}
+SEVERITY = {"L": ("light", 1), "H": ("high", 2), None: ("not graded", 1)}
 PART = re.compile(r"^(?P<fault>[a-z_]+?)(?:_(?P<sev>[LH]))?$")
 NAME = re.compile(
     r"^(?P<state>.+?)_(?P<varying>speed|torque)_circulation_(?P<nm>\d+)Nm_(?P<rpm>\d+)rpm"
