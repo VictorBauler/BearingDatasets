@@ -6,7 +6,9 @@ description: |
   amplitude (10-20 deg), radial load (9-19.4 kN) and frequency (5-10 Hz). A 10 s snapshot
   about every 15 min (every 910 s in Test 7) of: acceleration and radial displacement at
   each bearing (10 kHz), torque (10 kHz), oscillation angle (1 kHz), radial force at each
-  bearing (100 Hz), bearing and ambient temperatures (10 Hz). Units are not stated. Each
+  bearing (100 Hz), bearing and ambient temperatures (10 Hz). Units are not stated: the angle is in deg (file
+  suffix Position_deg), the force in kN (it matches the radial load of the file name) and the
+  temperatures (20-48) in degC; acceleration, displacement and torque units are unknown. Each
   snapshot is one recording with all channels (read fs per row). The files keep all
   snapshots of a test one after the other; time_s is the start of the snapshot from the
   file's time vector. Run-to-failure: use run_id, time_s and rul_s (end of life = last

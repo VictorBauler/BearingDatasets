@@ -9,7 +9,10 @@ description: |
   sensors on the LP rotor (horizontal, vertical displacement) and four accelerometers
   on the casings, 25 kHz. The authors cut each 15 s acquisition into segments of 20480
   samples and removed invalid ones: 2412 segments, stored here as one recording each
-  (`segment` numbers them within a speed pair). Units are not stated.
+  (`segment` numbers them within a speed pair). The authors scaled each channel of each
+  acquisition to [-1, 1] (min-max) before cutting it (every speed pair reaches -1 and +1
+  exactly): no physical unit (unit normalized), and amplitudes are not comparable between
+  speed pairs.
 license: unspecified (cite the paper)
 size: "download 2.9 GB, built 1.7 GB (measured)"
 homepage: https://github.com/HouLeiHIT/HIT-dataset

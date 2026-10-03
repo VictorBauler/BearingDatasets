@@ -11,6 +11,7 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "vertical",
+        "unit": "unknown",
         "fs": 50000,
     },
 }

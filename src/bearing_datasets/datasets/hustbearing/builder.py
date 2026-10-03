@@ -16,7 +16,8 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": axis.lower(),
-        "unit": "unknown",
+        "unit": "V",
+        "sensitivity": "100 mV/g",  # TREA331, nominal (+-15 %)
         "fs": 25600,
     }
     for axis in "XYZ"

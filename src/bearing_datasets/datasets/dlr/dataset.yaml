@@ -5,7 +5,9 @@ description: |
   vertically on a FALEX test bench, axially loaded with 5 or 8.8 kN at 60 or 500 rpm.
   Healthy, and artificially seeded spalls on the inner race (1.0, 2.1, 3.8 mm wide) or
   the outer race (1.4, 2.4, 4.0 mm wide): 28 recordings of 30 s at 25.6 kHz from one
-  accelerometer (PCB 356A32) on the bearing outer race. Unit not stated.
+  accelerometer (PCB 356A32) on the bearing outer race. Unit not stated; the values are in m/s^2: their ADC step is
+  9.68 mV per unit, the PCB 356A32's 10.2 mV/(m/s^2) (100 mV/g), and their peak (355) would
+  exceed the sensor's +-50 g range in g.
 license: CC-BY-4.0
 size: "download 0.16 GB, built 0.08 GB (measured)"
 homepage: https://data.mendeley.com/datasets/chwhh9n3bf/1

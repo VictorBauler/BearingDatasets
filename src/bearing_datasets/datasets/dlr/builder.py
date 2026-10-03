@@ -14,7 +14,7 @@ CHANNELS = {
         "sensor_location": "test_bearing",
         "sensor_mounting": "outer_ring",
         "quantity": "acceleration",
-        "unit": "unknown",
+        "unit": "m/s^2",
         "fs": 25600,
     },
 }

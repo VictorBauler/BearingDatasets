@@ -4,7 +4,8 @@ description: |
   ER-16K ball bearings on a SpectraQuest simulator in 9 health states (healthy;
   inner race, outer race, ball and inner+outer faults, each medium and severe) at
   10 constant speeds (20-80 Hz) and one time-varying speed (0-40-0 Hz): 99
-  recordings. Triaxial accelerometer (X, Y, Z), 25.6 kHz, 262144 samples (10.24 s).
+  recordings. Triaxial accelerometer (X, Y, Z), 25.6 kHz, 262144 samples (10.24 s), stored
+  in volts: the file header gives 1 V per unit for a TREA331 of 100 mV/g (Readme Fig. 4-5).
   All faults are artificial. Fault sizes: inner/outer race 0.15 mm (medium) and
   0.3 mm (severe); ball 0.25 mm and 0.5 mm; the combination fault is inner+outer.
   The files also hold a speed column that the authors say is meaningless (the speed

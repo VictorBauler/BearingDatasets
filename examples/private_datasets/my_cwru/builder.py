@@ -7,9 +7,9 @@ from bearing_datasets.io import read_mat
 # on the motor casing at the drive end and fan (non-drive) end
 CHANNELS = {
     "DE": {"sensor_location": "motor_bearing_de", "sensor_mounting": "casing",
-           "quantity": "acceleration"},
+           "quantity": "acceleration", "unit": "unknown"},
     "FE": {"sensor_location": "motor_bearing_nde", "sensor_mounting": "casing",
-           "quantity": "acceleration"},
+           "quantity": "acceleration", "unit": "unknown"},
 }  # fmt: skip
 # file: (CWRU label, fault type, sampling rate); faults are on the drive-end bearing
 FILES = {

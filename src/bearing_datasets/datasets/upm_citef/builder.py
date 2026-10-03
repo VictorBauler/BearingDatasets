@@ -28,8 +28,9 @@ CHANNELS = {
         "quantity": "acceleration",
     },
 }
-for _c in CHANNELS.values():
-    _c["unit"] = "unknown"
+for _c in CHANNELS.values():  # TE 805M1, volts with the sensor bias (2020 paper)
+    _c["unit"] = "V"
+    _c["sensitivity"] = "100 mV/g"
 STUDY_2023 = {
     "01_500_S1_EE_F0_R1",
     "02_500_S1_EE_F0_R2",

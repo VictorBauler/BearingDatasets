@@ -14,7 +14,7 @@ def _ch(location, mounting, quantity, axis):
         "quantity": quantity,
         "axis": axis,
         "unit": "V",
-        "sensitivity": "unknown",
+        "sensitivity": "100 mV/g" if quantity == "acceleration" else "unknown",
         "fs": 35000,
     }
 

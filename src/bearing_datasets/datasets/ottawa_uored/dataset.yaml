@@ -4,7 +4,8 @@ description: |
   20 bearings, each recorded healthy (stage 0) and then with a developing (1)
   and a fully developed (2) fault: inner race (bearings 1-5), outer race (6-10),
   ball (11-15), cage (16-20). 42 kHz, 10 s; accelerometer, microphone and a
-  temperature-difference channel. The speed and load columns of the raw files
+  temperature-difference channel (units from the data paper, Sehri et al. 2023: vibration
+  in m/s^2, microphone in V with the PCB 130F20's 45 mV/Pa, temperature in degC). The speed and load columns of the raw files
   hold one value (first sample), stored as `speed_rpm` and `load`.
   Bearings NSK 6203ZZ and FAFNIR 203KD with the same geometry (8 balls of 6.77 mm,
   pitch diameter 28.50 mm; paper Table 2): fault frequencies in bpfo, bpfi, bsf, ftf.

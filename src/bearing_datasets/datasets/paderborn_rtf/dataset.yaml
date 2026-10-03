@@ -6,8 +6,8 @@ description: |
   static and dynamic (shaker) load amplitudes are drawn at random from a range that
   depends on the experiment (dynamic load sinusoidal at 2 Hz for B01-B06, Gaussian noise
   up to 200 Hz for B07-B17). Every ~12 s, 1.6 s of vibration from two accelerometers on
-  the bearing housing (directions A and C; stored in V, 10 g/V for B01 per its log; see
-  the B<nn>_log.pdf of each experiment) at 128 kHz (B01-B09) or 64 kHz (B10-B17), plus the
+  the bearing housing (directions A and C; stored in V; 10 g/V, i.e. 100 mV/g (PCB 603C01),
+  in the B<nn>_log.pdf of every experiment B01-B17) at 128 kHz (B01-B09) or 64 kHz (B10-B17), plus the
   measured speed, loads and temperatures of that measurement (from the csv files). An
   experiment ends at a vibration (6-10 g) or temperature (110 degC) threshold (B01: no
   threshold set; B05: interrupted). Each experiment starts with a warm-up phase (750 rpm,

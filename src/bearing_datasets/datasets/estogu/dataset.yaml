@@ -9,7 +9,10 @@ description: |
   Hz x 60) and grid-fed at 50 Hz, each with 6 resistor-bank positions (no load, 111, 56,
   38, 29, 23 ohm): 432 recordings of 20 s at 35 kHz. Triaxial accelerometer on the motor fan
   cover, three phase currents (shunts, 100 mV/div) and one line voltage (200 V/div), all
-  stored in V. The README says the bearing defects were drilled, the setup description
+  stored in the DAQ volts. The accelerometer is a Metra KS943B100, 100 mV/g, gain 1 (setup
+  description). The currents (5 A / 60 mV shunts) and the voltage go through isolators set
+  to 100 mV/div and 200 V/div; their scale in V/A and V/V is not stated (sensitivity
+  unknown). The README says the bearing defects were drilled, the setup description
   says worn bearings from an industrial maintenance workshop were used; fault_origin is
   therefore unknown for BB and BR.
 license: CC-BY-4.0

@@ -38,6 +38,17 @@ CHANNELS = {
     "current_1": _ch("motor_supply", "none", "current", "a"),
     "current_2": _ch("motor_supply", "none", "current", "b"),
 }
+# Volts/Unit row of the file headers (the same in every file); the record: calibrated value =
+# recorded value / Volts/Unit. The probes (4.4) and currents (1.0) do not say per what unit.
+SENSITIVITY = {
+    "motor_vertical": "91 mV/g", "motor_horizontal": "88 mV/g", "motor_axial": "97 mV/g",
+    "inboard_vertical": "94 mV/g", "inboard_horizontal": "101 mV/g", "inboard_axial": "97 mV/g",
+    "outboard_vertical": "87 mV/g", "outboard_horizontal": "94 mV/g",
+    "gearbox_axial": "100 mV/g", "gearbox_horizontal": "100 mV/g", "gearbox_vertical": "100 mV/g",
+    "tacho": "none",
+}  # fmt: skip
+for _name, _values in CHANNELS.items():
+    _values["sensitivity"] = SENSITIVITY.get(_name, "unknown")
 RAMPS = "14.2-23.4-17.6"
 TESTS = {1: ("normal", "50"), 2: ("normal", RAMPS), 3: ("outer", RAMPS), 4: ("outer", "50")}
 

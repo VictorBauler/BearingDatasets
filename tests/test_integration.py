@@ -87,7 +87,8 @@ def test_readme_lists_the_standard_columns(name):
     ds = _open(name)
     if ds.outdated:
         pytest.skip(f"{name} was built before 0.2.0")
-    name = ds.manifest.get("selection", {}).get("of", name)
+    # a subset, or a copy built under another name (as_name): the dataset it comes from
+    name = ds.manifest.get("selection", {}).get("of") or Path(ds.manifest["spec_dir"]).name
     _, table = readme_columns()
     columns = set(ds.metadata().columns)
     wrong = {c for c in OPTIONAL if (c in columns) != (name in table[c])}

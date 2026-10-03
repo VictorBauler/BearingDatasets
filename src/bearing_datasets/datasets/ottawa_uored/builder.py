@@ -11,14 +11,16 @@ CHANNELS = {
         "sensor_location": "test_bearing",
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
-        "unit": "unknown",
+        "unit": "m/s^2",
+        "sensitivity": "none",
         "fs": 42000,
     },
     "acoustic": {
         "sensor_location": "ambient",
         "sensor_mounting": "none",
         "quantity": "sound_pressure",
-        "unit": "unknown",
+        "unit": "V",
+        "sensitivity": "45 mV/Pa",  # PCB 130F20 (record)
         "fs": 42000,
     },
     "temperature_difference": {
@@ -26,6 +28,7 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "temperature",
         "unit": "degC",
+        "sensitivity": "none",
         "fs": 42000,
     },
 }

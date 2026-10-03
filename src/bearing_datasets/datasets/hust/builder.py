@@ -7,7 +7,7 @@ from bearing_datasets.io import read_mat
 
 CHANNELS = {
     "vibration": {"sensor_location": "test_bearing", "sensor_mounting": "unknown",
-                  "quantity": "acceleration", "fs": 51200},
+                  "quantity": "acceleration", "unit": "g", "fs": 51200},
 }  # fmt: skip
 FAULT_TYPE = {
     "N": "normal",

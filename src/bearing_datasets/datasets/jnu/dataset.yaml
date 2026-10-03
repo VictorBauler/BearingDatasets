@@ -5,7 +5,9 @@ description: |
   inner race, outer race and roller, plus healthy, at 600, 800 and 1000 rpm: 12 recordings.
   One PCB MA352A60 accelerometer in the vertical direction, 50 kHz. Fault recordings
   last 10 s, normal ones 30 s. The amplitude is clipped at a different range in
-  different files (the input range was changed between recordings).
+  different files (the input range of the Yokogawa DL750 recorder was changed between
+  recordings: +-1.25 to +-12). The unit is not documented (the 10 mV/g sensor read as
+  volts would give implausible levels, so the values were probably scaled).
 license: unspecified (no license in the repository; cite the paper)
 size: "download 0.08 GB, built 0.02 GB (measured)"
 homepage: https://github.com/ClarkGableWang/JNU-Bearing-Dataset

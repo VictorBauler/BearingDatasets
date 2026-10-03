@@ -7,7 +7,8 @@ description: |
   (inner race, ball, outer race, combination), input shaft unbalance or bent shaft and a
   sheared output keyway, often several at once. 5 input shaft speeds (30-50 Hz) x high
   and low load x 2 repeats = 280 recordings of about 4 s at 66.67 kHz: input-side and
-  output-side accelerometers (on the casing) and a tachometer (10 pulses per revolution).
+  output-side accelerometers (on the casing; stored in V, Endevco 10 mV/g per the PHM Society
+  apparatus page) and a tachometer (10 pulses per revolution).
   The official downloads are gone; this is the labeled "Expanded" set as republished on
   Mendeley Data (folder gearset/raw of gearset.zip; the rest of the zip is ignored).
   The fault table per case comes from Chen et al. (arXiv:2002.07605), a secondary

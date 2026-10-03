@@ -18,7 +18,7 @@ def _ch(quantity, unit):
 
 
 CHANNELS = {**{f"ai{i}": _ch("acceleration", "m/s^2") for i in range(1, 7)},
-            "ai7_acoustic": _ch("sound_pressure", "dB")}  # fmt: skip
+            "ai7_acoustic": _ch("sound_pressure", "unknown")}  # fmt: skip
 STATE = {"N": "normal", "I": "inner", "O": "outer", "B1": "rolling_element"}
 NAME = re.compile(r"^\d+-(?P<state>N|I|O|B1)-(?P<rpm>[\d.]+)rpm-(?P<load>[\d.]+)N-(?P<rep>\d+)$")
 

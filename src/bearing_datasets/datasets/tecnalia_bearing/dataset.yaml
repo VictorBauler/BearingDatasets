@@ -7,9 +7,10 @@ description: |
   speed ramps through 14.2, 23.4 and 17.6 Hz. 16 channels at 20.48 kHz (anti-alias filter
   8 kHz): tachometer, PCB 608A11 accelerometers on the motor (3 axes), inboard bearing
   (3 axes), outboard bearing (vertical, horizontal) and gearbox (3 axes), two proximity
-  probes and two motor currents. Values are the recorded volts; divide by the file's
-  Volts/Unit row to calibrate (0.087-0.101 V/unit for the accelerometers, 4.4 for the
-  probes). The record calls the gearbox, probe and current channels not relevant to the
+  probes and two motor currents. Values are the recorded volts; the record divides them by
+  the file's Volts/Unit row to calibrate, which gives the sensitivity column (87-101 mV/g
+  for the accelerometers; 4.4 for the probes and 1.0 for the currents, per unit not stated,
+  so unknown). The record calls the gearbox, probe and current channels not relevant to the
   experiment. The inboard bearing is test_bearing, the outboard one support_bearing.
   Same group and file format as tecnalia_gearbox.
 license: CC-BY-4.0

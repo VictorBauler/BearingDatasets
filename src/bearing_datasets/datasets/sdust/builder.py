@@ -20,7 +20,7 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": axis.lower(),
-        "unit": "unknown",
+        "unit": "m/s^2",
         "fs": 25600,
     }
     for pos in ("upper", "lower")

@@ -16,6 +16,10 @@ def _ch(location, mounting, quantity, axis="none"):
         "quantity": quantity,
         "axis": axis,
         "unit": "V",
+        # IMI 601A01 / 604B31 at 100 mV/g (site); the microphone chain is not documented
+        "sensitivity": {"acceleration": "100 mV/g", "sound_pressure": "unknown"}.get(
+            quantity, "none"
+        ),
         "fs": 50000,
     }
 

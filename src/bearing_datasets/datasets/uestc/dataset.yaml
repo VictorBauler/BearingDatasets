@@ -4,7 +4,8 @@ description: |
   Laboratory rig at no load with ASAHI UCPH 20 pillow-block bearings in four states:
   normal, ball fault (pit of 3 mm diameter and 5 mm depth on one ball), inner and outer
   race faults (wire-cut slot 0.55 mm wide and 1 mm deep), at 800, 1000, 1200 and 1400 rpm.
-  One single-axis piezoelectric accelerometer (10.22 mV per m/s^2) at 20 kHz. Each of the
+  One single-axis piezoelectric accelerometer (10.22 mV per m/s^2) at 20 kHz, stored in
+  volts: the values step by 1.19 uV (24 bits over +-10 V) and I_1400 clips at 10 V. Each of the
   16 conditions was recorded continuously and split into five files for storage; the
   builder joins them back into one recording per condition.
 license: unspecified (open for research; cite the paper)

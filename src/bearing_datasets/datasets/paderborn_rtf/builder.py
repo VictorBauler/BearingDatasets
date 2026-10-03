@@ -22,6 +22,7 @@ CHANNELS = {
         "quantity": "acceleration",
         "axis": "horizontal",
         "unit": "V",
+        "sensitivity": "100 mV/g",  # 10 g/V in the log of every experiment
         "fs": 128000,
     },
     "acc_C": {
@@ -30,6 +31,7 @@ CHANNELS = {
         "quantity": "acceleration",
         "axis": "horizontal",
         "unit": "V",
+        "sensitivity": "100 mV/g",  # 10 g/V in the log of every experiment
         "fs": 128000,
     },
 }

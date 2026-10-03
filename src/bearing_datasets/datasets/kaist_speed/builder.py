@@ -27,10 +27,10 @@ def _ch(location, mounting, quantity, axis="none", unit="unknown", fs=25600):
 ORDERS = fault_orders(9, 7.90, 38.5)
 # housing A (motor side) and B both hold test bearings
 CHANNELS = {
-    "x_housing_a": _ch("test_bearing_de", "pedestal", "acceleration", "x"),
-    "y_housing_a": _ch("test_bearing_de", "pedestal", "acceleration", "y"),
-    "x_housing_b": _ch("test_bearing_nde", "pedestal", "acceleration", "x"),
-    "y_housing_b": _ch("test_bearing_nde", "pedestal", "acceleration", "y"),
+    "x_housing_a": _ch("test_bearing_de", "pedestal", "acceleration", "x", "g"),
+    "y_housing_a": _ch("test_bearing_de", "pedestal", "acceleration", "y", "g"),
+    "x_housing_b": _ch("test_bearing_nde", "pedestal", "acceleration", "x", "g"),
+    "y_housing_b": _ch("test_bearing_nde", "pedestal", "acceleration", "y", "g"),
     "current_r": _ch("motor_supply", "none", "current", "a", "A", 100000),
     "current_s": _ch("motor_supply", "none", "current", "b", "A", 100000),
     "current_t": _ch("motor_supply", "none", "current", "c", "A", 100000),
@@ -60,8 +60,11 @@ def recordings(raw_dir):
         else:
             location = "test_bearing_nde"
         x = _read(path)
+        unit = {}
         if kind == "vibration":
             signals = {ch: x[:, i] for i, ch in enumerate(list(CHANNELS)[:4])}
+            if constant:  # the Test.Lab SI export, as kaist_load
+                unit = {"unit": dict.fromkeys(signals, "m/s^2")}
         elif kind == "current":
             signals = {ch: x[:, i] for i, ch in enumerate(list(CHANNELS)[4:7])}
         else:
@@ -74,6 +77,7 @@ def recordings(raw_dir):
             "fault_location": location,
             "trial": n,
             "speed_profile": "constant" if constant else "varying",
+            **unit,
             **({"fs": {"speed": fs, "speed_time_s": fs}} if kind == "rpm" else {}),
             "bearing_model": "6205",
             **ORDERS,

@@ -18,6 +18,7 @@ CHANNELS = {
         "quantity": "acceleration",
         "axis": "none",
         "unit": "V",
+        "sensitivity": "10 mV/g",  # Endevco, PHM Society apparatus page
         "fs": 200000 / 3,
     },
     "output_accelerometer": {
@@ -26,6 +27,7 @@ CHANNELS = {
         "quantity": "acceleration",
         "axis": "none",
         "unit": "V",
+        "sensitivity": "10 mV/g",  # Endevco, PHM Society apparatus page
         "fs": 200000 / 3,
     },
     "tachometer": {
@@ -34,6 +36,7 @@ CHANNELS = {
         "quantity": "tachometer",
         "axis": "none",
         "unit": "V",
+        "sensitivity": "none",
         "fs": 200000 / 3,
     },
 }

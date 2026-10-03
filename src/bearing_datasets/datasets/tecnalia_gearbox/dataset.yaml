@@ -11,8 +11,11 @@ description: |
   encoders, torque, two motor currents, 8 accelerometers (drive motor, Test Gearbox input
   and output bearings, Load Gearbox bearings, load motor) and the axial force of the Test
   Gearbox bearing; channel16 is not described. The Test Gearbox and drive motor are
-  gearbox and motor; the Load Gearbox and load motor, the rig's loading system, are rig. Units are not stated (the file headers give
-  the sensor sensitivities in V/unit).
+  gearbox and motor; the Load Gearbox and load motor, the rig's loading system, are rig.
+  Values are the recorded volts. The sensitivity column comes from the Volts/Unit row of the
+  file headers (the same in every test): 94-101 mV/g for the accelerometers and 0.1 V/A for
+  the current transformers. The torque (0.5 V/unit) and force (0.000498 V/unit) sensitivities
+  do not name their unit and are left unknown.
 license: CC-BY-4.0
 size: "download 0.57 GB, built 0.19 GB (measured)"
 homepage: https://doi.org/10.17632/whj3wxhw8j.1

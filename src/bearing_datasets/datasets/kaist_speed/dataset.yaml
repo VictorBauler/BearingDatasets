@@ -11,8 +11,9 @@ description: |
   Housing A (motor side) is test_bearing_de, housing B test_bearing_nde.
   The faulty bearing is in housing B for the varying-speed runs; for the constant-speed
   files the paper only says the ball fault bearing is in housing A (inner and outer:
-  fault_location unknown). Vibration unit: the paper says g; the amplitudes match
-  kaist_load, whose file headers say SI, so the unit is left as unknown.
+  fault_location unknown). Vibration of the varying-speed runs in g (record and paper);
+  the constant-speed files are the Test.Lab SI export, in m/s^2 (same quantisation steps
+  and amplitudes as kaist_load).
   The Mendeley record text lists only normal, inner and outer, but the files include
   the ball fault described in the paper. Download: 3 records (subsets 1-3).
 license: CC-BY-4.0
