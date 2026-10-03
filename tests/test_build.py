@@ -206,6 +206,12 @@ def test_download_subset(toy_build, toy_dir, root):
     assert set(bd.open("toy_files", root).metadata().native_label) == {"gear", "healthy"}
 
 
+def test_bd_build_stays_a_function():
+    import bearing_datasets.build  # noqa: F401  (importing the submodule must not replace it)
+
+    assert callable(bd.build) and callable(bd.clean_raw)
+
+
 def test_cli_verify(toy_build, root):
     run = subprocess.run(
         [sys.executable, "-m", "bearing_datasets.cli", "--root", str(root), "verify", "toyrig"],
