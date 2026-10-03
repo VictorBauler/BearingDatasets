@@ -6,7 +6,7 @@ description: |
   CWRU bearing data center (the full dataset is the package's `cwru`), all at 0 hp:
   normal baseline (97.mat, 48 kHz) and 0.007" drive-end faults on the inner race
   (105.mat), ball (118.mat) and outer race at 6:00 (130.mat), 12 kHz. Drive-end and
-  fan-end accelerometers.
+  fan-end accelerometers, in g as in `cwru` (inferred, no source states it).
   Source: download the four files from https://engineering.case.edu/bearingdatacenter
   into ~/data/my_cwru (or change `path` below).
 license: "unspecified (public, cite CWRU)"

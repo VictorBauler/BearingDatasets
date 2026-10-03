@@ -5,8 +5,10 @@ description: |
   fan-end (FE) bearing of a 2 hp motor, loads 0-3 hp (1797-1720 rpm).
   Accelerometers on the motor casing at the drive end (DE, motor_bearing_de) and fan end
   (FE, motor_bearing_nde), at 12 o'clock, and on the base plate (BA),
-  12 kHz or 48 kHz. The record does not state the unit of the accelerations (often
-  assumed to be g; the values fit g or the volts of a 100 mV/g sensor). One recording per .mat file (161 files from the 4 official
+  12 kHz or 48 kHz. Unit g, inferred: no source states it (not the record, nor the
+  benchmark study of Smith & Randall 2015). g is the unit commonly assumed for these files,
+  and the levels fit it (healthy DE std about 0.07, faults up to about 10), but they would
+  also fit the volts of a 100 mV/g sensor. One recording per .mat file (161 files from the 4 official
   index pages). Normal baseline files have no BA channel. The bearing_id of a
   fault is shared by the 4 loads recorded with the same damaged bearing, so
   grouped splits can keep a physical bearing on one side.
