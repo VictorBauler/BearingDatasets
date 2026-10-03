@@ -72,6 +72,65 @@ def test_with_signals(toy_build):
         ds.with_signals(pd.DataFrame({"signal_id": ["gear_0/gb_q"]}))
 
 
+def test_signals_in_a_chosen_unit(toy_build):
+    ds = bd.Dataset(toy_build)
+    x = ds.signal("gear_0/gb_x")
+    assert ds.signal("gear_0/gb_x", unit="g").dtype == np.float64
+    np.testing.assert_allclose(ds.signal("gear_0/gb_x", unit="m/s^2"), x * 9.80665)
+    np.testing.assert_allclose(ds.signal("gear_0/gb_x", 5, 9, unit="mm/s^2"), x[5:9] * 9806.65)
+    assert ds.signal("gear_0/gb_x", unit="g", dtype=np.float32).dtype == np.float32
+    # volts of a 100 mV/g sensor
+    v = ds.signal("gear_0/axle")
+    np.testing.assert_allclose(ds.signal("gear_0/axle", unit="g"), v / 0.1, rtol=1e-6)
+    with pytest.raises(ValueError, match="'g' \\(acceleration\\) to 'mV'"):
+        ds.signal("gear_0/axle", unit="mV")  # the sensor volts are ds.signal(..., unit=None)
+    with pytest.raises(ValueError, match="does not document the unit"):
+        ds.signal("gear_0/current", unit="A")
+    with pytest.raises(ValueError, match=r"acceleration\) to 'mm/s' \(velocity"):
+        ds.signal("gear_0/gb_x", unit="mm/s")
+    with pytest.raises(ValueError, match="unknown unit 'G'"):
+        ds.signal("gear_0/gb_x", unit="G")
+    with pytest.raises(ValueError, match="keys are quantities"):
+        ds.signal("gear_0/gb_x", unit={"vibration": "g"})
+    # {quantity: unit} converts the signals of that quantity and keeps the others
+    rec = ds.recording("gear_0", unit={"acceleration": "m/s^2"})
+    np.testing.assert_allclose(rec["axle"], v * 98.0665, rtol=1e-6)
+    assert rec["current"].dtype == np.int16
+    assert dict(ds.iter_signals(["gear_0/gb_y"], unit="g"))["gear_0/gb_y"].dtype == np.float64
+    # with_signals gives the units it converted to
+    out = ds.with_signals(unit={"acceleration": "m/s^2"})
+    assert set(out.loc[out.quantity == "acceleration", "unit"]) == {"m/s^2"}
+    assert set(out.loc[out.quantity == "current", "unit"]) == {"unknown"}
+    assert set(out.loc[out.channel == "axle", "sensitivity"]) == {"none"}
+    with pytest.raises(ValueError, match="current"):
+        ds.with_signals(unit="g")  # one unit for every signal: the current is not in g
+
+
+def test_units_vocabulary_and_conversions():
+    from bearing_datasets.units import UNITS, allowed_units, convert, parse_sensitivity
+
+    assert convert(np.array([1.0]), "in/s", "mm/s")[0] == pytest.approx(25.4)
+    assert convert(np.array([60.0]), "rpm", "Hz")[0] == pytest.approx(1.0)
+    assert convert(np.array([1.0]), "mil", "um")[0] == pytest.approx(25.4)
+    assert convert(np.array([2.0]), "V", "m/s^2", "10.2 mV/(m/s^2)")[0] == pytest.approx(
+        196.08, 1e-3
+    )
+    assert convert(np.array([3], dtype=np.int16), "counts", "counts").tolist() == [3.0]
+    divider = convert(np.array([1.5]), "V", "V", "5 mV/V")  # line voltage through a 1:200 divider
+    assert divider[0] == pytest.approx(300.0)
+    with pytest.raises(ValueError, match="sensor sensitivity"):
+        convert(np.array([1.0]), "V", "g")
+    with pytest.raises(ValueError, match="raw ADC"):
+        convert(np.array([1]), "counts", "g")
+    with pytest.raises(ValueError, match="cannot convert from 'raw"):
+        convert(np.array([1]), "raw (int16)", "g")  # free text of older builds
+    assert parse_sensitivity("none") is None
+    with pytest.raises(ValueError, match="100 mV/g"):
+        parse_sensitivity("100mV/g")
+    assert {"g", "m/s^2", "V", "counts", "unknown"} <= allowed_units("acceleration")
+    assert "A" not in allowed_units("acceleration") and allowed_units("unknown") == set(UNITS)
+
+
 def test_open_polars_and_rebuild(toy_build, toy_dir, root):
     pl = pytest.importorskip("polars")
     ds = bd.open("toyrig", root)
@@ -147,6 +206,12 @@ def test_download_subset(toy_build, toy_dir, root):
     assert set(bd.open("toy_files", root).metadata().native_label) == {"gear", "healthy"}
 
 
+def test_bd_build_stays_a_function():
+    import bearing_datasets.build  # noqa: F401  (importing the submodule must not replace it)
+
+    assert callable(bd.build) and callable(bd.clean_raw)
+
+
 def test_cli_verify(toy_build, root):
     run = subprocess.run(
         [sys.executable, "-m", "bearing_datasets.cli", "--root", str(root), "verify", "toyrig"],
@@ -190,6 +255,7 @@ def test_validate_reports_problems():
         ("axis", "1"),
         ("speed_profile", "ramp"),
         ("fault_origin", "seeded"),
+        ("unit", "m/s2"),
     ]:
         with pytest.raises(ValueError, match=f"unknown {column} value"):
             validate(pd.DataFrame([_row(**{column: value})]))
@@ -208,6 +274,11 @@ def test_validate_reports_problems():
     with pytest.raises(ValueError, match="integer >= 0"):
         validate(pd.DataFrame([_row(fault_severity_level=0.5)]))
     validate(pd.DataFrame([_row(fault_severity_level=0), faulty | {"fault_severity_level": 2}]))
+    with pytest.raises(ValueError, match=r"do not fit the quantity.*'acceleration', 'A'"):
+        validate(pd.DataFrame([_row(quantity="acceleration", unit="A")]))
+    with pytest.raises(ValueError, match="'<value> <stored unit>/<physical unit>'"):
+        validate(pd.DataFrame([_row(quantity="acceleration", unit="V", sensitivity="0.1")]))
+    validate(pd.DataFrame([_row(quantity="acceleration", unit="V", sensitivity="10 mV/(m/s^2)")]))
 
 
 def test_sensor_at_fault(toy_build):
@@ -297,6 +368,7 @@ def test_channel_values_use_the_vocabularies(name):
     import importlib.util
 
     from bearing_datasets.schema import VOCABULARIES
+    from bearing_datasets.units import allowed_units, parse_sensitivity
 
     path = load_spec(name)["dir"] / "builder.py"
     spec = importlib.util.spec_from_file_location(f"_builder_{path.parent.name}", path)
@@ -306,6 +378,9 @@ def test_channel_values_use_the_vocabularies(name):
         for column, value in values.items():
             allowed = VOCABULARIES.get(column)
             assert allowed is None or value in allowed, (channel, column, value)
+        if "unit" in values:
+            assert values["unit"] in allowed_units(values.get("quantity", "unknown")), channel
+        parse_sensitivity(values.get("sensitivity", "none"))
 
 
 def test_every_column_is_described(toy_build):

@@ -8,7 +8,8 @@ description: |
   both; a crack on a rolling body; a crack at the root of the inner ring's gear teeth.
   Four accelerometers (PCB 352C03, x and y at points A and B of the outer ring) and a
   microphone (PCB 377B02) near the outer ring, 38.5 kHz, 10 min per condition (unit not
-  stated). The files split each 10 min acquisition into chunks of 1,000,000 samples
+  stated; read as g the vibration would sit below the sensor's 0.0005 g noise floor, so the
+  values are probably the volts of the 10 mV/g accelerometers). The files split each 10 min acquisition into chunks of 1,000,000 samples
   (~26 s), stored as one recording each; chunk numbers them in time order.
   Download: 3 RAR archives in 2 Mendeley records (11.7 GB).
 license: CC-BY-4.0

@@ -25,7 +25,7 @@ def _ch(location, mounting, quantity, axis="none", unit="g"):
 # ER-16K: 9 balls of 7.94 mm, pitch diameter 38.52 mm (Huang & Baddour 2018, as ottawa_2018)
 ORDERS = fault_orders(9, 7.94, 38.52)
 CHANNELS = {
-    "speed": _ch("motor_shaft", "shaft", "tachometer", unit="dimensionless"),
+    "speed": _ch("motor_shaft", "shaft", "tachometer", unit="unknown"),
     "torque": _ch("gearbox_shaft_input", "shaft", "torque", unit="Nm"),
     # x axial, y horizontal, z vertical
     "motor_vibration_x": _ch("motor_bearing_de", "casing", "acceleration", "axial"),

@@ -6,7 +6,8 @@ description: |
   outer + ball, and a looseness defect from prolonged operation. Sound recorded with a
   smartphone app (VibroTeak) at 44.1 kHz near the bearing housing, through a stethoscope
   (stethoscope = yes) or without it, at about 600-1800 rpm: 36 recordings of 10-20 s. Small
-  acoustic dataset for low-cost sensing studies. Unit not stated.
+  acoustic dataset for low-cost sensing studies. Sound in the [-1, 1] scale of MATLAB
+  audioread (smartphone .wav, not calibrated; unit normalized).
 license: CC-BY-4.0
 size: "download 0.08 GB, built 0.05 GB (measured)"
 homepage: https://doi.org/10.17632/n9y9c7xrz3.1

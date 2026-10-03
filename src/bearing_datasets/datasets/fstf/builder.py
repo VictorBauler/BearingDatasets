@@ -11,7 +11,7 @@ CHANNELS = {
         "sensor_location": "test_bearing",
         "sensor_mounting": "pedestal",  # through a stethoscope on the housing; none without
         "quantity": "sound_pressure",
-        "unit": "unknown",
+        "unit": "normalized",
         "fs": 44100,
     },
 }

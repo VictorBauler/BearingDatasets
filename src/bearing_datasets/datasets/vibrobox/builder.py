@@ -13,12 +13,12 @@ CHANNELS = {
         "sensor_location": "test_bearing",
         "sensor_mounting": "pedestal",  # stud mounted on the housing
         "quantity": "acceleration",
-        "unit": "raw (32 mV/g sensor)",
+        "unit": "counts",  # int32 wav of a 32 mV/g sensor, ADC scale not documented,
         "fs": 96000,
     },
     # irregularly sampled: fs is the mean rate, the exact times are in tach_time_unix
     "tach_speed": {"sensor_location": "rig_shaft", "sensor_mounting": "shaft", "quantity": "speed",
-                   "unit": "rpm / 30", "fs": 1},
+                   "unit": "unknown", "fs": 1},
     "tach_time_unix": {"sensor_location": "rig_shaft", "sensor_mounting": "shaft",
                        "quantity": "time", "unit": "s", "fs": 1},
 }  # fmt: skip

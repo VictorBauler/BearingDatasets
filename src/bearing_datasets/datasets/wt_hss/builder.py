@@ -11,7 +11,7 @@ CHANNELS = {
         "sensor_location": "gearbox_bearing_output",  # the high-speed shaft bearing
         "sensor_mounting": "casing",
         "quantity": "acceleration",
-        "unit": "unknown",
+        "unit": "g",  # as in MathWorks' example on this data
         "fs": 97656,
     },
     # pulse times, not samples: fs is the mean pulse rate of each recording

@@ -9,8 +9,8 @@ description: |
   loads of 0, 20, 40 and 60 N. Two triaxial accelerometers (6 channels), 25.6 kHz, about
   41 s per file, LMS Test.Lab. The files name the sensors zcjshang and zcjxia (upper and
   lower support); the dataset PDF says one sensor is on the bearing housing and one on
-  the gearbox support without saying which is which. Vibration unit: the Test.Lab export
-  says SI, displayed in g; left as unknown. Only the bearing subset is included (the
+  the gearbox support without saying which is which. Vibration in m/s^2: the Test.Lab export
+  stores SI (MKS) values; its g label is only the display unit (factor 0.10197). Only the bearing subset is included (the
   repository also has a planetary gear subset).
 license: unspecified (cite the papers)
 size: "download 19.2 GB, built 2.6 GB (measured)"

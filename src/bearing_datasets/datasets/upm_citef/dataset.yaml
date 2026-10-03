@@ -5,7 +5,10 @@ description: |
   Universidad Politecnica de Madrid: FAG 22205E1KC3 spherical roller bearings with
   milled defects, loaded through a tightening tower. Three studies, 40 kHz, three
   accelerometers (Rod_1 on the housing of the faulty bearing, Rod_2 on the other
-  housing, Rod_3 on the tightening tower); unit not stated.
+  housing, Rod_3 on the tightening tower), stored in volts with the sensor bias of about
+  1.9 V: TE 805M1 at 100 mV/g, as stated in the 2020 paper; the 2021 and 2023 studies use
+  the same acquisition system, with the same bias and amplitudes (remove the mean before
+  converting to g).
   2020: rolling element defects at 4 depths (0.006-0.027 mm) + healthy, 200/350/500 rpm,
   1.4 kN, 3 repeats, 30 s. 2021: combined outer race + rolling element defects at 4
   levels + healthy, same speeds and load, 3 repeats, 45 s. 2023: outer race, inner race

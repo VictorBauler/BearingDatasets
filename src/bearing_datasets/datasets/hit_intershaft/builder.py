@@ -14,7 +14,7 @@ def _ch(location, mounting, quantity, axis="none"):
         "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
-        "unit": "unknown",
+        "unit": "normalized",  # min-max scaled to [-1, 1] by the authors
         "fs": 25000,
     }
 

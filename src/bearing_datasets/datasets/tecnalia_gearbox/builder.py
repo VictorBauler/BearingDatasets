@@ -13,7 +13,7 @@ def _ch(location, mounting, quantity, axis="none"):
         "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
-        "unit": "unknown",
+        "unit": "V",
         "fs": 20480,
     }
 
@@ -43,6 +43,19 @@ CHANNELS = {
     "bearing_force": _ch("gearbox_bearing_input", "unknown", "force", "axial"),
     "channel16": _ch("unknown", "unknown", "unknown"),
 }  # fmt: skip
+# Volts/Unit row of the file headers (the same in every file), as in tecnalia_bearing whose
+# record says calibrated value = recorded value / Volts/Unit. The torque (0.5) and force
+# (0.000498) do not say per what unit.
+SENSITIVITY = {
+    "tacho": "none", "encoder_in": "none", "encoder_out": "none",
+    "current_1": "100 mV/A", "current_2": "100 mV/A",
+    "drive_motor_vertical": "100 mV/g", "drive_motor_axial": "98 mV/g",
+    "bearing_in_vertical": "101 mV/g", "bearing_in_axial": "101 mV/g",
+    "bearing_out_horizontal": "99 mV/g", "load_bearing_vertical": "101 mV/g",
+    "load_bearing_horizontal": "95 mV/g", "load_motor_vertical": "94 mV/g",
+}  # fmt: skip
+for _name, _values in CHANNELS.items():
+    _values["sensitivity"] = SENSITIVITY.get(_name, "unknown")
 STATE = {  # scenario -> (fault_type, fault_location)
     "baseline": ("normal", "none"),
     "gear": ("gear", "gearbox"),

@@ -12,7 +12,7 @@ CHANNELS = {
         "sensor_location": "ambient",
         "sensor_mounting": "none",
         "quantity": "sound_pressure",
-        "unit": "raw (int16)",
+        "unit": "counts",
         "fs": 16000,
     },
 }

@@ -152,6 +152,23 @@ t = np.arange(len(x)) / row.fs          # seconds
 part = ds.signal(row.signal_id, start=0, stop=int(row.fs))   # only the first second
 ```
 
+### Signals in a chosen unit
+
+```python
+xjtu = bd.open("xjtu_sy")                     # stored in g
+m = xjtu.metadata()
+a = xjtu.signal(m.signal_id.iloc[0], unit="m/s^2")         # float64, converted from g
+rec = xjtu.recording(m.recording_id.iloc[0], unit="mm/s^2")
+
+pb = bd.open("paderborn")                     # currents in A, speed in rpm, vibration unknown
+pm = pb.metadata()
+df = pb.with_signals(pm[pm.quantity == "speed"].head(), unit={"speed": "Hz"})
+```
+
+Signals stored in volts are converted with the `sensitivity` column when the dataset gives it.
+A signal in `unknown`, `counts` or `normalized` cannot be converted and raises `ValueError`:
+filter on `meta.unit` first. See the README's [Units](../README.md#units) for the list.
+
 ### All channels recorded together
 
 ```python
@@ -393,7 +410,8 @@ confused with `hust` (Hanoi).
   (`support_bearing`), `Rod_3` on the tightening tower (`rig`).
 
 **vibrobox**: VibroBox, five records on one stand (`subset`) from constant to widely varying speed.
-* Vibration is the raw integer wav output of a 32 mV/g sensor; `speed_setting` keeps the record's
+* Vibration is the raw integer wav output of a 32 mV/g sensor (`counts`: the ADC scale is not
+  documented, so it cannot be converted); `speed_setting` keeps the record's
   text (e.g. `650+5`, `0...900`). The varying-speed subsets have an irregular tachometer
   (`tach_speed` x 30 = rpm, times in `tach_time_unix`).
 
@@ -435,7 +453,9 @@ channel to track it. Recordings last 1.5 to 30 s.
   `..._acoustic`); group them by `native_label`. Channels have 3 sampling rates.
 * Acoustic exists only for normal and 0.3 / 1.0 mm bearing faults at 0 Nm; phases V and W
   are missing in the outer race current files.
-* Vibration unit left `unknown`: the paper says g, the file export says SI.
+* Vibration in m/s^2: the paper says g, but the Test.Lab export stores SI values (g is only
+  its display unit). Same for `sdust` and the constant-speed files of `kaist_speed`, whose
+  varying-speed runs are in g.
 
 **kaist_speed**: KAIST, same test bed as `kaist_load`, speed varying randomly 680-2460 rpm.
 * Vibration (25.6 kHz), motor current (100 kHz) and speed are separate recordings of the
@@ -465,7 +485,8 @@ sound detection under domain shift.
 
 **lenze_mb**: Lenze, bearing faults seen only through the drive's own signals.
 * No accelerometer: phase currents/voltages, DC bus, encoder angle and speed logged by the
-  inverter at 16 kHz. Some channels are in internal inverter units (see `unit`).
+  inverter at 16 kHz. The angle is in revolutions; speed, speed_deviation and
+  current_vector are inverter-internal values (`unit` unknown, see the description).
 * 5 pitting levels + one heavy artificial damage (`fault_severity`, levels 1-6), 16 operating
   conditions each.
 * License CC BY-NC (non-commercial).
@@ -565,7 +586,8 @@ snapshot is `unknown`; what failed at the end is in `failure` / `failed_bearing`
   kept as published: use `np.nanmean` or drop NaNs before processing.
 * **unsw**: 4 tests; progress is in shaft revolutions (`shaft_cycles`, `rul_cycles`), not
   seconds. Most measurements are at 6 Hz; some occasions add 12, 15 and 20 Hz (`speed_rpm`). All
-  channels are in V (sensitivities in `bearing-datasets info unsw`).
+  channels are in V; the `sensitivity` column converts the accelerations and the load cell
+  (`ds.signal(sid, unit="g")`).
 * **wt_hss**: field data from a wind turbine, one 6 s snapshot per day for 50 days.
   `tach_times_s` holds tachometer pulse *times*, not samples. License CC BY-NC-SA.
 * **ferrara_rtf**: 6 tests at 4 loads; every bearing ended with an outer raceway defect.

@@ -87,11 +87,32 @@ def test_readme_lists_the_standard_columns(name):
     ds = _open(name)
     if ds.outdated:
         pytest.skip(f"{name} was built before 0.2.0")
-    name = ds.manifest.get("selection", {}).get("of", name)
+    # a subset, or a copy built under another name (as_name): the dataset it comes from
+    name = ds.manifest.get("selection", {}).get("of") or Path(ds.manifest["spec_dir"]).name
     _, table = readme_columns()
     columns = set(ds.metadata().columns)
     wrong = {c for c in OPTIONAL if (c in columns) != (name in table[c])}
     assert not wrong, f"README rows to fix for {name}: {sorted(wrong)}"
+
+
+@pytest.mark.parametrize("name", _built())
+def test_acceleration_units_are_plausible(name):
+    """Accelerations that convert to g have an RMS a machine can have (a unit 9.81 or 1000 times
+    off, or volts taken for g, shows here)."""
+    ds = _open(name)
+    meta = ds.metadata()
+    if "unit" not in meta or ds.outdated:
+        pytest.skip(f"{name} has no unit column, or was built before 0.2.0")
+    acc = meta[meta.quantity == "acceleration"]
+    rng = np.random.default_rng(0)
+    for sid in rng.choice(acc.signal_id.to_numpy(), size=min(20, len(acc)), replace=False):
+        try:
+            x = ds.signal(sid, stop=200_000, unit="g")
+        except ValueError:
+            continue  # unit unknown, counts, or volts without a documented sensitivity
+        x = x[np.isfinite(x)]
+        rms = np.sqrt(np.mean((x - x.mean()) ** 2))
+        assert 1e-4 < rms < 200, (sid, rms)
 
 
 @pytest.mark.parametrize("name", sorted(COUNTS))

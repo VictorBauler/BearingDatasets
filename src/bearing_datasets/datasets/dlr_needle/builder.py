@@ -10,13 +10,16 @@ import numpy as np
 
 from bearing_datasets.io import read_mat
 
+# angle from the file suffix, force matching the load in the file name, temperatures 20-48
+UNIT = {"angle": "deg", "force": "kN", "temperature": "degC"}
+
 
 def _ch(location, mounting, quantity, fs):
     return {
         "sensor_location": location,
         "sensor_mounting": mounting,
         "quantity": quantity,
-        "unit": "unknown",
+        "unit": UNIT.get(quantity, "unknown"),
         "fs": fs,
     }
 

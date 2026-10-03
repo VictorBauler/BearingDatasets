@@ -6,6 +6,9 @@ import re
 
 from bearing_datasets.io import read_mat
 
+# "Read me for data description.docx": accelerometers 10 mV/ms-2, load cell 2.8 kN/V
+SENSITIVITY = {"acceleration": "10 mV/(m/s^2)", "force": "357.1 mV/kN"}
+
 
 def _ch(location, mounting, quantity, axis="none"):
     return {
@@ -14,6 +17,7 @@ def _ch(location, mounting, quantity, axis="none"):
         "quantity": quantity,
         "axis": axis,
         "unit": "V",
+        "sensitivity": SENSITIVITY.get(quantity, "none"),
     }
 
 

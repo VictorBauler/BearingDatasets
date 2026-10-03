@@ -12,7 +12,8 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "unknown",
-        "unit": "unknown",
+        "unit": "V",
+        "sensitivity": "10.22 mV/(m/s^2)",
         "fs": 20000,
     },
 }

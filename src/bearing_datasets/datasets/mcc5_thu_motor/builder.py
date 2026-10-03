@@ -9,6 +9,9 @@ import pandas as pd
 
 from bearing_datasets.bearings import fault_orders
 
+# data paper: torque sensor S2001, vibration TES001V, current clamps Fluke i30s
+SENSITIVITY = {"torque": "100 mV/Nm", "acceleration": "100 mV/g", "current": "100 mV/A"}
+
 
 def _ch(location, mounting, quantity, axis="none"):
     return {
@@ -17,6 +20,7 @@ def _ch(location, mounting, quantity, axis="none"):
         "quantity": quantity,
         "axis": axis,
         "unit": "V",
+        "sensitivity": SENSITIVITY.get(quantity, "none"),
         "fs": 12800,
     }
 

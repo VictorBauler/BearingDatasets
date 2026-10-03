@@ -8,7 +8,8 @@ description: |
   8 degrees (slight, moderate, severe), at 600, 900 and 1200 rpm: 42 recordings of
   262144 samples at 51.2 kHz, one vertical accelerometer each (the README mentions an
   accelerometer on each bearing base of the SpectraQuest rig, but each file holds one
-  signal). Unit not stated.
+  signal). Unit not stated, and the amplitude scale differs between files (healthy
+  SpectraQuest RMS about 3e-4, its faults 0.02-0.11).
 license: unspecified (cite the paper)
 size: "download 0.07 GB, built 0.03 GB (measured)"
 homepage: https://github.com/hitwzc/Bearing-datasets

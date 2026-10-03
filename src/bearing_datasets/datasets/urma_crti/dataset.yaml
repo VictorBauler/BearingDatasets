@@ -6,7 +6,8 @@ description: |
   combined fault, at supply frequencies of 30, 35, 40, 45 and 50 Hz (healthy has no
   50 Hz and outer race no 40 Hz recording): 23 recordings of 10.24 s at 25.6 kHz.
   The record mentions three accelerometers (CTC AC140-2D, 100 mV/g), but the file
-  holds one signal per recording. Labels are the French codes of the variable names
+  holds one signal per recording. The unit is not stated; the values are not the sensor
+  volts (peaks above 100), and peaks above the sensor's +-50 g suggest m/s^2. Labels are the French codes of the variable names
   (s = sain/healthy, ci/ce = inner/outer ring, b = bille/ball, c = combined); which
   faults the combined bearing has is not stated, so its fault_type is `bearing`.
 license: CC-BY-4.0

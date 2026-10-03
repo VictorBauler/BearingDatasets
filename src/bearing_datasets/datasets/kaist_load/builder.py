@@ -27,10 +27,10 @@ def _ch(location, mounting, quantity, axis="none", unit="unknown", fs=25600):
 ORDERS = fault_orders(9, 7.90, 38.5)
 # housing A holds the test bearing, housing B a support bearing
 CHANNELS = {
-    "x_housing_a": _ch("test_bearing", "pedestal", "acceleration", "x"),
-    "y_housing_a": _ch("test_bearing", "pedestal", "acceleration", "y"),
-    "x_housing_b": _ch("support_bearing", "pedestal", "acceleration", "x"),
-    "y_housing_b": _ch("support_bearing", "pedestal", "acceleration", "y"),
+    "x_housing_a": _ch("test_bearing", "pedestal", "acceleration", "x", "m/s^2"),
+    "y_housing_a": _ch("test_bearing", "pedestal", "acceleration", "y", "m/s^2"),
+    "x_housing_b": _ch("support_bearing", "pedestal", "acceleration", "x", "m/s^2"),
+    "y_housing_b": _ch("support_bearing", "pedestal", "acceleration", "y", "m/s^2"),
     "temperature_housing_a": _ch("test_bearing", "pedestal", "temperature", unit="degC",
                                  fs=25608),
     "temperature_housing_b": _ch("support_bearing", "pedestal", "temperature", unit="degC",

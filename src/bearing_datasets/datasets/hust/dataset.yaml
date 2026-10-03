@@ -3,7 +3,9 @@ title: HUST bearing dataset (Hanoi University of Science and Technology)
 description: |
   Ball bearings of 5 types (6204-6208) with inner, outer, ball and compound
   (inner+ball, inner+outer, outer+ball) defects, under 3 loads (0, 200, 400 W).
-  One accelerometer, 51.2 kHz, 10 s per recording.
+  One accelerometer, 51.2 kHz, 10 s per recording, in g: the paper does not state the
+  unit, but every value is a multiple of the NI-9234 24-bit step divided by the
+  accelerometer's ~100 mV/g, and the signals clip at about 51 g (5.1 V).
   Note: the `fs` variable inside the .mat files is the shaft rotation frequency
   (Hz), not the sampling rate. The auxiliary `rpm`/`ru`/`ru_raw` arrays are
   undocumented and present only in some files, so they are not stored.

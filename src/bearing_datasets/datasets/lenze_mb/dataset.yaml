@@ -9,7 +9,11 @@ description: |
   pitting_V) and a heavy, wide artificial damage (scientific_fault); each at 4 speeds
   (900, 1000, 1375, 1500 rpm), load torque 0 or 2 Nm and belt tension 250 or 500
   (radial force): 112 recordings. Labels come from Meta_Data.xlsx (copied as meta.csv).
-  Channels marked internal are inverter units; the report gives the conversions.
+  Currents (A), voltages and DC bus (V) are in physical units (technical report). The
+  angle is in revolutions (-0.5 to 0.5; its mean step x 16 kHz matches the shaft speed).
+  speed is in revolutions per sample (x 16000 = rev/s, so its unit is unknown), and
+  current_vector and speed_deviation are inverter-internal values of undocumented scale;
+  the report's conversions (x 20000 / 2^32, x 3/4) do not match the stored values.
   License CC BY-NC 4.0 (non-commercial).
 license: CC-BY-NC-4.0
 size: "download 3.2 GB, built 2.2 GB (measured)"

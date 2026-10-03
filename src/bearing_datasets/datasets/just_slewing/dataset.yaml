@@ -5,7 +5,8 @@ description: |
   normal, inner race, outer race and rolling element (B1) faults at 2, 6 and 12 rpm under
   loads of 0, 30 and 60 (N in the file names; a tilting moment according to the list), 5
   repetitions of ~61 s: 180 recordings at 50 kHz. Six accelerometers (m/s^2; positions not
-  documented) and one acoustic channel (dB). Two Mendeley records (conditions 1-6, 7-9).
+  documented) and one acoustic channel. Its header says dB, but the values (about 0.03 to
+  0.14) are not a level in dB, and the record calls it acoustic emission: unit unknown. Two Mendeley records (conditions 1-6, 7-9).
 license: CC-BY-4.0
 size: "download 14.5 GB, built 4.4 GB (measured)"
 homepage: https://doi.org/10.17632/hwg8v5j8t6.1

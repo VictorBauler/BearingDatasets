@@ -5,7 +5,9 @@ description: |
   Monitoring Systems Lab, Mehran UET). The drive-end 6204-2Z/C3 bearing is replaced by
   bearings with inner or outer race faults of 0.7, 0.9, 1.1, 1.3, 1.5 and 1.7 mm, each run
   at 100, 200 and 300 W load. Triaxial MEMS accelerometer (ADXL355, g) on the motor housing
-  near the drive-end bearing (z up) and three phase currents (A), recorded together at
+  near the drive-end bearing (z up) and three phase currents
+  (sensor output in V: every phase has a mean of about 2.5 with steps of 5 V / 4096; the
+  current sensor and its sensitivity are not documented), recorded together at
   10 kHz (the vibration and current files of each fault condition are one acquisition, so
   they form one 6-channel recording). Healthy: vibration without and with the belt/pulley
   (load not stated) and one healthy current file (load not stated), and current of a

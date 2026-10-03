@@ -12,8 +12,9 @@ description: |
   and acoustic (one microphone, 51.2 kHz, only normal and bearing faults of 0.3 and
   1.0 mm at 0 Nm). 60 s per faulty recording; normal recordings are longer.
   Phases V and W are empty in the 9 outer race current files (only phase U there).
-  Vibration unit: the paper says g, but the Test.Lab export says the values are SI
-  (m/s^2); amplitudes suggest m/s^2, so the unit is left as unknown.
+  Vibration in m/s^2: the paper says g, but the Test.Lab MAT export stores SI values
+  ("Data saved by Test.Lab in MKS", quantity L T^-2; g is only a display factor of
+  0.10197), and the quantisation step matches a 100 mV/g sensor read in m/s^2.
 license: CC-BY-4.0
 size: "download 4.3 GB, built 1.6 GB (measured)"
 homepage: https://data.mendeley.com/datasets/ztmf3m7h5x/5

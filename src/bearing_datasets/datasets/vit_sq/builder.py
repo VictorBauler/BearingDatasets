@@ -17,7 +17,7 @@ CHANNELS = {
         "sensor_mounting": "pedestal",
         "quantity": "acceleration",
         "axis": axis.lower(),
-        "unit": "unknown",
+        "unit": "g",
         "fs": 12800,
     }
     for axis in "XYZ"

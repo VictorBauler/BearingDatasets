@@ -13,7 +13,7 @@ def _ch(location, mounting, quantity, axis="none"):
         "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
-        "unit": "unknown",
+        "unit": "V",  # every file header: Volts/Unit 1
         "fs": 5120,
     }
 

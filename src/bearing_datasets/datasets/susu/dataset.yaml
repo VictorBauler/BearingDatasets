@@ -7,7 +7,9 @@ description: |
   three faults, made with a rotary tool. 31.175 kHz, at 20 Hz (1200 rpm, the set
   described in the paper, 64 s) and 18 Hz (an extra set in the repository, not
   described, 19 s). Each file holds three signals that the authors call linear and
-  angular acceleration; their order and unit are not documented (ch1-ch3).
+  angular acceleration; their order and unit are not documented (ch1-ch3). The ranges match
+  the paper's Fig. 2 (ch1 the angular acceleration in rad/s^2, ch2 and ch3 linear in m/s^2),
+  but the unit is left unknown.
 license: unspecified (cite the paper)
 size: "download 0.29 GB, built 0.34 GB (measured)"
 homepage: https://github.com/SUSU-CM/Bearings-dataset

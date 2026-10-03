@@ -16,7 +16,7 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "x",
-        "unit": "unknown",
+        "unit": "g",
         "fs": 25600,
     },
     "vibration_y": {
@@ -24,7 +24,7 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "y",
-        "unit": "unknown",
+        "unit": "g",
         "fs": 25600,
     },
     "temperature_bearing": {

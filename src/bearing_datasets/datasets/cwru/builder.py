@@ -11,10 +11,11 @@ from bearing_datasets.io import read_mat
 # on the motor casing at the drive end and fan (non-drive) end, and on the base plate
 CHANNELS = {
     "DE": {"sensor_location": "motor_bearing_de", "sensor_mounting": "casing",
-           "quantity": "acceleration"},
+           "quantity": "acceleration", "unit": "g"},
     "FE": {"sensor_location": "motor_bearing_nde", "sensor_mounting": "casing",
-           "quantity": "acceleration"},
-    "BA": {"sensor_location": "base", "sensor_mounting": "base", "quantity": "acceleration"},
+           "quantity": "acceleration", "unit": "g"},
+    "BA": {"sensor_location": "base", "sensor_mounting": "base", "quantity": "acceleration",
+           "unit": "g"},
 }  # fmt: skip
 FAULT_TYPE = {"inner_race": "inner", "outer_race": "outer", "rolling_element": "rolling_element"}
 LOCATION = {"DE": "motor_bearing_de", "FE": "motor_bearing_nde"}

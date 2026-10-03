@@ -7,7 +7,9 @@ description: |
   added unbalance mass (0/6/20/35 g), at speeds from about 737 to 3686 rpm: 1,951
   recordings of 5 s. 8 channels at 50 kHz: tachometer (one pulse per revolution),
   underhang and overhang tri-axial accelerometers (axial, radial, tangential) and a
-  microphone. Values are raw volts. The site states 50 kHz (the NI 9234 hardware runs
+  microphone. Values are the NI 9234 input volts: accelerometers IMI 601A01 / 604B31 at
+  100 mV/g (+-20 %, site), microphone Shure SM81 (sensitivity of its chain not given). The axial
+  channels carry a strong component near 22 kHz, even when healthy. The site states 50 kHz (the NI 9234 hardware runs
   at 51.2 kHz). The bearing-fault folders are named ball/cage/outer (there is no inner
   race folder). Bearing: 8 balls; fault frequencies in bpfo, bpfi, bsf, ftf (the same bearing type in
   both positions).
