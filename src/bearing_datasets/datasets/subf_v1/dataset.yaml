@@ -6,7 +6,8 @@ description: |
   BeanDevice 2.4 GHz AX-3D wireless triaxial accelerometer at 1 kHz. Six hours per class,
   cut into consecutive 10 s segments: 2160 recordings per class, 6480 in total. The release
   has every signal twice (.mat and .csv, identical values); the .mat files are read. The
-  unit is not stated; z has a mean of about 1, so g with gravity. How the faults were made
+  unit is not stated; z has a mean of about 1, so g with gravity, and every axis clips at
+  +-2 g (the sensor's range; many samples of the faulty classes are saturated). How the faults were made
   is not described. Non-commercial license.
 license: CC-BY-NC-SA-4.0
 size: "download 1.71 GB, built 0.23 GB (measured)"

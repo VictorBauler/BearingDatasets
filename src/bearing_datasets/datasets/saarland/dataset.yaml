@@ -7,7 +7,8 @@ description: |
   under a designed experiment of speed (85, 392, 706, 969 rpm), radial load level (0-3,
   about 0 / 1600 / 2500 / 3300 N), mounting position (A-D), three sensor-mounting runs and
   two workers: 1151 recordings of 60 s at 20 kHz from one triaxial accelerometer (unit not
-  stated). Deviations from the nominal assembly (sensor mounting, coupling mounting, second
+  stated: the CSV columns are the DAQ channels Mod1/ai0-2, and the Dytran 3233A calibration
+  certificate in Metadata.zip gives about 1 V/g: x 1055.72, y 1029.87, z 1014.92 mV/g). Deviations from the nominal assembly (sensor mounting, coupling mounting, second
   shaft) are recorded per measurement; missing values are "unknown". The metadata comes
   from the dataset's info.csv; temperature and humidity (missing for 203 recordings) are
   not included. Made for leave-one-group-out cross-validation (e.g. group by bearing_id,

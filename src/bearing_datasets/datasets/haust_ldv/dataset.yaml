@@ -7,7 +7,8 @@ description: |
   pitting on the inner race (0.2, 0.3, 0.5 mm), outer race (0.2, 0.3, 0.5 mm) or a roller
   (0.5, 0.8, 1.0 mm), under load A (100 N axial, 0 N radial) and B (100 N axial, 50 N
   radial), at 1800 rpm: 20 recordings of 34 s at 48 kHz. The files hold the velocity
-  (side1, unit not stated) and a second, undocumented channel env1 (probably an envelope
+  (side1, unit not stated; its values, hundreds to thousands, match the um/s of the
+  record's calibration statement, but the unit is left unknown) and a second, undocumented channel env1 (probably an envelope
   signal from the vibrometer electronics), stored as given.
 license: CC-BY-4.0
 size: "download 1.12 GB, built 0.38 GB (measured)"

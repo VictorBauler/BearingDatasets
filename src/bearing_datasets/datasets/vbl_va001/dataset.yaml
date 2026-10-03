@@ -6,7 +6,8 @@ description: |
   6 gram.cm (4 g on the impeller) or 27 gram.cm (18 g; the files call it 24), and a bearing
   fault made by hitting the outer ring with a hammer (both rings end up damaged). One enDAQ
   LOG-0002-100G shock and vibration sensor taped to the pump, x/y/z at 20 kHz, 5 s per file:
-  1000 files per condition. Units are not stated; the enDAQ export is in g. Each condition is
+  1000 files per condition. Values in g (the authors' paper: "original data
+  provided in acceleration (g) units"). Each condition is
   a different pump, so the machine is confounded with the class. Part of each class carries
   a "_z" in the file name (e.g. bearng_z, ub06_z), not explained by the authors; kept as
   file_series. The 43 misalignment files named "... - Copy.csv" are byte copies of other

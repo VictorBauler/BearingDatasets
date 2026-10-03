@@ -6,8 +6,9 @@ description: |
   healthy; single faults of the motor (mechanical), left bearing (outer race), shaft (crack),
   right bearing (inner race), right bearing housing (warping), belt pulley (eccentricity),
   gearbox (missing tooth); and 6 compound states. Each at 20, 30, 40, 50, 60, 70 Hz and one
-  0-70-0 Hz run-up/run-down: 98 recordings (10.24 s; 30.7 s for the run), four single-axis accelerometers (g)
-  on the motor, both bearing housings and the gearbox, 25.6 kHz. native_label keeps the
+  0-70-0 Hz run-up/run-down: 98 recordings (10.24 s; 30.7 s for the run), four single-axis accelerometers (g
+  per the Readme; the sister dataset hustbearing, recorded with the same software, stores
+  the volts of 100 mV/g sensors under the label g, so these may be volts too) on the motor, both bearing housings and the gearbox, 25.6 kHz. native_label keeps the
   component codes (e.g. M1_LB1_S0_RB0_RH0_BP0_G1). The left bearing (coupling side) is
   test_bearing_de, the right one test_bearing_nde. No license stated.
 license: unspecified (cite the paper)
