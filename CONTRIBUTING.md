@@ -135,6 +135,13 @@ def recordings(raw_dir):
   `sensor_mounting`, `quantity`, `axis`, `speed_profile` and `fault_origin`
   (`bearing_datasets.schema.VOCABULARIES`; the build checks them). `sensor_at_fault` is
   computed for you.
+* `unit` is the unit the stored values are in, from `bearing_datasets.units.UNITS`; it must fit
+  the `quantity` (the build checks it). A unit needs a source: the file header, the record or
+  the paper, or a clear check of the values (e.g. a z axis with a mean of 1 in g); say which in
+  the description, and write `unknown` rather than guess. Keep sensor volts as `V` and give
+  the documented sensitivity in `sensitivity` (`"100 mV/g"`, `"10 mV/A"`; `"none"` for
+  channels already in a physical unit, `"unknown"` when not documented), so that
+  `ds.signal(..., unit="g")` can convert them. Integer ADC values are `counts`.
 * Name a new column like the standard ones: `<subject>_<attribute>[_<unit>]`, with the unit
   at the end when it is fixed (`fault_depth_mm`, `radial_force_n`), `_id` for an identifier,
   `_level` for an ordinal integer (0 = healthy). Avoid

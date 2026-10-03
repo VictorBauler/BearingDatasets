@@ -9,13 +9,14 @@ import pandas as pd
 from bearing_datasets.bearings import fault_orders
 
 
-def _ch(location, mounting, quantity, axis, unit):
+def _ch(location, mounting, quantity, axis, sensitivity):
     return {
         "sensor_location": location,
         "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
-        "unit": unit,
+        "unit": "V",
+        "sensitivity": sensitivity,
         "fs": 25600,
     }
 
@@ -24,14 +25,14 @@ def _ch(location, mounting, quantity, axis, unit):
 ORDERS = fault_orders(9, 0.3125, 1.5157)
 # currents and voltages at the inverter output (the motor supply)
 CHANNELS = {
-    "current_1": _ch("motor_supply", "none", "current", "a", "raw (current / 100)"),
-    "current_2": _ch("motor_supply", "none", "current", "b", "raw (current / 100)"),
-    "current_3": _ch("motor_supply", "none", "current", "c", "raw (current / 100)"),
+    "current_1": _ch("motor_supply", "none", "current", "a", "10 mV/A"),
+    "current_2": _ch("motor_supply", "none", "current", "b", "10 mV/A"),
+    "current_3": _ch("motor_supply", "none", "current", "c", "10 mV/A"),
     "vibration": _ch("gearbox_bearing_intermediate", "casing", "acceleration", "none",
-                     "raw (100 mV/g)"),
-    "voltage_1": _ch("motor_supply", "none", "voltage", "a", "raw (voltage / 200)"),
-    "voltage_2": _ch("motor_supply", "none", "voltage", "b", "raw (voltage / 200)"),
-    "voltage_3": _ch("motor_supply", "none", "voltage", "c", "raw (voltage / 200)"),
+                     "100 mV/g"),
+    "voltage_1": _ch("motor_supply", "none", "voltage", "a", "5 mV/V"),
+    "voltage_2": _ch("motor_supply", "none", "voltage", "b", "5 mV/V"),
+    "voltage_3": _ch("motor_supply", "none", "voltage", "c", "5 mV/V"),
 }  # fmt: skip
 BEARING = "gearbox_bearing_intermediate"
 STATE = {  # folder -> (fault_type, fault_location); the gears are on the intermediate shaft

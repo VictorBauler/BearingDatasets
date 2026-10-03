@@ -37,13 +37,13 @@ CHANNELS = dict(
             "angle",
             "angle",
             "none",
-            "internal (x 20000 / 2^32 = revolutions)",
+            "counts",
             "motor_shaft",
             "shaft",
         ),
-        _ch("current_vector", "current", "none", "internal"),
-        _ch("speed", "speed", "none", "internal (x 3/4 = revolutions/s)", "motor_shaft", "shaft"),
-        _ch("speed_deviation", "speed", "none", "internal", "motor_shaft", "shaft"),
+        _ch("current_vector", "current", "none", "counts"),
+        _ch("speed", "speed", "none", "counts", "motor_shaft", "shaft"),
+        _ch("speed_deviation", "speed", "none", "counts", "motor_shaft", "shaft"),
     ]
 )
 META = Path(__file__).with_name("meta.csv")

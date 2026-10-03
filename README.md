@@ -116,6 +116,7 @@ meta = ds.metadata()                         # pandas DataFrame, one row per sig
 inner = meta[(meta.fault_type == "inner") & (meta.fs == 12000)]
 
 x = ds.signal(inner.signal_id.iloc[0])     # one signal, as a numpy array
+a = ds.signal(inner.signal_id.iloc[0], unit="m/s^2")  # the same, converted from g
 df = ds.with_signals(inner)                  # the same rows + a "signal" column
 ```
 
@@ -291,10 +292,10 @@ channels can share a location (a triaxial accelerometer is three channels).
 | `ds = bd.open(name, root=None)` | open a built dataset |
 | `ds.metadata(backend="pandas")` | metadata table (`backend="polars"` for polars) |
 | `ds.columns()` | description of every column of this dataset |
-| `ds.signal(signal_id, start=0, stop=None)` | samples of one signal (numpy, original dtype) |
-| `ds.recording(recording_id, channels=None)` | all channels of a recording, `{channel: array}` |
-| `ds.iter_signals(signal_ids)` | yields `(signal_id, array)`, one at a time |
-| `ds.with_signals(meta=None, start=0, stop=None)` | the metadata rows (default: all) with a `signal` column (numpy arrays) |
+| `ds.signal(signal_id, start=0, stop=None, unit=None, dtype=None)` | samples of one signal (numpy, original dtype and unit; `unit="g"` or `{quantity: unit}` converts, see [Units](#units)) |
+| `ds.recording(recording_id, channels=None, unit=None, dtype=None)` | all channels of a recording, `{channel: array}` |
+| `ds.iter_signals(signal_ids, unit=None, dtype=None)` | yields `(signal_id, array)`, one at a time |
+| `ds.with_signals(meta=None, start=0, stop=None, unit=None, dtype=None)` | the metadata rows (default: all) with a `signal` column (numpy arrays); with `unit`, the `unit` column gives the converted units |
 | `ds.signal_files()` | the Parquet files with the signals (to load them into a DataFrame) |
 | `ds.cite()` | suggested citation of the dataset (check the source; see [License](#license)) |
 | `bd.load_metadata(names)` | metadata of several datasets, with the columns they all have |
@@ -336,7 +337,8 @@ Columns that only some datasets have, standard ones first:
 | column | meaning | datasets |
 |---|---|---|
 | `quantity` | physical quantity: `acceleration`, `velocity`, `displacement`, `current`, `voltage`, `sound_pressure`, `speed`, `torque`, `force`, `temperature`, `angle`, `tachometer`, `encoder`, `time` (pulse times), `unknown` | all (and my_cwru) |
-| `unit` | signal unit (`unknown` when not documented) | all except cwru, hust, jnu |
+| `unit` | unit of the stored values (see [Units](#units)): a physical unit (`g`, `m/s^2`, `A`, …), `V` for an uncalibrated sensor, `counts` (raw ADC values), `normalized` (audio in [-1, 1]), `unknown` when not documented | all except cwru, hust, jnu |
+| `sensitivity` | sensitivity of the sensor whose volts are stored (`100 mV/g`, `10 mV/A`); `none` when already in a physical unit, `unknown` when not documented | estogu, laspi |
 | `axis` | measurement direction (`x`/`y`/`z`, `horizontal`/`vertical`, `axial`/`radial`/`tangential`) or phase (`a`/`b`/`c`); `none` for single-axis sensors | all except cwru, dcase_bearing, dlr, dlr_needle, fstf, hse_similar_system, hust, hust_transmission, isac, just_slewing, mfpt, ottawa_2018, ottawa_uored, paderborn, sca, sqv, uc204, uoemd, upm_citef, urma_crti, vibrobox, wt_hss |
 | `sensor_mounting` | surface the sensor is on (ISO 20816-1): `pedestal` (stand-alone bearing housing), `casing` (machine casing at the bearing, e.g. a motor end shield), `outer_ring`, `shaft` (sensor on or probe aimed at the shaft), `base`; `none` without mechanical mounting (currents, microphones) | all (and my_cwru) |
 | `speed_rpm` | shaft speed (rpm): measured, or the set or nominal speed when the dataset does not measure it (`ds.columns()` says which) | all except arkansas, army_pla, dcase_bearing, dlr_needle, hit_intershaft, hust_transmission, hustbearing, kaist_speed, mehran_uet, neepu, ottawa_2018, sdust, sqv, tecnalia_bearing, tecnalia_gearbox, uaq_upc, uoemd, urma_crti, vbl_va001, vibrobox, wt_hss (and my_cwru) |
@@ -480,6 +482,30 @@ Three rules to keep in mind:
   `recording_id`) to split without leakage.
 
 Bearing fault frequencies (BPFO, BPFI, …) are in each dataset's description.
+
+### Units
+
+Signals keep the values of the raw files; `unit` says what they are in. Pass `unit=` to the
+signal readers to convert:
+
+```python
+ds.signal(sid, unit="m/s^2")                                   # one unit
+ds.with_signals(meta, unit={"acceleration": "g", "speed": "Hz"})  # per quantity, others as stored
+```
+
+| dimension | units |
+|---|---|
+| acceleration | `m/s^2`, `mm/s^2`, `g` (9.80665 m/s^2) |
+| velocity | `m/s`, `mm/s`, `um/s`, `in/s` |
+| displacement | `m`, `mm`, `um`, `mil` |
+| electrical | `V`, `mV`, `A`, `mA` |
+| mechanical | `N`, `kN`, `Nm`, `Pa`, `rpm`, `Hz` (shaft speed, rev/s), `rad`, `deg`, `rev`, `s`, `ms` |
+| not convertible | `degC`, `dB`, `counts` (raw ADC values), `normalized` (audio in [-1, 1]), `unknown` |
+
+Signals stored in `V` are converted through the `sensitivity` column when the dataset documents
+it (`100 mV/g`). A unit change never integrates: acceleration does not become velocity.
+Converting a signal whose unit is `unknown`, `counts`, or another dimension raises `ValueError`.
+Converted samples are float64 (`dtype=np.float32` to save memory).
 
 ## On disk
 

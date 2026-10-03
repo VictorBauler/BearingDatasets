@@ -14,7 +14,11 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
-from .schema import SCHEMA_VERSION, renamed_columns, upgrade
+from .schema import QUANTITIES, SCHEMA_VERSION, renamed_columns, upgrade
+from .units import UNITS, convert
+
+# unit= of the signal readers: one unit for every signal, or {quantity: unit}
+Unit = str | dict[str, str] | None
 
 ENV_ROOT = "BEARING_DATASETS_ROOT"
 
@@ -127,19 +131,62 @@ class Dataset:
     # ---------------------------------------------------------------- signals
     def _locations(self) -> pd.DataFrame:
         if self._loc is None:
-            cols = ["signal_id", "signal_file", "signal_row_group", "signal_row"]
-            self._loc = pd.read_parquet(self.path / "metadata.parquet", columns=cols)
-            self._loc = self._loc.set_index("signal_id")
+            file = self.path / "metadata.parquet"
+            units = {"quantity": "unknown", "unit": "unknown", "sensitivity": "none"}
+            have = [c for c in units if c in pq.read_schema(file).names]
+            cols = ["signal_id", "signal_file", "signal_row_group", "signal_row", *have]
+            self._loc = pd.read_parquet(file, columns=cols).set_index("signal_id")
+            for c, default in units.items():  # columns a dataset does not have
+                if c not in have:
+                    self._loc[c] = default
         return self._loc
 
-    def signal(self, signal_id: str, start: int = 0, stop: int | None = None) -> np.ndarray:
-        """Samples of one signal, in the original dtype."""
+    def signal(
+        self,
+        signal_id: str,
+        start: int = 0,
+        stop: int | None = None,
+        unit: Unit = None,
+        dtype=None,
+    ) -> np.ndarray:
+        """Samples of one signal: in the original dtype and unit, or converted to ``unit``.
+
+        ``unit`` is a unit of ``bearing_datasets.units.UNITS`` (e.g. ``"m/s^2"``), or
+        ``{quantity: unit}`` to convert only the signals of those quantities (e.g.
+        ``{"acceleration": "g"}``). Converted samples are float64 unless ``dtype`` is given.
+        Raises ``ValueError`` when the signal's unit cannot be converted (unknown, raw counts,
+        another dimension).
+        """
         locations = self._locations()
         if signal_id not in locations.index:
             raise self._unknown_signal(signal_id)
-        file, group, row = locations.loc[signal_id]
+        file, group, row = locations.loc[
+            signal_id, ["signal_file", "signal_row_group", "signal_row"]
+        ]
         offsets, values = _row_group(str(self.path / "signals" / file), int(group), os.getpid())
-        return values[offsets[row] : offsets[row + 1]][start:stop]
+        x = values[offsets[row] : offsets[row + 1]][start:stop]
+        target = self._target_unit(signal_id, unit)
+        if target is None:
+            return x if dtype is None else np.asarray(x, dtype=dtype)
+        loc = locations.loc[signal_id]
+        try:
+            return convert(x, loc["unit"], target, loc["sensitivity"], dtype or np.float64)
+        except ValueError as e:
+            raise ValueError(f"{signal_id}: {e}") from None
+
+    def _target_unit(self, signal_id: str, unit: Unit) -> str | None:
+        """Unit ``signal_id`` is read in: None to keep the stored values."""
+        if unit is None:
+            return None
+        if isinstance(unit, str):
+            if unit not in UNITS:
+                raise ValueError(f"unknown unit {unit!r}; units: {', '.join(UNITS)}")
+            return unit
+        if bad := set(unit) - QUANTITIES:
+            raise ValueError(f"unit= keys are quantities ({', '.join(sorted(QUANTITIES))}): {bad}")
+        if bad := set(unit.values()) - set(UNITS):
+            raise ValueError(f"unknown unit(s) {bad}; units: {', '.join(UNITS)}")
+        return unit.get(self._locations().at[signal_id, "quantity"])
 
     def _unknown_signal(self, signal_id: str) -> UnknownIdError:
         meta = self.metadata()
@@ -158,18 +205,29 @@ class Dataset:
             "The ids are in ds.metadata()['signal_id'] ('<recording_id>/<channel>')."
         )
 
-    def iter_signals(self, signal_ids: Iterable[str]) -> Iterator[tuple[str, np.ndarray]]:
-        """Yield ``(signal_id, samples)`` one at a time (the dataset never has to fit in RAM)."""
+    def iter_signals(
+        self, signal_ids: Iterable[str], unit: Unit = None, dtype=None
+    ) -> Iterator[tuple[str, np.ndarray]]:
+        """Yield ``(signal_id, samples)`` one at a time (the dataset never has to fit in RAM).
+
+        ``unit`` and ``dtype`` as in ``signal()``.
+        """
         for sid in signal_ids:
-            yield sid, self.signal(sid)
+            yield sid, self.signal(sid, unit=unit, dtype=dtype)
 
     def with_signals(
-        self, meta: pd.DataFrame | None = None, start: int = 0, stop: int | None = None
+        self,
+        meta: pd.DataFrame | None = None,
+        start: int = 0,
+        stop: int | None = None,
+        unit: Unit = None,
+        dtype=None,
     ) -> pd.DataFrame:
         """``meta`` (default: all the metadata) with a ``signal`` column of numpy arrays.
 
         Loads the signals in memory: on large datasets, select rows first, e.g.
         ``ds.with_signals(meta[meta.fault_type == "inner"])``. ``start``/``stop`` cut every signal.
+        ``unit`` and ``dtype`` as in ``signal()``; the ``unit`` column gives the converted units.
         """
         meta = self.metadata() if meta is None else meta.copy()
         if "signal_id" not in meta.columns:
@@ -183,14 +241,27 @@ class Dataset:
         order = np.lexsort((loc["signal_row"], loc["signal_row_group"], loc["signal_file"]))
         signals = np.empty(len(ids), dtype=object)
         for i in order:
-            signals[i] = self.signal(ids[i], start, stop)
+            signals[i] = self.signal(ids[i], start, stop, unit, dtype)
         meta["signal"] = pd.Series(signals, index=meta.index)
+        if unit is not None:
+            targets = [self._target_unit(w, unit) for w in ids]
+            converted = np.array([t is not None for t in targets])
+            meta["unit"] = [t or u for t, u in zip(targets, loc["unit"], strict=True)]
+            if "sensitivity" in meta.columns:  # converted signals are not sensor volts any more
+                meta["sensitivity"] = meta["sensitivity"].where(~converted, "none")
         return meta
 
     def recording(
-        self, recording_id: str, channels: Sequence[str] | None = None
+        self,
+        recording_id: str,
+        channels: Sequence[str] | None = None,
+        unit: Unit = None,
+        dtype=None,
     ) -> dict[str, np.ndarray]:
-        """All (or some) channels of one recording, e.g. the 3 axes of a triaxial sensor."""
+        """All (or some) channels of one recording, e.g. the 3 axes of a triaxial sensor.
+
+        ``unit`` and ``dtype`` as in ``signal()``.
+        """
         meta = self.metadata()
         rows = meta[meta["recording_id"] == recording_id]
         if rows.empty:
@@ -207,7 +278,10 @@ class Dataset:
                     f" its channels are {', '.join(map(repr, rows['channel']))}."
                 )
             rows = rows[rows["channel"].isin(channels)]
-        return {c: self.signal(w) for c, w in zip(rows["channel"], rows["signal_id"], strict=True)}
+        return {
+            c: self.signal(w, unit=unit, dtype=dtype)
+            for c, w in zip(rows["channel"], rows["signal_id"], strict=True)
+        }
 
 
 @lru_cache(maxsize=4)

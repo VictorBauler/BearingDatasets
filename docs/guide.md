@@ -152,6 +152,18 @@ t = np.arange(len(x)) / row.fs          # seconds
 part = ds.signal(row.signal_id, start=0, stop=int(row.fs))   # only the first second
 ```
 
+### Signals in a chosen unit
+
+```python
+a = ds.signal(row.signal_id, unit="m/s^2")      # float64, converted from the stored unit
+rec = ds.recording("12k_DE_IR007_1", unit="g")
+df = ds.with_signals(meta, unit={"acceleration": "g", "speed": "Hz"})   # others as stored
+```
+
+Signals stored in volts are converted with the `sensitivity` column when the dataset gives it.
+A signal in `unknown`, `counts` or `normalized` cannot be converted and raises `ValueError`:
+filter on `meta.unit` first. See the README's [Units](../README.md#units) for the list.
+
 ### All channels recorded together
 
 ```python

@@ -9,7 +9,7 @@ description: |
   speeds of files 181-195 are not in the table: unknown); const_50_900rpm (normal and
   outer ring fault at 50-900 rpm, 30 s); moderate_ramps (speed changed by 1-10 rpm from
   650-975 rpm, 60 s); varying_0_900rpm (random, linear or triangle speed profiles over 0-900
-  rpm, 60 s). The two varying-speed subsets include the tachometer (speed / 30, irregularly
+  rpm, 60 s). The two varying-speed subsets include the tachometer (speed in rpm / 30, unit unknown, irregularly
   sampled; exact times in tach_time_unix). Labels and speeds come from the records' docx
   tables (meta.csv). bearing_model: the 6213 the test bearing is analogous to.
 license: CC-BY-4.0

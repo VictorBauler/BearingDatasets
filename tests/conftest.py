@@ -16,14 +16,16 @@ sources:
 BUILDER = """
 import numpy as np
 
+GB = {"sensor_location": "gearbox", "quantity": "acceleration", "unit": "g",
+      "sensitivity": "none", "fs": 1000}
 CHANNELS = {
-    "gb_x": {"sensor_location": "gearbox", "quantity": "acceleration", "axis": "x", "fs": 1000},
-    "gb_y": {"sensor_location": "gearbox", "quantity": "acceleration", "axis": "y", "fs": 1000},
-    "gb_z": {"sensor_location": "gearbox", "quantity": "acceleration", "axis": "z", "fs": 1000},
+    "gb_x": {**GB, "axis": "x"},
+    "gb_y": {**GB, "axis": "y"},
+    "gb_z": {**GB, "axis": "z"},
     "axle": {"sensor_location": "axle_bearing", "quantity": "acceleration", "axis": "none",
-             "fs": 2000},
+             "unit": "V", "sensitivity": "100 mV/g", "fs": 2000},
     "current": {"sensor_location": "motor_supply", "quantity": "current", "axis": "none",
-                "fs": 1000},
+                "unit": "unknown", "sensitivity": "none", "fs": 1000},
 }
 LABELS = {"healthy": ("normal", "none"), "gear": ("gear", "gearbox"),
           "compound": ("outer+electrical", "axle_bearing+motor")}

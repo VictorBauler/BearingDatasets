@@ -7,25 +7,26 @@ import re
 import pandas as pd
 
 
-def _ch(location, mounting, quantity, axis, unit):
+def _ch(location, mounting, quantity, axis):
     return {
         "sensor_location": location,
         "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
-        "unit": unit,
+        "unit": "V",
+        "sensitivity": "unknown",
         "fs": 35000,
     }
 
 
 CHANNELS = {
-    "vibration_x": _ch("motor", "casing", "acceleration", "x", "V"),  # on the fan cover
-    "vibration_y": _ch("motor", "casing", "acceleration", "y", "V"),
-    "vibration_z": _ch("motor", "casing", "acceleration", "z", "V"),
-    "current_1": _ch("motor_supply", "none", "current", "a", "V (100 mV/div)"),
-    "current_2": _ch("motor_supply", "none", "current", "b", "V (100 mV/div)"),
-    "current_3": _ch("motor_supply", "none", "current", "c", "V (100 mV/div)"),
-    "voltage_uv": _ch("motor_supply", "none", "voltage", "none", "V (200 V/div)"),
+    "vibration_x": _ch("motor", "casing", "acceleration", "x"),  # on the fan cover
+    "vibration_y": _ch("motor", "casing", "acceleration", "y"),
+    "vibration_z": _ch("motor", "casing", "acceleration", "z"),
+    "current_1": _ch("motor_supply", "none", "current", "a"),
+    "current_2": _ch("motor_supply", "none", "current", "b"),
+    "current_3": _ch("motor_supply", "none", "current", "c"),
+    "voltage_uv": _ch("motor_supply", "none", "voltage", "none"),
 }
 MACHINE = {  # code -> (fault_type, fault_location, fault_origin)
     "N": ("normal", "none", "none"),

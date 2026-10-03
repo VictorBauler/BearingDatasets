@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import pandas as pd
 
+from .units import UNITS, allowed_units, parse_sensitivity
+
 # Version of this table's layout, saved in manifest.json (no value: 1, before 0.2.0).
 SCHEMA_VERSION = 2
 
@@ -44,7 +46,12 @@ REQUIRED = {
 OPTIONAL = {
     # sensor
     "quantity": "physical quantity measured (see QUANTITIES)",
-    "unit": "unit of the signal ('unknown' if the dataset does not say)",
+    "unit": "unit the signal values are in (see units.UNITS): a physical unit (g, m/s^2, A, "
+    "...), V for an uncalibrated sensor, counts for raw ADC values, normalized for audio scaled "
+    "to [-1, 1], unknown when the dataset does not document it",
+    "sensitivity": "sensitivity of the sensor whose volts are stored (unit V), as '<value> "
+    "<V or mV>/<unit>' (e.g. '100 mV/g'), used to convert the signal; 'none' when the values are "
+    "already in a physical unit, 'unknown' when not documented",
     "axis": "measurement direction of the sensor (x/y/z, horizontal/vertical, axial/radial/"
     "tangential) or phase (a/b/c); 'none' for single-axis sensors",
     "sensor_mounting": "surface the sensor is on (ISO 20816-1): pedestal (stand-alone bearing "
@@ -143,6 +150,7 @@ VOCABULARIES = {
         "unknown",
     },
     "fault_origin": {"artificial", "real", "none", "unknown"},
+    "unit": set(UNITS),
 }
 JOINED = {"fault_type", "fault_location"}  # '+'-joined values
 
@@ -237,6 +245,16 @@ def validate(df: pd.DataFrame, notes: dict[str, str] | None = None) -> None:
         parts = {p for v in values for p in v.split("+")} if col in JOINED else set(values)
         if bad := parts - allowed:
             errors.append(f"unknown {col} value(s) {sorted(bad)}; allowed: {sorted(allowed)}")
+    if "quantity" in df and "unit" in df:
+        pairs = set(zip(df["quantity"].astype(str), df["unit"].astype(str), strict=True))
+        if bad := sorted((q, u) for q, u in pairs if q in QUANTITIES and u not in allowed_units(q)):
+            errors.append(f"unit(s) that do not fit the quantity (quantity, unit): {bad}")
+    if "sensitivity" in df:
+        for text in set(df["sensitivity"].astype(str)):
+            try:
+                parse_sensitivity(text)
+            except ValueError as e:
+                errors.append(str(e))
     if "fault_type" in df and "fault_location" in df:
         ft, loc = df["fault_type"].astype(str), df["fault_location"].astype(str)
         if ((ft == "normal") != (loc == "none")).any():

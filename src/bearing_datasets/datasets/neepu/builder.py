@@ -11,7 +11,7 @@ CHANNELS = {
         "sensor_mounting": "unknown",
         "quantity": "acceleration",
         "axis": "none",
-        "unit": "V/5",
+        "unit": "normalized",  # sensor volts (+-5 V) / 5,
         "fs": 12000,
     },
 }

@@ -9,8 +9,8 @@ description: |
   (faulty components supplied with the platform; sizes not given). 3 supply frequencies
   (25, 35, 45 Hz; measured rpm in the folder name) x 4 brake loads (0-75%) x 4
   acquisitions of 10 s at 25.6 kHz: 336 recordings. Three currents and three voltages at
-  the inverter output and one accelerometer near the intermediate shaft, stored raw
-  (currents / 100, voltages / 200, vibration 100 mV/g). License CC BY 3.0.
+  the inverter output and one accelerometer near the intermediate shaft, stored in the
+  acquisition volts (sensitivity: currents 10 mV/A, voltages 5 mV/V, vibration 100 mV/g). License CC BY 3.0.
 license: CC-BY-3.0
 size: "download 2.0 GB, built 2.1 GB (measured)"
 homepage: https://doi.org/10.25666/DATAUBFC-2023-03-06
