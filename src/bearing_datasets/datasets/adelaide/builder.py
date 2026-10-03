@@ -10,24 +10,24 @@ import re
 from bearing_datasets.io import read_mat
 
 
-def _ch(location, mounting, quantity, axis="none"):
+def _ch(location, mounting, quantity, axis="none", unit="V"):
     return {
         "sensor_location": location,
         "sensor_mounting": mounting,
         "quantity": quantity,
         "axis": axis,
-        "unit": "unknown",
+        "unit": unit,
         "fs": 25600,
     }
 
 
 CHANNELS = {
-    "Ex": _ch("test_bearing", "outer_ring", "displacement", "x"),  # eddy-current probes
-    "Ey": _ch("test_bearing", "outer_ring", "displacement", "y"),
-    "Ax": _ch("test_bearing", "pedestal", "acceleration", "x"),
-    "Ay": _ch("test_bearing", "pedestal", "acceleration", "y"),
+    "Ex": _ch("test_bearing", "outer_ring", "displacement", "x", "um"),  # eddy-current probes
+    "Ey": _ch("test_bearing", "outer_ring", "displacement", "y", "um"),
+    "Ax": _ch("test_bearing", "pedestal", "acceleration", "x", "m/s^2"),
+    "Ay": _ch("test_bearing", "pedestal", "acceleration", "y", "m/s^2"),
     "Wenglor": _ch("unknown", "unknown", "unknown"),
-    "Load": _ch("test_bearing", "unknown", "force"),
+    "Load": _ch("test_bearing", "unknown", "force", unit="N"),
     "SPL": _ch("ambient", "none", "sound_pressure"),
     "tacho": _ch("rig_shaft", "shaft", "tachometer"),
 }

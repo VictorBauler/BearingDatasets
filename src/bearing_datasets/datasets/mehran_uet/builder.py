@@ -26,9 +26,9 @@ CHANNELS = {
     "vibration_x": _ch("motor_bearing_de", "casing", "acceleration", "x", "g"),
     "vibration_y": _ch("motor_bearing_de", "casing", "acceleration", "y", "g"),
     "vibration_z": _ch("motor_bearing_de", "casing", "acceleration", "z", "g"),
-    "current_a": _ch("motor_supply", "none", "current", "a", "A"),
-    "current_b": _ch("motor_supply", "none", "current", "b", "A"),
-    "current_c": _ch("motor_supply", "none", "current", "c", "A"),
+    "current_a": _ch("motor_supply", "none", "current", "a", "V"),
+    "current_b": _ch("motor_supply", "none", "current", "b", "V"),
+    "current_c": _ch("motor_supply", "none", "current", "c", "V"),
 }
 SIZES = ["0.7", "0.9", "1.1", "1.3", "1.5", "1.7"]  # fault width, mm: levels 1-6
 FAULT = re.compile(r"^(?P<size>\d\.\d)(?P<race>inner|outer)-(?P<load>\d+)watt(?:-\w{6})?$")

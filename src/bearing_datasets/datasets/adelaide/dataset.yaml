@@ -8,9 +8,11 @@ description: |
   30, 45 or 90 degrees, loads 2.5, 5 and 10 kN. Length series (series=length): ball bearing,
   defects 100 um deep and 15.8 or 55.8 degrees long, loads 500-3000 N. Shaft speeds 5, 7.5,
   10 and 12.5 Hz; 10 s at 25.6 kHz. Stored channels are the authors' scaled signals in each
-  file: Ex, Ey (eddy-current probes, 50 x V + 250), Ax, Ay (accelerometers, 3.16 x V, sign
-  flipped in some files), Load (2260 x V), SPL and Wenglor (unscaled; the file's channel list
-  calls this column Acc_z), plus the raw tachometer. Units are not stated. native_label is
+  file: Ex, Ey (eddy-current probes, 50 x V + 250, in um: Micro-Epsilon EPU05), Ax, Ay
+  (accelerometers, the volts times each file's sens_Acc factor, e.g. 100 or -31.6, so the
+  sign is flipped in some files; in m/s^2 as plotted in Larizza's PhD thesis, Adelaide
+  2020), Load (2260 x V, in N; it matches the nominal load), SPL and Wenglor (unscaled V;
+  the file's channel list calls this column Acc_z), plus the raw tachometer (V). native_label is
   the test prefix of the file name (e.g. Bearing20EDM1or); the same prefix can hold several
   defects, so it is not a bearing identity. There are no healthy recordings.
   License: CC BY 4.0 (slope series), MIT (length series).

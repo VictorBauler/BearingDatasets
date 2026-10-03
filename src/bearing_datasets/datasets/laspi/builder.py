@@ -25,9 +25,9 @@ def _ch(location, mounting, quantity, axis, sensitivity):
 ORDERS = fault_orders(9, 0.3125, 1.5157)
 # currents and voltages at the inverter output (the motor supply)
 CHANNELS = {
-    "current_1": _ch("motor_supply", "none", "current", "a", "10 mV/A"),
-    "current_2": _ch("motor_supply", "none", "current", "b", "10 mV/A"),
-    "current_3": _ch("motor_supply", "none", "current", "c", "10 mV/A"),
+    "current_1": _ch("motor_supply", "none", "current", "a", "unknown"),
+    "current_2": _ch("motor_supply", "none", "current", "b", "unknown"),
+    "current_3": _ch("motor_supply", "none", "current", "c", "unknown"),
     "vibration": _ch("gearbox_bearing_intermediate", "casing", "acceleration", "none",
                      "100 mV/g"),
     "voltage_1": _ch("motor_supply", "none", "voltage", "a", "5 mV/V"),
